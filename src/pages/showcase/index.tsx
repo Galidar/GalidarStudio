@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import {SHOWCASE, ShowcaseItem} from '@site/src/data/showcase';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function Cards({items}: {items: ShowcaseItem[]}) {
   return (
@@ -10,7 +11,7 @@ function Cards({items}: {items: ShowcaseItem[]}) {
         <div key={item.title} className="col col--4 margin-bottom--lg">
           <div className="card card-elev">
             <div className="card__image">
-              <img src={item.image} alt={item.title} />
+              <img src={useBaseUrl(item.image)} alt={item.title} />
             </div>
             <div className="card__body">
               <h3 className="card-title">{item.title}</h3>

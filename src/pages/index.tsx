@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const FabLink = ({ href, label }: { href: string; label: string }) => (
   <Link className="button button--secondary button--lg" href={href} target="_blank" rel="noopener">
@@ -46,7 +47,7 @@ export default function Home(): JSX.Element {
           <p className="section-sub">Production‑ready water simulation tools for Unreal Engine.</p>
           <div className="grid cols-3">
             <div className="card-elev">
-              <img className="img" src="/img/landing/oceanology-nextgen.jpg" alt="Oceanology NextGen ocean at sunset" />
+              <img className="img" src={useBaseUrl("/img/landing/oceanology-nextgen.jpg")} alt="Oceanology NextGen ocean at sunset" />
               <div className="card-body">
                 <h3 className="card-title">Oceanology NextGen</h3>
                 <p className="card-desc">Hybrid spectral waves (FFT+Gerstner), coastline & shallow water simulation, and C++ quadtree tessellation for open worlds.</p>
@@ -62,7 +63,7 @@ export default function Home(): JSX.Element {
               </div>
             </div>
             <div className="card-elev">
-              <img className="img" src="/img/landing/oceanology-legacy.jpg" alt="Oceanology Legacy ship at dusk" />
+              <img className="img" src={useBaseUrl("/img/landing/oceanology-legacy.jpg")} alt="Oceanology Legacy ship at dusk" />
               <div className="card-body">
                 <h3 className="card-title">Oceanology Legacy</h3>
                 <p className="card-desc">Stable, game‑focused ocean built for performance on mid‑range GPUs with proven Gerstner‑based waves.</p>
@@ -74,7 +75,7 @@ export default function Home(): JSX.Element {
               </div>
             </div>
             <div className="card-elev">
-              <img className="img" src="/img/landing/riverology.jpg" alt="Riverology mountain river" />
+              <img className="img" src={useBaseUrl("/img/landing/riverology.jpg")} alt="Riverology mountain river" />
               <div className="card-body">
                 <h3 className="card-title">Riverology</h3>
                 <p className="card-desc">Spline‑based river generation with flow physics, buoyancy, and real‑time shallow water effects for open worlds.</p>
@@ -93,7 +94,7 @@ export default function Home(): JSX.Element {
           <p className="section-sub">Ready‑to‑use worlds to complement our water stack.</p>
           <div className="grid cols-3">
             <div className="card-elev">
-              <img className="img" src="/img/landing/cretaceous.jpg" alt="Cretaceous redwood forest scene" />
+              <img className="img" src={useBaseUrl("/img/landing/cretaceous.jpg")} alt="Cretaceous redwood forest scene" />
               <div className="card-body">
                 <h3 className="card-title">Cretaceous</h3>
                 <p className="card-desc">Majestic redwoods and lush undergrowth — photogrammetry assets tuned for UE5 open worlds. (Dinosaur not included.)</p>
@@ -101,7 +102,7 @@ export default function Home(): JSX.Element {
               </div>
             </div>
             <div className="card-elev">
-              <img className="img" src="/img/landing/forest-blizzard.jpg" alt="Forest Blizzard snowy valley" />
+              <img className="img" src={useBaseUrl("/img/landing/forest-blizzard.jpg")} alt="Forest Blizzard snowy valley" />
               <div className="card-body">
                 <h3 className="card-title">Forest Blizzard</h3>
                 <p className="card-desc">Photoreal Aleppo pine forests with World Partition and a snow generator for cinematic winter vistas.</p>
