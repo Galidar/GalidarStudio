@@ -4,12 +4,20 @@ slug: /
 title: Introduction
 ---
 
-# Oceanology Legacy 1.1
+# Oceanology Legacy
 
-> Example documentation for **Oceanology Legacy**.
+Proven ocean and underwater solution for Unreal Engine 5 projects. Offers a stable workflow with familiar components and feature parity for most common use cases.
 
-## Quick install
+## What you get
 
-```bash
-MyProject/Plugins/OceanologyLegacy/
-```
+- Infinite ocean surface with **QuadTree** tessellation.
+- **Buoyancy**, **RVT Manager**, **Water Volume**, and **Swimming** integration.
+- Audio cues and performance‑friendly materials for wide hardware support.
+
+## Who is it for
+
+Teams that prefer the established Legacy pipeline or maintain projects started on Legacy.
+
+## Quick start
+
+Continue to **[Install & Setup](./setup)** for installation and the required renderer options.
