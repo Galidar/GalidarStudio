@@ -4,7 +4,7 @@ slug: /
 title: Introduction
 ---
 
-# Oceanology Legacy 1.1
+# Oceanology Legacy
 
 > Example documentation for **Oceanology Legacy**.
 
