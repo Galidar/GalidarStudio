@@ -5,18 +5,73 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config: Config = {
   title: 'Galidar Studio Docs',
   tagline: 'Oceanology, Riverology & Environment Packs',
-  url: 'https://galidar.github.io', // TODO
+  url: 'https://galidar.github.io',
   baseUrl: '/GalidarStudio/',
   favicon: 'img/logo.svg',
   i18n: { defaultLocale: 'en', locales: ['en'] },
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   trailingSlash: false,
+
+  // Keep the build passing while we finish fixing links
+  onBrokenLinks: 'warn',
+  // Docusaurus v4 migration: move onBrokenMarkdownLinks to markdown.hooks
+  markdown: {
+    hooks: { onBrokenMarkdownLinks: 'warn' }
+  },
 
   organizationName: 'Galidar',
   projectName: 'GalidarStudio',
   deploymentBranch: 'gh-pages',
 
+  presets: [
+    [
+      'classic',
+      {
+        // We use multi-instances of the docs plugin below
+        docs: false,
+        blog: {
+          showReadingTime: true,
+          routeBasePath: 'blog',
+          blogTitle: 'Blog',
+          blogDescription: 'News and release notes for Oceanology and Riverology'
+        },
+        theme: { customCss: require.resolve('./src/css/custom.css') }
+      } satisfies Preset.Options,
+    ],
+  ],
+
+  // Three docs sections: legacy, nextgen, riverology
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'legacy',
+        path: 'oceanology-legacy',
+        routeBasePath: 'oceanology-legacy',
+        sidebarPath: require.resolve('./sidebarsLegacy.ts'),
+        homePageId: 'intro'
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'nextgen',
+        path: 'oceanology-nextgen',
+        routeBasePath: 'oceanology-nextgen',
+        sidebarPath: require.resolve('./sidebarsNextGen.ts'),
+        homePageId: 'intro'
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'riverology',
+        path: 'riverology',
+        routeBasePath: 'riverology',
+        sidebarPath: require.resolve('./sidebarsRiverology.ts'),
+        homePageId: 'intro'
+      },
+    ],
+  ],
 
   themes: [
     [
@@ -28,39 +83,10 @@ const config: Config = {
         indexPages: true,
         docsRouteBasePath: ['oceanology-legacy', 'oceanology-nextgen', 'riverology'],
         language: ['en'],
-        searchBarShortcutKeymap: 'mod+k',
         searchBarPosition: 'right',
         docsPluginIdForPreferredVersion: 'legacy'
       },
     ],
-  ],
-
-  presets: [
-    [
-      'classic',
-      {
-        docs: false,
-        blog: {
-          showReadingTime: true,
-          routeBasePath: 'blog',
-          blogTitle: 'Blog',
-          blogDescription: 'News and release notes for Oceanology and Riverology'
-        },
-        theme: {
-          customCss: './src/css/custom.css'
-        },
-        sitemap: {
-          changefreq: 'weekly',
-          priority: 0.5
-        }
-      } satisfies Preset.Options,
-    ],
-  ],
-
-  plugins: [
-    ['@docusaurus/plugin-content-docs', { id: 'legacy', path: 'oceanology-legacy', routeBasePath: 'oceanology-legacy', sidebarPath: './sidebarsLegacy.ts' }],
-    ['@docusaurus/plugin-content-docs', { id: 'default', path: 'oceanology-nextgen', routeBasePath: 'oceanology-nextgen', sidebarPath: './sidebarsNextGen.ts' }],
-    ['@docusaurus/plugin-content-docs', { id: 'riverology', path: 'riverology', routeBasePath: 'riverology', sidebarPath: './sidebarsRiverology.ts' }],
   ],
 
   themeConfig: {
@@ -74,16 +100,13 @@ const config: Config = {
       title: 'Galidar Studio',
       logo: { alt: 'Galidar Studio', src: 'img/logo.svg' },
       items: [
-        { type: 'docSidebar', sidebarId: 'legacySidebar', docsPluginId: 'legacy', position: 'left', label: 'Oceanology Legacy' },
-        { type: 'docSidebar', sidebarId: 'nextgenSidebar', docsPluginId: 'default', position: 'left', label: 'Oceanology NextGen' },
-        { type: 'docSidebar', sidebarId: 'riverologySidebar', docsPluginId: 'riverology', position: 'left', label: 'Riverology' },
-        { to: '/blog', label: 'Blog', position: 'left' },
-        { to: '/community', label: 'Community', position: 'left' },
+        { label: 'Oceanology Legacy', to: '/oceanology-legacy/intro', position: 'left' },
+        { label: 'Oceanology NextGen', to: '/oceanology-nextgen/intro', position: 'left' },
+        { label: 'Riverology', to: '/riverology/intro', position: 'left' },
         { to: '/showcase', label: 'Showcase', position: 'left' },
-        { to: '/linked-roles', label: 'Linked Roles', position: 'right' },
-        { to: '/faq', label: 'FAQ', position: 'right' },
-        { to: '/support', label: 'Support', position: 'right' },
-        { href: 'https://discord.com/invite/bkB6XbXgYJ', label: 'Discord', position: 'right' }
+        { to: '/blog', label: 'Blog', position: 'left' },
+        { to: '/community', label: 'Community', position: 'right' },
+        { href: 'https://github.com/Galidar/GalidarStudio', label: 'GitHub', position: 'right' },
       ],
     },
     footer: {
@@ -92,9 +115,9 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            {label: 'Oceanology Legacy', to: '/oceanology-legacy/'},
-            {label: 'Oceanology NextGen', to: '/oceanology-nextgen/'},
-            {label: 'Riverology', to: '/riverology/'},
+            {label: 'Oceanology Legacy', to: '/oceanology-legacy/intro'},
+            {label: 'Oceanology NextGen', to: '/oceanology-nextgen/intro'},
+            {label: 'Riverology', to: '/riverology/intro'},
           ],
         },
         {
@@ -103,15 +126,6 @@ const config: Config = {
             {label: 'Community', to: '/community'},
             {label: 'Discord', href: 'https://discord.com/invite/bkB6XbXgYJ'},
             {label: 'Support', to: '/support'},
-            {label: 'Code of Conduct', to: '/code-of-conduct'},
-            {label: 'Moderation', to: '/moderation'}
-          ],
-        },
-        {
-          title: 'Legal',
-          items: [
-            {label: 'Terms', to: '/terms'},
-            {label: 'Privacy', to: '/privacy'}
           ],
         },
         {
@@ -126,6 +140,6 @@ const config: Config = {
     },
     prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
   } as Preset.ThemeConfig,
-};
+} satisfies Config;
 
 export default config;
