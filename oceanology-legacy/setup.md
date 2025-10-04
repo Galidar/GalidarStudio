@@ -9,41 +9,77 @@ Follow these steps on a clean test project first. Then merge into your main proj
 
 :::note
 ## 1) Install the plugin to your Engine (Epic Games Launcher)
+
 1. Open **Epic Games Launcher → Library**.
 2. In **Fab Library**, click **Refresh**.
 3. Search **Oceanology Legacy** and **Install to Engine**.
 4. Choose the UE **5.5+** slot and wait for the download to complete.
-![Search plugins](/img/oceanology-legacy/setup/Plugin1.png)
-![Select engine version](/img/oceanology-legacy/setup/Plugin2.png)
+
+![Fab Library — search and Install to Engine](/img/oceanology-legacy/setup/ocea.png)
 :::
 
-:::note
+:::tip
+## 1) Install the plugin to your Engine (Epic Games Launcher)
+
+1. Open **Epic Games Launcher → Library**.
+2. In **Fab Library**, click **Refresh**.
+3. Search **Oceanology Legacy** and **Install to Engine**.
+4. Choose the UE **5.5+** slot and wait for the download to complete.
+
+![Fab Library — search and Install to Engine](/img/oceanology-legacy/setup/ocea.png)
+:::
+
+:::danger
+## 1) Install the plugin to your Engine (Epic Games Launcher)
+
+1. Open **Epic Games Launcher → Library**.
+2. In **Fab Library**, click **Refresh**.
+3. Search **Oceanology Legacy** and **Install to Engine**.
+4. Choose the UE **5.5+** slot and wait for the download to complete.
+
+![Fab Library — search and Install to Engine](/img/oceanology-legacy/setup/ocea.png)
+:::
+
+:::warning
+## 1) Install the plugin to your Engine (Epic Games Launcher)
+
+1. Open **Epic Games Launcher → Library**.
+2. In **Fab Library**, click **Refresh**.
+3. Search **Oceanology Legacy** and **Install to Engine**.
+4. Choose the UE **5.5+** slot and wait for the download to complete.
+
+![Fab Library — search and Install to Engine](/img/oceanology-legacy/setup/ocea.png)
+:::
+
+![Fab Library — search and Install to Engine](/img/oceanology-legacy/setup/fab-library-install-to-engine.png)
+![Fab Library — download progress](/img/oceanology-legacy/setup/fab-download-progress.png)
+![Select engine version](/img/oceanology-legacy/setup/fab-choose-engine-version.png)
+
 ## 2) Create a test project
-- Launch UE → **Games → Third Person**. Target **Desktop**, Quality **Maximum**, **Starter Content** on. Name the project and **Create**.
-![UE Project Browser — Third Person template](/img/oceanology-legacy/setup/Plugin3.png)
-:::
 
-:::note
+- Launch UE → **Games → Third Person**. Target **Desktop**, Quality **Maximum**, **Starter Content** on. Name the project and **Create**.
+
+![UE Project Browser — Third Person template](/img/oceanology-legacy/setup/ue55-new-project-third-person.png)
+
 ## 3) Enable the plugin in your project
+
 1. In UE, open **Edit → Plugins**.
 2. Search `Oceanology Legacy` and enable it.
 3. Click **Restart Now** when prompted.
 
-![Open Plugins window](/img/oceanology-legacy/setup/Plugin4.png)
-![Enable plugin](//img/oceanology-legacy/setup/Plugin5.png)
-![Restart to apply](/img/oceanology-legacy/setup/Plugin6.png)
-:::
+![Open Plugins window](/img/oceanology-legacy/setup/menu-edit-plugins.png)
+![Enable plugin](/img/oceanology-legacy/setup/plugins-search-oceanology.png)
+![Restart to apply](/img/oceanology-legacy/setup/plugins-enabled-restart-now.png)
 
-:::note
 ## 4) View sample content
+
 1. Open **Content Browser**. Click the gear icon.
 2. Enable **Show Engine Content** and **Show Plugin Content**.
 3. Navigate to **Engine/Plugins/OCEANOLOGY LEGACY Content** and open a sample map.
-![Show Engine and Plugin Content](/img/oceanology-legacy/setup/Plugin7.png)
-![Plugin content folder](/img/oceanology-legacy/setup/Plugin8.png)
-:::
 
-:::tip
+![Show Engine and Plugin Content](/img/oceanology-legacy/setup/content-browser-settings-show-engine-plugin.png)
+![Plugin content folder](/img/oceanology-legacy/setup/content-browser-oceanology-content-folder.png)
+
 ## 5) Project configuration — `DefaultEngine.ini`
 
 > Place this under your project at: `MyProject/Config/DefaultEngine.ini`.  
@@ -112,7 +148,7 @@ bTickPhysicsAsync=True
 bSubsteppingAsync=True
 bSubstepping=True
 ```
-:::
+
 :::note
 Engine variables may change between UE versions. If you see warnings, search the cvar and adjust.
 :::
