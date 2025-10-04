@@ -14,6 +14,8 @@ Follow these steps on a clean test project first. Then merge into your main proj
 3. Search **Oceanology NextGen** and **Install to Engine**.
 4. Choose the UE **5.5+** slot and wait for the download to complete.
 
+![Fab Library — search and Install to Engine](/img/oceanology-nextgen/setup/ocea.png)
+
 ![Fab Library — search and Install to Engine](/img/oceanology-nextgen/setup/fab-library-install-to-engine.png)
 ![Fab Library — download progress](/img/oceanology-nextgen/setup/fab-download-progress.png)
 ![Select engine version](/img/oceanology-nextgen/setup/fab-choose-engine-version.png)
