@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+slug: /
 title: Introduction
 ---
 
@@ -15,34 +16,16 @@ Production‑ready water simulation for Unreal Engine **5.5+**.
 
 ## Quick start
 
-:::note
 1. **Install to Engine** in Epic Games Launcher → **Library** → **Fab Library**. Search `Oceanology Legacy` and click **Install to Engine** for your UE **5.5+** slot.  
-   ![Fab Library — Install to Engine](/img/oceanology-legacy/setup/Plugin1.png)
-   ![Fab Library — Install to Engine](/img/oceanology-legacy/setup/Plugin2.png)
-   :::
-
-   :::note
+   ![Fab Library — Install to Engine](/img/oceanology-legacy/setup/fab-library-install-to-engine.png)
 2. Create a **Third Person** project and open it.  
-   ![New Third Person project](/img/oceanology-legacy/setup/Plugin3.png)
-   :::
-
-   :::note
+   ![New Third Person project](/img/oceanology-legacy/setup/ue55-new-project-third-person.png)
 3. In UE: **Edit → Plugins**, search **Oceanology Legacy**, enable, then **Restart**.  
-   ![Open Plugins window](/img/oceanology-legacy/setup/Plugin4.png)
-   ![Show Engine and Plugin Content](/img/oceanology-legacy/setup/Plugin5.png)
-   ![Show Engine and Plugin Content](/img/oceanology-legacy/setup/Plugin6.png)
-   ![Show Engine and Plugin Content](/img/oceanology-legacy/setup/Plugin7.png)
-   :::
-
-   :::note
+   ![Open Plugins window](/img/oceanology-legacy/setup/menu-edit-plugins.png)
 4. In **Content Browser → gear icon** enable **Show Engine Content** and **Show Plugin Content**.  
-   ![Show Engine and Plugin Content](/img/oceanology-legacy/setup/Plugin8.png)
-   :::
-
-   :::note
+   ![Show Engine and Plugin Content](/img/oceanology-legacy/setup/content-browser-settings-show-engine-plugin.png)
 5. Browse to **Engine/Plugins/OCEANOLOGY LEGACY Content** and open a sample map.  
-   ![Plugin content folder](/img/oceanology-legacy/setup/Plugin9.png)
-   :::
+   ![Plugin content folder](/img/oceanology-legacy/setup/content-browser-oceanology-content-folder.png)
 
 ## Next steps
 
