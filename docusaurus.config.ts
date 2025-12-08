@@ -5,7 +5,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config: Config = {
   title: 'Galidar Studio Docs',
   tagline: 'Oceanology, Riverology & Environment Packs',
-  url: 'https://galidar.github.io', // TODO
+  url: 'https://galidar.com', // TODO
   baseUrl: '/GalidarStudio/',
   favicon: 'img/logo.svg',
   i18n: { defaultLocale: 'en', locales: ['en'] },
