@@ -6,7 +6,7 @@ const config: Config = {
   title: 'Galidar Studio Docs',
   tagline: 'Oceanology, Riverology & Environment Packs',
   url: 'https://galidar.com', // TODO
-  baseUrl: '/GalidarStudio/',
+  baseUrl: '/galidar/',
   favicon: 'img/logo.svg',
   i18n: { defaultLocale: 'en', locales: ['en'] },
   onBrokenLinks: 'throw',
