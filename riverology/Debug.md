@@ -3,7 +3,7 @@ title: Debug
 sidebar_label: Debug
 ---
 
-# Debug
+# Riverology — Debug
 
 _Last updated: 2025-12-09_
 

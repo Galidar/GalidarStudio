@@ -3,7 +3,7 @@ title: Landscape
 sidebar_label: Landscape
 ---
 
-# Oceanology Legacy — Landscape
+# Riverology — Landscape
 
 _Last updated: 2025-12-08_
 
