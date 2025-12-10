@@ -69,7 +69,7 @@ This documentation is organized to get you productive quickly:
 
 | Section | Description |
 |---------|-------------|
-| **[Setup](./Setup.md)** | Installation, project configuration, and first scene verification. |
+| **[Setup](./setup.md)** | Installation, project configuration, and first scene verification. |
 | **[Waves](./Waves.md)** | Gerstner wave parameters, presets, and wave layer customization. |
 | **[Buoyancy](./Buoyancy.md)** | Pontoon-based floating physics for vessels and objects. |
 | **[Swimming](./Swimming.md)** | Character swimming component setup, bubbles, and transitions. |
@@ -90,7 +90,7 @@ This documentation is organized to get you productive quickly:
 4. **Configure Water Volume** — Add an `Oceanology Water Volume` for buoyancy and swimming.
 5. **Play** — Enter Play mode to see your ocean in action.
 
-For detailed instructions, see the **[Setup Guide](./Setup.md)**.
+For detailed instructions, see the **[Setup Guide](./setup.md)**.
 
 ---
 
@@ -119,6 +119,6 @@ Choose **Legacy** for reliable performance across diverse hardware. Choose **Nex
 
 <div align="center">
 
-**Ready to dive in?** Start with the **[Setup Guide](./Setup.md)** →
+**Ready to dive in?** Start with the **[Setup Guide](./setup.md)** →
 
 </div>
