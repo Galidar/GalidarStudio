@@ -1,4 +1,5 @@
 ---
+sidebar_position: 2
 title: Setup
 sidebar_label: Setup
 ---
