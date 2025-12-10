@@ -90,7 +90,7 @@ This documentation is organized to get you productive quickly:
 4. **Configure Water Volume** — Add an `Oceanology Water Volume` for buoyancy and swimming.
 5. **Play** — Enter Play mode to see your ocean in action.
 
-For detailed instructions, see the **[Setup Guide](./setup.md)**.
+For detailed instructions, see the **[Setup Guide](./Setup.md)**.
 
 ---
 
@@ -119,6 +119,6 @@ Choose **Legacy** for reliable performance across diverse hardware. Choose **Nex
 
 <div align="center">
 
-**Ready to dive in?** Start with the **[Setup Guide](./setup.md)** →
+**Ready to dive in?** Start with the **[Setup Guide](./Setup.md)** →
 
 </div>
