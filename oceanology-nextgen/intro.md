@@ -75,8 +75,8 @@ This documentation is organized to get you productive quickly:
 | Section | Description |
 |---------|-------------|
 | **[Setup](./setup.md)** | Installation, project configuration, and first scene verification. |
-| **[Waves](./Waves.md)** | Gerstner wave parameters, presets, and wave layer customization. |
-| **[Buoyancy](./Buoyancy.md)** | Pontoon-based floating physics for vessels and objects. |
+| **[Waves](./NextGenWaves.md)** | Gerstner wave parameters, presets, and wave layer customization. |
+| **[Buoyancy](./NextGenBuoyancy.md)** | Pontoon-based floating physics for vessels and objects. |
 | **Swimming** | Character swimming component setup and configuration. |
 | **Underwater** | Volumetric effects, post-processing, and caustics. |
 | **Quadtree** | LOD system, tessellation settings, and performance tuning. |
