@@ -3,7 +3,7 @@ title: Dome FX
 sidebar_label: Dome FX
 ---
 
-# Oceanology — Dome FX
+# Oceanology Next-Gen — Dome FX
 
 _Last updated: 2025-12-13_
 

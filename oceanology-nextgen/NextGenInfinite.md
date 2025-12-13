@@ -3,7 +3,7 @@ title: Infinite
 sidebar_label: Infinite
 ---
 
-# Oceanology — Infinite
+# Oceanology Next-Gen — Infinite
 
 _Last updated: 2025-12-13_
 

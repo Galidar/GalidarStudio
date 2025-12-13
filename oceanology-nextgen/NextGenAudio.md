@@ -3,7 +3,7 @@ title: Wave Audio
 sidebar_label: Wave Audio
 ---
 
-# Oceanology — Wave Audio
+# Oceanology Next-Gen — Wave Audio
 
 _Last updated: 2025-12-13_
 
