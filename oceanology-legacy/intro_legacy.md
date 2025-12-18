@@ -97,7 +97,7 @@ For detailed instructions, see the **[Setup Guide](./setup.md)**.
 ## Support & Community
 
 **Need Help?**
-- **Discord** — Join our community for real-time support and discussions.
+- **[Discord](https://discord.gg/VHJGBDR2as)** — Join our community for real-time support and discussions.
 - **Marketplace** — Open a support ticket through the Unreal Marketplace page.
 - **Issue Reports** — Include engine version, plugin version, logs (`Saved/Logs/`), and screenshots.
 

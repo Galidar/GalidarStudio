@@ -77,10 +77,18 @@ This documentation is organized to get you productive quickly:
 | **[Setup](./setup.md)** | Installation, project configuration, and first scene verification. |
 | **[Waves](./NextGenWaves.md)** | Gerstner wave parameters, presets, and wave layer customization. |
 | **[Buoyancy](./NextGenBuoyancy.md)** | Pontoon-based floating physics for vessels and objects. |
-| **Swimming** | Character swimming component setup and configuration. |
-| **Underwater** | Volumetric effects, post-processing, and caustics. |
-| **Quadtree** | LOD system, tessellation settings, and performance tuning. |
-| **Rivers & Lakes** | Bounded water bodies with flow and spline-based rivers. |
+| **[Swimming](./NextGenSwimming.md)** | Character swimming component setup and configuration. |
+| **[Underwater](./NextGenUnderwater.md)** | Volumetric effects, post-processing, and caustics. |
+| **[Surface](./NextGenSurface.md)** | Water surface rendering, reflections, and refractions. |
+| **[QuadTree](./NextGenQuadTree.md)** | LOD system, tessellation settings, and performance tuning. |
+| **[Infinite Ocean](./NextGenInfinite.md)** | Infinite ocean setup and world-scale water configuration. |
+| **[Shore Waves](./NextGenShoreWaves.md)** | Math-based breaking waves and coastal wave behavior. |
+| **[Shoreline Wetness](./NextGenShorelineWetness.md)** | Dynamic shoreline wetness and sand darkening effects. |
+| **[Foam](./NextGenFoam.md)** | Flow-based foam generation and wave crest foam systems. |
+| **[DomeFX](./NextGenDomeFX.md)** | Sky dome effects and atmospheric integration. |
+| **[RVT](./NextGenRVT.md)** | Runtime Virtual Texture and landscape integration. |
+| **[Audio](./NextGenAudio.md)** | Dynamic audio system and wave-driven soundscapes. |
+| **[Presets](./NextGenPreset.md)** | Saving, loading, and managing water configuration presets. |
 
 ---
 
@@ -99,7 +107,7 @@ For detailed instructions, see the **[Setup Guide](./setup.md)**.
 ## Support & Community
 
 **Need Help?**
-- **Discord** — Join our community for real-time support and discussions.
+- **[Discord](https://discord.gg/VHJGBDR2as)** — Join our community for real-time support and discussions.
 - **Marketplace** — Open a support ticket through the Unreal Marketplace page.
 - **Issue Reports** — Include engine version, plugin version, logs (`Saved/Logs/`), and screenshots.
 
