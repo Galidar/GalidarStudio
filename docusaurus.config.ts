@@ -83,7 +83,7 @@ const config: Config = {
         { to: '/linked-roles', label: 'Linked Roles', position: 'right' },
         { to: '/faq', label: 'FAQ', position: 'right' },
         { to: '/support', label: 'Support', position: 'right' },
-        { href: 'https://discord.com/invite/bkB6XbXgYJ', label: 'Discord', position: 'right' }
+        { href: 'https://discord.gg/VHJGBDR2as', label: 'Discord', position: 'right' }
       ],
     },
     footer: {
@@ -101,7 +101,7 @@ const config: Config = {
           title: 'Community',
           items: [
             {label: 'Community', to: '/community'},
-            {label: 'Discord', href: 'https://discord.com/invite/bkB6XbXgYJ'},
+            {label: 'Discord', href: 'https://discord.gg/VHJGBDR2as'},
             {label: 'Support', to: '/support'},
             {label: 'Code of Conduct', to: '/code-of-conduct'},
             {label: 'Moderation', to: '/moderation'}

@@ -146,7 +146,7 @@ export default function Home(): JSX.Element {
             <Link className="button button--primary" to="/oceanology-legacy/">Legacy Docs</Link>
             <Link className="button button--primary" to="/riverology/">Riverology Docs</Link>
             <Link className="button button--secondary" to="/linked-roles">Linked Roles</Link>
-            <a className="button button--secondary" href="https://discord.com/invite/bkB6XbXgYJ" target="_blank" rel="noopener">Join Discord</a>
+            <a className="button button--secondary" href="https://discord.gg/VHJGBDR2as" target="_blank" rel="noopener">Join Discord</a>
           </div>
         </section>
       </main>
