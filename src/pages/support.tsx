@@ -272,9 +272,9 @@ export default function Support(): JSX.Element {
             <span className="quick-link-title">Community</span>
             <span className="quick-link-arrow">→</span>
           </Link>
-          <Link to="/blog" className="quick-link-card">
+          <Link to="/roadmap" className="quick-link-card">
             <span className="quick-link-icon">📰</span>
-            <span className="quick-link-title">Blog & Updates</span>
+            <span className="quick-link-title">Roadmap & Updates</span>
             <span className="quick-link-arrow">→</span>
           </Link>
         </div>

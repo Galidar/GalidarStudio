@@ -26,6 +26,7 @@ const config: Config = {
         indexDocs: true,
         indexBlog: true,
         indexPages: true,
+        blogRouteBasePath: ['roadmap'],
         docsRouteBasePath: ['oceanology-legacy', 'oceanology-nextgen', 'riverology'],
         language: ['en'],
         searchBarShortcutKeymap: 'mod+k',
@@ -42,9 +43,9 @@ const config: Config = {
         docs: false,
         blog: {
           showReadingTime: true,
-          routeBasePath: 'blog',
-          blogTitle: 'Blog',
-          blogDescription: 'News and release notes for Oceanology and Riverology'
+          routeBasePath: 'roadmap',
+          blogTitle: 'Roadmap',
+          blogDescription: 'Upcoming features and release notes for Oceanology and Riverology'
         },
         theme: {
           customCss: './src/css/custom.css'
@@ -81,7 +82,7 @@ const config: Config = {
         { type: 'docSidebar', sidebarId: 'legacySidebar', docsPluginId: 'legacy', position: 'left', label: 'Oceanology Legacy' },
         { type: 'docSidebar', sidebarId: 'nextgenSidebar', docsPluginId: 'default', position: 'left', label: 'Oceanology NextGen' },
         { type: 'docSidebar', sidebarId: 'riverologySidebar', docsPluginId: 'riverology', position: 'left', label: 'Riverology' },
-        { to: '/blog', label: 'Blog', position: 'left' },
+        { to: '/roadmap', label: 'Roadmap', position: 'left' },
         { to: '/community', label: 'Community', position: 'left' },
         { to: '/showcase', label: 'Showcase', position: 'left' },
         { to: '/linked-roles', label: 'Linked Roles', position: 'right' },
