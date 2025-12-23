@@ -1794,11 +1794,18 @@
 }
 
 /* Mobile sidebar */
-[data-theme='light'] 
+[data-theme='light'] .navbar-sidebar {
+  background: var(--bg-card) !important;
+}
 
-[data-theme='light'] 
+[data-theme='light'] .navbar-sidebar__brand {
+  background: var(--bg-card) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
 
-[data-theme='light'] 
+[data-theme='light'] .navbar-sidebar__items {
+  background: var(--bg-card) !important;
+}
 
 /* Back to top button */
 [data-theme='light'] .theme-back-to-top-button {
@@ -5626,9 +5633,15 @@ footer[class*="footer"] {
   }
   
   /* Mobile menu improvements */
+  .navbar-sidebar {
+    width: 85%;
+    max-width: 320px;
+  }
   
-  
-  
+  .navbar-sidebar .menu__link {
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+  }
   
   .navbar__toggle {
     padding: 0.5rem;
@@ -5984,7 +5997,9 @@ footer[class*="footer"] {
     padding-top: env(safe-area-inset-top);
   }
   
-  
+  .navbar-sidebar {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }
 
 /* ========== VERY SMALL SCREENS (320px) ========== */
@@ -6512,23 +6527,62 @@ footer[class*="footer"] {
   }
   
   /* Mobile sidebar */
+  .navbar-sidebar {
+    width: 85%;
+    max-width: 320px;
+    padding: 1.5rem;
+    background: rgba(9, 9, 11, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
   
+  .navbar-sidebar__brand {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
   
+  .navbar-sidebar .menu__list {
+    padding: 0;
+  }
   
+  .navbar-sidebar .menu__link {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    border-radius: 12px;
+    margin-bottom: 0.25rem;
+    transition: all 0.2s ease;
+  }
   
+  .navbar-sidebar .menu__link:hover,
+  .navbar-sidebar .menu__link--active {
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--violet);
+  }
   
-  
-  
-  
-  
-  
-  
+  .navbar-sidebar .menu__link:active {
+    transform: scale(0.98);
+  }
   
   /* Close button */
-  
+  .navbar-sidebar__close {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+  }
   
   /* Backdrop */
-  
+  .navbar-sidebar__backdrop {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+  }
 }
 
 /* ========== COMMUNITY PAGE - MOBILE PREMIUM ========== */
@@ -7111,9 +7165,14 @@ footer[class*="footer"] {
     border-color: rgba(0, 0, 0, 0.06);
   }
   
-  [data-theme='light'] 
+  [data-theme='light'] .navbar-sidebar {
+    background: rgba(255, 255, 255, 0.98);
+  }
   
-  [data-theme='light'] 
+  [data-theme='light'] .navbar-sidebar .menu__link:hover,
+  [data-theme='light'] .navbar-sidebar .menu__link--active {
+    background: rgba(139, 92, 246, 0.08);
+  }
   
   [data-theme='light'] .navbar__toggle {
     background: rgba(0, 0, 0, 0.03);
@@ -7182,41 +7241,85 @@ footer[class*="footer"] {
   }
   
   /* Mobile sidebar - style only, don't override display/flex */
-  
+  .navbar-sidebar {
+    background: var(--ifm-background-color);
+  }
   
   /* Brand section */
-  
+  .navbar-sidebar__brand {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--ifm-toc-border-color);
+  }
   
   /* Close button styling */
+  .navbar-sidebar__close {
+    border-radius: 8px;
+    transition: background 0.2s ease;
+  }
   
-  
-  
+  .navbar-sidebar__close:hover {
+    background: rgba(139, 92, 246, 0.1);
+  }
   
   /* Menu items container */
-  
+  .navbar-sidebar__items {
+    padding: 0.5rem;
+  }
   
   /* Individual menu links */
+  .navbar-sidebar .menu__link {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+  }
   
+  .navbar-sidebar .menu__link:hover {
+    background: rgba(139, 92, 246, 0.08);
+  }
   
-  
-  
-  
+  .navbar-sidebar .menu__link--active {
+    background: rgba(139, 92, 246, 0.12);
+    color: var(--ifm-color-primary);
+    font-weight: 600;
+  }
   
   /* Submenu styling */
+  .navbar-sidebar .menu__list .menu__list {
+    padding-left: 0.75rem;
+    margin-top: 0.25rem;
+  }
   
-  
-  
+  .navbar-sidebar .menu__list .menu__list .menu__link {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
   
   /* Dropdown caret */
+  .navbar-sidebar .menu__caret {
+    padding: 0.5rem;
+    border-radius: 6px;
+  }
   
-  
-  
+  .navbar-sidebar .menu__caret:hover {
+    background: rgba(139, 92, 246, 0.1);
+  }
   
   /* Back button in nested menus */
-  
+  .navbar-sidebar .navbar-sidebar__back {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: var(--ifm-color-primary);
+    border-bottom: 1px solid var(--ifm-toc-border-color);
+    margin-bottom: 0.5rem;
+  }
   
   /* Backdrop */
-  
+  .navbar-sidebar__backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
   
   /* Toggle button */
   .navbar__toggle {
@@ -7234,36 +7337,26 @@ footer[class*="footer"] {
 }
 
 /* Light mode adjustments */
-[data-theme='light'] 
-
-[data-theme='light'] 
-
-[data-theme='light'] 
-
-[data-theme='light'] 
-
-[data-theme='light'] 
-
-[data-theme='light'] 
-
-/* ============================================
-   MOBILE NAVBAR - SAFE VISUAL STYLING ONLY
-   These styles only affect colors/borders, 
-   NOT display, position, or layout properties
-   ============================================ */
-
-/* Mobile navbar toggle button - only colors */
-@media (max-width: 996px) {
-  .navbar__toggle {
-    color: var(--ifm-navbar-link-color);
-  }
-  
-  .navbar__toggle:hover {
-    background-color: rgba(139, 92, 246, 0.1);
-  }
+[data-theme='light'] .navbar-sidebar {
+  background: #ffffff;
 }
 
-/* Light mode mobile navbar adjustments - only colors */
-[data-theme='light'] .navbar__toggle:hover {
-  background-color: rgba(139, 92, 246, 0.08);
+[data-theme='light'] .navbar-sidebar__brand {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .navbar-sidebar .menu__link:hover {
+  background: rgba(139, 92, 246, 0.06);
+}
+
+[data-theme='light'] .navbar-sidebar .menu__link--active {
+  background: rgba(139, 92, 246, 0.1);
+}
+
+[data-theme='light'] .navbar-sidebar__backdrop {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='light'] .navbar-sidebar .navbar-sidebar__back {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
 }
