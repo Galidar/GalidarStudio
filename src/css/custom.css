@@ -5029,3 +5029,204 @@ footer[class*="footer"] {
 .row {
   background: transparent !important;
 }
+
+/* ============================================
+   WAVE FORGE STUDIO SECTION
+   ============================================ */
+
+.wave-forge-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 968px) {
+  .wave-forge-showcase {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wave-forge-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.wave-forge-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(6, 182, 212, 0.2));
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--violet);
+  width: fit-content;
+  animation: pulse-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
+  50% { box-shadow: 0 0 20px 5px rgba(139, 92, 246, 0.2); }
+}
+
+.wave-forge-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin: 0;
+}
+
+.wave-forge-desc {
+  font-size: 1.1rem;
+  color: var(--text-gray);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.wave-forge-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.wave-forge-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.wave-forge-feature:hover {
+  background: rgba(139, 92, 246, 0.08);
+  border-color: rgba(139, 92, 246, 0.2);
+  transform: translateX(4px);
+}
+
+.wave-forge-feature-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.wave-forge-feature div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.wave-forge-feature strong {
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+.wave-forge-feature span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.wave-forge-pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.05));
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 12px;
+}
+
+.wave-forge-pricing-label {
+  color: var(--violet);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.wave-forge-pricing-note {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.wave-forge-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.wave-forge-actions .btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+.wave-forge-preview {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.wave-forge-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wave-forge-preview-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  display: flex;
+  justify-content: center;
+}
+
+.wave-forge-preview-overlay span {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Light mode adjustments */
+[data-theme='light'] .wave-forge-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .wave-forge-desc {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .wave-forge-feature {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .wave-forge-feature:hover {
+  background: rgba(139, 92, 246, 0.08);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+[data-theme='light'] .wave-forge-feature strong {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .wave-forge-feature span {
+  color: var(--text-muted) !important;
+}
+
+[data-theme='light'] .wave-forge-preview {
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}

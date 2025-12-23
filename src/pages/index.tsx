@@ -532,6 +532,97 @@ export default function Home(): JSX.Element {
         </div>
       </section>
 
+      {/* ========== WAVE FORGE STUDIO ========== */}
+      <section className="bento-section reveal">
+        <div className="section-header">
+          <div className="section-label" style={{background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(6, 182, 212, 0.2))', borderColor: 'rgba(139, 92, 246, 0.4)', color: 'var(--violet)'}}>
+            🆕 New Tool
+          </div>
+          <h2 className="section-title">Wave Forge Studio</h2>
+          <p className="section-desc">Professional breaking wave profile editor for NextGen 2.0 and compatible plugins.</p>
+        </div>
+
+        <div className="wave-forge-showcase">
+          <div className="wave-forge-content">
+            <div className="wave-forge-badge">Coming Soon</div>
+            <h3 className="wave-forge-title">Create Custom Breaking Waves</h3>
+            <p className="wave-forge-desc">
+              Design physics-accurate surf wave animations with our WebGPU-powered spline editor. 
+              Export directly to Unreal Engine for use in games, cinematics, architectural visualization, and more.
+            </p>
+            
+            <div className="wave-forge-features">
+              <div className="wave-forge-feature">
+                <span className="wave-forge-feature-icon">🌊</span>
+                <div>
+                  <strong>21-Spline System</strong>
+                  <span>Complete wave lifecycle from swell to wash</span>
+                </div>
+              </div>
+              <div className="wave-forge-feature">
+                <span className="wave-forge-feature-icon">🎬</span>
+                <div>
+                  <strong>Real-Time Preview</strong>
+                  <span>Instant 3D visualization with WebGPU rendering</span>
+                </div>
+              </div>
+              <div className="wave-forge-feature">
+                <span className="wave-forge-feature-icon">📤</span>
+                <div>
+                  <strong>Multiple Export Formats</strong>
+                  <span>16-bit HDR textures, HLSL, LUA, JSON, C++</span>
+                </div>
+              </div>
+              <div className="wave-forge-feature">
+                <span className="wave-forge-feature-icon">🎮</span>
+                <div>
+                  <strong>Commercial License</strong>
+                  <span>Use in games, films, architecture & more</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="wave-forge-pricing">
+              <span className="wave-forge-pricing-label">Subscription-based access</span>
+              <span className="wave-forge-pricing-note">Create unlimited wave profiles for your projects</span>
+            </div>
+
+            <div className="wave-forge-actions">
+              <a href="https://waveforgestudio.galidarreset.workers.dev" target="_blank" rel="noopener" className="btn btn-primary btn-lg">
+                🚀 Launch Wave Forge Studio
+              </a>
+              <Link to="/roadmap/wave-forge-studio-announcement" className="btn btn-secondary">
+                📖 Learn More
+              </Link>
+            </div>
+          </div>
+          <div className="wave-forge-preview">
+            <img src={useBaseUrl("/img/landing/wave-forge-studio.png")} alt="Wave Forge Studio Interface" />
+            <div className="wave-forge-preview-overlay">
+              <span>WebGPU • 16-bit HDR • Real-Time</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Wave Forge Feature Cards */}
+        <div className="features-grid">
+          <div className="feature-card violet">
+            <div className="product-icon violet">🔧</div>
+            <div>
+              <h4 className="feature-card-title">NextGen 2.0 Compatible</h4>
+              <p className="feature-card-desc">Seamlessly integrates with Oceanology NextGen breaking wave system.</p>
+            </div>
+          </div>
+          <div className="feature-card cyan">
+            <div className="product-icon cyan">🌐</div>
+            <div>
+              <h4 className="feature-card-title">Browser-Based</h4>
+              <p className="feature-card-desc">No installation required. Works on any modern browser with WebGPU support.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ========== VIDEOS ========== */}
       <section className="bento-section reveal">
         <div className="section-header">
