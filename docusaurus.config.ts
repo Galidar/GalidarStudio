@@ -42,6 +42,7 @@ const config: Config = {
       {
         docs: false,
         blog: {
+          path: 'roadmap',
           showReadingTime: true,
           routeBasePath: 'roadmap',
           blogTitle: 'Roadmap',
