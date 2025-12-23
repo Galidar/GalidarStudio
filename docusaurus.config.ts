@@ -103,8 +103,6 @@ const config: Config = {
             {label: 'Community', to: '/community'},
             {label: 'Discord', href: 'https://discord.gg/VHJGBDR2as'},
             {label: 'Support', to: '/support'},
-            {label: 'Code of Conduct', to: '/code-of-conduct'},
-            {label: 'Moderation', to: '/moderation'}
           ],
         },
         {
