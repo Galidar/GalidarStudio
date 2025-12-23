@@ -1,7 +1,11 @@
 ---
 slug: breaking-waves-deep-dive
 title: "🏄 Breaking Waves - Realistic Surf Zone Simulation in NextGen 2.0"
-authors: [galidar]
+authors:
+  - name: Galidar
+    title: Founder, Galidar Studio
+    url: https://www.fab.com/sellers/galidar
+    image_url: /img/logo.svg
 tags: [nextgen, coastal, breaking-waves, surf, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---

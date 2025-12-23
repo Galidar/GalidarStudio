@@ -1,7 +1,11 @@
 ---
 slug: spectral-gerstner-waves-explained
 title: "🌊 Spectral Gerstner Waves - The Science Behind NextGen 2.0"
-authors: [galidar]
+authors:
+  - name: Galidar
+    title: Founder, Galidar Studio
+    url: https://www.fab.com/sellers/galidar
+    image_url: /img/logo.svg
 tags: [nextgen, waves, technical, physics, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---

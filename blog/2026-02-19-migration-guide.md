@@ -1,7 +1,11 @@
 ---
 slug: migration-guide-1x-to-2
 title: "📦 Migration Guide - Upgrading from NextGen 1.x to 2.0"
-authors: [galidar]
+authors:
+  - name: Galidar
+    title: Founder, Galidar Studio
+    url: https://www.fab.com/sellers/galidar
+    image_url: /img/logo.svg
 tags: [nextgen, migration, upgrade, guide, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---

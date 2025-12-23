@@ -1,7 +1,11 @@
 ---
 slug: nextgen-2-technical-architecture
 title: "⚙️ Under the Hood - NextGen 2.0 Technical Architecture"
-authors: [galidar]
+authors:
+  - name: Galidar
+    title: Founder, Galidar Studio
+    url: https://www.fab.com/sellers/galidar
+    image_url: /img/logo.svg
 tags: [nextgen, technical, architecture, gpu, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---
