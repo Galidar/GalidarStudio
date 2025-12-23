@@ -1,11 +1,7 @@
 ---
 slug: landscape-integration
 title: "🏔️ Landscape Integration - Automatic Terrain Sculpting"
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 tags: [nextgen, landscape, islands, terrain, brush-effects]
 image: /img/landing/oceanology-nextgen.png
 ---

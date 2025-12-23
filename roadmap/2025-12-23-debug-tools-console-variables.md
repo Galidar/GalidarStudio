@@ -1,11 +1,7 @@
 ---
 slug: debug-tools-console-variables
 title: "🔧 Debug Tools & Console Variables - Complete Reference"
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 tags: [nextgen, debug, console, performance, tools, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---

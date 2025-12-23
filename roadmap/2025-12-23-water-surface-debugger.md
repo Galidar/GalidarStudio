@@ -1,11 +1,7 @@
 ---
 slug: water-surface-debugger
 title: "🔍 Water Surface Debugger - Advanced Visualization & Analysis Tools"
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 tags: [nextgen, debug, visualization, editor, tools]
 image: /img/landing/oceanology-nextgen.png
 ---

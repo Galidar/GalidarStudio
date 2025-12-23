@@ -8,11 +8,7 @@ tags:
   - tips
 description: "Learn how to optimize your water simulation for smooth gameplay while maintaining stunning visuals."
 image: /img/landing/oceanology-legacy.png
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 ---
 
 Beautiful water shouldn't mean sacrificing performance. This guide shows you how to achieve both.

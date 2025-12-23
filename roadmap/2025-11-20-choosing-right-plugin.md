@@ -9,11 +9,7 @@ tags:
   - riverology
 description: "Not sure which water plugin is right for your project? This comprehensive guide helps you make the perfect choice."
 image: /img/landing/oceanology-legacy.png
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 ---
 
 Choosing the right water simulation plugin can make or break your project. Let's find the perfect match for your needs.

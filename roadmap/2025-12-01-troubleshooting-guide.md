@@ -8,11 +8,7 @@ tags:
   - tips
 description: "Quick solutions to the most common problems users encounter with Oceanology and Riverology plugins."
 image: /img/landing/oceanology-nextgen.png
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 ---
 
 Encountering issues? Don't worry — most problems have simple solutions. This guide covers the top issues we see in support and how to fix them fast.

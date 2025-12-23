@@ -1,11 +1,7 @@
 ---
 slug: nextgen-2-buoyancy-river-forces
 title: "⚓ Advanced Buoyancy & River Physics in NextGen 2.0"
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 tags: [nextgen, buoyancy, physics, rivers, boats, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---

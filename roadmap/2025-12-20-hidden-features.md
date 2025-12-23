@@ -8,11 +8,7 @@ tags:
   - features
 description: "Discover powerful features in Oceanology and Riverology that many users overlook. Level up your water simulation game!"
 image: /img/landing/riverology.png
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 ---
 
 Our plugins have many features that even experienced users sometimes miss. Let's uncover them!

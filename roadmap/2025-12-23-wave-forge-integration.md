@@ -1,11 +1,7 @@
 ---
 slug: wave-forge-integration
 title: "🔨 Wave Forge Studio - Custom Wave Profiles for NextGen 2.0"
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 tags: [nextgen, wave-forge, tools, procedural, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---

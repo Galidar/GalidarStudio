@@ -9,11 +9,7 @@ tags:
   - riverology
 description: "Master these essential tips to get the most out of your water simulation plugins and create stunning ocean environments."
 image: /img/landing/oceanology-nextgen.png
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 ---
 
 After helping thousands of developers create stunning water environments, we've compiled the most valuable tips that will dramatically improve your workflow and results.

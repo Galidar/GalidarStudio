@@ -1,11 +1,7 @@
 ---
 slug: spline-data-generator-breaking-physics
 title: "🌊 Spline Data Generator - Physics-Accurate Breaking Wave Authoring"
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 tags: [nextgen, splines, breaking-waves, physics, wave-forge]
 image: /img/landing/oceanology-nextgen.png
 ---

@@ -1,11 +1,7 @@
 ---
 slug: nextgen-2-announcement
 title: "🌊 Oceanology NextGen 2.0 - The Future of Water Simulation"
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 tags: [nextgen, announcement, update, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---

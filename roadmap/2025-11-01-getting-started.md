@@ -8,11 +8,7 @@ tags:
   - oceanology
 description: "A quick-start guide to creating your first ocean environment with Oceanology NextGen in Unreal Engine 5."
 image: /img/landing/oceanology-legacy.png
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 ---
 
 New to Oceanology? This quick tutorial will have you rendering beautiful ocean water in just 5 minutes.

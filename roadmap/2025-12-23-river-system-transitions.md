@@ -1,11 +1,7 @@
 ---
 slug: river-system-transitions
 title: "🌊 Rivers, Lakes & Oceans - Seamless Water Transitions"
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 tags: [nextgen, rivers, lakes, transitions, splines, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---

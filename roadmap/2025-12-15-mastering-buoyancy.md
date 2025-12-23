@@ -8,11 +8,7 @@ tags:
   - physics
 description: "A complete guide to creating believable floating objects, from simple debris to complex vessels with proper weight distribution."
 image: /img/landing/oceanology-nextgen.png
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 ---
 
 Buoyancy is the magic that brings your water to life. Let's master it together.

@@ -1,11 +1,7 @@
 ---
 slug: wave-forge-studio-announcement
 title: "🚀 Introducing Wave Forge Studio - Professional Breaking Wave Editor"
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 tags: [announcement, wave-forge, tool, breaking-waves, subscription]
 image: /img/landing/wave-forge-studio.png
 ---

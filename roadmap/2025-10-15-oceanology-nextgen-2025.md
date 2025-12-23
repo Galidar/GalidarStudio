@@ -8,11 +8,7 @@ tags:
   - update
 description: "Discover the latest features in Oceanology NextGen including improved FFT waves, better performance, and new coastline rendering."
 image: /img/landing/oceanology-nextgen.png
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 ---
 
 Oceanology NextGen continues to evolve with powerful new features for creating stunning ocean environments in Unreal Engine 5.

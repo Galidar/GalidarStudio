@@ -1,11 +1,7 @@
 ---
 slug: nextgen-2-additional-features
 title: "✨ NextGen 2.0 - Complete Feature Roundup"
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 tags: [nextgen, features, niagara, hlod, shallow-water, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---

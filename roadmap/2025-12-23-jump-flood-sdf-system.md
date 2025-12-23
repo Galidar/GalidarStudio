@@ -1,11 +1,7 @@
 ---
 slug: jump-flood-sdf-system
 title: "📐 Jump Flood SDF - Real-Time Distance Field Computation"
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 tags: [nextgen, sdf, jump-flood, algorithm, shore-detection]
 image: /img/landing/oceanology-nextgen.png
 ---

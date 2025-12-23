@@ -1,11 +1,7 @@
 ---
 slug: caustics-generator-system
 title: "✨ Caustics Generator - Dynamic Underwater Light Patterns"
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 tags: [nextgen, caustics, underwater, lighting, visual-effects]
 image: /img/landing/oceanology-nextgen.png
 ---

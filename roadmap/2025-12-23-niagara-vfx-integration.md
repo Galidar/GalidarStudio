@@ -1,11 +1,7 @@
 ---
 slug: niagara-vfx-integration
 title: "🎆 Niagara VFX Integration - Water-Aware Particle Systems"
-authors:
-  - name: Galidar
-    title: Founder, Galidar Studio
-    url: https://www.fab.com/sellers/galidar
-    image_url: /img/logo.svg
+authors: [galidar]
 tags: [nextgen, niagara, vfx, particles, integration]
 image: /img/landing/oceanology-nextgen.png
 ---
