@@ -122,7 +122,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Galidar Studio. Built with Docusaurus.`,
+      copyright: `Copyright © 2019-${new Date().getFullYear()} Galidar Studio.`,
     },
     prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
   } as Preset.ThemeConfig,
