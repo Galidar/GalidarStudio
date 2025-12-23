@@ -3,22 +3,28 @@ title: Navigation
 sidebar_label: Navigation
 ---
 
-# Oceanology Legacy — Navigation
+# Oceanology Legacy - Navigation
 
-_Last updated: 2025-12-08_
+<div className="doc-badge doc-badge-violet">🚢 Vessel Control</div>
+<div className="doc-badge doc-badge-cyan">🎮 Input System</div>
+<div className="doc-badge doc-badge-emerald">🤖 AI Ready</div>
+
+Control buoyant vessels with keyboard, mouse, or gamepad using the Pawn-based navigation system.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.6 or newer.
-- **Oceanology Legacy** installed and configured (see the **Setup** page).
-- At least one **Oceanology Legacy** water body placed in your level (infinite ocean or lake).
-- A working **Buoyancy** setup (see the **Buoyancy** page).
-- Basic familiarity with **Blueprints**, **Pawns**, **Game Modes**, and **Enhanced Input** in Unreal Engine.
 
-## Notes
-- Navigation in Oceanology Legacy allows players to control buoyant vessels using keyboard, mouse, or gamepad inputs.
-- The system uses a **Pawn-based architecture** where the player controls a lightweight Pawn that follows a physics-simulated buoyant mesh. This separation keeps input handling clean while allowing realistic wave-based movement.
-- Oceanology Legacy includes pre-configured navigation Blueprints: a **Game Mode**, a **Pawn**, and **Enhanced Input** assets. You can use these as-is or as templates for custom implementations.
-- The workflow in this page focuses on understanding the provided navigation system before customizing it for your project.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Oceanology Legacy installed and configured |
+| **Scene** | Water body with buoyancy setup |
+| **Skills** | Basic familiarity with Pawns and Enhanced Input |
+
+:::info About Navigation
+The navigation system uses a **Pawn-based architecture** where players control a lightweight Pawn following a physics-simulated buoyant mesh. This separation keeps input handling clean while allowing realistic wave-based movement.
+:::
 
 ---
 
@@ -29,9 +35,9 @@ Open the **Content Browser** and navigate to:
 `Plugins > Oceanology Legacy > Design > Ocean > Prefabs > BattleShip > Navigation`
 
 This folder contains all the navigation-related assets:
-- **Inputs** — A subfolder containing the Enhanced Input assets (Input Actions and Input Mapping Contexts).
-- **BP_BattleShip_Pawn** — The player-controllable Pawn Blueprint that handles input and follows the buoyant ship mesh.
-- **BP_GameMode_BattleShip** — A Game Mode Blueprint pre-configured to spawn the BattleShip Pawn as the default player character.
+- **Inputs** - A subfolder containing the Enhanced Input assets (Input Actions and Input Mapping Contexts).
+- **BP_BattleShip_Pawn** - The player-controllable Pawn Blueprint that handles input and follows the buoyant ship mesh.
+- **BP_GameMode_BattleShip** - A Game Mode Blueprint pre-configured to spawn the BattleShip Pawn as the default player character.
 
 These assets work together to provide a complete ship navigation system out of the box.
 
@@ -96,7 +102,7 @@ This section:
 1. Calls `Get Battle Ship Custom Collision` to retrieve a reference to the buoyant ship mesh.
 2. Uses `Is Valid` to verify the reference exists before proceeding.
 
-The separation of Pawn and buoyant mesh is intentional — the Pawn handles input while the physics-simulated mesh handles realistic water interaction.
+The separation of Pawn and buoyant mesh is intentional - the Pawn handles input while the physics-simulated mesh handles realistic water interaction.
 
 ![Event BeginPlay logic](Navigation/LegacyNavigation_05.png)
 :::
@@ -110,10 +116,10 @@ This logic:
 2. Validates it with `Is Valid`.
 3. Retrieves the world location and rotation of the `Custom Collision` component.
 4. Calls `Set Actor Location And Rotation` on the Pawn (self) with:
-   - **New Location** — The buoyant mesh's world location.
-   - **New Rotation** — The buoyant mesh's world rotation.
-   - **Sweep** — Disabled (direct teleport).
-   - **Teleport** — Enabled (no physics interpolation).
+   - **New Location** - The buoyant mesh's world location.
+   - **New Rotation** - The buoyant mesh's world rotation.
+   - **Sweep** - Disabled (direct teleport).
+   - **Teleport** - Enabled (no physics interpolation).
 
 This approach ensures the player's viewpoint follows the ship's movement while the physics simulation runs independently on the buoyant mesh.
 
@@ -131,9 +137,9 @@ The input handling section processes the **IA_Move** Input Action to control shi
 
 **EnhancedInputAction IA_Move** triggers when the player provides movement input. The logic flow:
 
-1. **Validation Chain** — Multiple `Is Valid` checks ensure all required references exist (Battle Ship Custom Collision, physics simulation state).
+1. **Validation Chain** - Multiple `Is Valid` checks ensure all required references exist (Battle Ship Custom Collision, physics simulation state).
 
-2. **Is Simulating Physics** — Verifies the buoyant mesh is actively simulating physics before applying forces.
+2. **Is Simulating Physics** - Verifies the buoyant mesh is actively simulating physics before applying forces.
 
 3. **Propulsion System:**
    - `Get Physics Linear Velocity` retrieves current ship speed.
@@ -165,8 +171,8 @@ In the **Content Browser**, navigate to:
 `Plugins > Oceanology Legacy > Design > Ocean > Prefabs > BattleShip > Navigation > Inputs`
 
 This folder contains:
-- **IA_Move** — An Input Action that captures 2D movement input (forward/backward and left/right).
-- **IMC_Move** — An Input Mapping Context that binds keyboard keys and gamepad controls to the IA_Move action.
+- **IA_Move** - An Input Action that captures 2D movement input (forward/backward and left/right).
+- **IMC_Move** - An Input Mapping Context that binds keyboard keys and gamepad controls to the IA_Move action.
 
 ![Input assets in Content Browser](Navigation/LegacyNavigation_08.png)
 :::
@@ -276,7 +282,7 @@ The BP_BattleShip_Pawn exposes several parameters for tuning ship handling:
 1. **Increase Propeller Strength** for faster acceleration (larger ships may need higher values).
 2. **Increase Rudder Strength** for tighter turns (be careful not to make it feel unrealistic).
 3. **Adjust Max Speed** to balance gameplay feel with realism.
-4. These values interact with the **Mass** and **Damping** settings on the buoyant mesh — tune them together for best results.
+4. These values interact with the **Mass** and **Damping** settings on the buoyant mesh - tune them together for best results.
 
 ---
 
@@ -299,12 +305,12 @@ The BP_BattleShip_Pawn exposes several parameters for tuning ship handling:
 
 In this guide, you learned how to:
 
-1. **Locate the Navigation assets** — Find the Game Mode, Pawn, and Input assets in the BattleShip > Navigation folder.
-2. **Configure the Game Mode** — Set the GameMode Override in World Settings to enable ship navigation.
-3. **Understand the Pawn architecture** — Learn how the Pawn follows a physics-simulated buoyant mesh for realistic wave response.
-4. **Examine the input logic** — Understand how Enhanced Input drives propulsion and rudder controls.
-5. **Configure Input Mappings** — Review and customize keyboard and gamepad bindings in IMC_Move.
-6. **Understand the Input Action** — Learn why Axis2D is used for combined movement input.
-7. **Connect Navigation with Buoyancy** — Understand the relationship between the Pawn and the CustomCollision buoyant mesh.
+1. **Locate the Navigation assets** - Find the Game Mode, Pawn, and Input assets in the BattleShip > Navigation folder.
+2. **Configure the Game Mode** - Set the GameMode Override in World Settings to enable ship navigation.
+3. **Understand the Pawn architecture** - Learn how the Pawn follows a physics-simulated buoyant mesh for realistic wave response.
+4. **Examine the input logic** - Understand how Enhanced Input drives propulsion and rudder controls.
+5. **Configure Input Mappings** - Review and customize keyboard and gamepad bindings in IMC_Move.
+6. **Understand the Input Action** - Learn why Axis2D is used for combined movement input.
+7. **Connect Navigation with Buoyancy** - Understand the relationship between the Pawn and the CustomCollision buoyant mesh.
 
 With this knowledge, you can customize the navigation system for your own vessels or create entirely new player-controlled boats and ships.

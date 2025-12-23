@@ -6,50 +6,60 @@ slug: /
 
 # Riverology
 
-![riverology](intro/RiverologyIntro_01.jpg)
+![riverology](intro/RiverologyIntro_01.png)
 
-**Riverology** is a professional spline-based river and water flow system for Unreal Engine, engineered for seamless integration into open-world environments. From tranquil streams to rushing rapids, Riverology provides the tools to create believable, interactive water bodies that respond to terrain, physics, and gameplay — all while maintaining consistent performance across platforms.
+<div className="doc-badge doc-badge-violet">🌊 Spline-Based Rivers</div>
+<div className="doc-badge doc-badge-cyan">💨 Flow Physics</div>
+<div className="doc-badge doc-badge-emerald">🏞️ Terrain Integration</div>
+<div className="doc-badge doc-badge-orange">🎮 Game Ready</div>
+
+**Riverology** is a professional spline-based river and water flow system for Unreal Engine, engineered for seamless integration into open-world environments. From tranquil streams to rushing rapids, Riverology provides the tools to create believable, interactive water bodies that respond to terrain, physics, and gameplay.
 
 ---
 
 ## Who It's For
 
-Riverology is designed for teams who need dynamic river systems at scale:
-
-- **Open-World Studios** — Spline-driven river generation that spans kilometers with automatic terrain adaptation.
-- **Adventure & Exploration Games** — Interactive water with swimming, buoyancy, and flow-based physics for immersive gameplay.
-- **Environment Artists** — Intuitive spline tools with real-time foam, caustics, and surface effects for rapid iteration.
-- **Technical Artists** — Exposed parameters for custom shaders, landscape integration, and procedural workflows.
+| Target | Use Case |
+|--------|----------|
+| **Open-World Studios** | Spline-driven river generation spanning kilometers with automatic terrain adaptation |
+| **Adventure Games** | Interactive water with swimming, buoyancy, and flow-based physics |
+| **Environment Artists** | Intuitive spline tools with real-time foam, caustics, and surface effects |
+| **Technical Artists** | Exposed parameters for custom shaders and procedural workflows |
 
 ---
 
 ## Core Features
 
-### River Generation
-- **Spline-Driven System** — Define river paths with intuitive spline tools that automatically adapt to terrain.
-- **Flow-Based Physics** — Realistic water flow that affects buoyancy, swimming, and floating objects.
-- **Large-World Continuity** — Rivers that span World Partition cells without seams or performance drops.
+### 🌊 River Generation
 
-### Visual Effects
-- **Dynamic Foam** — Procedural foam generation at rapids, obstacles, and shorelines.
-- **Caustics** — Underwater light patterns that respond to surface movement and depth.
-- **Surface Rendering** — Reflections, refractions, and flow-driven normal animation.
-- **Refraction** — Physically-based light bending for realistic underwater distortion.
+- **Spline-Driven System** - Define river paths with intuitive spline tools that adapt to terrain
+- **Flow-Based Physics** - Realistic water flow affecting buoyancy, swimming, and floating objects
+- **Large-World Continuity** - Rivers spanning World Partition cells without seams
 
-### Underwater Environment
-- **Volumetric Effects** — Light scattering, fog, and depth-based color absorption.
-- **Normal Maps** — Detailed surface normals for fine water detail and ripples.
-- **Post-Processing** — Underwater camera effects with smooth surface transitions.
+### 🎨 Visual Effects
 
-### Gameplay Systems
-- **Buoyancy Volumes** — Physics-accurate floating with flow forces that push objects downstream.
-- **Swimming Mechanics** — Complete character swimming with current response and stamina integration.
-- **Debug Tools** — Visual debugging for flow vectors, spline paths, and collision volumes.
+- **Dynamic Foam** - Procedural foam at rapids, obstacles, and shorelines
+- **Caustics** - Underwater light patterns responding to surface movement
+- **Surface Rendering** - Reflections, refractions, and flow-driven normal animation
+- **Refraction** - Physically-based light bending for underwater distortion
 
-### Terrain Integration
-- **Landscape Deformation** — Automatic riverbed carving and shoreline blending.
-- **RVT Support** — Runtime Virtual Texture integration for seamless terrain-water transitions.
-- **Waterfall Generator** — Tools for creating waterfalls with splash effects and mist.
+### 🌊 Underwater Environment
+
+- **Volumetric Effects** - Light scattering, fog, and depth-based color absorption
+- **Normal Maps** - Detailed surface normals for fine water detail and ripples
+- **Post-Processing** - Underwater camera effects with smooth transitions
+
+### 🎮 Gameplay Systems
+
+- **Buoyancy Volumes** - Physics-accurate floating with downstream flow forces
+- **Swimming Mechanics** - Complete character swimming with current response
+- **Debug Tools** - Visual debugging for flow vectors, splines, and volumes
+
+### 🏔️ Terrain Integration
+
+- **Landscape Deformation** - Automatic riverbed carving and shoreline blending
+- **RVT Support** - Runtime Virtual Texture for seamless terrain-water transitions
+- **Waterfall Generator** - Create waterfalls with splash effects and mist
 
 ---
 
@@ -57,40 +67,40 @@ Riverology is designed for teams who need dynamic river systems at scale:
 
 | Requirement | Specification |
 |-------------|---------------|
-| **Engine** | Unreal Engine 5.6 or newer |
+| **Engine** | Unreal Engine 5.3 or newer |
 | **Platform** | Windows (consoles supported) |
-| **Graphics API** | DirectX 12 (Shader Model 6 recommended) |
-| **Hardware** | Mid-range GPU or better |
+| **Graphics API** | DirectX 12 (SM6 recommended) |
+| **Hardware** | Mid-range GPU (GTX 1080 / RTX 3060+) or better |
 
 ---
 
 ## Documentation Structure
 
-This documentation is organized to get you productive quickly:
-
 | Section | Description |
 |---------|-------------|
-| **[Setup](./setup.md)** | Installation, project configuration, and first river creation. |
-| **[Buoyancy](./Buoyancy.md)** | Flow-based buoyancy physics for objects and vessels. |
-| **[Swimming](./Swimming.md)** | Character swimming with current response and transitions. |
-| **[Surface](./Surface.md)** | Water surface rendering, flow animation, and reflections. |
-| **[Underwater](./Underwater.md)** | Volumetric effects, fog, and underwater camera settings. |
-| **[Foam](./Foam.md)** | Dynamic foam generation at rapids, obstacles, and edges. |
-| **[Caustics](./Caustics.md)** | Underwater light patterns and caustic projection. |
-| **[Refraction](./Refraction.md)** | Light bending and underwater distortion effects. |
-| **[NormalMaps](./NormalMaps.md)** | Surface detail normals and ripple configuration. |
-| **[Landscape](./Landscape.md)** | Terrain integration, riverbed carving, and shoreline blending. |
-| **[Debug](./Debug.md)** | Visual debugging tools for flow, splines, and volumes. |
+| **[Setup](./setup.md)** | Installation and first river creation |
+| **[Buoyancy](./Buoyancy.md)** | Flow-based buoyancy physics |
+| **[Swimming](./Swimming.md)** | Character swimming with current response |
+| **[Surface](./Surface.md)** | Water surface rendering and reflections |
+| **[Underwater](./Underwater.md)** | Volumetric effects and fog |
+| **[Foam](./Foam.md)** | Dynamic foam generation |
+| **[Caustics](./Caustics.md)** | Underwater light patterns |
+| **[Refraction](./Refraction.md)** | Light bending and distortion |
+| **[NormalMaps](./NormalMaps.md)** | Surface detail and ripples |
+| **[Landscape](./Landscape.md)** | Terrain integration and carving |
+| **[Debug](./Debug.md)** | Visual debugging tools |
 
 ---
 
 ## Quick Start
 
-1. **Install the Plugin** — Enable Riverology in your project's Plugins menu.
-2. **Create a River Spline** — Use the Riverology spline actor to define your river path.
-3. **Adjust Flow Settings** — Configure flow speed, width, and depth along the spline.
-4. **Add Water Volume** — Place a Riverology Water Volume for buoyancy and swimming.
-5. **Play** — Enter Play mode to see your river in action with flow physics.
+<ol className="doc-steps">
+  <li><strong>Install the Plugin</strong> - Enable Riverology in your project's Plugins menu</li>
+  <li><strong>Create a River Spline</strong> - Use the Riverology spline actor to define your river path</li>
+  <li><strong>Adjust Flow Settings</strong> - Configure flow speed, width, and depth along the spline</li>
+  <li><strong>Add Water Volume</strong> - Place a Riverology Water Volume for buoyancy and swimming</li>
+  <li><strong>Play</strong> - Enter Play mode to see your river in action with flow physics</li>
+</ol>
 
 For detailed instructions, see the **[Setup Guide](./setup.md)**.
 
@@ -98,23 +108,14 @@ For detailed instructions, see the **[Setup Guide](./setup.md)**.
 
 ## Key Concepts
 
-### Flow Direction
-Rivers in Riverology have a defined flow direction determined by the spline. Objects in the water experience forces pushing them downstream, and swimming characters must fight against or swim with the current.
+### 💨 Flow Direction
+Rivers have a defined flow direction determined by the spline. Objects experience forces pushing them downstream, and swimming characters must fight against or swim with the current.
 
-### Spline Width & Depth
-Each spline point can have independent width and depth values, allowing rivers to narrow through canyons, widen into deltas, or shallow out near banks — all with smooth interpolation.
+### 📏 Spline Width & Depth
+Each spline point can have independent width and depth values - rivers can narrow through canyons, widen into deltas, or shallow near banks with smooth interpolation.
 
-### Terrain Adaptation
-Riverology can automatically carve riverbeds into landscape geometry and blend shorelines using Runtime Virtual Textures, eliminating manual terrain painting.
-
----
-
-## Support & Community
-
-**Need Help?**
-- **[Discord](https://discord.gg/VHJGBDR2as)** — Join our community for real-time support and discussions.
-- **Marketplace** — Open a support ticket through the Unreal Marketplace page.
-- **Issue Reports** — Include engine version, plugin version, logs (`Saved/Logs/`), and screenshots.
+### 🏔️ Terrain Adaptation
+Riverology automatically carves riverbeds into landscape geometry and blends shorelines using Runtime Virtual Textures.
 
 ---
 
@@ -127,12 +128,22 @@ Riverology can automatically carve riverbeds into landscape geometry and blend s
 | **Flow Physics** | Directional current | Wave-based |
 | **Best For** | Inland water, flowing rivers | Open water, coastal scenes |
 
-Use **Riverology** for rivers, streams, and inland water bodies. Use **Oceanology** for oceans, seas, and large open water. Both systems can coexist in the same project for complete water coverage.
+:::tip Using Both Systems
+Both Riverology and Oceanology can coexist in the same project for complete water coverage - rivers flowing into oceans!
+:::
+
+---
+
+<div className="doc-cta">
+  <h3>Need Help?</h3>
+  <p>Join our Discord community for real-time support and discussions.</p>
+  <a href="https://discord.gg/VHJGBDR2as" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Join Discord</a>
+</div>
 
 ---
 
 <div align="center">
 
-**Ready to create your first river?** Start with the **[Setup Guide](./setup.md)** →
+**Ready to create your first river?** Start with the **[Setup Guide →](./setup.md)**
 
 </div>

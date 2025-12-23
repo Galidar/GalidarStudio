@@ -4,85 +4,181 @@ title: Setup
 sidebar_label: Setup
 ---
 
-# Riverology — Setup
+# Riverology - Setup
 
-_Last updated: 2025-10-16_
+<div className="doc-badge doc-badge-cyan">📋 Step-by-Step Guide</div>
+<div className="doc-badge doc-badge-emerald">⏱️ 10 Minutes</div>
+<div className="doc-badge doc-badge-violet">🌊 Spline-Based</div>
+
+Get Riverology up and running in your Unreal Engine project with this comprehensive setup guide.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.6 or newer.
-- Windows with **DirectX 12** capable GPU.
-- **Shader Model 6** support recommended for advanced features.
-- Optional: Mesh Distance Fields for shoreline effects.
 
-## Notes
-- Use the spline points to shape the river. Adjust flow, width, and foam per-segment if available.
+| Requirement | Details |
+|-------------|---------|
+| **Unreal Engine** | Version 5.3 or newer |
+| **Operating System** | Windows with DirectX 12 capable GPU (GTX 1080 / RTX 3060+) |
+| **Shader Model** | SM6 support recommended |
+| **Optional** | Mesh Distance Fields for shoreline effects |
 
-## Step-by-step
+:::info River Setup Tips
+Use spline points to shape your river. Adjust flow, width, and foam per-segment for varied river characteristics.
+:::
 
-:::note 1. Install the plugin
-- Install from Marketplace into your Engine, or copy the plugin folder into `<Project>/Plugins/`.
-- Restart the editor if you manually copied files.
+---
+
+## Installation Steps
+
+### Step 1: Install the Plugin
+
+Install from the FAB Marketplace into your Engine, or copy the plugin folder into `<Project>/Plugins/`.
+
+If you manually copied files, restart the editor to load the plugin.
 
 ![Install the plugin](setup/RiverologySetup_01.png)
-:::
 
-:::note 2. Enable the plugin
-- Open **Edit → Plugins**, search for **Riverology**, enable it, and accept the restart prompt.
-- After restart, confirm there are no missing dependencies in the Output Log.
+---
+
+### Step 2: Enable the Plugin
+
+1. Open **Edit → Plugins**
+2. Search for **Riverology**
+3. Enable the plugin and accept the restart prompt
+4. After restart, confirm no missing dependencies in Output Log
 
 ![Enable the plugin](setup/RiverologySetup_02.png)
-:::
 
-:::note 3. Project Settings essentials
-- **Platforms → Windows**: set **Default RHI** to **DirectX 12** and enable **D3D12 Shader Model 6**.
-- **Engine → Rendering**: toggle **Generate Mesh Distance Fields** for shoreline foam and interactions.
-- Optional: **Global Illumination = Lumen**, **Reflections = Lumen**, **Shadow Map Method = Virtual Shadow Maps**.
+---
+
+### Step 3: Configure Project Settings
+
+Navigate to **Edit → Project Settings** and configure:
+
+#### Required Settings
+
+| Category | Setting | Value |
+|----------|---------|-------|
+| **Platforms → Windows** | Default RHI | DirectX 12 |
+| **Platforms → Windows** | D3D12 Shader Model 6 | ✅ Enabled |
+| **Engine → Rendering** | Generate Mesh Distance Fields | ✅ Enabled |
+
+#### Recommended Settings
+
+| Category | Setting | Value |
+|----------|---------|-------|
+| **Engine → Rendering** | Global Illumination | Lumen |
+| **Engine → Rendering** | Reflections | Lumen |
+| **Engine → Rendering** | Shadow Map Method | Virtual Shadow Maps |
 
 ![Project Settings essentials](setup/RiverologySetup_03.png)
-:::
 
-:::note 4. Open a demo map
-- In **Content Drawer → Plugins → Riverology → Maps**, open **Riverology Demo Map** to let shaders compile and verify assets.
+---
+
+### Step 4: Open a Demo Map
+
+Verify the installation:
+
+1. Open **Content Drawer**
+2. Navigate to **Plugins → Riverology → Maps**
+3. Open **Riverology Demo Map**
+4. Wait for shaders to compile
 
 ![Open a demo map](setup/RiverologySetup_04.png)
-:::
 
-:::note 5. Place the Riverology Spline
-- In **Place Actors**, drag **Riverology Spline** into the level.
-- Scale/position to cover your playable area. For large worlds, prefer World Partition.
+---
+
+### Step 5: Place the River Spline
+
+Add a river to your own level:
+
+1. Open **Place Actors** panel
+2. Search for **Riverology Spline**
+3. Drag it into your level
+4. Click to add spline points and shape your river
+
+:::tip Large Worlds
+For expansive maps, use World Partition for optimal streaming performance.
+:::
 
 ![Place the Riverology Spline](setup/RiverologySetup_05.png)
-:::
 
-:::note 6. Assign a starter Material Instance
-- Use the provided material instance from the plugin content.
-- Tweak wave height/length, foam thresholds, normals, and water color.
+---
+
+### Step 6: Apply Material Instance
+
+Configure the water's appearance:
+
+1. Select the river spline actor
+2. Locate the **Material** section in Details
+3. Use the provided material instance
+4. Customize flow speed, foam, and water color
 
 ![Assign a starter Material Instance](setup/RiverologySetup_06.png)
-:::
 
-:::note 7. Interaction and effects
-- Enable collision if gameplay requires it.
-- Optionally add Niagara splash/foam systems and audio cues.
+---
+
+### Step 7: Add Interactions
+
+Enhance your river with gameplay features:
+
+| Feature | Purpose |
+|---------|---------|
+| **Collision** | Enable for physical interaction |
+| **Niagara Systems** | Add splash and foam effects |
+| **Audio Cues** | Water flow and ambient sounds |
 
 ![Interaction and effects](setup/RiverologySetup_07.png)
-:::
 
-:::note 8. Save and test
-- Save your level and **Play In Editor**.
-- If performance is low: disable debug views, reduce wave layers, update GPU drivers.
+---
+
+### Step 8: Test Your Setup
+
+1. Save your level (**Ctrl+S**)
+2. Click **Play In Editor**
+3. Verify the river renders correctly
+4. Test flow direction and water effects
 
 ![Save and test](setup/RiverologySetup_08.png)
-:::
+
+---
 
 ## Troubleshooting
 
-:::warning Common issues
-**Pink/preview materials**: shaders are compiling; wait.
+:::warning Common Issues
 
-**No shoreline foam**: enable **Generate Mesh Distance Fields** and ensure distance fields are built for landscape/meshes.
+**Pink/Preview Materials**
+Shaders are still compiling. Wait for compilation to complete.
 
-**DX12/SM6 errors**: verify Project Settings and restart the editor.
+**No Shoreline Foam**
+Enable **Generate Mesh Distance Fields** in Project Settings.
 
-**Low performance**: disable expensive debug views, reduce wave/spectrum layers, and profile GPU.
+**DX12/SM6 Errors**
+Verify Project Settings and restart the editor.
+
+**Low Performance**
+- Disable debug views
+- Reduce complexity settings
+- Profile GPU with `stat gpu`
+
 :::
+
+---
+
+## Next Steps
+
+| Guide | Learn About |
+|-------|-------------|
+| **[Buoyancy](./Buoyancy.md)** | Add floating objects with flow forces |
+| **[Swimming](./Swimming.md)** | Implement character swimming |
+| **[Surface](./Surface.md)** | Configure water rendering |
+| **[Foam](./Foam.md)** | Set up dynamic foam effects |
+
+---
+
+<div className="doc-cta">
+  <h3>Need Help?</h3>
+  <p>Join our Discord community for setup assistance.</p>
+  <a href="https://discord.gg/VHJGBDR2as" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Get Support</a>
+</div>

@@ -3,22 +3,28 @@ title: Buoyancy
 sidebar_label: Buoyancy
 ---
 
-# Oceanology Next-Gen — Buoyancy
+# Oceanology NextGen - Buoyancy
 
-_Last updated: 2025-12-10_
+<div className="doc-badge doc-badge-violet">🚢 Physics System</div>
+<div className="doc-badge doc-badge-cyan">⚓ Pontoon-Based</div>
+<div className="doc-badge doc-badge-emerald">🎮 Game Ready</div>
+
+Implement realistic floating physics with the pontoon-based buoyancy system in Oceanology NextGen.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.6 or newer.
-- **Oceanology Next-Gen** installed and configured (see the **Setup** page).
-- At least one **Oceanology Next-Gen** water body placed in your level (Infinite Ocean or Lake).
-- Basic familiarity with **Blueprints**, **Physics**, and **Components** in Unreal Engine.
 
-## Notes
-- Oceanology Next-Gen uses a **pontoon-based buoyancy system** that simulates realistic floating behavior. Pontoons are virtual sampling points that query the water surface height and apply upward forces to keep objects afloat.
-- The buoyancy system works in conjunction with **Oceanology Water Volume** actors, which define the regions where buoyancy and swimming are enabled.
-- The **OceanBuoyancy** component can be added to any actor with physics enabled. It handles all buoyancy calculations, wave response, and optional flow physics.
-- Proper physics and collision configuration on the root component is essential for realistic floating behavior. Child meshes should have physics disabled to avoid conflicts.
-- The system supports **5 pontoons by default**, positioned at the corners and center of typical boat hulls. You can customize pontoon positions for any vessel shape.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Oceanology NextGen installed and configured |
+| **Scene** | Water body with Oceanology Water Volume |
+| **Skills** | Basic familiarity with Blueprints and Physics |
+
+:::info About Buoyancy
+NextGen uses a **pontoon-based buoyancy system** with virtual sampling points that query water surface height. The system supports **5 pontoons by default** (corners + center) and works with **Oceanology Water Volume** actors for region-based buoyancy.
+:::
 
 ---
 
@@ -30,24 +36,24 @@ Open your level and use the **Quickly Add to the Project** menu (the `+` button 
 You will see several Oceanology actors available:
 
 **Volumes:**
-- **Oceanology Water Niagara Waves Volume** — Enables Niagara-based wave effects in specific regions.
-- **Oceanology Water Volume** — Defines regions for buoyancy and underwater effects. Required for the buoyancy system.
+- **Oceanology Water Niagara Waves Volume** - Enables Niagara-based wave effects in specific regions.
+- **Oceanology Water Volume** - Defines regions for buoyancy and underwater effects. Required for the buoyancy system.
 
 **All Actors:**
-- **BP_OceanologyChronos** — Time-of-day controller for dynamic lighting.
-- **Oceanology Infinite Ocean** — An infinite ocean water body with full wave simulation.
-- **Oceanology Lake** — A bounded lake water body.
-- **Oceanology Light Source Controller** — Controls light source behavior with water.
-- **Oceanology Manager** — The central controller for all Oceanology systems.
-- **Oceanology Material to Struct Converter** — Utility for converting material parameters.
-- **Oceanology Preset Converter Actor** — Converts presets between versions.
-- **Oceanology Scrubber** — Utility actor for timeline scrubbing.
-- **Oceanology Water Depth Debugger** — Visualizes water depth calculations.
-- **Oceanology Water Interactor** — Enables interaction effects with water.
-- **Oceanology Water Niagara Waves Volume** — Niagara wave effects volume.
-- **Oceanology Water Surface Debugger** — Visualizes wave calculations for debugging.
-- **Oceanology Water Volume** — Water physics volume.
-- **Oceanology Wave Audio** — Dynamic audio based on wave conditions.
+- **BP_OceanologyChronos** - Time-of-day controller for dynamic lighting.
+- **Oceanology Infinite Ocean** - An infinite ocean water body with full wave simulation.
+- **Oceanology Lake** - A bounded lake water body.
+- **Oceanology Light Source Controller** - Controls light source behavior with water.
+- **Oceanology Manager** - The central controller for all Oceanology systems.
+- **Oceanology Material to Struct Converter** - Utility for converting material parameters.
+- **Oceanology Preset Converter Actor** - Converts presets between versions.
+- **Oceanology Scrubber** - Utility actor for timeline scrubbing.
+- **Oceanology Water Depth Debugger** - Visualizes water depth calculations.
+- **Oceanology Water Interactor** - Enables interaction effects with water.
+- **Oceanology Water Niagara Waves Volume** - Niagara wave effects volume.
+- **Oceanology Water Surface Debugger** - Visualizes wave calculations for debugging.
+- **Oceanology Water Volume** - Water physics volume.
+- **Oceanology Wave Audio** - Dynamic audio based on wave conditions.
 
 For buoyancy to work, you need both a water body (Infinite Ocean or Lake) and an **Oceanology Water Volume** that encompasses the area where floating objects will exist.
 
@@ -84,15 +90,15 @@ Ensure **Enable Buoyancy in Area** is checked for floating objects to work corre
 Click the dropdown next to **Oceanology Water** to select which water body this volume should reference. The browser will show all available Oceanology water bodies in your level.
 
 **Available Options:**
-- **Use Selected** — Uses the currently selected actor in the viewport.
-- **Edit** — Opens the referenced asset for editing.
-- **Copy** — Copies the reference.
-- **Paste** — Pastes a copied reference.
-- **Clear** — Removes the reference.
+- **Use Selected** - Uses the currently selected actor in the viewport.
+- **Edit** - Opens the referenced asset for editing.
+- **Copy** - Copies the reference.
+- **Paste** - Pastes a copied reference.
+- **Clear** - Removes the reference.
 
 In the **Browse** section, you will see water bodies present in your level:
-- **OceanologyInfiniteOcean** — The infinite ocean actor.
-- **OceanologyLake** — Lake actors if present.
+- **OceanologyInfiniteOcean** - The infinite ocean actor.
+- **OceanologyLake** - Lake actors if present.
 
 Select the appropriate water body for your scene. For open ocean environments, choose **OceanologyInfiniteOcean**.
 
@@ -128,20 +134,20 @@ These prefabs demonstrate the correct component hierarchy and physics setup for 
 To add buoyancy to any actor, open the Blueprint and click **+ Add** in the **Components** panel. Type `ocean` in the search field to filter available components.
 
 **Buoyancy Components:**
-- **Ocean Buoyancy** — The main buoyancy component that handles floating physics.
+- **Ocean Buoyancy** - The main buoyancy component that handles floating physics.
 
 **Custom Components:**
-- **Ocean Audio** — Adds dynamic ocean audio to the actor.
-- **Ocean Swimming** — Enables swimming behavior for characters.
-- **Oceanology Empty Wave Solver** — Base wave solver for custom implementations.
-- **Oceanology Game Time** — Syncs actor with game time.
-- **Oceanology Gerstner Wave Solver** — Gerstner wave calculation component.
-- **Oceanology Heightmap** — Heightmap-based water surface sampling.
-- **Oceanology Infinite** — Infinite ocean mesh component.
-- **Oceanology Underwater** — Underwater effects component.
+- **Ocean Audio** - Adds dynamic ocean audio to the actor.
+- **Ocean Swimming** - Enables swimming behavior for characters.
+- **Oceanology Empty Wave Solver** - Base wave solver for custom implementations.
+- **Oceanology Game Time** - Syncs actor with game time.
+- **Oceanology Gerstner Wave Solver** - Gerstner wave calculation component.
+- **Oceanology Heightmap** - Heightmap-based water surface sampling.
+- **Oceanology Infinite** - Infinite ocean mesh component.
+- **Oceanology Underwater** - Underwater effects component.
 
 **Water Interaction:**
-- **Ocean Water Interactor Mesh** — Enables mesh-based water interaction effects.
+- **Ocean Water Interactor Mesh** - Enables mesh-based water interaction effects.
 
 Select **Ocean Buoyancy** to add it to your actor.
 
@@ -188,11 +194,11 @@ Select the **Box Collision** (root component) in the Components panel. In the **
 | **Enable Gravity** | `✓` | Gravity must be enabled for buoyancy forces to counteract it. |
 
 **Advanced Settings:**
-- **Gravity Group Index:** `0` — Uses default gravity.
-- **Update Kinematic from Simulation:** `☐` — Not needed for dynamic physics.
-- **Gyroscopic Torque Enabled:** `☐` — Optional, can add realism for spinning objects.
-- **Apply Impulse on Damage:** `✓` — Enables physics response to damage events.
-- **Replicate Physics to Autonomous Proxy:** `✓` — Required for multiplayer replication.
+- **Gravity Group Index:** `0` - Uses default gravity.
+- **Update Kinematic from Simulation:** `☐` - Not needed for dynamic physics.
+- **Gyroscopic Torque Enabled:** `☐` - Optional, can add realism for spinning objects.
+- **Apply Impulse on Damage:** `✓` - Enables physics response to damage events.
+- **Replicate Physics to Autonomous Proxy:** `✓` - Required for multiplayer replication.
 
 The combination of **Simulate Physics** enabled with appropriate damping values creates smooth, realistic floating behavior.
 
@@ -225,21 +231,21 @@ The collision matrix determines how this object interacts with different object 
 | Channel | Ignore | Overlap | Block |
 |---------|--------|---------|-------|
 | **Trace Responses** | | | |
-| — Visibility | ✓ | | |
-| — Camera | ✓ | | |
+| - Visibility | ✓ | | |
+| - Camera | ✓ | | |
 | **Object Responses** | | | |
-| — WorldStatic | | | ✓ |
-| — WorldDynamic | | ✓ | |
-| — Pawn | ✓ | | |
-| — PhysicsBody | | | ✓ |
-| — Vehicle | ✓ | | |
-| — Destructible | ✓ | | |
+| - WorldStatic | | | ✓ |
+| - WorldDynamic | | ✓ | |
+| - Pawn | ✓ | | |
+| - PhysicsBody | | | ✓ |
+| - Vehicle | ✓ | | |
+| - Destructible | ✓ | | |
 
 **Key Points:**
-- **Block WorldStatic** — Prevents the boat from falling through terrain and docks.
-- **Block PhysicsBody** — Enables collision with other physics objects.
-- **Ignore Pawn** — Allows characters to overlap for boarding detection.
-- **Ignore Visibility/Camera** — Prevents interference with camera and visibility traces.
+- **Block WorldStatic** - Prevents the boat from falling through terrain and docks.
+- **Block PhysicsBody** - Enables collision with other physics objects.
+- **Ignore Pawn** - Allows characters to overlap for boarding detection.
+- **Ignore Visibility/Camera** - Prevents interference with camera and visibility traces.
 
 ![Root component Collision settings](NextGenBuoyancy/NextGenBuoyancy_08.png)
 :::
@@ -251,7 +257,7 @@ The collision matrix determines how this object interacts with different object 
 Child meshes in the hierarchy should have physics disabled to prevent conflicts with the root component's physics simulation. Each child serves a specific purpose and requires different collision settings.
 
 :::note 9. Select the visual mesh component
-In the **Components** panel, select **SM_FishingBoat** — this is the main visual mesh that players see.
+In the **Components** panel, select **SM_FishingBoat** - this is the main visual mesh that players see.
 
 The component hierarchy should show:
 ```
@@ -317,15 +323,15 @@ Configure all channels to **Block** for character walkability:
 | Channel | Ignore | Overlap | Block |
 |---------|--------|---------|-------|
 | **Trace Responses** | | | |
-| — Visibility | | | ✓ |
-| — Camera | | | ✓ |
+| - Visibility | | | ✓ |
+| - Camera | | | ✓ |
 | **Object Responses** | | | |
-| — WorldStatic | | | ✓ |
-| — WorldDynamic | | | ✓ |
-| — Pawn | | | ✓ |
-| — PhysicsBody | | | ✓ |
-| — Vehicle | | | ✓ |
-| — Destructible | | | ✓ |
+| - WorldStatic | | | ✓ |
+| - WorldDynamic | | | ✓ |
+| - Pawn | | | ✓ |
+| - PhysicsBody | | | ✓ |
+| - Vehicle | | | ✓ |
+| - Destructible | | | ✓ |
 
 **Purpose:** This configuration allows characters to walk on the deck, enables line traces for interactions, and provides blocking collision for gameplay elements while the actual physics movement is handled by the root component.
 
@@ -367,7 +373,7 @@ With **SM_FishingBoat_Mask** selected, configure the **Physics** category.
 | **Angular Damping** | `1.0` | Default value, not used. |
 | **Enable Gravity** | `✓` | Has no effect without Simulate Physics. |
 
-The mask mesh should never simulate physics — it exists purely for rendering purposes.
+The mask mesh should never simulate physics - it exists purely for rendering purposes.
 
 ![SM_FishingBoat_Mask Physics settings](NextGenBuoyancy/NextGenBuoyancy_13.png)
 :::
@@ -398,15 +404,15 @@ Set all channels to **Ignore**:
 | Channel | Ignore | Overlap | Block |
 |---------|--------|---------|-------|
 | **Trace Responses** | | | |
-| — Visibility | ✓ | | |
-| — Camera | ✓ | | |
+| - Visibility | ✓ | | |
+| - Camera | ✓ | | |
 | **Object Responses** | | | |
-| — WorldStatic | ✓ | | |
-| — WorldDynamic | ✓ | | |
-| — Pawn | ✓ | | |
-| — PhysicsBody | ✓ | | |
-| — Vehicle | ✓ | | |
-| — Destructible | ✓ | | |
+| - WorldStatic | ✓ | | |
+| - WorldDynamic | ✓ | | |
+| - Pawn | ✓ | | |
+| - PhysicsBody | ✓ | | |
+| - Vehicle | ✓ | | |
+| - Destructible | ✓ | | |
 
 **Why No Collision?**
 - The mask mesh is purely for underwater rendering effects.
@@ -444,9 +450,9 @@ With **OceanBuoyancy** selected, locate the **Buoyancy** category in the Details
 
 **Debug Buttons:**
 At the top of the category, you'll find utility buttons:
-- **DebugPontoons** — Visualizes pontoon positions in the viewport.
-- **ToggleDebug** — Toggles debug visualization on/off.
-- **VerifySetup** — Validates the buoyancy configuration and reports issues.
+- **DebugPontoons** - Visualizes pontoon positions in the viewport.
+- **ToggleDebug** - Toggles debug visualization on/off.
+- **VerifySetup** - Validates the buoyancy configuration and reports issues.
 
 **Core Buoyancy Parameters:**
 
@@ -577,9 +583,9 @@ Expand the **Debug** category in the OceanBuoyancy component.
 
 **Using Debug Visualization:**
 
-1. **Enable Debug** — Check the **Debug Enabled** box.
-2. **Play in Editor** — Enter Play mode (PIE) or Simulate mode.
-3. **Observe Spheres** — You will see colored spheres at each pontoon position.
+1. **Enable Debug** - Check the **Debug Enabled** box.
+2. **Play in Editor** - Enter Play mode (PIE) or Simulate mode.
+3. **Observe Spheres** - You will see colored spheres at each pontoon position.
 4. **Analyze Behavior:**
    - Spheres below water surface = pontoon is submerged, applying upward force.
    - Spheres above water surface = pontoon is above water, no force applied.
@@ -622,26 +628,26 @@ The following table summarizes the correct physics and collision settings for ea
 
 | Parameter | Range | Default | Description |
 |-----------|-------|---------|-------------|
-| **Buoyancy Update Interval** | `0.0` — `1.0` | `0.0` | Update frequency. 0 = every frame |
-| **Default Mesh Density** | `100.0` — `8000.0` | `700.0` | Object density in kg/m³ |
-| **Water Fluid Density** | `900.0` — `1100.0` | `1030.0` | Water density in kg/m³ |
-| **Water Fluid Linear Damping** | `0.0` — `10.0` | `1.0` | Linear movement damping |
-| **Water Fluid Angular Damping** | `0.0` — `10.0` | `2.5` | Rotational damping |
+| **Buoyancy Update Interval** | `0.0` - `1.0` | `0.0` | Update frequency. 0 = every frame |
+| **Default Mesh Density** | `100.0` - `8000.0` | `700.0` | Object density in kg/m³ |
+| **Water Fluid Density** | `900.0` - `1100.0` | `1030.0` | Water density in kg/m³ |
+| **Water Fluid Linear Damping** | `0.0` - `10.0` | `1.0` | Linear movement damping |
+| **Water Fluid Angular Damping** | `0.0` - `10.0` | `2.5` | Rotational damping |
 
 ### Pontoon Parameters
 
 | Parameter | Range | Default | Description |
 |-----------|-------|---------|-------------|
 | **Pontoon Position** | Any | Varies | Local offset from actor origin |
-| **Radius** | `1.0` — `100.0` | `10.0` | Sampling sphere radius |
-| **Density Override** | `0.0` — `8000.0` | `0.0` | Per-pontoon density (0 = use default) |
+| **Radius** | `1.0` - `100.0` | `10.0` | Sampling sphere radius |
+| **Density Override** | `0.0` - `8000.0` | `0.0` | Per-pontoon density (0 = use default) |
 
 ### Flow Parameters
 
 | Parameter | Range | Default | Description |
 |-----------|-------|---------|-------------|
 | **Enable Flow Physics** | Boolean | `✓` | Toggle flow forces |
-| **Angle Adjusted Force Strength** | `0.0` — `200.0` | `35.0` | Flow push strength |
+| **Angle Adjusted Force Strength** | `0.0` - `200.0` | `35.0` | Flow push strength |
 
 ---
 
@@ -693,24 +699,24 @@ The following presets demonstrate common vessel configurations:
 
 In this guide, you learned how to:
 
-1. **Add an Oceanology Water Volume** — Place and configure the volume that enables buoyancy in specific areas.
-2. **Configure volume settings** — Set up buoyancy and swimming options, physics parameters, and water body references.
-3. **Link to a water body** — Connect the volume to your Infinite Ocean or Lake actor.
-4. **Locate prefab vessels** — Find ready-to-use buoyant vessel Blueprints in the plugin content.
-5. **Add the OceanBuoyancy component** — Attach the buoyancy component to any actor.
-6. **Understand component hierarchy** — Learn the correct structure with root physics and child meshes.
-7. **Configure root physics** — Set up Simulate Physics, mass, and damping for realistic floating.
-8. **Configure root collision** — Set up collision presets with PhysicsBody type and appropriate response channels.
-9. **Select the visual mesh** — Identify the main visual mesh component in the hierarchy.
-10. **Disable child physics** — Prevent conflicts by disabling Simulate Physics on all child meshes.
-11. **Configure visual mesh collision** — Enable walkability with Pawn object type and Block responses.
-12. **Select the mask mesh** — Identify the underwater rendering mask component.
-13. **Disable mask physics** — Ensure the mask mesh has no physics simulation.
-14. **Disable mask collision** — Configure no collision for rendering-only components.
-15. **Select OceanBuoyancy** — Access the main buoyancy component settings.
-16. **Configure buoyancy parameters** — Set density, damping, and wave response options.
-17. **Configure pontoons** — Position sampling points for stable floating behavior.
-18. **Enable flow physics** — Allow wave-driven movement and drift.
-19. **Use debug visualization** — Troubleshoot issues with visual pontoon feedback.
+1. **Add an Oceanology Water Volume** - Place and configure the volume that enables buoyancy in specific areas.
+2. **Configure volume settings** - Set up buoyancy and swimming options, physics parameters, and water body references.
+3. **Link to a water body** - Connect the volume to your Infinite Ocean or Lake actor.
+4. **Locate prefab vessels** - Find ready-to-use buoyant vessel Blueprints in the plugin content.
+5. **Add the OceanBuoyancy component** - Attach the buoyancy component to any actor.
+6. **Understand component hierarchy** - Learn the correct structure with root physics and child meshes.
+7. **Configure root physics** - Set up Simulate Physics, mass, and damping for realistic floating.
+8. **Configure root collision** - Set up collision presets with PhysicsBody type and appropriate response channels.
+9. **Select the visual mesh** - Identify the main visual mesh component in the hierarchy.
+10. **Disable child physics** - Prevent conflicts by disabling Simulate Physics on all child meshes.
+11. **Configure visual mesh collision** - Enable walkability with Pawn object type and Block responses.
+12. **Select the mask mesh** - Identify the underwater rendering mask component.
+13. **Disable mask physics** - Ensure the mask mesh has no physics simulation.
+14. **Disable mask collision** - Configure no collision for rendering-only components.
+15. **Select OceanBuoyancy** - Access the main buoyancy component settings.
+16. **Configure buoyancy parameters** - Set density, damping, and wave response options.
+17. **Configure pontoons** - Position sampling points for stable floating behavior.
+18. **Enable flow physics** - Allow wave-driven movement and drift.
+19. **Use debug visualization** - Troubleshoot issues with visual pontoon feedback.
 
 With this knowledge, you can create any floating vessel from simple rafts to complex ships, all with realistic wave response and physics interaction.

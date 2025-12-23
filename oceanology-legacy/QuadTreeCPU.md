@@ -3,33 +3,42 @@ title: QuadTree CPU
 sidebar_label: QuadTree CPU
 ---
 
-# Oceanology Legacy — QuadTree CPU
+# Oceanology Legacy - QuadTree CPU
 
-_Last updated: 2025-12-06_
+<div className="doc-badge doc-badge-violet">🔲 LOD System</div>
+<div className="doc-badge doc-badge-cyan">⚡ Performance</div>
+<div className="doc-badge doc-badge-emerald">🌍 Infinite Ocean</div>
+
+Dynamic mesh generation with seamless Level of Detail transitions based on camera distance.
+
+---
 
 ## Overview
 
-The **QuadTree CPU** system is the core mesh generation technology that powers Oceanology Legacy's infinite ocean. It dynamically generates and manages the ocean surface mesh using a quadtree subdivision algorithm, providing seamless Level of Detail (LOD) transitions based on camera distance.
+The **QuadTree CPU** system is the core mesh generation technology powering Oceanology Legacy's infinite ocean. It dynamically generates and manages the ocean surface mesh using a quadtree subdivision algorithm, providing seamless LOD transitions.
 
-This system ensures optimal performance by rendering high-detail geometry only where it's needed (close to the camera) while using progressively lower detail for distant water, all without visible seams or popping artifacts.
+| Feature | Benefit |
+|---------|---------|
+| **Dynamic Subdivision** | High detail near camera, lower detail at distance |
+| **Seamless Transitions** | No visible seams or popping artifacts |
+| **Optimal Performance** | Renders detail only where needed |
+| **Infinite Scale** | Supports vast ocean expanses |
 
 ## How QuadTree Works
 
-A quadtree is a hierarchical spatial data structure where each node can subdivide into four child nodes. In the context of ocean rendering:
-
-1. **Root Level** — The ocean starts as a grid of large tiles covering the entire visible area.
-2. **Subdivision** — Tiles closer to the camera subdivide into smaller tiles with more geometric detail.
-3. **LOD Transitions** — As the camera moves, tiles dynamically subdivide or collapse to maintain optimal detail levels.
-4. **Seamless Stitching** — Adjacent tiles of different LOD levels are stitched together to prevent gaps or T-junctions.
+1. **Root Level** - The ocean starts as a grid of large tiles covering the visible area
+2. **Subdivision** - Tiles closer to camera subdivide into smaller, more detailed tiles
+3. **LOD Transitions** - Tiles dynamically subdivide or collapse as camera moves
+4. **Seamless Stitching** - Adjacent tiles of different LODs connect without gaps
 
 The result is a continuous ocean surface that appears highly detailed up close while maintaining excellent performance for vast ocean expanses.
 
 ![QuadTree mesh visualization](QuadTree/LegacyQuadTree_01.png)
 
 The wireframe visualization above shows the QuadTree in action:
-- **Foreground (bottom)** — Dense tessellation with small triangles for detailed wave displacement.
-- **Midground (center)** — Medium tessellation as detail becomes less critical.
-- **Background (top)** — Coarse tessellation for distant water where individual waves aren't distinguishable.
+- **Foreground (bottom)** - Dense tessellation with small triangles for detailed wave displacement.
+- **Midground (center)** - Medium tessellation as detail becomes less critical.
+- **Background (top)** - Coarse tessellation for distant water where individual waves aren't distinguishable.
 
 ---
 
@@ -54,10 +63,10 @@ The wireframe visualization above shows the QuadTree in action:
 In the **Outliner**, locate and select **BP_OceanologyInfiniteOcean**. This is the main ocean actor that contains all QuadTree settings.
 
 The actor hierarchy shows:
-- **Default Scene Root** — The root transform component.
-- **Underwater Box Volume Component** — Defines the underwater region for post-processing.
-- **Underwater Post Process Component** — Handles underwater visual effects.
-- **Volumetric Fog Mesh Component** — Optional volumetric fog for atmosphere.
+- **Default Scene Root** - The root transform component.
+- **Underwater Box Volume Component** - Defines the underwater region for post-processing.
+- **Underwater Post Process Component** - Handles underwater visual effects.
+- **Volumetric Fog Mesh Component** - Optional volumetric fog for atmosphere.
 
 In the **Details** panel, scroll down to find the **Quad Tree** category. This contains all mesh generation settings.
 
@@ -166,17 +175,17 @@ LODScale controls how aggressively the QuadTree reduces detail with distance:
 
 The QuadTree runs on the CPU. Monitor these factors:
 
-1. **Extent in Tiles** — Larger extents require more subdivision calculations.
-2. **Check for Update Interval** — Set to `0.016` (60 FPS) or `0.033` (30 FPS) to reduce CPU load.
-3. **Force Update Count** — Lower values reduce sustained CPU spikes after camera movement.
+1. **Extent in Tiles** - Larger extents require more subdivision calculations.
+2. **Check for Update Interval** - Set to `0.016` (60 FPS) or `0.033` (30 FPS) to reduce CPU load.
+3. **Force Update Count** - Lower values reduce sustained CPU spikes after camera movement.
 
 ### GPU Considerations
 
 While QuadTree runs on CPU, it affects GPU workload:
 
-1. **Tessellation Factor** — Directly increases vertex count and vertex shader load.
-2. **Tile Size** — Smaller tiles mean more draw calls (batching mitigates this).
-3. **Far Mesh** — Enabling this adds one additional draw call but prevents rendering the full QuadTree to the horizon.
+1. **Tessellation Factor** - Directly increases vertex count and vertex shader load.
+2. **Tile Size** - Smaller tiles mean more draw calls (batching mitigates this).
+3. **Far Mesh** - Enabling this adds one additional draw call but prevents rendering the full QuadTree to the horizon.
 
 ### Recommended Settings by Platform
 
@@ -195,7 +204,7 @@ While QuadTree runs on CPU, it affects GPU workload:
 | Problem | Likely Cause | Solution |
 |---------|--------------|----------|
 | Ocean doesn't reach horizon | Far Mesh disabled or extent too small | Enable Use Far Mesh, increase Far Distance Mesh Extent |
-| Visible seams between tiles | T-junction artifacts | This shouldn't happen with Oceanology — report as bug |
+| Visible seams between tiles | T-junction artifacts | This shouldn't happen with Oceanology - report as bug |
 | Waves clipped at screen edges | Max Wave Height Multiplier too low | Increase Max Wave Height Multiplier |
 | Low framerate | Tessellation too high or extent too large | Reduce Tessellation Factor, increase LODScale |
 | Ocean LOD pops visibly | LODScale too aggressive | Increase LODScale for smoother transitions |
@@ -208,9 +217,9 @@ While QuadTree runs on CPU, it affects GPU workload:
 
 To visualize the QuadTree structure:
 
-1. **Wireframe Mode** — In the editor viewport, press **Alt + 2** or select **View Mode > Wireframe** to see the mesh tessellation.
-2. **LOD Coloring** — Use the Ocean material's debug features to color-code LOD levels.
-3. **Stat Commands** — Use `stat oceanology` in the console to view QuadTree statistics (if available).
+1. **Wireframe Mode** - In the editor viewport, press **Alt + 2** or select **View Mode > Wireframe** to see the mesh tessellation.
+2. **LOD Coloring** - Use the Ocean material's debug features to color-code LOD levels.
+3. **Stat Commands** - Use `stat oceanology` in the console to view QuadTree statistics (if available).
 
 The wireframe view clearly shows:
 - Tile boundaries as larger squares
@@ -223,11 +232,11 @@ The wireframe view clearly shows:
 
 In this guide, you learned how to:
 
-1. **Understand QuadTree fundamentals** — How hierarchical subdivision creates efficient ocean meshes.
-2. **Configure tile settings** — Set Tile Size and Extent for your ocean coverage needs.
-3. **Tune tessellation and LOD** — Balance visual quality and performance with Tessellation Factor and LODScale.
-4. **Enable far mesh** — Extend ocean rendering to the horizon efficiently.
-5. **Optimize for your platform** — Apply recommended settings for different hardware targets.
+1. **Understand QuadTree fundamentals** - How hierarchical subdivision creates efficient ocean meshes.
+2. **Configure tile settings** - Set Tile Size and Extent for your ocean coverage needs.
+3. **Tune tessellation and LOD** - Balance visual quality and performance with Tessellation Factor and LODScale.
+4. **Enable far mesh** - Extend ocean rendering to the horizon efficiently.
+5. **Optimize for your platform** - Apply recommended settings for different hardware targets.
 
 The QuadTree CPU system is the foundation of Oceanology Legacy's infinite ocean. Proper configuration ensures your ocean looks great while maintaining excellent performance across all target platforms.
 

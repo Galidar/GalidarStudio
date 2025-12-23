@@ -3,20 +3,28 @@ title: Debug
 sidebar_label: Debug
 ---
 
-# Riverology — Debug
+# Riverology - Debug
 
-_Last updated: 2025-12-09_
+<div className="doc-badge doc-badge-violet">🔧 Visualization</div>
+<div className="doc-badge doc-badge-cyan">🐛 Troubleshooting</div>
+<div className="doc-badge doc-badge-emerald">📊 Runtime Tools</div>
+
+Visual debugging tools for flow vectors, spline paths, and collision volumes.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.6 or newer.
-- **Riverology** installed and configured (see the **Setup** page).
-- At least one **BP_Riverology** river spline placed in your level.
-- Basic familiarity with **spline editing** and **runtime debugging** in Unreal Engine.
 
-## Notes
-- Riverology includes a comprehensive debug visualization system that helps you understand how the river spline behaves at runtime. These tools are essential for troubleshooting buoyancy issues, verifying spline configuration, and understanding water surface interactions.
-- The debug options are located in the **Debug Drawing** category of the BP_Riverology actor. Each option provides different information about the river system.
-- Debug visualizations are rendered in the viewport during Play mode (PIE) and help identify problems such as incorrect spline widths, surface detection issues, or unexpected water entry/exit behavior.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Riverology installed and configured |
+| **Scene** | BP_Riverology river spline in your level |
+| **Skills** | Basic spline editing familiarity |
+
+:::info Debug System
+Debug options in the **Debug Drawing** category help troubleshoot buoyancy issues, verify spline configuration, and understand water surface interactions. Rendered in viewport during Play mode.
+:::
 
 ---
 
@@ -33,10 +41,10 @@ Select the actor to access its properties in the **Details** panel.
 :::note 2. Locate the Debug Drawing category
 With **BP_Riverology** selected, scroll through the **Details** panel to find the **Debug Drawing** category. This section contains all the debug visualization options:
 
-- **Unscaled Spline Width** — The base width value used for debug visualization (default: 75.0).
-- **Draw Debug Spline Width** — Visualizes the spline boundaries and width along the river path.
-- **Draw Debug Strings** — Displays detailed numerical information about each point along the spline.
-- **Surface Debugging** — Shows water entry and exit events for actors interacting with the river surface.
+- **Unscaled Spline Width** - The base width value used for debug visualization (default: 75.0).
+- **Draw Debug Spline Width** - Visualizes the spline boundaries and width along the river path.
+- **Draw Debug Strings** - Displays detailed numerical information about each point along the spline.
+- **Surface Debugging** - Shows water entry and exit events for actors interacting with the river surface.
 
 Each option can be toggled independently, allowing you to focus on specific aspects of the river behavior.
 
@@ -47,9 +55,9 @@ Each option can be toggled independently, allowing you to focus on specific aspe
 Check the **Draw Debug Spline Width** option and press **Play** to enter Play mode. The viewport will display debug lines showing the spline path and its boundaries.
 
 **What you will see:**
-- **White dashed lines** — The spline path and boundary edges.
-- **Blue progress bars** — Visual indicators showing the normalized position along the spline.
-- **Yellow/Red angle values** — The angle at each spline point, useful for identifying sharp turns or problematic curves.
+- **White dashed lines** - The spline path and boundary edges.
+- **Blue progress bars** - Visual indicators showing the normalized position along the spline.
+- **Yellow/Red angle values** - The angle at each spline point, useful for identifying sharp turns or problematic curves.
 
 This visualization helps you verify that the river boundaries are correctly defined and that the spline shape matches your intended design.
 
@@ -66,9 +74,9 @@ Disable **Draw Debug Spline Width** and enable **Draw Debug Strings** to see a d
 Press **Play** to see the debug strings visualization. Each buoyant actor interacting with the river will display detailed information:
 
 **Displayed values:**
-- **Normalized position** — A value between -1.0 and 1.0 indicating the actor's position relative to the spline center (negative = left side, positive = right side).
-- **Radius** — The current river radius at the actor's position along the spline.
-- **XYLen** — The horizontal distance from the actor to the spline center point.
+- **Normalized position** - A value between -1.0 and 1.0 indicating the actor's position relative to the spline center (negative = left side, positive = right side).
+- **Radius** - The current river radius at the actor's position along the spline.
+- **XYLen** - The horizontal distance from the actor to the spline center point.
 
 This information is invaluable for debugging buoyancy behavior and understanding how actors interact with the river's variable width along its path.
 
@@ -85,8 +93,8 @@ Disable **Draw Debug Strings** and enable **Surface Debugging** to monitor water
 Press **Play** and watch the top-left corner of the viewport. The system will display real-time messages whenever actors enter or exit the water surface:
 
 **Event messages:**
-- **Entered Water** (green) — An actor has crossed into the water volume.
-- **Exited Water** (yellow) — An actor has left the water volume.
+- **Entered Water** (green) - An actor has crossed into the water volume.
+- **Exited Water** (yellow) - An actor has left the water volume.
 
 A small hint message `'DisableAllScreenMessages' to suppress` appears, indicating you can disable these messages in production builds.
 
@@ -125,10 +133,10 @@ This debug mode is particularly useful for verifying that water detection is wor
 
 In this guide, you learned how to:
 
-1. **Access debug options** — Locate the Debug Drawing category in the BP_Riverology Details panel.
-2. **Visualize spline boundaries** — Use Draw Debug Spline Width to see the river path and width.
-3. **Inspect numerical data** — Enable Draw Debug Strings to view position, radius, and distance values.
-4. **Monitor surface events** — Use Surface Debugging to track water entry and exit interactions.
-5. **Troubleshoot issues** — Interpret debug information to identify and resolve river configuration problems.
+1. **Access debug options** - Locate the Debug Drawing category in the BP_Riverology Details panel.
+2. **Visualize spline boundaries** - Use Draw Debug Spline Width to see the river path and width.
+3. **Inspect numerical data** - Enable Draw Debug Strings to view position, radius, and distance values.
+4. **Monitor surface events** - Use Surface Debugging to track water entry and exit interactions.
+5. **Troubleshoot issues** - Interpret debug information to identify and resolve river configuration problems.
 
 These debug tools are essential during development and should be disabled in production builds for optimal performance.

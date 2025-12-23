@@ -3,22 +3,28 @@ title: Swimming
 sidebar_label: Swimming
 ---
 
-# Oceanology Legacy — Swimming
+# Oceanology Legacy - Swimming
 
-_Last updated: 2025-12-06_
+<div className="doc-badge doc-badge-violet">🏊 Character System</div>
+<div className="doc-badge doc-badge-cyan">🎮 Game Ready</div>
+<div className="doc-badge doc-badge-emerald">📋 Step-by-Step</div>
+
+Implement realistic character swimming with the OceanSwimming component in Oceanology Legacy.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.6 or newer.
-- **Oceanology Legacy** installed and configured (see the **Setup** page).
-- At least one **Oceanology Legacy** water body placed in your level (infinite ocean or lake).
-- A **Character Blueprint** with a **CharacterMovementComponent** (the standard Third Person Character works perfectly).
-- Basic familiarity with **Blueprints**, **Enhanced Input System**, and **physics** in Unreal Engine.
 
-## Notes
-- Swimming in Oceanology Legacy is driven by two components working together: the `OceanBuoyancyComponent` and the `OceanSwimmingComponent`. The buoyancy component handles water surface detection and floating forces, while the swimming component manages movement, drowning, and underwater effects.
-- Unlike vessel buoyancy which uses multiple pontoons distributed across a hull, character swimming requires exactly **two strategically placed pontoons**: one for the full body (controls floating) and one for the head (detects water entry and triggers drowning).
-- The swimming system integrates with Unreal Engine's **Enhanced Input System** for modern, flexible input handling. You will configure Input Actions for swimming up/down, swimming fast, and surface-locked swimming.
-- This guide assumes you are using the included `BP_ThirdPersonCharacter` as your starting point. The same principles apply to custom characters.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Oceanology Legacy installed and configured |
+| **Scene** | Water body with Oceanology Water Volume |
+| **Character** | A Character Blueprint with CharacterMovementComponent |
+
+:::info About Swimming
+Swimming in Oceanology Legacy is driven by two components: the `OceanBuoyancyComponent` (water detection, floating) and `OceanSwimmingComponent` (movement, drowning, underwater effects). Character swimming requires exactly **two pontoons**: one for the body (floating) and one for the head (drowning detection).
+:::
 
 ---
 
@@ -28,11 +34,11 @@ _Last updated: 2025-12-06_
 Open your level and use the **Quickly Add to the Project** menu (the `+` button in the toolbar or right-click in the viewport). Search for `oceanology` to filter the available actors.
 
 You will need to drag the following actors into your scene:
-- **Oceanology Manager** — The central controller that manages all Oceanology systems. This actor is required for any Oceanology feature to work.
-- **Oceanology Water Niagara Waves Volume** — Optional volume for Niagara-based wave effects.
-- **Oceanology Water Volume** — Defines the region where buoyancy and swimming calculations are performed. This volume detects when characters enter the water.
-- **BP_OceanologyInfiniteOcean** — The infinite ocean water body. Use this for open sea environments.
-- **BP_OceanologyLake** _(optional)_ — A bounded lake water body. Add this if your level includes lakes or enclosed water areas.
+- **Oceanology Manager** - The central controller that manages all Oceanology systems. This actor is required for any Oceanology feature to work.
+- **Oceanology Water Niagara Waves Volume** - Optional volume for Niagara-based wave effects.
+- **Oceanology Water Volume** - Defines the region where buoyancy and swimming calculations are performed. This volume detects when characters enter the water.
+- **BP_OceanologyInfiniteOcean** - The infinite ocean water body. Use this for open sea environments.
+- **BP_OceanologyLake** _(optional)_ - A bounded lake water body. Add this if your level includes lakes or enclosed water areas.
 
 At minimum, you need: **Oceanology Manager**, **Oceanology Water Volume**, and one water body (**BP_OceanologyInfiniteOcean** or **BP_OceanologyLake**).
 
@@ -44,12 +50,12 @@ In the **Content Browser**, navigate to:
 `Plugins > Oceanology Legacy > Character > Blueprints`
 
 Here you will find:
-- **BP_ThirdPersonCharacter** — A pre-configured character Blueprint with swimming already set up. This is an excellent reference for understanding the component configuration.
-- **BP_ThirdPersonGameMode** — The game mode that spawns the swimming-enabled character.
+- **BP_ThirdPersonCharacter** - A pre-configured character Blueprint with swimming already set up. This is an excellent reference for understanding the component configuration.
+- **BP_ThirdPersonGameMode** - The game mode that spawns the swimming-enabled character.
 
 You can either:
-1. **Use the included character directly** — Drag `BP_ThirdPersonCharacter` into your scene or set it as the default pawn in your Game Mode.
-2. **Study and replicate the setup** — Open this Blueprint to understand the component configuration, then apply the same setup to your own character.
+1. **Use the included character directly** - Drag `BP_ThirdPersonCharacter` into your scene or set it as the default pawn in your Game Mode.
+2. **Study and replicate the setup** - Open this Blueprint to understand the component configuration, then apply the same setup to your own character.
 
 For this guide, we will open `BP_ThirdPersonCharacter` to examine its configuration.
 
@@ -60,14 +66,14 @@ For this guide, we will open `BP_ThirdPersonCharacter` to examine its configurat
 Open your Character Blueprint in the **Blueprint Editor**. In the **Components** panel, click **+ Add** and search for `ocean`.
 
 You will see several Oceanology components available:
-- **Ocean Buoyancy** — Required. Handles water surface detection and applies buoyancy forces.
-- **Ocean Swimming** — Required. Manages swimming movement, drowning, and effects.
-- **Ocean Audio** — Optional. Adds water interaction sounds.
-- **Oceanology Empty Wave Solver** — A blank wave solver for custom implementations.
-- **Oceanology Gerstner Wave Solver** — Samples Gerstner wave displacement.
-- **Oceanology Heightmap** — Samples heightmap-based water surfaces.
-- **Oceanology Infinite** — References the infinite ocean system.
-- **Oceanology Underwater** — Optional. Handles underwater post-processing effects.
+- **Ocean Buoyancy** - Required. Handles water surface detection and applies buoyancy forces.
+- **Ocean Swimming** - Required. Manages swimming movement, drowning, and effects.
+- **Ocean Audio** - Optional. Adds water interaction sounds.
+- **Oceanology Empty Wave Solver** - A blank wave solver for custom implementations.
+- **Oceanology Gerstner Wave Solver** - Samples Gerstner wave displacement.
+- **Oceanology Heightmap** - Samples heightmap-based water surfaces.
+- **Oceanology Infinite** - References the infinite ocean system.
+- **Oceanology Underwater** - Optional. Handles underwater post-processing effects.
 
 Add both **Ocean Buoyancy** and **Ocean Swimming** to your character. The order in the component hierarchy does not matter, but both must be present for swimming to function correctly.
 
@@ -86,24 +92,24 @@ Character buoyancy differs significantly from vessel buoyancy. While ships use 5
 Select the **OceanBuoyancy** component in your character Blueprint. In the **Details** panel, configure the **Buoyancy** category:
 
 **Debug Buttons:**
-- **DebugPontoons** — Click to visualize pontoon positions in the viewport.
-- **ToggleDebug** — Enables runtime debug visualization.
+- **DebugPontoons** - Click to visualize pontoon positions in the viewport.
+- **ToggleDebug** - Enables runtime debug visualization.
 
 **Core Buoyancy Settings:**
-- **Buoyancy Update Interval** — `0.0` (updates every frame for responsive swimming)
-- **Default Mesh Density** — `900.0` kg/m³ (slightly less than water, allowing the character to float)
-- **Water Fluid Density** — `1030.0` kg/m³ (standard seawater density)
-- **Water Fluid Linear Damping** — `1.0` (reduces forward/backward velocity in water)
-- **Water Fluid Angular Damping** — `2.5` (reduces rotation velocity in water)
-- **Water Velocity Damper** — `(0.1, 0.1, 0.1)` (per-axis velocity reduction)
-- **Limit Underwater Max Velocity** — ✅ Enabled
-- **Max Underwater Velocity** — `100.0` (caps swimming speed for realistic movement)
+- **Buoyancy Update Interval** - `0.0` (updates every frame for responsive swimming)
+- **Default Mesh Density** - `900.0` kg/m³ (slightly less than water, allowing the character to float)
+- **Water Fluid Density** - `1030.0` kg/m³ (standard seawater density)
+- **Water Fluid Linear Damping** - `1.0` (reduces forward/backward velocity in water)
+- **Water Fluid Angular Damping** - `2.5` (reduces rotation velocity in water)
+- **Water Velocity Damper** - `(0.1, 0.1, 0.1)` (per-axis velocity reduction)
+- **Limit Underwater Max Velocity** - ✅ Enabled
+- **Max Underwater Velocity** - `100.0` (caps swimming speed for realistic movement)
 
-**Pontoons Array — Critical for Swimming:**
+**Pontoons Array - Critical for Swimming:**
 
 The **Pontoons** array is the most important configuration for character swimming. You need exactly **2 pontoons** with specific roles:
 
-### Pontoon [0] — FullBody (Buoyancy Control)
+### Pontoon [0] - FullBody (Buoyancy Control)
 This pontoon controls the character's overall floating behavior.
 
 | Property | Value | Explanation |
@@ -114,24 +120,24 @@ This pontoon controls the character's overall floating behavior.
 | **Density Override** | `0.0` | Uses Default Mesh Density (900.0) |
 | **Mode** | `Buoyancy` | This pontoon applies floating forces |
 
-### Pontoon [1] — Head (Water Entry Detection)
+### Pontoon [1] - Head (Water Entry Detection)
 This pontoon detects when the character's head enters/exits water, triggering drowning mechanics.
 
 | Property | Value | Explanation |
 |----------|-------|-------------|
 | **Socket** | `Head` | Attaches to the head bone socket |
-| **Pontoon** | `(0.0, 0.0, 0.0)` | No offset — directly at the head socket position |
+| **Pontoon** | `(0.0, 0.0, 0.0)` | No offset - directly at the head socket position |
 | **Radius** | `1.0` | Small radius for precise head-water intersection detection |
 | **Density Override** | `0.0` | Uses Default Mesh Density |
-| **Mode** | `Water Enter Exit Event Only` | **Critical!** This pontoon does NOT apply forces — it only triggers events |
+| **Mode** | `Water Enter Exit Event Only` | **Critical!** This pontoon does NOT apply forces - it only triggers events |
 
 **Global Wave Settings:**
-- **Global Wave Force Multiplier** — `2.0` (how much waves affect the character)
-- **Global Wave Force Enabled** — ✅ Enabled (character responds to wave motion)
+- **Global Wave Force Multiplier** - `2.0` (how much waves affect the character)
+- **Global Wave Force Enabled** - ✅ Enabled (character responds to wave motion)
 
 **Understanding Pontoon Modes:**
-- `Buoyancy` — The pontoon samples water height and applies upward force to keep the character floating. Use this for the body.
-- `Water Enter Exit Event Only` — The pontoon samples water height but applies NO force. Instead, it fires events when entering/exiting water. Use this for the head to detect submersion without affecting physics.
+- `Buoyancy` - The pontoon samples water height and applies upward force to keep the character floating. Use this for the body.
+- `Water Enter Exit Event Only` - The pontoon samples water height but applies NO force. Instead, it fires events when entering/exiting water. Use this for the head to detect submersion without affecting physics.
 
 **Why Two Pontoons?**
 - The **FullBody** pontoon keeps the character floating at the correct height relative to the water surface.
@@ -153,26 +159,26 @@ Your character's Skeletal Mesh must have sockets named `FullBody` (or similar, a
 
 The OceanSwimming component controls all swimming-specific behavior: movement speed, drowning, underwater effects, and input handling.
 
-:::note 5. Configure the OceanSwimming component — Main Settings
+:::note 5. Configure the OceanSwimming component - Main Settings
 Select the **OceanSwimming** component in your character Blueprint. In the **Details** panel, configure the **Swimming** category:
 
 **Debug:**
-- **ToggleDebug** — Enables runtime visualization of swimming state.
+- **ToggleDebug** - Enables runtime visualization of swimming state.
 
 **Core Swimming Settings:**
-- **Swimming Update Interval** — `0.0` (updates every frame for responsive controls)
-- **Buoyancy Pontoon Socket for Enter Water Event** — `Head` — **Critical!** This tells the swimming system which pontoon to use for detecting water entry. Must match the socket name from Pontoon [1].
-- **Swimming Buoyancy Force Multiplier** — `0.03` — Fine-tunes how strongly buoyancy affects the character while swimming. Lower values = character sinks more easily when not actively swimming up.
-- **Immersion** — `100.0` — Percentage of body considered submerged. At 100%, the character is fully in swimming mode.
-- **Swim Up Limiter** — `10.0` — Limits how quickly the character can ascend. Prevents unrealistically fast vertical movement.
-- **Surface Locked Swimming Limiter** — `50.0` — Controls how strongly the character is held at the water surface when surface-locked mode is active.
-- **Enter Exit Water Tolerance Offset** — `0.0` — Offset for water entry/exit detection threshold.
+- **Swimming Update Interval** - `0.0` (updates every frame for responsive controls)
+- **Buoyancy Pontoon Socket for Enter Water Event** - `Head` - **Critical!** This tells the swimming system which pontoon to use for detecting water entry. Must match the socket name from Pontoon [1].
+- **Swimming Buoyancy Force Multiplier** - `0.03` - Fine-tunes how strongly buoyancy affects the character while swimming. Lower values = character sinks more easily when not actively swimming up.
+- **Immersion** - `100.0` - Percentage of body considered submerged. At 100%, the character is fully in swimming mode.
+- **Swim Up Limiter** - `10.0` - Limits how quickly the character can ascend. Prevents unrealistically fast vertical movement.
+- **Surface Locked Swimming Limiter** - `50.0` - Controls how strongly the character is held at the water surface when surface-locked mode is active.
+- **Enter Exit Water Tolerance Offset** - `0.0` - Offset for water entry/exit detection threshold.
 
 **Collapsed Categories (configure in next steps):**
-- **Speed** — Swimming velocity settings
-- **Underwater** — Drowning and visual effects
-- **Debug** — Debug visualization options
-- **Controls** — Rotation and input settings
+- **Speed** - Swimming velocity settings
+- **Underwater** - Drowning and visual effects
+- **Debug** - Debug visualization options
+- **Controls** - Rotation and input settings
 
 ![OceanSwimming main settings](Swimming/LegacySwimming_05.png)
 :::
@@ -266,14 +272,14 @@ This input toggles **surface-locked mode**, where the character stays at the wat
 
 **Blueprint Logic:**
 
-1. **Add Enhanced Input Action node** — Select **IA_SurfaceLockedSwimming**.
+1. **Add Enhanced Input Action node** - Select **IA_SurfaceLockedSwimming**.
 
 2. **Get Ocean Swimming component reference**.
 
 3. **Get current Surface Locked Swimming state:**
    - Drag from Ocean Swimming → Get **Surface Locked Swimming** (boolean property).
 
-4. **Add NOT node** — Invert the current state to toggle it.
+4. **Add NOT node** - Invert the current state to toggle it.
    - Input: Current Surface Locked Swimming value
    - Output: Inverted value
 
@@ -291,12 +297,12 @@ This input enables sprint swimming when held.
 
 **Blueprint Logic:**
 
-1. **Add Enhanced Input Action node** — Select **IA_SwimFast**.
+1. **Add Enhanced Input Action node** - Select **IA_SwimFast**.
 
 2. **Connect the outputs:**
-   - **Triggered** — Fires when the key is pressed.
-   - **Cancelled** — Fires if the action is interrupted.
-   - **Completed** — Fires when the key is released.
+   - **Triggered** - Fires when the key is pressed.
+   - **Cancelled** - Fires if the action is interrupted.
+   - **Completed** - Fires when the key is released.
 
 3. **Get Ocean Swimming component reference**.
 
@@ -318,16 +324,16 @@ This input allows vertical movement underwater. **Q** swims up, **E** swims down
 
 **Blueprint Logic:**
 
-1. **Add Enhanced Input Action node** — Search for `EnhancedInputAction` and select **IA_SwimUpOrDown**.
+1. **Add Enhanced Input Action node** - Search for `EnhancedInputAction` and select **IA_SwimUpOrDown**.
 
 2. **Connect the outputs:**
-   - **Triggered** — Fires continuously while the key is held.
-   - **Completed** — Fires when the key is released.
-   - **Action Value** — Float value indicating direction (+1 for up, -1 for down).
+   - **Triggered** - Fires continuously while the key is held.
+   - **Completed** - Fires when the key is released.
+   - **Action Value** - Float value indicating direction (+1 for up, -1 for down).
 
-3. **Get Ocean Swimming component reference** — Drag from your OceanSwimming component variable.
+3. **Get Ocean Swimming component reference** - Drag from your OceanSwimming component variable.
 
-4. **Call Server Swim Up or Down** — This is a replicated function for multiplayer support.
+4. **Call Server Swim Up or Down** - This is a replicated function for multiplayer support.
 
 **For Triggered output (key pressed):**
 - Target: Ocean Swimming component
@@ -351,30 +357,30 @@ This input allows vertical movement underwater. **Q** swims up, **E** swims down
 Open your Character Blueprint and navigate to the **Event Graph**. You need to register the Input Mapping Context when the game starts.
 
 **BeginPlay Event Chain:**
-1. **Event BeginPlay** — Fires when the character spawns.
-2. **Register Example UI** — (Optional) Initializes any example UI widgets.
-3. **Register User Example Events** — (Optional) Binds example gameplay events.
-4. **Input Mapping** — Custom event that registers the input context.
+1. **Event BeginPlay** - Fires when the character spawns.
+2. **Register Example UI** - (Optional) Initializes any example UI widgets.
+3. **Register User Example Events** - (Optional) Binds example gameplay events.
+4. **Input Mapping** - Custom event that registers the input context.
 
-**Add Input Mapping — Custom Event Implementation:**
+**Add Input Mapping - Custom Event Implementation:**
 Create a custom event called `Input Mapping` with the following logic:
 
-1. **Get Controller** — Get the character's controller reference.
+1. **Get Controller** - Get the character's controller reference.
    - Target: `self`
    - Returns: Controller reference
 
-2. **Cast To PlayerController** — Verify it's a player controller.
+2. **Cast To PlayerController** - Verify it's a player controller.
    - Object: Controller reference
    - Returns: As Player Controller
 
-3. **Get Enhanced Input Local Player Subsystem** — Access the input subsystem.
+3. **Get Enhanced Input Local Player Subsystem** - Access the input subsystem.
    - Returns: Enhanced Input Local Player Subsystem reference
 
-4. **Is Valid** — Check if the subsystem exists.
+4. **Is Valid** - Check if the subsystem exists.
    - Input Object: Subsystem reference
    - Returns: Is Valid (boolean)
 
-5. **Add Mapping Context** — Register the input mapping.
+5. **Add Mapping Context** - Register the input mapping.
    - Target: Enhanced Input Subsystem Interface
    - Mapping Context: `IMC_Default`
    - Priority: `0`
@@ -393,9 +399,9 @@ The swimming system requires the following Input Actions (already included in Oc
 | **IA_Jump** | Space | Jump / Exit water |
 | **IA_Move** | WASD | Horizontal movement (shared with ground movement) |
 | **IA_Look** | Mouse | Camera control (shared with ground movement) |
-| **IA_SwimFast** | Left Shift | Sprint swimming — hold to swim faster |
-| **IA_SurfaceLockedSwimming** | L | Toggle surface-locked mode — character stays at water surface |
-| **IA_SwimUpOrDown** | Q / E | Vertical swimming — Q swims up, E swims down |
+| **IA_SwimFast** | Left Shift | Sprint swimming - hold to swim faster |
+| **IA_SurfaceLockedSwimming** | L | Toggle surface-locked mode - character stays at water surface |
+| **IA_SwimUpOrDown** | Q / E | Vertical swimming - Q swims up, E swims down |
 | **IA_ToggleUI** | H | Toggle UI visibility |
 | **IA_Zoom** | Mouse Wheel | Camera zoom |
 
@@ -415,25 +421,25 @@ The Water Volume defines the region where swimming calculations are performed. C
 Select the **OceanologyWaterVolume** actor in the **Outliner**. In the **Details** panel, configure the **Transform** and **Settings** categories.
 
 **Transform:**
-- **Location** — Position the volume to cover your water body. Example: `(410.0, -600.0, -930.0)`
-- **Rotation** — `(0.0, 0.0, 0.0)` (no rotation needed for box volumes)
-- **Scale** — `(1.0, 1.0, 1.0)` (use Brush Settings for size, not scale)
-- **Mobility** — `Static` for best performance. Use `Movable` only if the volume needs to move at runtime.
+- **Location** - Position the volume to cover your water body. Example: `(410.0, -600.0, -930.0)`
+- **Rotation** - `(0.0, 0.0, 0.0)` (no rotation needed for box volumes)
+- **Scale** - `(1.0, 1.0, 1.0)` (use Brush Settings for size, not scale)
+- **Mobility** - `Static` for best performance. Use `Movable` only if the volume needs to move at runtime.
 
 **Settings:**
-- **Set Volume Bounds** — Click this button to automatically adjust the volume boundaries to match your water body.
-- **Oceanology Water** — Select which water body this volume tracks. Choose **BP_OceanologyInfiniteOcean** for ocean environments.
-- **Bounds Align Actor** — Leave as `None` for infinite oceans, or select a reference actor for lakes.
-- **Check Initial Overlap on Begin Play** — ✅ Enabled. Detects if actors start inside the water volume.
-- **Initial Overlap on Begin Play Delay** — `0.5` seconds. Brief delay before checking overlaps.
-- **Enable Buoyancy in Area** — ✅ Enabled. Required for characters to float.
-- **Enable Swimming in Area** — ✅ Enabled. **This is the critical setting that activates swimming behavior.**
-- **Physics Volume Terminal Velocity** — `4000.0`. Maximum falling speed within the volume.
-- **Physics Volume Priority** — `0`. Priority when multiple volumes overlap.
-- **Physics Volume Fluid Friction** — `0.3`. Resistance applied to movement in water.
+- **Set Volume Bounds** - Click this button to automatically adjust the volume boundaries to match your water body.
+- **Oceanology Water** - Select which water body this volume tracks. Choose **BP_OceanologyInfiniteOcean** for ocean environments.
+- **Bounds Align Actor** - Leave as `None` for infinite oceans, or select a reference actor for lakes.
+- **Check Initial Overlap on Begin Play** - ✅ Enabled. Detects if actors start inside the water volume.
+- **Initial Overlap on Begin Play Delay** - `0.5` seconds. Brief delay before checking overlaps.
+- **Enable Buoyancy in Area** - ✅ Enabled. Required for characters to float.
+- **Enable Swimming in Area** - ✅ Enabled. **This is the critical setting that activates swimming behavior.**
+- **Physics Volume Terminal Velocity** - `4000.0`. Maximum falling speed within the volume.
+- **Physics Volume Priority** - `0`. Priority when multiple volumes overlap.
+- **Physics Volume Fluid Friction** - `0.3`. Resistance applied to movement in water.
 
 **Debug:**
-- **Debug Enabled** — ❌ Disabled. Enable to visualize volume boundaries at runtime.
+- **Debug Enabled** - ❌ Disabled. Enable to visualize volume boundaries at runtime.
 
 ![Water Volume Settings](Swimming/LegacySwimming_12.png)
 :::
@@ -442,15 +448,15 @@ Select the **OceanologyWaterVolume** actor in the **Outliner**. In the **Details
 Still with the **OceanologyWaterVolume** selected, expand the **Brush Settings** category to configure the physical size of the swimming area.
 
 **Brush Settings:**
-- **X** — `35000.0` (width of the volume in Unreal units)
-- **Y** — `35000.0` (depth of the volume in Unreal units)
-- **Z** — `5000.0` (height of the volume — how deep underwater characters can swim)
-- **Wall Thickness** — `10.0`
-- **Hollow** — ❌ Disabled
-- **Tessellated** — ❌ Disabled
-- **Brush Shape** — `Box`
-- **Display Shaded Volume** — ❌ Disabled (enable temporarily for debugging)
-- **Shaded Volume Opacity Value** — `0.25`
+- **X** - `35000.0` (width of the volume in Unreal units)
+- **Y** - `35000.0` (depth of the volume in Unreal units)
+- **Z** - `5000.0` (height of the volume - how deep underwater characters can swim)
+- **Wall Thickness** - `10.0`
+- **Hollow** - ❌ Disabled
+- **Tessellated** - ❌ Disabled
+- **Brush Shape** - `Box`
+- **Display Shaded Volume** - ❌ Disabled (enable temporarily for debugging)
+- **Shaded Volume Opacity Value** - `0.25`
 
 The Z dimension is particularly important for swimming. It determines the vertical space where swimming is active. A value of `5000.0` allows characters to dive approximately 50 meters below the water surface.
 
@@ -551,16 +557,16 @@ Use this checklist to verify your swimming implementation:
 
 In this complete Swimming guide, you learned how to:
 
-1. **Set up the scene** — Add Oceanology Manager, Water Volume, and water bodies.
-2. **Locate the example character** — Find the included `BP_ThirdPersonCharacter`.
-3. **Add swimming components** — Attach OceanBuoyancy and OceanSwimming to your character.
-4. **Configure the two-pontoon system** — FullBody for floating, Head for drowning detection.
-5. **Set swimming parameters** — Speed, buoyancy force, limiters, and rotation behavior.
-6. **Configure drowning** — Warning and death timers for underwater breath management.
-7. **Set up underwater effects** — Bubble particles and speed trails using Niagara.
-8. **Create Blueprint logic** — Connect inputs to OceanSwimming component functions.
-9. **Register input mapping** — Add IMC_Default in BeginPlay.
-10. **Configure Water Volume** — Set bounds and enable swimming in the volume.
+1. **Set up the scene** - Add Oceanology Manager, Water Volume, and water bodies.
+2. **Locate the example character** - Find the included `BP_ThirdPersonCharacter`.
+3. **Add swimming components** - Attach OceanBuoyancy and OceanSwimming to your character.
+4. **Configure the two-pontoon system** - FullBody for floating, Head for drowning detection.
+5. **Set swimming parameters** - Speed, buoyancy force, limiters, and rotation behavior.
+6. **Configure drowning** - Warning and death timers for underwater breath management.
+7. **Set up underwater effects** - Bubble particles and speed trails using Niagara.
+8. **Create Blueprint logic** - Connect inputs to OceanSwimming component functions.
+9. **Register input mapping** - Add IMC_Default in BeginPlay.
+10. **Configure Water Volume** - Set bounds and enable swimming in the volume.
 
 Your character is now fully configured for swimming in Oceanology Legacy. Test thoroughly in different water conditions and adjust parameters to match your game's feel.
 

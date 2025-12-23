@@ -3,20 +3,28 @@ title: Refraction
 sidebar_label: Refraction
 ---
 
-# Riverology — Refraction
+# Riverology - Refraction
 
-_Last updated: 2025-12-09_
+<div className="doc-badge doc-badge-violet">💎 Light Bending</div>
+<div className="doc-badge doc-badge-cyan">🔬 Physics-Based</div>
+<div className="doc-badge doc-badge-emerald">🌊 Depth-Aware</div>
+
+Configure physically-based light bending for realistic underwater distortion.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.6 or newer.
-- **Riverology** installed and configured (see the **Setup** page).
-- At least one **BP_Riverology** river placed in your level.
-- Basic familiarity with **Materials** and **optical effects** in Unreal Engine.
 
-## Notes
-- Refraction is the bending of light as it passes through water, creating the characteristic distortion you see when looking at objects beneath the surface. Riverology provides advanced controls to simulate realistic light bending based on viewing angle and water depth.
-- The refraction system uses critical angle calculations to determine how much light bends at different viewing angles, simulating real-world optical physics where light refracts more at shallow angles.
-- These settings work together with the water surface normals — waves and ripples affect how refraction distorts the underwater view.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Riverology installed and configured |
+| **Scene** | BP_Riverology river in your level |
+| **Skills** | Basic Materials and optical effects |
+
+:::info About Refraction
+Refraction bends light through water, distorting underwater views. Uses critical angle calculations for realistic physics - light refracts more at shallow angles. Works with surface normals, waves, and ripples.
+:::
 
 ---
 
@@ -55,9 +63,9 @@ Select your **BP_Riverology** actor in the **Outliner**. In the **Details** pane
 With refraction configured, the effect is most visible when viewing underwater objects from above the surface or when looking at the water-air interface from below.
 
 The refraction system creates realistic optical distortion:
-- **Shallow angles** — Maximum distortion as light bends sharply at the water surface.
-- **Steep angles** — Minimal distortion when looking straight down into the water.
-- **Depth falloff** — Distortion decreases for objects at greater depths, controlled by **Refraction Far** and **Depth for Min Refraction**.
+- **Shallow angles** - Maximum distortion as light bends sharply at the water surface.
+- **Steep angles** - Minimal distortion when looking straight down into the water.
+- **Depth falloff** - Distortion decreases for objects at greater depths, controlled by **Refraction Far** and **Depth for Min Refraction**.
 
 The image shows the view from beneath the water surface, demonstrating how refraction distorts the sky and shoreline when viewed through the water-air boundary.
 
@@ -88,7 +96,7 @@ The critical angle in optics is the angle of incidence beyond which light is tot
 |-----------|-----------------|
 | **Critical Angle Dot = 0.0** | Critical angle at perpendicular view (looking straight down) |
 | **Critical Angle Dot = 1.0** | Critical angle at grazing view (looking along surface) |
-| **Critical Angle Dot = 0.5** | Balanced — critical angle at 60° from surface normal |
+| **Critical Angle Dot = 0.5** | Balanced - critical angle at 60° from surface normal |
 
 The **Critical Angle Bend Width** negative value creates the characteristic "flip" in refraction direction that occurs at the critical angle boundary, matching real-world optical behavior.
 
@@ -112,9 +120,9 @@ The **Critical Angle Bend Width** negative value creates the characteristic "fli
 
 In this guide, you learned how to:
 
-1. **Configure critical angle settings** — Control how viewing angle affects refraction intensity and transitions.
-2. **Adjust refraction intensity** — Fine-tune the base refraction index and edge behavior.
-3. **Set depth-based falloff** — Configure how refraction changes with water depth for realistic optical behavior.
-4. **Understand the optical model** — Learn how critical angle parameters simulate real-world light bending physics.
+1. **Configure critical angle settings** - Control how viewing angle affects refraction intensity and transitions.
+2. **Adjust refraction intensity** - Fine-tune the base refraction index and edge behavior.
+3. **Set depth-based falloff** - Configure how refraction changes with water depth for realistic optical behavior.
+4. **Understand the optical model** - Learn how critical angle parameters simulate real-world light bending physics.
 
 Refraction is essential for realistic water rendering, creating the characteristic distortion that makes water feel like a true optical medium rather than a flat surface. Subtle adjustments to these parameters significantly impact visual quality.

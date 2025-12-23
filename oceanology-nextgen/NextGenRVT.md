@@ -3,21 +3,28 @@ title: RVT (Runtime Virtual Texture)
 sidebar_label: RVT
 ---
 
-# Oceanology Next-Gen — RVT (Runtime Virtual Texture)
+# Oceanology NextGen - RVT
 
-_Last updated: 2025-12-13_
+<div className="doc-badge doc-badge-violet">🏖️ Shoreline Blending</div>
+<div className="doc-badge doc-badge-cyan">📐 Height Sampling</div>
+<div className="doc-badge doc-badge-emerald">🌍 Terrain Integration</div>
+
+Enable seamless water-terrain blending with Runtime Virtual Texture height sampling.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.5 or newer.
-- **Oceanology** installed and configured (see the **Setup** page).
-- A **Landscape** actor in your level for terrain-water interaction.
-- **Runtime Virtual Texturing** enabled in Project Settings.
-- Basic familiarity with **Virtual Textures** and **Materials** in Unreal Engine.
 
-## Notes
-- The RVT (Runtime Virtual Texture) system in Oceanology enables seamless blending between water and terrain. It captures heightmap data from your landscape and uses it to create smooth shoreline transitions, proper depth-based effects, and accurate water-terrain intersections.
-- RVT eliminates harsh water edges by sampling the actual terrain height at runtime, allowing the water shader to know exactly where land meets water.
-- The system requires both the **OceanologyManager** (for heightmap capture setup) and the **OceanologyInfiniteOcean** (for RVT rendering settings) to be properly configured.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Oceanology NextGen installed and configured |
+| **Scene** | Landscape actor for terrain-water interaction |
+| **Settings** | Runtime Virtual Texturing enabled |
+
+:::info About RVT
+RVT captures heightmap data from your landscape for smooth shoreline transitions and accurate water-terrain intersections. Requires both **OceanologyManager** (heightmap capture) and **OceanologyInfiniteOcean** (RVT settings) configured.
+:::
 
 ---
 
@@ -27,14 +34,14 @@ _Last updated: 2025-12-13_
 Open your level and use the **Quickly Add to the Project** menu (the `+` button in the toolbar or right-click in the viewport). Type `Oceanology` in the search field to filter the available actors.
 
 Locate and add the following actor:
-- **Oceanology Manager** — The central controller that manages RVT heightmap capture and other Oceanology systems.
+- **Oceanology Manager** - The central controller that manages RVT heightmap capture and other Oceanology systems.
 
 The Manager is essential for RVT functionality as it handles the heightmap generation from your landscape. Without it, the water will not have terrain depth information for proper shoreline rendering.
 
 Other useful actors visible in the menu:
-- **Oceanology Infinite Ocean** — The main ocean water body.
-- **Oceanology Lake** — Bounded water body for lakes.
-- **Oceanology Water Volume** — Interaction volume for buoyancy and effects.
+- **Oceanology Infinite Ocean** - The main ocean water body.
+- **Oceanology Lake** - Bounded water body for lakes.
+- **Oceanology Water Volume** - Interaction volume for buoyancy and effects.
 
 ![Quickly Add menu with Oceanology Manager](NextGenRVT/NextGenRVT_01.png)
 :::
@@ -43,24 +50,24 @@ Other useful actors visible in the menu:
 Select the **OceanologyManager** actor in your level. In the **Details** panel, you will find the RVT-related configuration sections:
 
 **Transform:**
-- **Location** — Position of the manager actor. Example: `-100800.0, -100800.0, -100.0`
-- **Scale** — Defines the capture area size. Example: `201600.0, 201600.0, 15089.843`. This should cover your entire landscape.
+- **Location** - Position of the manager actor. Example: `-100800.0, -100800.0, -100.0`
+- **Scale** - Defines the capture area size. Example: `201600.0, 201600.0, 15089.843`. This should cover your entire landscape.
 
 **Heightmap:**
-- **Setup Landscape/Ground Mesh** — Click this button to automatically configure the heightmap capture based on your landscape. This is the quickest way to set up RVT.
+- **Setup Landscape/Ground Mesh** - Click this button to automatically configure the heightmap capture based on your landscape. This is the quickest way to set up RVT.
 
 **RVT Settings:**
-- **Auto Configure Functions** — ✅ Enabled. Automatically sets up RVT capture functions.
-- **Auto Configure Heightmap Location and Scale** — ✅ Enabled. Automatically positions and scales the heightmap capture to match your landscape bounds.
-- **Auto Configure Water Z** — ✅ Enabled. Automatically determines the water surface Z height.
+- **Auto Configure Functions** - ✅ Enabled. Automatically sets up RVT capture functions.
+- **Auto Configure Heightmap Location and Scale** - ✅ Enabled. Automatically positions and scales the heightmap capture to match your landscape bounds.
+- **Auto Configure Water Z** - ✅ Enabled. Automatically determines the water surface Z height.
 
 **Volume Bounds:**
-- **Bounds Align Actor** — `Landscape`. Select the landscape actor to align the capture volume.
-- **Set Bounds** — Click to manually set the capture bounds if auto-configure doesn't produce desired results.
+- **Bounds Align Actor** - `Landscape`. Select the landscape actor to align the capture volume.
+- **Set Bounds** - Click to manually set the capture bounds if auto-configure doesn't produce desired results.
 
 **Advanced:**
-- **Snap To Landscape** — When enabled, snaps the manager to the landscape surface.
-- **Expand Bounds** — `0.0`. Adds padding to the capture bounds.
+- **Snap To Landscape** - When enabled, snaps the manager to the landscape surface.
+- **Expand Bounds** - `0.0`. Adds padding to the capture bounds.
 
 ![OceanologyManager RVT settings](NextGenRVT/NextGenRVT_02.png)
 :::
@@ -69,15 +76,15 @@ Select the **OceanologyManager** actor in your level. In the **Details** panel, 
 Select the **OceanologyInfiniteOcean** actor in your level. In the **Details** panel, locate and expand the **RVT** category:
 
 **RVT Parameters:**
-- **WaterZMin** — `-100.0`. The minimum Z height for water rendering. Water below this level will not render RVT effects.
-- **HeightmapLocation** — Vector defining the world position of the heightmap capture origin. Displayed as a blue color picker for X/Y coordinates.
-- **HeightmapScale** — Vector defining the scale/size of the heightmap capture area. Displayed as a yellow color picker.
-- **WaterBoxScale** — Vector defining the water rendering box dimensions. Displayed as a dark color picker.
+- **WaterZMin** - `-100.0`. The minimum Z height for water rendering. Water below this level will not render RVT effects.
+- **HeightmapLocation** - Vector defining the world position of the heightmap capture origin. Displayed as a blue color picker for X/Y coordinates.
+- **HeightmapScale** - Vector defining the scale/size of the heightmap capture area. Displayed as a yellow color picker.
+- **WaterBoxScale** - Vector defining the water rendering box dimensions. Displayed as a dark color picker.
 
 **Heightmap Asset:**
-- **RVT_Heightmap** — `RVT_Heightmap`. The Runtime Virtual Texture asset that stores the captured heightmap data. This texture is sampled by the water material to determine terrain depth.
+- **RVT_Heightmap** - `RVT_Heightmap`. The Runtime Virtual Texture asset that stores the captured heightmap data. This texture is sampled by the water material to determine terrain depth.
 
-The heightmap preview shows a grayscale representation of your terrain — white areas are high elevation, black areas are low. This data drives the water depth calculations and shoreline blending.
+The heightmap preview shows a grayscale representation of your terrain - white areas are high elevation, black areas are low. This data drives the water depth calculations and shoreline blending.
 
 ![RVT settings on OceanologyInfiniteOcean](NextGenRVT/NextGenRVT_03.png)
 :::
@@ -86,23 +93,23 @@ The heightmap preview shows a grayscale representation of your terrain — white
 The RVT system works through a material setup that captures terrain data and outputs it to a Runtime Virtual Texture. Open the **M_Grid** material (or your landscape material) to see how heightmap data flows:
 
 **Heightmap Data Node:**
-- **Absolute World Position (Excluding Material Offsets)** — Provides the world position for height sampling.
-- **Input Data** — The heightmap input connection.
-- **XYZ** — Full 3D position output.
-- **XY** — Horizontal position only.
-- **Z** — Vertical height value (most important for water depth).
+- **Absolute World Position (Excluding Material Offsets)** - Provides the world position for height sampling.
+- **Input Data** - The heightmap input connection.
+- **XYZ** - Full 3D position output.
+- **XY** - Horizontal position only.
+- **Z** - Vertical height value (most important for water depth).
 
 **Runtime Virtual Texture Output:**
 This node writes data to the RVT for the water shader to sample:
-- **BaseColor** — Surface color information.
-- **Specular** — Specular reflection data.
-- **Roughness** — Surface roughness values.
-- **Normal** — Surface normal vectors.
-- **WorldHeight** — The terrain height at each point (critical for water depth).
-- **Opacity** — Transparency information.
-- **Mask** — General purpose masking.
-- **Displacement** — Vertex displacement data.
-- **Mask4** — Additional mask channel.
+- **BaseColor** - Surface color information.
+- **Specular** - Specular reflection data.
+- **Roughness** - Surface roughness values.
+- **Normal** - Surface normal vectors.
+- **WorldHeight** - The terrain height at each point (critical for water depth).
+- **Opacity** - Transparency information.
+- **Mask** - General purpose masking.
+- **Displacement** - Vertex displacement data.
+- **Mask4** - Additional mask channel.
 
 The **Z** output from Heightmap Data connects to **WorldHeight** on the RVT Output. This is how the water shader knows the terrain elevation at every point, enabling proper depth-based coloring and shoreline blending.
 
@@ -156,9 +163,9 @@ The **Z** output from Heightmap Data connects to **WorldHeight** on the RVT Outp
 
 In this guide, you learned how to:
 
-1. **Add the Oceanology Manager** — Place the manager actor that handles RVT heightmap capture.
-2. **Configure Manager RVT settings** — Set up automatic heightmap capture aligned to your landscape.
-3. **Configure Ocean RVT settings** — Adjust heightmap location, scale, and the RVT texture reference.
-4. **Understand the Material setup** — See how heightmap data flows from terrain to the Runtime Virtual Texture Output.
+1. **Add the Oceanology Manager** - Place the manager actor that handles RVT heightmap capture.
+2. **Configure Manager RVT settings** - Set up automatic heightmap capture aligned to your landscape.
+3. **Configure Ocean RVT settings** - Adjust heightmap location, scale, and the RVT texture reference.
+4. **Understand the Material setup** - See how heightmap data flows from terrain to the Runtime Virtual Texture Output.
 
 With RVT properly configured, your ocean will seamlessly blend with the terrain, showing accurate depth-based coloring, smooth shoreline transitions, and proper water-land intersections without harsh edges.

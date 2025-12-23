@@ -3,21 +3,28 @@ title: Landscape
 sidebar_label: Landscape
 ---
 
-# Riverology — Landscape
+# Riverology - Landscape
 
-_Last updated: 2025-12-08_
+<div className="doc-badge doc-badge-violet">🏔️ Terrain Carving</div>
+<div className="doc-badge doc-badge-cyan">🌊 Riverbed Generation</div>
+<div className="doc-badge doc-badge-emerald">📐 Non-Destructive</div>
+
+Automatically carve realistic riverbeds and banks into your landscape terrain.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.6 or newer.
-- **Oceanology Legacy** installed and configured (see the **Setup** page).
-- A **Landscape** actor already placed and configured in your level.
-- Basic familiarity with **Landscape Mode**, **splines**, and **terrain sculpting** in Unreal Engine.
 
-## Notes
-- Oceanology Legacy includes **Riverology**, a river system that uses splines to define water flow paths. The **Landscape** feature allows these river splines to automatically deform the terrain, carving realistic riverbeds and banks.
-- The deformation is non-destructive and can be applied or removed at any time during development. This makes it easy to iterate on river placement without permanently modifying your landscape.
-- The system supports both **raising** and **lowering** terrain heights, allowing you to create embankments, levees, and natural river valleys.
-- Landscape deformation works with **Edit Layers**, enabling you to isolate river modifications on a separate layer for better control and reversibility.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Riverology installed and configured |
+| **Scene** | Landscape actor in your level |
+| **Skills** | Basic Landscape Mode familiarity |
+
+:::info Terrain Deformation
+River splines automatically deform terrain, carving riverbeds and banks. **Non-destructive** - apply or remove anytime. Supports Edit Layers for isolated modifications and easy reversibility.
+:::
 
 ---
 
@@ -39,9 +46,9 @@ Before applying river deformation, ensure your Landscape is properly configured 
 Enter **Landscape Mode** by selecting it from the **Modes** panel or pressing `Shift + 3`. The Landscape tools will appear in the left panel.
 
 **Key Tool Categories:**
-- **Sculpt** — Manual terrain modification tools (Sculpt, Erase, Smooth, Flatten, Ramp, Erosion, Hydro, Noise, etc.)
-- **Manage** — Landscape component and streaming settings
-- **Paint** — Material layer painting
+- **Sculpt** - Manual terrain modification tools (Sculpt, Erase, Smooth, Flatten, Ramp, Erosion, Hydro, Noise, etc.)
+- **Manage** - Landscape component and streaming settings
+- **Paint** - Material layer painting
 
 **Recommended Brush Settings for River Work:**
 
@@ -53,7 +60,7 @@ Enter **Landscape Mode** by selecting it from the **Modes** panel or pressing `S
 | **Apply Without Moving** | ✅ Enabled | Allows continuous application while stationary |
 
 **Edit Layers:**
-If your Landscape uses Edit Layers, select or create a dedicated layer for river deformation. This isolates changes and allows easy modification or removal later. In the **Layers** section, you can see `Layer` with `Alpha: 1` — this is the active editing layer.
+If your Landscape uses Edit Layers, select or create a dedicated layer for river deformation. This isolates changes and allows easy modification or removal later. In the **Layers** section, you can see `Layer` with `Alpha: 1` - this is the active editing layer.
 
 ![Landscape Mode sculpting tools](Landscape/RiverologyLandscape_02.png)
 :::
@@ -62,8 +69,8 @@ If your Landscape uses Edit Layers, select or create a dedicated layer for river
 Select the **BP_Riverology** actor in your level. In the **Details** panel, locate the **Riverology Landscape** category. This section controls how the river spline deforms the terrain.
 
 **Component Hierarchy:**
-- **Root (Root)** — The base transform node
-- **Spline Component (Spline)** — Defines the river's path through the level
+- **Root (Root)** - The base transform node
+- **Spline Component (Spline)** - Defines the river's path through the level
 
 **Landscape Settings:**
 
@@ -121,7 +128,7 @@ These toggles provide safety controls:
 
 | Configuration | Use Case |
 |---------------|----------|
-| **Both Enabled** | Full deformation — creates complete riverbeds with banks |
+| **Both Enabled** | Full deformation - creates complete riverbeds with banks |
 | **Only Lower** | Carves channels without raising any terrain |
 | **Only Raise** | Creates levees/embankments without cutting into terrain |
 | **Both Disabled** | Deformation preview only (no terrain changes) |
@@ -132,10 +139,10 @@ These toggles provide safety controls:
 
 ### Initial River Placement
 
-1. **Plan the path** — Sketch the river route before deforming terrain.
-2. **Use Edit Layers** — Create a dedicated layer named "Rivers" for all water deformation.
-3. **Start with defaults** — Apply initial deformation, then refine parameters.
-4. **Work incrementally** — Apply changes in sections rather than the entire river at once.
+1. **Plan the path** - Sketch the river route before deforming terrain.
+2. **Use Edit Layers** - Create a dedicated layer named "Rivers" for all water deformation.
+3. **Start with defaults** - Apply initial deformation, then refine parameters.
+4. **Work incrementally** - Apply changes in sections rather than the entire river at once.
 
 ### Parameter Tuning
 
@@ -150,10 +157,10 @@ These toggles provide safety controls:
 
 After applying spline deformation, you can use manual Landscape tools for refinement:
 
-- **Smooth** — Blend harsh transitions at river junctions
-- **Erosion** — Add natural weathering patterns to banks
-- **Hydro** — Simulate water erosion for realistic flow channels
-- **Noise** — Add subtle variation to prevent uniform appearance
+- **Smooth** - Blend harsh transitions at river junctions
+- **Erosion** - Add natural weathering patterns to banks
+- **Hydro** - Simulate water erosion for realistic flow channels
+- **Noise** - Add subtle variation to prevent uniform appearance
 
 ---
 
@@ -188,11 +195,11 @@ After applying spline deformation, you can use manual Landscape tools for refine
 
 In this guide, you learned how to:
 
-1. **Add the Riverology actor** — Place BP_Riverology in your level using the Quick Add menu.
-2. **Prepare the Landscape** — Configure Landscape Mode and Edit Layers for controlled editing.
-3. **Configure deformation settings** — Understand and adjust Deform Width, Falloff, and height toggles.
-4. **Apply spline deformation** — Use Editor Apply Spline to carve riverbeds automatically.
-5. **Tune parameters for different river types** — Match settings to your desired river character.
-6. **Integrate with other systems** — Understand how landscape deformation works with water rendering, buoyancy, and foliage.
+1. **Add the Riverology actor** - Place BP_Riverology in your level using the Quick Add menu.
+2. **Prepare the Landscape** - Configure Landscape Mode and Edit Layers for controlled editing.
+3. **Configure deformation settings** - Understand and adjust Deform Width, Falloff, and height toggles.
+4. **Apply spline deformation** - Use Editor Apply Spline to carve riverbeds automatically.
+5. **Tune parameters for different river types** - Match settings to your desired river character.
+6. **Integrate with other systems** - Understand how landscape deformation works with water rendering, buoyancy, and foliage.
 
 With this knowledge, you can create realistic river valleys that integrate seamlessly with Oceanology's water simulation, producing natural-looking waterways that properly interact with buoyant objects and flow dynamics.

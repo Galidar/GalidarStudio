@@ -3,20 +3,28 @@ title: Underwater
 sidebar_label: Underwater
 ---
 
-# Riverology — Underwater
+# Riverology - Underwater
 
-_Last updated: 2025-12-09_
+<div className="doc-badge doc-badge-violet">🌊 Volumetric Effects</div>
+<div className="doc-badge doc-badge-cyan">🎨 Post-Processing</div>
+<div className="doc-badge doc-badge-emerald">🐟 Immersive</div>
+
+Create immersive underwater environments with fog, light absorption, and color tinting.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.6 or newer.
-- **Riverology** installed and configured (see the **Setup** page).
-- At least one **BP_Riverology** river spline placed in your level.
-- Basic understanding of **post-processing** and **fog systems** in Unreal Engine.
 
-## Notes
-- The Underwater settings in Riverology control the visual appearance when the camera submerges beneath the river surface. These parameters define fog density, light absorption, color tinting, and surface effects that create a realistic underwater experience.
-- The system automatically detects when the camera enters the water volume and applies the configured post-processing effects.
-- Properly tuned underwater settings are essential for immersive swimming gameplay and underwater exploration sequences.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Riverology installed and configured |
+| **Scene** | BP_Riverology river spline in your level |
+| **Skills** | Basic post-processing understanding |
+
+:::info About Underwater Effects
+The system automatically detects camera submersion and applies post-processing effects - fog density, light absorption, and color tinting. Essential for immersive swimming gameplay.
+:::
 
 ---
 
@@ -26,28 +34,28 @@ _Last updated: 2025-12-09_
 Select **BP_Riverology** in your scene and scroll through the **Details** panel to find the **Underwater** category. This section contains all parameters that control the underwater visual experience:
 
 **Fog Settings:**
-- **Enable Fog** — ✅ Enables underwater fog rendering.
-- **Light Absorption** — Controls how quickly light diminishes with depth (default: 5.0). Higher values create darker, murkier water.
-- **Fog Scatter Color** — The color of light scattered by particles in the water.
-- **Fog Ambient Color** — The ambient fog color that fills the underwater environment.
-- **Absorption** — The color absorbed by the water, affecting the overall tint.
-- **Fog** — Fog density value (default: 0.005). Higher values reduce visibility distance.
+- **Enable Fog** - ✅ Enables underwater fog rendering.
+- **Light Absorption** - Controls how quickly light diminishes with depth (default: 5.0). Higher values create darker, murkier water.
+- **Fog Scatter Color** - The color of light scattered by particles in the water.
+- **Fog Ambient Color** - The ambient fog color that fills the underwater environment.
+- **Absorption** - The color absorbed by the water, affecting the overall tint.
+- **Fog** - Fog density value (default: 0.005). Higher values reduce visibility distance.
 
 **Surface Band Settings:**
-- **Band Color** — The color of the surface band visible from underwater.
-- **Band Width** — Width of the surface transition band (default: 2.0).
-- **Band Offset** — Vertical offset of the band effect (default: 1.0).
-- **Band Opacity** — Opacity of the surface band (default: 1.0).
+- **Band Color** - The color of the surface band visible from underwater.
+- **Band Width** - Width of the surface transition band (default: 2.0).
+- **Band Offset** - Vertical offset of the band effect (default: 1.0).
+- **Band Opacity** - Opacity of the surface band (default: 1.0).
 
 **Scattering and Wet Effects:**
-- **Scattering Aniso** — Anisotropy of light scattering underwater (default: 0.75).
-- **Wet Location** — Position reference for wet effects (default: 0.0).
-- **Wet Hardness** — Sharpness of the wet/dry transition (default: 0.15).
-- **Wet Radius** — Radius of wet effect application (default: 3.0).
-- **Wet Alpha** — Opacity of wet surface effects (default: 0.2).
+- **Scattering Aniso** - Anisotropy of light scattering underwater (default: 0.75).
+- **Wet Location** - Position reference for wet effects (default: 0.0).
+- **Wet Hardness** - Sharpness of the wet/dry transition (default: 0.15).
+- **Wet Radius** - Radius of wet effect application (default: 3.0).
+- **Wet Alpha** - Opacity of wet surface effects (default: 0.2).
 
 **Depth Settings:**
-- **Max Depth** — Maximum depth for underwater calculations (default: 45000.0).
+- **Max Depth** - Maximum depth for underwater calculations (default: 45000.0).
 
 ![Underwater parameters in Details panel](Underwater/RIvarologyUnderwater_01.png)
 :::
@@ -56,10 +64,10 @@ Select **BP_Riverology** in your scene and scroll through the **Details** panel 
 Press **Play** and submerge the camera beneath the river surface to observe how your Underwater settings affect the visual experience.
 
 **Key visual elements:**
-- **Fog density** — How quickly distant objects fade into the fog color.
-- **Color absorption** — The overall tint and mood of the underwater environment.
-- **Surface visibility** — The band effect visible when looking up toward the surface.
-- **Light behavior** — How light rays penetrate and scatter through the water.
+- **Fog density** - How quickly distant objects fade into the fog color.
+- **Color absorption** - The overall tint and mood of the underwater environment.
+- **Surface visibility** - The band effect visible when looking up toward the surface.
+- **Light behavior** - How light rays penetrate and scatter through the water.
 
 The image shows a typical underwater view with fog absorption creating depth, the riverbed visible below, and the water surface with refraction effects visible above.
 
@@ -74,10 +82,10 @@ The image shows a typical underwater view with fog absorption creating depth, th
 |-----------|---------|-------------|
 | **Enable Fog** | true | Enables underwater fog rendering |
 | **Light Absorption** | 5.0 | Light falloff rate with depth |
-| **Fog Scatter Color** | — | Color of scattered light particles |
-| **Fog Ambient Color** | — | Ambient fill color underwater |
-| **Absorption** | — | Water color absorption tint |
-| **Band Color** | — | Surface band color from below |
+| **Fog Scatter Color** | - | Color of scattered light particles |
+| **Fog Ambient Color** | - | Ambient fill color underwater |
+| **Absorption** | - | Water color absorption tint |
+| **Band Color** | - | Surface band color from below |
 | **Band Width** | 2.0 | Surface transition band width |
 | **Band Offset** | 1.0 | Vertical band position offset |
 | **Band Opacity** | 1.0 | Surface band visibility |
@@ -120,8 +128,8 @@ The image shows a typical underwater view with fog absorption creating depth, th
 
 In this guide, you learned how to:
 
-1. **Configure underwater fog** — Set up fog density, absorption, and scatter colors for realistic depth perception.
-2. **Adjust surface band effects** — Control the visual transition when looking at the surface from below.
-3. **Fine-tune wet effects** — Configure the wet surface appearance parameters.
+1. **Configure underwater fog** - Set up fog density, absorption, and scatter colors for realistic depth perception.
+2. **Adjust surface band effects** - Control the visual transition when looking at the surface from below.
+3. **Fine-tune wet effects** - Configure the wet surface appearance parameters.
 
 These settings create the immersive underwater experience essential for swimming gameplay and underwater exploration in your Riverology rivers.

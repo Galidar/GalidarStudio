@@ -3,27 +3,32 @@ title: RVT Heightmap
 sidebar_label: RVT Heightmap
 ---
 
-# Oceanology Legacy — RVT Heightmap
+# Oceanology Legacy - RVT Heightmap
 
-_Last updated: 2025-12-06_
+<div className="doc-badge doc-badge-violet">🏖️ Shoreline Effects</div>
+<div className="doc-badge doc-badge-cyan">🌊 Water-Terrain Interaction</div>
+<div className="doc-badge doc-badge-emerald">📐 Runtime Virtual Texture</div>
+
+Enable realistic water-terrain interaction with dynamic shoreline foam, depth effects, and wave masking.
+
+---
 
 ## Overview
 
-**RVT Heightmap** (Runtime Virtual Texture Heightmap) is a powerful feature that enables realistic water-terrain interaction in Oceanology Legacy. By reading the landscape's height data through Unreal Engine's Runtime Virtual Texture system, the ocean can dynamically generate shoreline foam, wave masking, and depth-based effects where water meets land.
+**RVT Heightmap** enables realistic water-terrain interaction by reading landscape height data through Unreal Engine's Runtime Virtual Texture system. The ocean dynamically generates effects where water meets land.
 
-This system creates beautiful coastal effects including:
-- **Shoreline foam** — White foam that appears where waves touch the beach
-- **Depth-based transparency** — Water becomes clearer in shallow areas
-- **Wave masking** — Waves naturally flatten near the shore
-- **Still shore areas** — Calm water in very shallow regions
+| Effect | Description |
+|--------|-------------|
+| **Shoreline Foam** | White foam appears where waves touch the beach |
+| **Depth Transparency** | Water becomes clearer in shallow areas |
+| **Wave Masking** | Waves naturally flatten near the shore |
+| **Still Shore Areas** | Calm water in very shallow regions |
 
 ## How RVT Heightmap Works
 
-The RVT system works by:
-
-1. **Landscape writes height** — Your landscape material outputs its world height to a Runtime Virtual Texture.
-2. **Ocean reads height** — The ocean material samples this texture to know where the terrain is.
-3. **Effects are calculated** — Based on the height difference between water surface and terrain, the ocean generates foam, adjusts transparency, and modifies wave behavior.
+1. **Landscape writes height** - Your landscape material outputs world height to a Runtime Virtual Texture
+2. **Ocean reads height** - The ocean material samples this texture to know terrain position
+3. **Effects are calculated** - Based on the height difference between water surface and terrain, the ocean generates foam, adjusts transparency, and modifies wave behavior.
 
 This GPU-based approach is highly performant and works with any landscape shape, including complex coastlines, islands, and underwater terrain.
 
@@ -51,26 +56,26 @@ This GPU-based approach is highly performant and works with any landscape shape,
 Open your level and use the **Quickly Add to the Project** menu (the `+` button in the toolbar or right-click in the viewport). Search for `oceanology` to filter the available actors.
 
 You will need to drag the following actors into your scene:
-- **Oceanology Manager** — The central controller that manages all Oceanology systems, including RVT Heightmap configuration.
-- **Oceanology Water Niagara Waves Volume** — Optional volume for Niagara-based wave effects.
-- **Oceanology Water Volume** — Defines the region where water interactions occur.
-- **BP_OceanologyInfiniteOcean** — The infinite ocean water body.
-- **BP_OceanologyLake** _(optional)_ — A bounded lake water body.
+- **Oceanology Manager** - The central controller that manages all Oceanology systems, including RVT Heightmap configuration.
+- **Oceanology Water Niagara Waves Volume** - Optional volume for Niagara-based wave effects.
+- **Oceanology Water Volume** - Defines the region where water interactions occur.
+- **BP_OceanologyInfiniteOcean** - The infinite ocean water body.
+- **BP_OceanologyLake** _(optional)_ - A bounded lake water body.
 
 For RVT Heightmap, the critical actors are **Oceanology Manager** (which contains the heightmap configuration) and **BP_OceanologyInfiniteOcean** (which contains the RVT settings).
 
 ![Add the required Oceanology actors](RVT/LegacyRVT_01.png)
 :::
 
-:::note 2. Configure the Oceanology Manager — Heightmap Settings
+:::note 2. Configure the Oceanology Manager - Heightmap Settings
 Select the **OceanologyManager** actor in the **Outliner**. In the **Details** panel, you will see the **HeightmapVirtualTextureComponent** as part of the actor hierarchy.
 
 Expand the component and configure the **Heightmap** category:
 
 **Transform:**
-- **Location** — Position that covers your landscape. Example: `(-12600.0, -12600.0, -900.0)`
-- **Rotation** — `(0.0, 0.0, 0.0)`
-- **Scale** — Size of the heightmap coverage area. Example: `(25200.0, 25200.0, 2296.09375)` — This should encompass your entire landscape.
+- **Location** - Position that covers your landscape. Example: `(-12600.0, -12600.0, -900.0)`
+- **Rotation** - `(0.0, 0.0, 0.0)`
+- **Scale** - Size of the heightmap coverage area. Example: `(25200.0, 25200.0, 2296.09375)` - This should encompass your entire landscape.
 
 **Heightmap Settings:**
 | Property | Value | Explanation |
@@ -81,9 +86,9 @@ Expand the component and configure the **Heightmap** category:
 | **RT Heightmap** | `RT_Heightmap_31` | The Render Target asset used for heightmap storage. Oceanology provides this asset. |
 
 **Action Buttons:**
-- **Setup Landscape/Ground Mesh** — Click to automatically configure your landscape to write to the RVT.
-- **Save Heightmap** — Bakes the current heightmap to a static texture for improved performance.
-- **Setup Water** — Configures the ocean to read from this heightmap.
+- **Setup Landscape/Ground Mesh** - Click to automatically configure your landscape to write to the RVT.
+- **Save Heightmap** - Bakes the current heightmap to a static texture for improved performance.
+- **Setup Water** - Configures the ocean to read from this heightmap.
 
 **Advanced:**
 | Property | Value | Explanation |
@@ -99,19 +104,19 @@ Expand the component and configure the **Heightmap** category:
 ![Oceanology Manager Heightmap Settings](RVT/LegacyRVT_02.png)
 :::
 
-:::note 3. Configure the Landscape — Virtual Texture Settings
+:::note 3. Configure the Landscape - Virtual Texture Settings
 Select your **Landscape** actor in the **Outliner**. In the **Details** panel, configure the **Virtual Texture** category:
 
 **Transform:**
-- **Location** — Your landscape position. Example: `(-12600.0, -12600.0, -800.0)`
-- **Rotation** — `(0.0, 0.0, 0.0)`
-- **Scale** — `(100.0, 100.0, 100.0)` (typical landscape scale)
+- **Location** - Your landscape position. Example: `(-12600.0, -12600.0, -800.0)`
+- **Rotation** - `(0.0, 0.0, 0.0)`
+- **Scale** - `(100.0, 100.0, 100.0)` (typical landscape scale)
 
 **Virtual Texture Settings:**
 | Property | Value | Explanation |
 |----------|-------|-------------|
 | **Draw in Virtual Textures** | `1 Array element` | The list of RVTs this landscape writes to. |
-| **Index [0]** | `RVT_Heightmap` | The Runtime Virtual Texture asset. Oceanology provides this asset — select it from the dropdown. |
+| **Index [0]** | `RVT_Heightmap` | The Runtime Virtual Texture asset. Oceanology provides this asset - select it from the dropdown. |
 | **Create Volumes** | Button | Creates the necessary RVT volumes in your level. Click this after assigning the RVT. |
 | **Draw in Main Pass** | `Always` | Ensures the landscape renders in both the main pass and the virtual texture pass. |
 
@@ -128,7 +133,7 @@ Select your **Landscape** actor in the **Outliner**. In the **Details** panel, c
 ![Landscape Virtual Texture Settings](RVT/LegacyRVT_03.png)
 :::
 
-:::note 4. Configure the Landscape Material — RVT Output
+:::note 4. Configure the Landscape Material - RVT Output
 Your landscape material must output its height data to the Runtime Virtual Texture. Oceanology provides a ready-to-use material called **M_RVTLandscape**.
 
 Open **M_RVTLandscape** in the Material Editor. The key setup is:
@@ -144,31 +149,31 @@ Open **M_RVTLandscape** in the Material Editor. The key setup is:
 | **Use Material Attributes** | ✅ Enabled | Enables material attribute passing. |
 | **Cast Ray Traced Shadows** | ✅ Enabled | Allows ray-traced shadow casting. |
 
-**Material Graph — Get Heightmap Function:**
+**Material Graph - Get Heightmap Function:**
 
 The material contains a **"Get Heightmap"** Material Function that:
 
-1. **Absolute World Position** node — Gets the current pixel's world position.
-2. **Component Mask (Z)** — Extracts the Z (height) component.
-3. **Runtime Virtual Texture Output** — Writes the height to the RVT.
+1. **Absolute World Position** node - Gets the current pixel's world position.
+2. **Component Mask (Z)** - Extracts the Z (height) component.
+3. **Runtime Virtual Texture Output** - Writes the height to the RVT.
 
 The **Runtime Virtual Texture Output** node has these connections:
-- **BaseColor** — (optional) Landscape base color
-- **Specular** — (optional) Specular value
-- **Roughness** — (optional) Roughness value
-- **Normal** — (optional) Normal map
-- **WorldHeight** — **Critical!** Connect the Z component of Absolute World Position here
-- **Opacity** — (optional) Opacity value
-- **Mask** — (optional) Mask value
-- **Displacement** — (optional) Displacement value
-- **Mask4** — (optional) Additional mask
+- **BaseColor** - (optional) Landscape base color
+- **Specular** - (optional) Specular value
+- **Roughness** - (optional) Roughness value
+- **Normal** - (optional) Normal map
+- **WorldHeight** - **Critical!** Connect the Z component of Absolute World Position here
+- **Opacity** - (optional) Opacity value
+- **Mask** - (optional) Mask value
+- **Displacement** - (optional) Displacement value
+- **Mask4** - (optional) Additional mask
 
-**The WorldHeight output is the essential connection** — this is what the ocean reads to generate shoreline effects.
+**The WorldHeight output is the essential connection** - this is what the ocean reads to generate shoreline effects.
 
 ![M_RVTLandscape Material Graph](RVT/LegacyRVT_04.png)
 :::
 
-:::note 5. Configure the Ocean — RVT Settings
+:::note 5. Configure the Ocean - RVT Settings
 Select **OceanologyInfiniteOcean** (or your ocean actor) in the **Outliner**. In the **Details** panel, locate the **RVT** category:
 
 **Scene Hierarchy:**
@@ -203,14 +208,14 @@ Your Outliner should show:
 ![OceanologyInfiniteOcean RVT Settings](RVT/LegacyRVT_05.png)
 :::
 
-:::note 6. Verify the Result — Shoreline Foam
+:::note 6. Verify the Result - Shoreline Foam
 After completing the configuration, enter **Play mode** or use **Simulate** to see the RVT Heightmap in action.
 
 You should see:
 - **White foam** appearing where the ocean meets the landscape
 - **Smooth transitions** from deep water to shallow areas
-- **Wave masking** — waves naturally flatten as they approach the shore
-- **Depth-based effects** — water clarity changes based on depth
+- **Wave masking** - waves naturally flatten as they approach the shore
+- **Depth-based effects** - water clarity changes based on depth
 
 The image shows a typical result: foam correctly appearing at the water-terrain intersection, creating a realistic shoreline effect.
 
@@ -220,7 +225,7 @@ The image shows a typical result: foam correctly appearing at the water-terrain 
 3. Ensure your landscape material outputs **WorldHeight** to the Runtime Virtual Texture Output.
 4. Click **Setup Landscape/Ground Mesh** and **Setup Water** in the Oceanology Manager.
 
-![RVT Heightmap Result — Shoreline Foam](RVT/LegacyRVT_06.png)
+![RVT Heightmap Result - Shoreline Foam](RVT/LegacyRVT_06.png)
 :::
 
 ---
@@ -315,13 +320,13 @@ Use this checklist for rapid RVT Heightmap setup:
 
 In this guide, you learned how to:
 
-1. **Understand RVT Heightmap** — How the ocean reads terrain height for shoreline effects.
-2. **Add Oceanology actors** — Set up the Manager and Ocean in your scene.
-3. **Configure Oceanology Manager** — Set up the heightmap component with proper bounds and resolution.
-4. **Configure the Landscape** — Enable RVT output and assign the heightmap texture.
-5. **Set up the landscape material** — Ensure WorldHeight is output to the Runtime Virtual Texture.
-6. **Configure the ocean RVT settings** — Enable VirtualTexture and tune depth parameters.
-7. **Verify the result** — Confirm shoreline foam appears correctly.
+1. **Understand RVT Heightmap** - How the ocean reads terrain height for shoreline effects.
+2. **Add Oceanology actors** - Set up the Manager and Ocean in your scene.
+3. **Configure Oceanology Manager** - Set up the heightmap component with proper bounds and resolution.
+4. **Configure the Landscape** - Enable RVT output and assign the heightmap texture.
+5. **Set up the landscape material** - Ensure WorldHeight is output to the Runtime Virtual Texture.
+6. **Configure the ocean RVT settings** - Enable VirtualTexture and tune depth parameters.
+7. **Verify the result** - Confirm shoreline foam appears correctly.
 
 RVT Heightmap is essential for creating realistic coastal environments. The system is highly performant and works with any terrain shape, making it ideal for open-world games with complex coastlines.
 

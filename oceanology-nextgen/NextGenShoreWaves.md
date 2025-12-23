@@ -3,21 +3,28 @@ title: Shore Waves
 sidebar_label: Shore Waves
 ---
 
-# Oceanology Next-Gen — Shore Waves
+# Oceanology NextGen - Shore Waves
 
-_Last updated: 2025-12-13_
+<div className="doc-badge doc-badge-violet">🏖️ Breaking Waves</div>
+<div className="doc-badge doc-badge-cyan">🌊 Coastal Physics</div>
+<div className="doc-badge doc-badge-emerald">🎨 Math-Based</div>
+
+Simulate realistic coastal wave behavior with math-based breaking waves and directional flow.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.5 or newer.
-- **Oceanology** installed and configured (see the **Setup** page).
-- At least one **OceanologyInfiniteOcean** actor placed in your level.
-- A landscape or coastline geometry for waves to interact with.
-- Basic familiarity with **wave physics** concepts in Unreal Engine.
 
-## Notes
-- The Shore Waves system in Oceanology simulates realistic coastal wave behavior where ocean waves interact with the shoreline. This includes wave breaking, directional flow, and the characteristic swaying motion seen on real beaches.
-- Shore waves work in conjunction with the main ocean wave system but add specialized behavior for shallow water and coastal areas.
-- For visual shore wave effects using particles, you can add the **Oceanology Water Niagara Waves Volume** actor to your scene.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Oceanology NextGen installed and configured |
+| **Scene** | Ocean actor + landscape/coastline geometry |
+| **Skills** | Basic wave physics understanding |
+
+:::info About Shore Waves
+Shore Waves simulate coastal behavior where ocean waves interact with shorelines - wave breaking, directional flow, and beach swaying. Add **Oceanology Water Niagara Waves Volume** for visual particle effects.
+:::
 
 ---
 
@@ -29,12 +36,12 @@ Open your level and use the **Quickly Add to the Project** menu (the `+` button 
 Locate the following shore-related actors:
 
 **Volumes:**
-- **Oceanology Water Niagara Waves Volume** — Creates visual particle effects for breaking waves along shorelines. This volume triggers Niagara particle systems when waves reach the coast.
-- **Oceanology Water Volume** — General water interaction volume for buoyancy and swimming.
+- **Oceanology Water Niagara Waves Volume** - Creates visual particle effects for breaking waves along shorelines. This volume triggers Niagara particle systems when waves reach the coast.
+- **Oceanology Water Volume** - General water interaction volume for buoyancy and swimming.
 
 **Other useful actors:**
-- **Oceanology Infinite Ocean** — The main ocean water body.
-- **Oceanology Water Interactor** — Enables object interaction with water surfaces.
+- **Oceanology Infinite Ocean** - The main ocean water body.
+- **Oceanology Water Interactor** - Enables object interaction with water surfaces.
 
 Drag **Oceanology Water Niagara Waves Volume** into your scene and position it along your coastline where you want breaking wave effects to appear.
 
@@ -45,24 +52,24 @@ Drag **Oceanology Water Niagara Waves Volume** into your scene and position it a
 Select the **OceanologyInfiniteOcean** actor in your level. In the **Details** panel, locate and expand the **Shore Waves** category. Here you will find all parameters controlling coastal wave behavior:
 
 **Transition Settings:**
-- **BaseWaveTransitionFactor** — `200.0`. Controls how waves transition from deep water behavior to shore wave behavior. Higher values create a more gradual transition.
+- **BaseWaveTransitionFactor** - `200.0`. Controls how waves transition from deep water behavior to shore wave behavior. Higher values create a more gradual transition.
 
 **Coastal Wave Toggle:**
-- **CoastalWaves** — ✅ **Enabled**. Master toggle for the shore wave system. When disabled, waves will not exhibit coastal breaking behavior.
+- **CoastalWaves** - ✅ **Enabled**. Master toggle for the shore wave system. When disabled, waves will not exhibit coastal breaking behavior.
 
 **Wave Motion:**
-- **DirectionWaveSpeed** — `250.0`. The speed at which waves travel toward the shore. Higher values create faster-moving coastal waves.
-- **GlobalNoiseScale** — `20000.0`. Scale of the noise pattern applied to wave variation. Larger values create broader, more gradual variations.
-- **GlobalWaveScale** — `0.25`. Overall scale multiplier for shore wave intensity. Values below 1.0 reduce wave prominence.
+- **DirectionWaveSpeed** - `250.0`. The speed at which waves travel toward the shore. Higher values create faster-moving coastal waves.
+- **GlobalNoiseScale** - `20000.0`. Scale of the noise pattern applied to wave variation. Larger values create broader, more gradual variations.
+- **GlobalWaveScale** - `0.25`. Overall scale multiplier for shore wave intensity. Values below 1.0 reduce wave prominence.
 
 **Breaking Wave Behavior:**
-- **SideBreakForce** — `500.0`. Force applied to waves as they break sideways along the shore. Creates the characteristic lateral spread of breaking waves.
-- **WaveHeight** — `-1500.0`. The vertical displacement of shore waves. Negative values indicate waves that curl downward as they break.
-- **WaveLength** — `4000.0`. Distance between wave crests along the shoreline. Larger values create longer, more spread-out wave patterns.
+- **SideBreakForce** - `500.0`. Force applied to waves as they break sideways along the shore. Creates the characteristic lateral spread of breaking waves.
+- **WaveHeight** - `-1500.0`. The vertical displacement of shore waves. Negative values indicate waves that curl downward as they break.
+- **WaveLength** - `4000.0`. Distance between wave crests along the shoreline. Larger values create longer, more spread-out wave patterns.
 
 **Animation:**
-- **WavePhaseSpeed** — `1.0`. Speed of the wave phase animation. Higher values make waves cycle faster.
-- **WaveSwayAmplitude** — `500.0`. The side-to-side swaying motion of waves as they approach shore. Creates natural oscillation in wave direction.
+- **WavePhaseSpeed** - `1.0`. Speed of the wave phase animation. Higher values make waves cycle faster.
+- **WaveSwayAmplitude** - `500.0`. The side-to-side swaying motion of waves as they approach shore. Creates natural oscillation in wave direction.
 
 ![Shore Waves settings in Details panel](NextGenShoreWaves/NextGenShoreWaves_02.png)
 :::
@@ -118,7 +125,7 @@ Select the **OceanologyInfiniteOcean** actor in your level. In the **Details** p
 
 In this guide, you learned how to:
 
-1. **Add visual wave effects** — Use the Water Niagara Waves Volume for particle-based breaking wave effects.
-2. **Configure Shore Waves settings** — Adjust wave height, speed, and breaking behavior for realistic coastal simulation.
+1. **Add visual wave effects** - Use the Water Niagara Waves Volume for particle-based breaking wave effects.
+2. **Configure Shore Waves settings** - Adjust wave height, speed, and breaking behavior for realistic coastal simulation.
 
 With Shore Waves properly configured, your coastlines will feature realistic breaking wave behavior that responds naturally to the shoreline geometry, creating immersive beach and coastal environments.

@@ -3,21 +3,28 @@ title: Waves
 sidebar_label: Waves
 ---
 
-# Oceanology Legacy — Waves
+# Oceanology Legacy - Waves
 
-_Last updated: 2025-12-08_
+<div className="doc-badge doc-badge-violet">🌊 Gerstner Simulation</div>
+<div className="doc-badge doc-badge-cyan">⚙️ 4 Wave Layers</div>
+<div className="doc-badge doc-badge-emerald">🎮 Deterministic</div>
+
+Configure Gerstner wave parameters to create calm seas, stormy oceans, or anything in between.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.6 or newer.
-- **Oceanology Legacy** installed and configured (see the **Setup** page).
-- At least one **Oceanology Legacy** water body placed in your level (infinite ocean or lake).
-- Basic familiarity with **Blueprints** and **material parameters** in Unreal Engine.
 
-## Notes
-- Oceanology Legacy uses **Gerstner Waves** to simulate realistic ocean surface displacement. Gerstner waves are a mathematical model that creates the characteristic circular motion of water particles, producing natural-looking wave peaks and troughs.
-- The wave system is divided into two control levels: **Global parameters** that affect the entire ocean uniformly, and **Custom parameters** that allow fine-tuning of individual wave layers.
-- Oceanology Legacy supports **4 wave layers (Σ1–Σ4)** that combine to create complex, organic wave patterns. Each layer can have different amplitude, speed, wavelength, and direction.
-- Wave parameters directly affect **Buoyancy** calculations — any changes to wave settings will influence how objects float and respond to the water surface.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Oceanology Legacy installed and configured |
+| **Scene** | At least one water body in your level |
+| **Skills** | Basic Blueprint and material parameter familiarity |
+
+:::info About Gerstner Waves
+Oceanology Legacy uses **Gerstner Waves** - a mathematical model creating circular water particle motion for natural-looking wave peaks and troughs. The system supports **4 wave layers (Σ1-Σ4)** that combine for complex, organic patterns. Wave parameters directly affect **Buoyancy** calculations.
+:::
 
 ---
 
@@ -29,19 +36,19 @@ Open your level and use the **Quickly Add to the Project** menu (the `+` button 
 You will see several Oceanology actors available:
 
 **Core Actors:**
-- **Oceanology Manager** — The central controller for all Oceanology systems. Required for waves and other features to function.
-- **Oceanology Water Volume** — Defines regions for buoyancy and underwater effects.
+- **Oceanology Manager** - The central controller for all Oceanology systems. Required for waves and other features to function.
+- **Oceanology Water Volume** - Defines regions for buoyancy and underwater effects.
 
 **Water Bodies:**
-- **BP_OceanologyInfiniteOcean** — An infinite ocean water body with full wave simulation. Use this for open sea environments.
-- **BP_OceanologyLake** — A bounded lake water body. Lakes can also have wave settings but typically use calmer configurations.
-- **Oceanology Infinite Ocean** — Alternative infinite ocean actor.
-- **Oceanology Lake** — Alternative lake actor.
+- **BP_OceanologyInfiniteOcean** - An infinite ocean water body with full wave simulation. Use this for open sea environments.
+- **BP_OceanologyLake** - A bounded lake water body. Lakes can also have wave settings but typically use calmer configurations.
+- **Oceanology Infinite Ocean** - Alternative infinite ocean actor.
+- **Oceanology Lake** - Alternative lake actor.
 
 **Utility Actors:**
-- **Oceanology Water Niagara Waves Volume** — Enables Niagara-based wave effects in specific regions.
-- **Oceanology Material to Struct Converter** — Utility for converting material parameters.
-- **Oceanology Water Surface Debugger** — Visualizes wave calculations for debugging.
+- **Oceanology Water Niagara Waves Volume** - Enables Niagara-based wave effects in specific regions.
+- **Oceanology Material to Struct Converter** - Utility for converting material parameters.
+- **Oceanology Water Surface Debugger** - Visualizes wave calculations for debugging.
 
 For this guide, drag **BP_OceanologyInfiniteOcean** into your scene along with the **Oceanology Manager**.
 
@@ -126,9 +133,9 @@ To create more dramatic, stormy waves, modify the **Gerstner Waves (Global)** pa
 | **Choppiness** | `3.0` | `3.0` | Choppiness unchanged (increase for sharper peaks) |
 
 The key changes are:
-1. **Reduced Size** — Creates more wave frequency across the surface.
-2. **Increased Overall Length** — Produces longer, more dramatic swells.
-3. **Quadrupled Global Amplitude** — Dramatically increases wave height for stormy appearance.
+1. **Reduced Size** - Creates more wave frequency across the surface.
+2. **Increased Overall Length** - Produces longer, more dramatic swells.
+3. **Quadrupled Global Amplitude** - Dramatically increases wave height for stormy appearance.
 
 These settings produce an aggressive ocean surface with whitecaps and steep wave faces, suitable for storm sequences, dramatic ship battles, or survival scenarios.
 
@@ -137,10 +144,10 @@ These settings produce an aggressive ocean surface with whitecaps and steep wave
 
 :::note 6. Preview the stormy wave result
 The modified settings create a visibly more turbulent ocean surface with:
-- **Higher wave peaks** — More pronounced vertical displacement
-- **Deeper troughs** — Increased contrast between peaks and valleys
-- **More whitecaps** — Foam appears on wave crests due to steeper angles
-- **Dynamic movement** — The surface feels more alive and threatening
+- **Higher wave peaks** - More pronounced vertical displacement
+- **Deeper troughs** - Increased contrast between peaks and valleys
+- **More whitecaps** - Foam appears on wave crests due to steeper angles
+- **Dynamic movement** - The surface feels more alive and threatening
 
 **Important Considerations:**
 - Higher amplitude waves will cause buoyant objects to rock more dramatically.
@@ -235,12 +242,12 @@ Wave settings affect multiple Oceanology systems:
 
 In this guide, you learned how to:
 
-1. **Add Oceanology water bodies** — Place the Infinite Ocean and Manager actors in your level.
-2. **Access wave settings** — Find the Gerstner Waves category in the water body's Details panel.
-3. **Understand Global parameters** — Control overall wave scale, amplitude, speed, and choppiness.
-4. **Understand Custom parameters** — Fine-tune base offsets and individual wave layers (Σ1–Σ4).
-5. **Create calm vs. stormy seas** — Adjust parameters to achieve different ocean moods.
-6. **Use preset configurations** — Apply common wave scenarios as starting points.
-7. **Understand system interactions** — Recognize how waves affect buoyancy, swimming, and other features.
+1. **Add Oceanology water bodies** - Place the Infinite Ocean and Manager actors in your level.
+2. **Access wave settings** - Find the Gerstner Waves category in the water body's Details panel.
+3. **Understand Global parameters** - Control overall wave scale, amplitude, speed, and choppiness.
+4. **Understand Custom parameters** - Fine-tune base offsets and individual wave layers (Σ1–Σ4).
+5. **Create calm vs. stormy seas** - Adjust parameters to achieve different ocean moods.
+6. **Use preset configurations** - Apply common wave scenarios as starting points.
+7. **Understand system interactions** - Recognize how waves affect buoyancy, swimming, and other features.
 
 With this knowledge, you can create any ocean condition from tranquil lakes to hurricane-force storms, all while maintaining realistic buoyancy behavior for your vessels and characters.

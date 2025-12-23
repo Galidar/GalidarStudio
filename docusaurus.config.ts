@@ -72,7 +72,6 @@ const config: Config = {
     ],
     navbar: {
       title: 'Galidar Studio',
-      logo: { alt: 'Galidar Studio', src: 'img/logo.svg' },
       items: [
         { type: 'docSidebar', sidebarId: 'legacySidebar', docsPluginId: 'legacy', position: 'left', label: 'Oceanology Legacy' },
         { type: 'docSidebar', sidebarId: 'nextgenSidebar', docsPluginId: 'default', position: 'left', label: 'Oceanology NextGen' },

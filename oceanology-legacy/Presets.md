@@ -3,27 +3,34 @@ title: Presets
 sidebar_label: Presets
 ---
 
-# Oceanology Legacy — Presets
+# Oceanology Legacy - Presets
 
-_Last updated: 2025-12-06_
+<div className="doc-badge doc-badge-violet">💾 Save & Load</div>
+<div className="doc-badge doc-badge-cyan">🎨 Quick Iteration</div>
+<div className="doc-badge doc-badge-emerald">📦 Shareable</div>
+
+Save and reuse complete ocean configurations with the Presets system.
+
+---
 
 ## Overview
 
-**Presets** in Oceanology Legacy allow you to save and reuse complete ocean configurations. A preset stores all visual and behavioral settings for your ocean — including wave parameters, surface properties, foam, caustics, underwater effects, and more — in a reusable Data Asset.
+**Presets** allow you to save and reuse complete ocean configurations. A preset stores all visual and behavioral settings - waves, surface, foam, caustics, underwater effects - in a reusable Data Asset.
 
-This system enables you to:
-- **Save ocean configurations** — Capture your perfect ocean look as a reusable asset
-- **Share between projects** — Export presets and import them into other projects
-- **Quick iteration** — Switch between different ocean styles instantly
-- **Team collaboration** — Artists can create presets for developers to use
-- **Multiple water types** — Create presets for different environments (tropical, arctic, stormy, calm)
+| Feature | Benefit |
+|---------|---------|
+| **Save Configurations** | Capture your perfect ocean look as a reusable asset |
+| **Share Between Projects** | Export presets and import them into other projects |
+| **Quick Iteration** | Switch between different ocean styles instantly |
+| **Team Collaboration** | Artists can create presets for developers to use |
+| **Multiple Water Types** | Create presets for tropical, arctic, stormy, or calm environments |
 
 ## How Presets Work
 
-1. **Create a Preset Asset** — Use the Content Browser to create a new Oceanology Preset Data Asset.
-2. **Configure the Preset** — Open the asset and adjust all ocean parameters.
-3. **Assign to Ocean** — Reference the preset in your ocean actor.
-4. **Select Inclusion Groups** — Choose which parameter groups the preset should control.
+1. **Create a Preset Asset** - Use the Content Browser to create a new Oceanology Preset Data Asset.
+2. **Configure the Preset** - Open the asset and adjust all ocean parameters.
+3. **Assign to Ocean** - Reference the preset in your ocean actor.
+4. **Select Inclusion Groups** - Choose which parameter groups the preset should control.
 
 Presets are **Data Assets**, meaning they exist as standalone files in your project that can be duplicated, shared, and version-controlled.
 
@@ -51,8 +58,8 @@ In the **Content Browser**, right-click to open the context menu. Navigate to:
 **Miscellaneous** → Search for `ocea` to filter the options.
 
 You will see two preset types:
-- **Oceanology Lake Preset** — For bounded lake water bodies (BP_OceanologyLake).
-- **Oceanology Ocean Preset** — For infinite ocean water bodies (BP_OceanologyInfiniteOcean).
+- **Oceanology Lake Preset** - For bounded lake water bodies (BP_OceanologyLake).
+- **Oceanology Ocean Preset** - For infinite ocean water bodies (BP_OceanologyInfiniteOcean).
 
 Select **Oceanology Ocean Preset** to create a new ocean preset asset.
 
@@ -63,9 +70,9 @@ Select **Oceanology Ocean Preset** to create a new ocean preset asset.
 After creating the preset, a new **Data Asset** appears in your Content Browser. 
 
 **Asset Properties:**
-- **Name** — Give it a descriptive name like `NewOceanPreset`, `TropicalOcean`, `StormyNorthSea`, etc.
-- **Type** — `Data Asset` (specifically an OceanologyOceanPreset)
-- **Thumbnail** — Shows a preview of ocean water to help identify the asset.
+- **Name** - Give it a descriptive name like `NewOceanPreset`, `TropicalOcean`, `StormyNorthSea`, etc.
+- **Type** - `Data Asset` (specifically an OceanologyOceanPreset)
+- **Thumbnail** - Shows a preview of ocean water to help identify the asset.
 
 **Organization Tips:**
 - Create a dedicated folder for presets (e.g., `Content/Ocean/Presets/`)
@@ -172,8 +179,8 @@ Select **BP_OceanologyInfiniteOcean** in the **Outliner**. In the **Details** pa
 | **Preset Inclusion Groups** | `25 Array elements` | Which parameter groups from the preset should be applied. See Note 5 for details. |
 
 **Preset Mode Options:**
-- **Use Preset Directly** — Applies all selected inclusion groups from the preset immediately.
-- **Blend With Current** — Interpolates between current ocean settings and preset values.
+- **Use Preset Directly** - Applies all selected inclusion groups from the preset immediately.
+- **Blend With Current** - Interpolates between current ocean settings and preset values.
 
 Once assigned, the ocean actor will use the parameters defined in your preset.
 
@@ -213,8 +220,8 @@ The **Preset Inclusion Groups** array controls which parameter categories the pr
 
 **How Inclusion Groups Work:**
 
-- **Included** — Parameters from this group are loaded from the preset.
-- **Excluded** — Parameters from this group use the ocean actor's own values (allowing manual override).
+- **Included** - Parameters from this group are loaded from the preset.
+- **Excluded** - Parameters from this group use the ocean actor's own values (allowing manual override).
 
 **Use Cases:**
 
@@ -232,7 +239,7 @@ This system provides granular control over which aspects of the preset are appli
 
 ---
 
-## Creating Custom Presets — Workflow
+## Creating Custom Presets - Workflow
 
 ### Starting from Scratch
 
@@ -311,11 +318,11 @@ Content/
 
 In this guide, you learned how to:
 
-1. **Create a Preset asset** — Use Miscellaneous menu to create Ocean or Lake presets.
-2. **Configure preset parameters** — Set all ocean visual properties in the preset asset.
-3. **Assign presets to ocean actors** — Reference presets in the Preset category.
-4. **Use Preset Inclusion Groups** — Selectively apply only certain parameter categories.
-5. **Organize presets** — Follow naming conventions and folder structures for maintainability.
+1. **Create a Preset asset** - Use Miscellaneous menu to create Ocean or Lake presets.
+2. **Configure preset parameters** - Set all ocean visual properties in the preset asset.
+3. **Assign presets to ocean actors** - Reference presets in the Preset category.
+4. **Use Preset Inclusion Groups** - Selectively apply only certain parameter categories.
+5. **Organize presets** - Follow naming conventions and folder structures for maintainability.
 
 Presets are powerful tools for managing ocean configurations across your project. They enable rapid iteration, easy sharing, and consistent water appearance throughout your game.
 

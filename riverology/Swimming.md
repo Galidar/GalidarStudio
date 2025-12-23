@@ -3,21 +3,28 @@ title: Swimming
 sidebar_label: Swimming
 ---
 
-# Riverology — Swimming
+# Riverology - Swimming
 
-_Last updated: 2025-12-09_
+<div className="doc-badge doc-badge-violet">🏊 Character System</div>
+<div className="doc-badge doc-badge-cyan">💨 Current Response</div>
+<div className="doc-badge doc-badge-emerald">🎮 Physics Volume</div>
+
+Implement character swimming with automatic current response in river environments.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.6 or newer.
-- **Riverology** installed and configured (see the **Setup** page).
-- At least one **BP_Riverology** river spline placed in your level.
-- A **Character Blueprint** with a **Character Movement Component**.
-- Basic familiarity with **Physics Volumes**, **Blueprints**, and **Enhanced Input** in Unreal Engine.
 
-## Notes
-- Swimming in Riverology is implemented using a **Physics Volume** that defines the swimmable area. When a character enters this volume, the Character Movement Component automatically switches to swimming mode.
-- The system requires linking the Physics Volume to BP_Riverology so the river can track which volume represents its swimmable region.
-- For full swimming functionality with vertical movement (swim up/down), you need to implement Blueprint logic using Enhanced Input Actions.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Riverology installed and configured |
+| **Scene** | BP_Riverology river spline in your level |
+| **Character** | Blueprint with CharacterMovementComponent |
+
+:::info About River Swimming
+Swimming uses a **Physics Volume** that defines the swimmable area. When characters enter, the CharacterMovementComponent automatically switches to swimming mode. Link the Physics Volume to BP_Riverology for current tracking.
+:::
 
 ---
 
@@ -57,13 +64,13 @@ Select the **PhysicsVolume** actor in the **Outliner**. In the **Details** panel
 - Set **Mobility** to `Movable` if the volume needs to follow a moving water body.
 
 **Character Movement:**
-- **Terminal Velocity** — Maximum falling speed in the volume (default: 4000.0).
-- **Priority** — Volume priority when overlapping with other physics volumes (default: 0).
-- **Fluid Friction** — Resistance applied to character movement (default: 0.5). Higher values slow the character more.
-- **Water Volume** — ✅ **Enable this checkbox**. This is critical — it tells the Character Movement Component to switch to swimming mode.
+- **Terminal Velocity** - Maximum falling speed in the volume (default: 4000.0).
+- **Priority** - Volume priority when overlapping with other physics volumes (default: 0).
+- **Fluid Friction** - Resistance applied to character movement (default: 0.5). Higher values slow the character more.
+- **Water Volume** - ✅ **Enable this checkbox**. This is critical - it tells the Character Movement Component to switch to swimming mode.
 
 **Volume:**
-- **Physics on Contact** — Leave unchecked unless you need physics actors to react to entering the volume.
+- **Physics on Contact** - Leave unchecked unless you need physics actors to react to entering the volume.
 
 ![Physics Volume configuration](Swmining/RiverologySwmining_04.png)
 :::
@@ -71,8 +78,8 @@ Select the **PhysicsVolume** actor in the **Outliner**. In the **Details** panel
 :::note 5. Review the Actor settings
 In the **Actor** category of the Physics Volume, note the following settings:
 
-- **Spawn Collision Handling Method** — Set to `Always Spawn, Ignore Collisions` for reliable volume placement.
-- **Initial Life Span** — Set to `0.0` for a persistent volume (never destroyed).
+- **Spawn Collision Handling Method** - Set to `Always Spawn, Ignore Collisions` for reliable volume placement.
+- **Initial Life Span** - Set to `0.0` for a persistent volume (never destroyed).
 
 These settings ensure the Physics Volume remains active throughout gameplay.
 
@@ -89,11 +96,11 @@ To enable vertical swimming (swim up/down with input), you need to implement Blu
 Open your **Character Blueprint** and create the swimming input handling logic. The system uses **Enhanced Input Actions** for swim controls:
 
 **Key nodes:**
-- **EnhancedInputAction IA_SwimUp** — Triggered when the player presses the swim up input.
-- **EnhancedInputAction IA_SwimDown** — Triggered when the player presses the swim down input.
-- **Get Physics Volume** — Retrieves the current physics volume the character is in.
-- **Water Volume** — Boolean check to verify the character is in a water volume.
-- **Add Movement Input** — Applies vertical movement with World Direction `(0.0, 0.0, 0.5)` for up or `(0.0, 0.0, -0.5)` for down.
+- **EnhancedInputAction IA_SwimUp** - Triggered when the player presses the swim up input.
+- **EnhancedInputAction IA_SwimDown** - Triggered when the player presses the swim down input.
+- **Get Physics Volume** - Retrieves the current physics volume the character is in.
+- **Water Volume** - Boolean check to verify the character is in a water volume.
+- **Add Movement Input** - Applies vertical movement with World Direction `(0.0, 0.0, 0.5)` for up or `(0.0, 0.0, -0.5)` for down.
 
 The logic flow:
 1. Check if the swim input is triggered.
@@ -113,8 +120,8 @@ In your Character Blueprint, set up the Riverology reference on **Event BeginPla
 4. Store it in a variable named `Riverology` for later use.
 
 **Additional initialization (optional):**
-- **VSync** — Call this function if you need vertical synchronization with the river surface.
-- **Input Mapping** — Set up input mapping context for swimming controls.
+- **VSync** - Call this function if you need vertical synchronization with the river surface.
+- **Input Mapping** - Set up input mapping context for swimming controls.
 
 This reference allows your character to query the river for surface height, flow direction, and other properties during swimming.
 
@@ -152,10 +159,10 @@ This reference allows your character to query the river for surface height, flow
 
 In this guide, you learned how to:
 
-1. **Add a Physics Volume** — Create the swimmable region for your river.
-2. **Link the volume to Riverology** — Connect the Physics Volume to BP_Riverology via the Swim Volume property.
-3. **Configure swimming physics** — Set up Fluid Friction, Terminal Velocity, and enable Water Volume.
-4. **Implement swim controls** — Create Blueprint logic for vertical swimming using Enhanced Input.
-5. **Get the Riverology reference** — Store the river reference for runtime queries.
+1. **Add a Physics Volume** - Create the swimmable region for your river.
+2. **Link the volume to Riverology** - Connect the Physics Volume to BP_Riverology via the Swim Volume property.
+3. **Configure swimming physics** - Set up Fluid Friction, Terminal Velocity, and enable Water Volume.
+4. **Implement swim controls** - Create Blueprint logic for vertical swimming using Enhanced Input.
+5. **Get the Riverology reference** - Store the river reference for runtime queries.
 
 With this setup, characters can swim in your Riverology rivers with full vertical movement control.

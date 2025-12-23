@@ -3,20 +3,28 @@ title: Foam
 sidebar_label: Foam
 ---
 
-# Riverology — Foam
+# Riverology - Foam
 
-_Last updated: 2025-12-09_
+<div className="doc-badge doc-badge-violet">💨 Procedural</div>
+<div className="doc-badge doc-badge-cyan">🌊 Flow-Driven</div>
+<div className="doc-badge doc-badge-emerald">🪨 Obstacle Interaction</div>
+
+Configure dynamic foam generation at rapids, obstacles, and shorelines.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.6 or newer.
-- **Riverology** installed and configured (see the **Setup** page).
-- At least one **BP_Riverology** river placed in your level.
-- Basic familiarity with **Materials**, **Textures**, and **Flowmaps** in Unreal Engine.
 
-## Notes
-- Foam in Riverology simulates the white water effect that appears when water flows over obstacles, around rocks, or down waterfalls. The system uses procedural textures combined with flowmap-driven animation.
-- The foam system consists of three subsystems: **Foam Generator** (texture and vertex-based foam), **Flow Generator** (flowmap and obstacle interaction), and **Distortion** (flow direction and distance field masking).
-- Foam automatically appears around objects that intersect the water surface when properly configured. Place static meshes with collision in your river to see foam form around them.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Riverology installed and configured |
+| **Scene** | BP_Riverology river in your level |
+| **Skills** | Basic Materials and Flowmaps understanding |
+
+:::info Foam System
+The foam system has three subsystems: **Foam Generator** (texture/vertex foam), **Flow Generator** (flowmap/obstacle interaction), and **Distortion** (flow direction/distance field masking). Foam automatically appears around intersecting objects.
+:::
 
 ---
 
@@ -111,9 +119,9 @@ Expand the **Distortion** subsection within **Foam Flow** to access flow vector 
 With the foam system configured, place static mesh actors (such as rocks or simple cubes) in your river. Ensure these meshes have collision enabled so the distance field can detect them.
 
 The foam will automatically appear:
-- **Upstream** of obstacles — controlled by **ObstacleBeforeExp** and **ObstacleBeforeLinear**
-- **Around** obstacles — controlled by **DF Mask Power** and **DF Distance**
-- **Downstream** as trailing foam — controlled by **Gradient Flow Amount**
+- **Upstream** of obstacles - controlled by **ObstacleBeforeExp** and **ObstacleBeforeLinear**
+- **Around** obstacles - controlled by **DF Mask Power** and **DF Distance**
+- **Downstream** as trailing foam - controlled by **Gradient Flow Amount**
 
 The flowmap drives the foam animation direction, creating realistic water flow patterns around obstacles.
 
@@ -153,9 +161,9 @@ The flowmap drives the foam animation direction, creating realistic water flow p
 
 In this guide, you learned how to:
 
-1. **Configure the Foam Generator** — Set up waterfall and foam flow textures with vertex-based masking controls.
-2. **Configure the Flow Generator** — Adjust foam opacity, obstacle interaction, and flowmap settings for realistic water behavior.
-3. **Configure Distortion settings** — Fine-tune flow direction, distance field masking, and procedural noise for natural variation.
-4. **Create foam around obstacles** — Place collision-enabled meshes in your river to generate automatic foam effects.
+1. **Configure the Foam Generator** - Set up waterfall and foam flow textures with vertex-based masking controls.
+2. **Configure the Flow Generator** - Adjust foam opacity, obstacle interaction, and flowmap settings for realistic water behavior.
+3. **Configure Distortion settings** - Fine-tune flow direction, distance field masking, and procedural noise for natural variation.
+4. **Create foam around obstacles** - Place collision-enabled meshes in your river to generate automatic foam effects.
 
 The foam system adds significant visual realism to river scenes by simulating the turbulent white water that forms around obstacles and in fast-moving sections. Experiment with the parameters to match different river conditions from calm streams to rushing rapids.

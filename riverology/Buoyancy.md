@@ -3,21 +3,28 @@ title: Buoyancy
 sidebar_label: Buoyancy
 ---
 
-# Riverology — Buoyancy
+# Riverology - Buoyancy
 
-_Last updated: 2025-12-08_
+<div className="doc-badge doc-badge-violet">⚓ Flow Physics</div>
+<div className="doc-badge doc-badge-cyan">💨 Downstream Forces</div>
+<div className="doc-badge doc-badge-emerald">🎮 Game Ready</div>
+
+Implement flow-based buoyancy with automatic downstream forces for floating objects.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.6 or newer.
-- **Oceanology Legacy** installed and configured (see the **Setup** page).
-- A **BP_Riverology** actor placed in your level with waves configured (see the **River Waves** page).
-- Basic familiarity with **physics simulation**, **collision**, and **Static Mesh Actors** in Unreal Engine.
 
-## Notes
-- Riverology includes a built-in buoyancy system that allows objects to float on the river surface without requiring additional components. Unlike ocean buoyancy which uses the **OceanBuoyancyComponent**, river buoyancy is handled directly by the **BP_Riverology** actor.
-- Any physics-simulating actor that overlaps with the river volume will automatically receive buoyancy forces when **Enable Buoyancy** is active on the river.
-- The buoyancy calculation respects wave height, meaning floating objects will rise and fall with the river's Gerstner wave simulation.
-- River buoyancy also applies **flow forces**, pushing objects downstream along the spline direction. This creates realistic current behavior for floating debris, boats, or characters.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Riverology installed and configured |
+| **Scene** | BP_Riverology actor with waves configured |
+| **Skills** | Basic physics and collision familiarity |
+
+:::info About River Buoyancy
+Unlike ocean buoyancy, river buoyancy is handled directly by **BP_Riverology** - no additional components needed. Objects automatically receive buoyancy forces when **Enable Buoyancy** is active, and flow forces push them downstream along the spline direction.
+:::
 
 ---
 
@@ -77,7 +84,7 @@ Create or select a **Static Mesh Actor** that you want to float in the river. In
 
 | Property | Value | Description |
 |----------|-------|-------------|
-| **Simulate Physics** | ✅ Enabled | **Critical** — Enables physics simulation |
+| **Simulate Physics** | ✅ Enabled | **Critical** - Enables physics simulation |
 | **Mass (kg)** | `177.827942` | Calculated from mesh volume and density. Affects how deep the object floats. |
 | **Linear Damping** | `0.01` | Resistance to linear movement. Low values allow free floating. |
 | **Angular Damping** | `0.0` | Resistance to rotation. Zero allows natural tumbling in current. |
@@ -115,9 +122,9 @@ Still on the Static Mesh Actor, locate the **Collision** category. Proper collis
 
 | Property | Value | Description |
 |----------|-------|-------------|
-| **Simulation Generates Hit Events** | ❌ Disabled | Optional — enable for impact sounds/effects |
+| **Simulation Generates Hit Events** | ❌ Disabled | Optional - enable for impact sounds/effects |
 | **Phys Material Override** | `None` | Uses default physical material |
-| **Generate Overlap Events** | ✅ Enabled | **Required** — Detects river volume overlap |
+| **Generate Overlap Events** | ✅ Enabled | **Required** - Detects river volume overlap |
 | **Can Character Step Up On** | `Yes` | Allows characters to stand on floating object |
 
 **Collision Presets:**
@@ -204,11 +211,11 @@ When properly configured, floating objects in Riverology exhibit these behaviors
 
 | Damping Value | Effect |
 |---------------|--------|
-| `0.0` | No resistance — object moves/rotates freely |
-| `0.01` – `0.1` | Minimal resistance — natural floating behavior |
-| `0.5` – `1.0` | Moderate resistance — stabilized motion |
-| `2.0` – `5.0` | High resistance — sluggish, dampened response |
-| `10.0+` | Extreme resistance — nearly stationary in water |
+| `0.0` | No resistance - object moves/rotates freely |
+| `0.01` – `0.1` | Minimal resistance - natural floating behavior |
+| `0.5` – `1.0` | Moderate resistance - stabilized motion |
+| `2.0` – `5.0` | High resistance - sluggish, dampened response |
+| `10.0+` | Extreme resistance - nearly stationary in water |
 
 ---
 
@@ -224,8 +231,8 @@ When properly configured, floating objects in Riverology exhibit these behaviors
 | **Fine-Tuning** | Extensive parameters | Limited to physics settings |
 
 **When to use which:**
-- **Ocean Buoyancy** — Complex vessels requiring precise floating behavior, multiple pontoon sampling, custom buoyancy forces.
-- **River Buoyancy** — Simple floating objects, debris, quick prototyping, objects that need to flow with current.
+- **Ocean Buoyancy** - Complex vessels requiring precise floating behavior, multiple pontoon sampling, custom buoyancy forces.
+- **River Buoyancy** - Simple floating objects, debris, quick prototyping, objects that need to flow with current.
 
 ---
 
@@ -261,11 +268,11 @@ When properly configured, floating objects in Riverology exhibit these behaviors
 
 In this guide, you learned how to:
 
-1. **Enable river buoyancy** — Activate the Enable Buoyancy checkbox on BP_Riverology with Movable mobility.
-2. **Configure physics simulation** — Set up Static Mesh Actors with Simulate Physics, appropriate Mass, and Damping values.
-3. **Set up collision** — Use the PhysicsActor preset with Generate Overlap Events enabled.
-4. **Configure actor settings** — Set spawn handling and damage properties for gameplay integration.
-5. **Understand buoyancy behavior** — Learn how mass, damping, and wave settings affect floating objects.
-6. **Compare river vs ocean buoyancy** — Understand when to use each system based on project requirements.
+1. **Enable river buoyancy** - Activate the Enable Buoyancy checkbox on BP_Riverology with Movable mobility.
+2. **Configure physics simulation** - Set up Static Mesh Actors with Simulate Physics, appropriate Mass, and Damping values.
+3. **Set up collision** - Use the PhysicsActor preset with Generate Overlap Events enabled.
+4. **Configure actor settings** - Set spawn handling and damage properties for gameplay integration.
+5. **Understand buoyancy behavior** - Learn how mass, damping, and wave settings affect floating objects.
+6. **Compare river vs ocean buoyancy** - Understand when to use each system based on project requirements.
 
 With this knowledge, you can create floating debris, logs, crates, and other objects that naturally float and flow with your Riverology rivers.

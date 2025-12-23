@@ -3,22 +3,28 @@ title: Surface
 sidebar_label: Surface
 ---
 
-# Oceanology Next Gen — Surface
+# Oceanology NextGen - Surface
 
-_Last updated: 2025-12-18_
+<div className="doc-badge doc-badge-violet">🎨 Visual Appearance</div>
+<div className="doc-badge doc-badge-cyan">🌊 Water Rendering</div>
+<div className="doc-badge doc-badge-emerald">💎 Materials</div>
+
+Configure water surface rendering including scattering, caustics, refraction, and reflections.
+
+---
 
 ## Prerequisites
 
-- Unreal Engine 5.6 or newer.
-- **Oceanology Next Gen** installed and configured (see the **Setup** page).
-- At least one **Oceanology Next Gen** water body placed in your level (infinite ocean or lake).
-- Basic familiarity with **material parameters** and **rendering concepts** in Unreal Engine.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Oceanology NextGen installed and configured |
+| **Scene** | Water body placed in your level |
+| **Skills** | Basic material and rendering familiarity |
 
-## Notes
-
-- The Surface system in Oceanology Next Gen controls the visual appearance of the water surface, including scattering, caustics, refraction, and normal calculation.
-- These settings are configured directly on the **OceanologyInfiniteOcean** actor in your level.
-- The workflow in this page focuses on understanding each parameter category and how they interact to create realistic water rendering.
+:::info About Surface Rendering
+Surface settings control visual appearance: scattering, caustics, refraction, and normal calculation. Configure directly on the **OceanologyInfiniteOcean** actor.
+:::
 
 ---
 
@@ -29,25 +35,25 @@ Select the **OceanologyInfiniteOcean** actor in the **Outliner**. In the **Detai
 
 **Surface Scattering** controls how light interacts with and scatters through the water volume:
 
-- **DeepAbsorptionCoefficient** — Controls light absorption at depth. Higher values create darker deep water. Default: `7.0`.
-- **PhaseGHigh** — Phase function parameter for forward scattering in bright areas. Default: `0.1`.
-- **PhaseGLow** — Phase function parameter for backscattering. Default: `0.75`.
-- **ShallowAbsorptionCoefficient** — Controls light absorption in shallow areas. Default: `100.0`.
-- **SoftenEdges** — Softens the transition at water edges. Default: `200.0`.
-- **SurfaceScatteringExponential** — Exponential falloff for surface scattering. Default: `8.0`.
-- **WaterFresnelExponent** — Controls the Fresnel reflection curve steepness. Default: `10.0`.
-- **WaterFresnelRoughness** — Roughness applied to Fresnel reflections. Default: `0.15`.
-- **WaterFresnelSpecular** — Specular intensity for Fresnel reflections. Default: `1.0`.
-- **WaterRoughness** — Overall surface roughness. Default: `0.1`.
-- **WaterSpecular** — Base specular intensity. Default: `0.05`.
-- **Absorption** — Color gradient defining light absorption tint.
-- **DeepScatteringColor** — Color of light scattered in deep water areas.
-- **ShallowScatteringColor** — Color of light scattered in shallow water areas.
+- **DeepAbsorptionCoefficient** - Controls light absorption at depth. Higher values create darker deep water. Default: `7.0`.
+- **PhaseGHigh** - Phase function parameter for forward scattering in bright areas. Default: `0.1`.
+- **PhaseGLow** - Phase function parameter for backscattering. Default: `0.75`.
+- **ShallowAbsorptionCoefficient** - Controls light absorption in shallow areas. Default: `100.0`.
+- **SoftenEdges** - Softens the transition at water edges. Default: `200.0`.
+- **SurfaceScatteringExponential** - Exponential falloff for surface scattering. Default: `8.0`.
+- **WaterFresnelExponent** - Controls the Fresnel reflection curve steepness. Default: `10.0`.
+- **WaterFresnelRoughness** - Roughness applied to Fresnel reflections. Default: `0.15`.
+- **WaterFresnelSpecular** - Specular intensity for Fresnel reflections. Default: `1.0`.
+- **WaterRoughness** - Overall surface roughness. Default: `0.1`.
+- **WaterSpecular** - Base specular intensity. Default: `0.05`.
+- **Absorption** - Color gradient defining light absorption tint.
+- **DeepScatteringColor** - Color of light scattered in deep water areas.
+- **ShallowScatteringColor** - Color of light scattered in shallow water areas.
 
 **Caustics** settings are also visible in this panel:
 
-- **FadeDistance** — Distance over which caustics fade out. Default: `1.0`.
-- **MultiplyRefraction** — Multiplier for caustic refraction intensity. Default: `1.333`.
+- **FadeDistance** - Distance over which caustics fade out. Default: `1.0`.
+- **MultiplyRefraction** - Multiplier for caustic refraction intensity. Default: `1.333`.
 
 ![Surface Scattering and Caustics settings](NextGenSurface/NextGenSurface_01.png)
 :::
@@ -57,29 +63,29 @@ Scroll down in the **Surface** category to find the **Refraction** and **Normal 
 
 **Refraction** controls how light bends when passing through the water surface:
 
-- **CriticalAngleBendWidth** — Width of the critical angle bend effect. Default: `-0.75`.
-- **CriticalAngleDot** — Dot product threshold for critical angle. Default: `0.225`.
-- **CriticalAngleWidth** — Width of the critical angle zone. Default: `0.01`.
-- **LipRefraction** — Refraction intensity at the water lip/edge. Default: `0.95`.
-- **RefractionBottomAmount** — Amount of refraction applied to the bottom. Default: `1.0`.
-- **RefractionDownsampleFactor** — Downsampling factor for refraction calculations (performance optimization). Default: `2.0`.
-- **WaterRefractionFar** — Refraction index for distant water. Default: `1.02`.
-- **WaterRefractionNear** — Refraction index for near water. Default: `1.033`.
+- **CriticalAngleBendWidth** - Width of the critical angle bend effect. Default: `-0.75`.
+- **CriticalAngleDot** - Dot product threshold for critical angle. Default: `0.225`.
+- **CriticalAngleWidth** - Width of the critical angle zone. Default: `0.01`.
+- **LipRefraction** - Refraction intensity at the water lip/edge. Default: `0.95`.
+- **RefractionBottomAmount** - Amount of refraction applied to the bottom. Default: `1.0`.
+- **RefractionDownsampleFactor** - Downsampling factor for refraction calculations (performance optimization). Default: `2.0`.
+- **WaterRefractionFar** - Refraction index for distant water. Default: `1.02`.
+- **WaterRefractionNear** - Refraction index for near water. Default: `1.033`.
 
 **Normal Calculation** contains three subcategories:
 
 **Horizon Correction:**
-- **HorizonCorrectionNormalIntensity** — Intensity of normal correction at the horizon. Default: `1.0`.
+- **HorizonCorrectionNormalIntensity** - Intensity of normal correction at the horizon. Default: `1.0`.
 
 **Flipbook:**
-- **DistantWaterScale** — Scale of the distant water normal flipbook. Default: `32.0`.
-- **FrameRateFar** — Frame rate for distant water animation. Default: `30.0`.
-- **T_FarNormalWater** — Normal texture used for distant water. Default: `T_FFTNormal02`.
+- **DistantWaterScale** - Scale of the distant water normal flipbook. Default: `32.0`.
+- **FrameRateFar** - Frame rate for distant water animation. Default: `30.0`.
+- **T_FarNormalWater** - Normal texture used for distant water. Default: `T_FFTNormal02`.
 
 **Compute Normals:**
-- **HorizonCorrectionNormalIntensity** — Normal intensity correction at horizon. Default: `1.0`.
-- **NormalBlendDistance** — Distance over which normals blend. Default: `25000.0`.
-- **NormalBlendFall** — Falloff for normal blending. Default: `1000.0`.
+- **HorizonCorrectionNormalIntensity** - Normal intensity correction at horizon. Default: `1.0`.
+- **NormalBlendDistance** - Distance over which normals blend. Default: `25000.0`.
+- **NormalBlendFall** - Falloff for normal blending. Default: `1000.0`.
 
 ![Refraction and Normal Calculation settings](NextGenSurface/NextGenSurface_02.png)
 :::
@@ -89,9 +95,9 @@ Continue scrolling in the **Surface** category to find the **Camera** subcategor
 
 These settings control how the surface rendering adjusts based on camera position:
 
-- **CameraOffset** — Enable or disable camera-based offset adjustments. Default: ✅ Enabled.
-- **TransitionFalloff** — Falloff distance for the camera transition effect. Default: `2500.0`.
-- **TransitionThreshold** — Threshold distance at which the transition begins. Default: `1000.0`.
+- **CameraOffset** - Enable or disable camera-based offset adjustments. Default: ✅ Enabled.
+- **TransitionFalloff** - Falloff distance for the camera transition effect. Default: `2500.0`.
+- **TransitionThreshold** - Threshold distance at which the transition begins. Default: `1000.0`.
 
 Camera Offset is useful for preventing z-fighting and ensuring smooth transitions when the camera moves close to or through the water surface.
 
@@ -185,10 +191,10 @@ The image below shows an example of a fully configured ocean surface with proper
 
 In this guide, you learned how to:
 
-1. **Configure Surface Scattering** — Control light absorption, phase functions, Fresnel reflections, and scattering colors for realistic water appearance.
-2. **Adjust Caustics** — Fine-tune caustic fade distance and refraction intensity.
-3. **Set up Refraction** — Configure critical angle parameters and refraction indices for accurate light bending.
-4. **Configure Normal Calculation** — Set up horizon correction, flipbook normals, and normal blending for detailed wave surfaces.
-5. **Enable Camera Offset** — Prevent z-fighting and ensure smooth camera transitions near the water surface.
+1. **Configure Surface Scattering** - Control light absorption, phase functions, Fresnel reflections, and scattering colors for realistic water appearance.
+2. **Adjust Caustics** - Fine-tune caustic fade distance and refraction intensity.
+3. **Set up Refraction** - Configure critical angle parameters and refraction indices for accurate light bending.
+4. **Configure Normal Calculation** - Set up horizon correction, flipbook normals, and normal blending for detailed wave surfaces.
+5. **Enable Camera Offset** - Prevent z-fighting and ensure smooth camera transitions near the water surface.
 
 With this knowledge, you can now customize the visual appearance of your ocean to match your project's artistic direction and performance requirements.

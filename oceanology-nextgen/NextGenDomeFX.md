@@ -3,20 +3,28 @@ title: Dome FX
 sidebar_label: Dome FX
 ---
 
-# Oceanology Next-Gen — Dome FX
+# Oceanology NextGen - Dome FX
 
-_Last updated: 2025-12-13_
+<div className="doc-badge doc-badge-violet">🔮 Underwater Domes</div>
+<div className="doc-badge doc-badge-cyan">🏠 Bases & Aquariums</div>
+<div className="doc-badge doc-badge-emerald">💎 Glass Rendering</div>
+
+Create underwater dome structures with correct water interaction for bases and observation areas.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.5 or newer.
-- **Oceanology** installed and configured (see the **Setup** page).
-- At least one **OceanologyInfiniteOcean** actor placed in your level.
-- Basic familiarity with **Blueprints** and **Materials** in Unreal Engine.
 
-## Notes
-- The Dome FX system in Oceanology creates transparent underwater dome structures that interact correctly with the ocean surface. This is ideal for underwater bases, observation domes, aquariums, or any scenario where players need to see the water from inside a protected enclosure.
-- The dome uses a specialized glass material that properly renders the water surface visible through its transparent walls while maintaining correct refraction and visual effects.
-- For the dome to display water correctly, it must be linked to an Oceanology water body. Without this connection, the dome interior will render incorrectly.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Oceanology NextGen installed and configured |
+| **Scene** | OceanologyInfiniteOcean actor in level |
+| **Skills** | Basic Blueprint and Materials familiarity |
+
+:::info About Dome FX
+Dome FX creates transparent underwater structures with specialized glass materials. Ideal for underwater bases, observation domes, and aquariums. Must be linked to an Oceanology water body for correct rendering.
+:::
 
 ---
 
@@ -27,11 +35,11 @@ In the **Content Browser**, navigate to:
 `Plugins > OCEANOLOGY NEXT-GEN > Design > Ocean > Blueprints > Assets`
 
 Here you will find several pre-configured effect Blueprints:
-- **BP_Crystal** — Crystal effect for underwater environments.
-- **BP_DomeFX** — The underwater dome effect. Select this for transparent observation structures.
-- **BP_Dragon** — Decorative dragon model.
-- **BP_Fire** — Fire effect for above-water scenarios.
-- **BP_GlassFX** — Glass panel effect for windows and partitions.
+- **BP_Crystal** - Crystal effect for underwater environments.
+- **BP_DomeFX** - The underwater dome effect. Select this for transparent observation structures.
+- **BP_Dragon** - Decorative dragon model.
+- **BP_Fire** - Fire effect for above-water scenarios.
+- **BP_GlassFX** - Glass panel effect for windows and partitions.
 
 Select **BP_DomeFX** and drag it into your scene within or near your water body.
 
@@ -42,13 +50,13 @@ Select **BP_DomeFX** and drag it into your scene within or near your water body.
 Select the **BP_DomeFX** actor in your scene. In the **Details** panel, you will see the following configuration options:
 
 **Transform Settings:**
-- **Location** — Position the dome where you want the underwater observation area.
-- **Rotation** — `0.0, 0.0, 0.0` (adjust as needed for your scene).
-- **Scale** — `2.0, 2.0, 2.0`. Increase or decrease to change the dome size. Uniform scaling maintains the spherical shape.
+- **Location** - Position the dome where you want the underwater observation area.
+- **Rotation** - `0.0, 0.0, 0.0` (adjust as needed for your scene).
+- **Scale** - `2.0, 2.0, 2.0`. Increase or decrease to change the dome size. Uniform scaling maintains the spherical shape.
 
 **Default Settings:**
-- **Oceanology Water** — `None`. This is the critical setting that links the dome to your water body. Without this connection, the dome will not render water correctly.
-- **Material** — `MI_UnderwaterGlass_Oc`. The specialized glass material that handles underwater refraction and transparency. You can assign a custom material if needed.
+- **Oceanology Water** - `None`. This is the critical setting that links the dome to your water body. Without this connection, the dome will not render water correctly.
+- **Material** - `MI_UnderwaterGlass_Oc`. The specialized glass material that handles underwater refraction and transparency. You can assign a custom material if needed.
 
 At this point, the dome is placed but not yet connected to the water system.
 
@@ -75,15 +83,15 @@ To fix the rendering, you must connect the dome to your water body. In the **Det
 Click the dropdown arrow next to the `None` value. A picker window will appear with the following options:
 
 **Current Actor:**
-- **Use Selected** — Assigns the currently selected actor in the Outliner.
-- **Copy** — Copies the current reference.
-- **Paste** — Pastes a previously copied reference.
-- **Clear** — Removes the current assignment.
+- **Use Selected** - Assigns the currently selected actor in the Outliner.
+- **Copy** - Copies the current reference.
+- **Paste** - Pastes a previously copied reference.
+- **Clear** - Removes the current assignment.
 
 **Browse:**
 Use the search field or scroll through the list to find your water body. You will see:
-- **Masking_Map (Editor)** — Editor-only map reference (ignore this).
-- **OceanologyInfiniteOcean** — Your ocean water body. Select this.
+- **Masking_Map (Editor)** - Editor-only map reference (ignore this).
+- **OceanologyInfiniteOcean** - Your ocean water body. Select this.
 
 Click on **OceanologyInfiniteOcean** to assign it to the dome.
 
@@ -100,7 +108,7 @@ After linking the dome to the **OceanologyInfiniteOcean** actor, the rendering u
 - The water surface appears continuous and realistic when viewed from inside.
 - Light caustics and underwater effects render correctly.
 
-The dome now functions as intended — a transparent underwater observation structure that seamlessly integrates with the Oceanology water system.
+The dome now functions as intended - a transparent underwater observation structure that seamlessly integrates with the Oceanology water system.
 
 ![Dome with water connection - correct blue water rendering](NextGenDome/NextGenDome_05.png)
 :::
@@ -110,9 +118,9 @@ For optimal dome rendering, verify that the **Masking System** is properly confi
 
 Select the **OceanologyInfiniteOcean** actor in the Outliner. In the **Details** panel, locate the **Masking System** category and expand the **Mask** subcategory:
 
-- **LandscapeVisibilityMask** — ✅ **Enabled**. Allows the water to properly mask around landscape geometry.
-- **MaskLandscapeEdges** — `0.05`. Controls the softness of the masking edge where water meets landscape. Lower values create sharper transitions.
-- **ObjectVisibilityMask** — ✅ **Enabled**. Allows the water to properly interact with objects like the dome. This setting is essential for correct dome rendering.
+- **LandscapeVisibilityMask** - ✅ **Enabled**. Allows the water to properly mask around landscape geometry.
+- **MaskLandscapeEdges** - `0.05`. Controls the softness of the masking edge where water meets landscape. Lower values create sharper transitions.
+- **ObjectVisibilityMask** - ✅ **Enabled**. Allows the water to properly interact with objects like the dome. This setting is essential for correct dome rendering.
 
 These masking settings ensure the water surface correctly interacts with the dome geometry, preventing visual artifacts and z-fighting issues.
 
@@ -151,11 +159,11 @@ These masking settings ensure the water surface correctly interacts with the dom
 
 In this guide, you learned how to:
 
-1. **Locate the BP_DomeFX prefab** — Find the dome effect in the Oceanology asset folders.
-2. **Configure dome properties** — Adjust transform and default settings for your scene.
-3. **Identify incorrect rendering** — Recognize the yellow/green interior that indicates missing water connection.
-4. **Link to water body** — Use the Oceanology Water picker to connect the dome to OceanologyInfiniteOcean.
-5. **Verify correct rendering** — Confirm the dome shows blue water with proper refraction.
-6. **Configure masking settings** — Enable ObjectVisibilityMask for proper water-dome interaction.
+1. **Locate the BP_DomeFX prefab** - Find the dome effect in the Oceanology asset folders.
+2. **Configure dome properties** - Adjust transform and default settings for your scene.
+3. **Identify incorrect rendering** - Recognize the yellow/green interior that indicates missing water connection.
+4. **Link to water body** - Use the Oceanology Water picker to connect the dome to OceanologyInfiniteOcean.
+5. **Verify correct rendering** - Confirm the dome shows blue water with proper refraction.
+6. **Configure masking settings** - Enable ObjectVisibilityMask for proper water-dome interaction.
 
 With the Dome FX properly configured, you can create immersive underwater observation structures, submarine windows, and aquarium exhibits that seamlessly integrate with Oceanology's water rendering system.

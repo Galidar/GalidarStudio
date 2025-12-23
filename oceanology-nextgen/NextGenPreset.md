@@ -3,20 +3,28 @@ title: Presets
 sidebar_label: Presets
 ---
 
-# Oceanology Next-Gen — Presets
+# Oceanology NextGen - Presets
 
-_Last updated: 2025-12-13_
+<div className="doc-badge doc-badge-violet">💾 Save & Load</div>
+<div className="doc-badge doc-badge-cyan">🎨 Quick Iteration</div>
+<div className="doc-badge doc-badge-emerald">📦 Data Assets</div>
+
+Save, load, and combine ocean configurations with the two-tier preset system.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.5 or newer.
-- **Oceanology** installed and configured (see the **Setup** page).
-- At least one **OceanologyInfiniteOcean** actor placed in your level.
-- Basic familiarity with **Data Assets** and the **Details panel** in Unreal Engine.
 
-## Notes
-- The Preset system in Oceanology allows you to save, load, and combine ocean configurations without manually adjusting dozens of individual parameters. This dramatically speeds up iteration and enables quick switching between different ocean looks.
-- Oceanology uses a two-tier preset system: a **Master Ocean Preset** that controls the overall look, and **Grouped Water Presets** that let you override specific aspects (waves, color, foam, etc.) independently.
-- Presets are stored as Data Assets, making them easy to share between projects, version control, and organize in your Content Browser.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Oceanology NextGen installed and configured |
+| **Scene** | OceanologyInfiniteOcean actor in level |
+| **Skills** | Basic Data Assets familiarity |
+
+:::info About Presets
+NextGen uses a **two-tier preset system**: **Master Ocean Preset** (overall look) and **Grouped Water Presets** (override specific aspects). Presets are Data Assets - easy to share, version control, and organize.
+:::
 
 ---
 
@@ -26,25 +34,25 @@ _Last updated: 2025-12-13_
 Select the **OceanologyInfiniteOcean** actor in your level. In the **Details** panel, locate the **Preset** category. Here you will find the main preset controls:
 
 **Master Preset:**
-- **Preset** — The primary ocean preset that defines the overall ocean appearance. Default is `DefaultOceanPreset`. Click the thumbnail to select a different preset or create a new one.
+- **Preset** - The primary ocean preset that defines the overall ocean appearance. Default is `DefaultOceanPreset`. Click the thumbnail to select a different preset or create a new one.
 
 **Grouped Water Presets:**
 Below the master preset, you will find individual preset slots for each ocean aspect:
-- **Waves** — Wave animation and behavior presets.
-- **Wave Buffer** — Wave buffer rendering settings.
-- **Shore Waves** — Coastal and breaking wave presets.
-- **Color** — Water color and transparency presets.
-- **Caustics** — Underwater light caustic patterns.
-- **Detail** — Surface detail and normal map settings.
-- **Foam** — Ocean foam appearance and behavior.
-- **Wetness** — Surface wetness effect settings.
-- **Underwater** — Underwater rendering and fog presets.
+- **Waves** - Wave animation and behavior presets.
+- **Wave Buffer** - Wave buffer rendering settings.
+- **Shore Waves** - Coastal and breaking wave presets.
+- **Color** - Water color and transparency presets.
+- **Caustics** - Underwater light caustic patterns.
+- **Detail** - Surface detail and normal map settings.
+- **Foam** - Ocean foam appearance and behavior.
+- **Wetness** - Surface wetness effect settings.
+- **Underwater** - Underwater rendering and fog presets.
 
 Each slot shows `None` by default, meaning it inherits settings from the master preset. You can override any category by selecting a specific preset.
 
 **Additional Options:**
-- **Preset Mode** — `Apply Preset to Current Settings`. Determines how presets are applied.
-- **Preset Inclusion Groups** — `23 Array elements`. Controls which parameter groups are affected when applying presets.
+- **Preset Mode** - `Apply Preset to Current Settings`. Determines how presets are applied.
+- **Preset Inclusion Groups** - `23 Array elements`. Controls which parameter groups are affected when applying presets.
 
 ![Preset section in OceanologyInfiniteOcean](NextGenPreset/NextGenPreset_01.png)
 :::
@@ -80,7 +88,7 @@ Expand the **Preset Inclusion Groups** array to see all 23 parameter groups that
 | 21 | VolumetricFog | Volumetric fog integration |
 | 22 | BubblesSettings | Underwater bubble effects |
 
-Each group has a dropdown to enable/disable it when applying presets. This allows selective preset application — for example, applying only wave settings while preserving your custom color configuration.
+Each group has a dropdown to enable/disable it when applying presets. This allows selective preset application - for example, applying only wave settings while preserving your custom color configuration.
 
 ![Preset Inclusion Groups array](NextGenPreset/NextGenPreset_02.png)
 :::
@@ -89,18 +97,18 @@ Each group has a dropdown to enable/disable it when applying presets. This allow
 To override a specific aspect of the ocean, click the dropdown for any **Grouped Water Preset** slot. A picker window appears with the following options:
 
 **Create New Asset:**
-- **Oceanology Water Waves Preset** — Creates a new preset asset for the selected category.
+- **Oceanology Water Waves Preset** - Creates a new preset asset for the selected category.
 
 **Current Asset:**
-- **Copy** — Copies the current preset reference.
-- **Paste** — Pastes a previously copied preset.
-- **Clear** — Removes the override, reverting to the master preset.
+- **Copy** - Copies the current preset reference.
+- **Paste** - Pastes a previously copied preset.
+- **Clear** - Removes the override, reverting to the master preset.
 
 **Browse:**
 Use the search field to find existing presets. For the **Waves** category, Oceanology includes several pre-built presets:
-- **DA_Wave_Calm** — Gentle, smooth ocean waves ideal for calm seas and harbors.
-- **DA_Wave_SevereGale** — Intense, dramatic waves for stormy weather conditions.
-- **DA_Wave_Tsunami** — Extreme wave heights for catastrophic ocean events.
+- **DA_Wave_Calm** - Gentle, smooth ocean waves ideal for calm seas and harbors.
+- **DA_Wave_SevereGale** - Intense, dramatic waves for stormy weather conditions.
+- **DA_Wave_Tsunami** - Extreme wave heights for catastrophic ocean events.
 
 Select a preset to override the master preset for that specific category. The ocean will update immediately to reflect the new wave behavior.
 
@@ -111,16 +119,16 @@ Select a preset to override the master preset for that specific category. The oc
 To view or edit the master preset, double-click the **DefaultOceanPreset** thumbnail or navigate to the preset asset in the Content Browser. The preset editor displays all configurable categories:
 
 **Preset Categories:**
-- **Default** — Base configuration and general settings.
-- **Waves** — Wave amplitude, frequency, direction, and animation.
-- **Wave Buffer** — Wave buffer resolution and rendering quality.
-- **Shore Waves** — Breaking wave behavior near coastlines.
-- **Color** — Water color, absorption, and scattering.
-- **Caustics** — Caustic pattern intensity and animation.
-- **Detail** — Surface normal maps and micro-detail.
-- **Foam** — Foam generation, coverage, and appearance.
-- **Wetness** — Surface wetness effects on nearby objects.
-- **Underwater** — Underwater fog, tint, and post-processing.
+- **Default** - Base configuration and general settings.
+- **Waves** - Wave amplitude, frequency, direction, and animation.
+- **Wave Buffer** - Wave buffer resolution and rendering quality.
+- **Shore Waves** - Breaking wave behavior near coastlines.
+- **Color** - Water color, absorption, and scattering.
+- **Caustics** - Caustic pattern intensity and animation.
+- **Detail** - Surface normal maps and micro-detail.
+- **Foam** - Foam generation, coverage, and appearance.
+- **Wetness** - Surface wetness effects on nearby objects.
+- **Underwater** - Underwater fog, tint, and post-processing.
 
 Each category can be expanded to reveal its individual parameters. Modifying values here will affect all ocean actors using this preset.
 
@@ -173,9 +181,9 @@ To create variations, right-click the preset in Content Browser and select **Dup
 
 In this guide, you learned how to:
 
-1. **Access the Preset system** — Locate and understand the master preset and grouped preset slots on the ocean actor.
-2. **Control Preset Inclusion Groups** — Selectively enable or disable which parameter groups are affected by presets.
-3. **Apply Grouped Water Presets** — Override specific ocean aspects like waves, color, or foam independently.
-4. **Explore Ocean Preset assets** — View, edit, and duplicate preset Data Assets for custom ocean configurations.
+1. **Access the Preset system** - Locate and understand the master preset and grouped preset slots on the ocean actor.
+2. **Control Preset Inclusion Groups** - Selectively enable or disable which parameter groups are affected by presets.
+3. **Apply Grouped Water Presets** - Override specific ocean aspects like waves, color, or foam independently.
+4. **Explore Ocean Preset assets** - View, edit, and duplicate preset Data Assets for custom ocean configurations.
 
 With the Preset system, you can rapidly iterate on ocean looks, create weather variations, and maintain consistent water styles across your project without manually adjusting dozens of individual parameters.

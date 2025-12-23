@@ -3,20 +3,28 @@ title: Caustics
 sidebar_label: Caustics
 ---
 
-# Riverology — Caustics
+# Riverology - Caustics
 
-_Last updated: 2025-12-09_
+<div className="doc-badge doc-badge-violet">💡 Light Patterns</div>
+<div className="doc-badge doc-badge-cyan">🌊 Animated</div>
+<div className="doc-badge doc-badge-emerald">☀️ Sun-Driven</div>
+
+Create dancing underwater light patterns projected onto the riverbed.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.6 or newer.
-- **Riverology** installed and configured (see the **Setup** page).
-- At least one **BP_Riverology** river placed in your level.
-- Basic familiarity with **Materials** and **Lighting** in Unreal Engine.
 
-## Notes
-- Caustics are the light patterns you see dancing on the riverbed when sunlight passes through moving water. Riverology simulates this effect by projecting animated caustic textures onto surfaces beneath the water.
-- The caustic system is built into the **BP_Riverology** actor. You enable and configure it directly from the Details panel without adding additional components.
-- For best results, ensure your scene has a directional light (sun) and that the riverbed geometry is visible through the water surface.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Riverology installed and configured |
+| **Scene** | BP_Riverology river + Directional Light |
+| **Skills** | Basic Materials and Lighting understanding |
+
+:::info About Caustics
+Caustics are animated light patterns on the riverbed from sunlight through moving water. Built into **BP_Riverology** - enable and configure directly from the Details panel.
+:::
 
 ---
 
@@ -81,8 +89,8 @@ The caustics animate automatically based on the water surface motion and the **C
 
 In this guide, you learned how to:
 
-1. **Locate the Caustic System settings** — Find and expand the caustic parameters in the BP_Riverology Details panel.
-2. **Configure caustic appearance** — Adjust scale, brightness, and animation speed to match your scene.
-3. **Tune for different scenarios** — Apply recommended settings for various lighting and water conditions.
+1. **Locate the Caustic System settings** - Find and expand the caustic parameters in the BP_Riverology Details panel.
+2. **Configure caustic appearance** - Adjust scale, brightness, and animation speed to match your scene.
+3. **Tune for different scenarios** - Apply recommended settings for various lighting and water conditions.
 
 Caustics add significant visual realism to river scenes with minimal performance cost. Experiment with the parameters to achieve the look that best matches your environment's lighting and mood.

@@ -3,20 +3,28 @@ title: Wave Audio
 sidebar_label: Wave Audio
 ---
 
-# Oceanology Next-Gen — Wave Audio
+# Oceanology NextGen - Wave Audio
 
-_Last updated: 2025-12-13_
+<div className="doc-badge doc-badge-violet">🔊 Spatialized Sound</div>
+<div className="doc-badge doc-badge-cyan">🌊 Wave-Driven</div>
+<div className="doc-badge doc-badge-emerald">🎧 Immersive</div>
+
+Create immersive ocean soundscapes with spatialized audio that responds to player position.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.5 or newer.
-- **Oceanology** installed and configured (see the **Setup** page).
-- At least one **Oceanology** water body placed in your level (infinite ocean or lake).
-- Basic familiarity with **audio systems** and **volumes** in Unreal Engine.
 
-## Notes
-- The Wave Audio system in Oceanology provides spatialized ocean sound effects that respond to the player's position relative to the water. This creates immersive audio environments where wave sounds change based on proximity and location.
-- The system uses attenuation volumes to control how sound fades in and out as the player moves toward or away from the water.
-- You can customize the audio behavior with different modes, volume multipliers, and pitch adjustments to match your project's audio design.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Oceanology NextGen installed and configured |
+| **Scene** | Water body placed in your level |
+| **Skills** | Basic audio systems familiarity |
+
+:::info About Wave Audio
+Wave Audio provides spatialized ocean sounds that respond to player proximity. Uses attenuation volumes for natural fade in/out. Customize modes, volume multipliers, and pitch to match your audio design.
+:::
 
 ---
 
@@ -28,14 +36,14 @@ Open your level and use the **Quickly Add to the Project** menu (the `+` button 
 Scroll through the list to find the audio-related actors:
 
 **Volumes:**
-- **Oceanology Water Niagara Waves Volume** — Volume for Niagara wave particle effects.
-- **Oceanology Water Volume** — General water interaction volume.
+- **Oceanology Water Niagara Waves Volume** - Volume for Niagara wave particle effects.
+- **Oceanology Water Volume** - General water interaction volume.
 
 **All Actors:**
-- **Oceanology Infinite Ocean** — The infinite ocean water body.
-- **Oceanology Lake** — Bounded lake water body.
-- **Oceanology Manager** — Central Oceanology controller.
-- **Oceanology Wave Audio** — The wave sound effect actor. Select this to add ocean audio.
+- **Oceanology Infinite Ocean** - The infinite ocean water body.
+- **Oceanology Lake** - Bounded lake water body.
+- **Oceanology Manager** - Central Oceanology controller.
+- **Oceanology Wave Audio** - The wave sound effect actor. Select this to add ocean audio.
 
 Drag **Oceanology Wave Audio** into your scene and position it where you want the ocean sounds to emanate from (typically along the shoreline or over the water surface).
 
@@ -46,30 +54,30 @@ Drag **Oceanology Wave Audio** into your scene and position it where you want th
 Select the **OceanologyWaveAudio** actor in your scene. In the **Details** panel, you will find the following configuration options:
 
 **Transform Settings:**
-- **Location** — Position the audio source where wave sounds should originate. Example: `159490.0, 34890.0, 1000.0`
-- **Rotation** — `0.0, 0.0, 0.0` (typically no rotation needed for ambient audio).
-- **Scale** — `2.9075, 1.03, 1.0`. Adjust to change the audio volume shape proportions.
+- **Location** - Position the audio source where wave sounds should originate. Example: `159490.0, 34890.0, 1000.0`
+- **Rotation** - `0.0, 0.0, 0.0` (typically no rotation needed for ambient audio).
+- **Scale** - `2.9075, 1.03, 1.0`. Adjust to change the audio volume shape proportions.
 
 **Ocean Audio Settings:**
 
-- **Mode** — `Wave`. Determines the type of ocean audio. Wave mode provides continuous ocean wave sounds.
-- **Attenuation Shape Extent** — `8000.0`. The maximum distance from the audio source where sound is audible. Beyond this distance, the sound fades to silence.
-- **Attenuation Shape** — ✅ `Box`. The shape of the attenuation volume. Box creates a rectangular audio zone ideal for shorelines.
-- **Use Override Sound** — ❌ Disabled. When enabled, allows using a custom sound asset instead of the default wave audio.
-- **Override Sound** — `None`. Assign a custom Sound Wave or Sound Cue here when Use Override Sound is enabled.
+- **Mode** - `Wave`. Determines the type of ocean audio. Wave mode provides continuous ocean wave sounds.
+- **Attenuation Shape Extent** - `8000.0`. The maximum distance from the audio source where sound is audible. Beyond this distance, the sound fades to silence.
+- **Attenuation Shape** - ✅ `Box`. The shape of the attenuation volume. Box creates a rectangular audio zone ideal for shorelines.
+- **Use Override Sound** - ❌ Disabled. When enabled, allows using a custom sound asset instead of the default wave audio.
+- **Override Sound** - `None`. Assign a custom Sound Wave or Sound Cue here when Use Override Sound is enabled.
 
 **Volume and Pitch:**
-- **Water Volume Multiplier** — `0.75`. Controls the overall volume of the wave sounds. Range 0.0 to 1.0.
-- **Water Pitch Multiplier** — `1.0`. Controls the pitch of the wave sounds. Values below 1.0 lower the pitch, above 1.0 raise it.
+- **Water Volume Multiplier** - `0.75`. Controls the overall volume of the wave sounds. Range 0.0 to 1.0.
+- **Water Pitch Multiplier** - `1.0`. Controls the pitch of the wave sounds. Values below 1.0 lower the pitch, above 1.0 raise it.
 
 **Overlap Detection:**
-- **Check Initial Overlap** — ✅ Enabled. Checks if the player starts inside the audio volume when the level loads.
-- **Initial Overlap Check Delay** — `0.5`. Delay in seconds before checking initial overlap.
+- **Check Initial Overlap** - ✅ Enabled. Checks if the player starts inside the audio volume when the level loads.
+- **Initial Overlap Check Delay** - `0.5`. Delay in seconds before checking initial overlap.
 
 **Debug Options:**
-- **Debug Enabled** — ✅ Enabled. Shows debug information at runtime.
-- **Show Play Sound Debug Messages** — ✅ Enabled. Displays messages when sounds play or stop.
-- **Show Sound Area** — ✅ Enabled. Visualizes the audio attenuation volumes in the viewport.
+- **Debug Enabled** - ✅ Enabled. Shows debug information at runtime.
+- **Show Play Sound Debug Messages** - ✅ Enabled. Displays messages when sounds play or stop.
+- **Show Sound Area** - ✅ Enabled. Visualizes the audio attenuation volumes in the viewport.
 
 ![Wave Audio settings in Details panel](NextGenAudio/NextGenAudio_02.png)
 :::
@@ -77,8 +85,8 @@ Select the **OceanologyWaveAudio** actor in your scene. In the **Details** panel
 :::note 3. Visualize the audio attenuation volumes
 With **Show Sound Area** enabled in the Debug options, the viewport displays wireframe volumes representing the audio zones:
 
-- **Magenta/Pink wireframe box** — Represents the **Attenuation Shape Extent**. This is the outer boundary of the audio zone. Sound begins to fade as the player approaches this boundary and is completely silent outside it.
-- **Cyan wireframe box** — Represents the **inner audio zone**. Within this area, the wave audio plays at full volume (modified by the Water Volume Multiplier).
+- **Magenta/Pink wireframe box** - Represents the **Attenuation Shape Extent**. This is the outer boundary of the audio zone. Sound begins to fade as the player approaches this boundary and is completely silent outside it.
+- **Cyan wireframe box** - Represents the **inner audio zone**. Within this area, the wave audio plays at full volume (modified by the Water Volume Multiplier).
 
 **Understanding the audio falloff:**
 The space between the cyan inner box and the magenta outer box is the **falloff zone**. As the player moves from the inner zone toward the outer boundary, the audio volume gradually decreases until it reaches zero at the magenta boundary.
@@ -136,8 +144,8 @@ The space between the cyan inner box and the magenta outer box is the **falloff 
 
 In this guide, you learned how to:
 
-1. **Add Wave Audio to your scene** — Use the Quickly Add menu to find and place the OceanologyWaveAudio actor.
-2. **Configure audio settings** — Adjust mode, attenuation, volume, and pitch for your desired audio experience.
-3. **Visualize audio volumes** — Use debug options to see the attenuation and falloff zones in the viewport.
+1. **Add Wave Audio to your scene** - Use the Quickly Add menu to find and place the OceanologyWaveAudio actor.
+2. **Configure audio settings** - Adjust mode, attenuation, volume, and pitch for your desired audio experience.
+3. **Visualize audio volumes** - Use debug options to see the attenuation and falloff zones in the viewport.
 
 With Wave Audio properly configured, your ocean environments will have immersive, spatialized sound effects that respond naturally to player movement, enhancing the overall atmosphere of your water scenes.

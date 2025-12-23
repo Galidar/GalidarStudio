@@ -3,22 +3,28 @@ title: Waves
 sidebar_label: Waves
 ---
 
-# Oceanology Next-Gen — Waves
+# Oceanology NextGen - Waves
 
-_Last updated: 2025-12-10_
+<div className="doc-badge doc-badge-violet">🌊 Spectral Gerstner + FFT</div>
+<div className="doc-badge doc-badge-cyan">🌬️ Beaufort Wind Scale</div>
+<div className="doc-badge doc-badge-emerald">🎮 Deterministic</div>
+
+Configure the hybrid wave system combining Spectral Gerstner waves with FFT for photorealistic ocean surfaces.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.6 or newer.
-- **Oceanology Next-Gen** installed and configured (see the **Setup** page).
-- At least one **Oceanology Next-Gen** water body placed in your level (Infinite Ocean or Lake).
-- Basic familiarity with **Blueprints** and **material parameters** in Unreal Engine.
 
-## Notes
-- Oceanology Next-Gen uses a **Spectral Gerstner** wave system that generates realistic ocean surface displacement based on the Beaufort wind scale. This physically-based approach creates natural wave patterns that respond to wind speed and direction.
-- The wave system includes **Wave Buffers** that capture wave data into render targets at multiple LOD distances (Near, Medium, Far) for efficient GPU sampling.
-- **Shore Waves** provide coastal breaking wave simulation with configurable transition factors and sway amplitudes.
-- Wave parameters directly affect **Buoyancy** calculations — any changes to wave settings will influence how objects float and respond to the water surface.
-- The system is **deterministic**, ensuring synchronized wave states across multiplayer clients without additional network overhead.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Oceanology NextGen installed and configured |
+| **Scene** | At least one water body in your level |
+| **Skills** | Basic Blueprint and material parameter familiarity |
+
+:::info About Spectral Waves
+NextGen uses a **Spectral Gerstner** system based on the Beaufort wind scale for physically-based wave generation. **Wave Buffers** capture data at multiple LOD distances (Near, Medium, Far) for efficient GPU sampling. The system is **deterministic** for multiplayer synchronization.
+:::
 
 ---
 
@@ -30,24 +36,24 @@ Open your level and use the **Quickly Add to the Project** menu (the `+` button 
 You will see several Oceanology actors available:
 
 **Volumes:**
-- **Oceanology Water Niagara Waves Volume** — Enables Niagara-based wave effects in specific regions.
-- **Oceanology Water Volume** — Defines regions for buoyancy and underwater effects.
+- **Oceanology Water Niagara Waves Volume** - Enables Niagara-based wave effects in specific regions.
+- **Oceanology Water Volume** - Defines regions for buoyancy and underwater effects.
 
 **All Actors:**
-- **BP_OceanologyChronos** — Time-of-day controller for dynamic lighting.
-- **Oceanology Infinite Ocean** — An infinite ocean water body with full wave simulation.
-- **Oceanology Lake** — A bounded lake water body.
-- **Oceanology Light Source Controller** — Controls light source behavior with water.
-- **Oceanology Manager** — The central controller for all Oceanology systems.
-- **Oceanology Material to Struct Converter** — Utility for converting material parameters.
-- **Oceanology Preset Converter Actor** — Converts presets between versions.
-- **Oceanology Scrubber** — Utility actor for timeline scrubbing.
-- **Oceanology Water Depth Debugger** — Visualizes water depth calculations.
-- **Oceanology Water Interactor** — Enables interaction effects with water.
-- **Oceanology Water Niagara Waves Volume** — Niagara wave effects volume.
-- **Oceanology Water Surface Debugger** — Visualizes wave calculations for debugging.
-- **Oceanology Water Volume** — Water physics volume.
-- **Oceanology Wave Audio** — Dynamic audio based on wave conditions.
+- **BP_OceanologyChronos** - Time-of-day controller for dynamic lighting.
+- **Oceanology Infinite Ocean** - An infinite ocean water body with full wave simulation.
+- **Oceanology Lake** - A bounded lake water body.
+- **Oceanology Light Source Controller** - Controls light source behavior with water.
+- **Oceanology Manager** - The central controller for all Oceanology systems.
+- **Oceanology Material to Struct Converter** - Utility for converting material parameters.
+- **Oceanology Preset Converter Actor** - Converts presets between versions.
+- **Oceanology Scrubber** - Utility actor for timeline scrubbing.
+- **Oceanology Water Depth Debugger** - Visualizes water depth calculations.
+- **Oceanology Water Interactor** - Enables interaction effects with water.
+- **Oceanology Water Niagara Waves Volume** - Niagara wave effects volume.
+- **Oceanology Water Surface Debugger** - Visualizes wave calculations for debugging.
+- **Oceanology Water Volume** - Water physics volume.
+- **Oceanology Wave Audio** - Dynamic audio based on wave conditions.
 
 For this guide, drag **Oceanology Infinite Ocean** into your scene along with the **Oceanology Manager**.
 
@@ -260,27 +266,27 @@ This configuration works well for most gameplay scenarios and can be adjusted us
 
 | Parameter | Range | Default | Description |
 |-----------|-------|---------|-------------|
-| **BeaufortScale** | `0.0` — `12.0` | `5.0` | Wind intensity scale |
-| **DirectionalVariance** | `0.0` — `180.0` | `30.0` | Wave direction spread in degrees |
-| **MaxWaveHeight** | `1.0` — `50.0` | `13.7` | Maximum wave height |
-| **MaxWaveLength** | `1000.0` — `50000.0` | `13312.0` | Maximum wavelength |
-| **WaveComponentCount** | `32.0` — `512.0` | `128.0` | Number of wave components |
+| **BeaufortScale** | `0.0` - `12.0` | `5.0` | Wind intensity scale |
+| **DirectionalVariance** | `0.0` - `180.0` | `30.0` | Wave direction spread in degrees |
+| **MaxWaveHeight** | `1.0` - `50.0` | `13.7` | Maximum wave height |
+| **MaxWaveLength** | `1000.0` - `50000.0` | `13312.0` | Maximum wavelength |
+| **WaveComponentCount** | `32.0` - `512.0` | `128.0` | Number of wave components |
 
 ### Wave Buffer Settings
 
 | Parameter | Range | Default | Description |
 |-----------|-------|---------|-------------|
-| **Wave Capture Size** | `1000.0` — `100000.0` | `32768.0` | Capture area size |
-| **Wave Texture Resolution** | `512` — `4096` | `2048` | Render target resolution |
-| **Wave Capture Disable Distance** | `10000.0` — `200000.0` | `75000.0` | LOD cutoff distance |
+| **Wave Capture Size** | `1000.0` - `100000.0` | `32768.0` | Capture area size |
+| **Wave Texture Resolution** | `512` - `4096` | `2048` | Render target resolution |
+| **Wave Capture Disable Distance** | `10000.0` - `200000.0` | `75000.0` | LOD cutoff distance |
 
 ### Shore Wave Parameters
 
 | Parameter | Range | Default | Description |
 |-----------|-------|---------|-------------|
-| **WaveHeight** | `100.0` — `5000.0` | `1500.0` | Shore wave height |
-| **WaveLength** | `500.0` — `10000.0` | `4000.0` | Shore wavelength |
-| **WaveSwayAmplitude** | `100.0` — `5000.0` | `2000.0` | Breaking wave sway |
+| **WaveHeight** | `100.0` - `5000.0` | `1500.0` | Shore wave height |
+| **WaveLength** | `500.0` - `10000.0` | `4000.0` | Shore wavelength |
+| **WaveSwayAmplitude** | `100.0` - `5000.0` | `2000.0` | Breaking wave sway |
 
 ---
 
@@ -331,12 +337,12 @@ The following presets demonstrate common ocean conditions using the Beaufort sca
 
 In this guide, you learned how to:
 
-1. **Add an Oceanology Infinite Ocean** — Place the ocean actor and manager in your level.
-2. **Access wave settings** — Find the Waves category in the ocean actor's Details panel.
-3. **Configure Spectral Gerstner** — Adjust Beaufort scale, directional variance, and wave dimensions for desired sea state.
-4. **Understand Wave Buffers** — Learn how wave data is captured to render targets for efficient GPU sampling.
-5. **Configure Wave Buffer Settings** — Set resolution, capture size, and LOD distances for optimal performance.
-6. **Configure Shore Waves** — Set up coastal breaking waves with transition factors and sway amplitudes.
-7. **Preview results** — See the final wave simulation with realistic foam and motion.
+1. **Add an Oceanology Infinite Ocean** - Place the ocean actor and manager in your level.
+2. **Access wave settings** - Find the Waves category in the ocean actor's Details panel.
+3. **Configure Spectral Gerstner** - Adjust Beaufort scale, directional variance, and wave dimensions for desired sea state.
+4. **Understand Wave Buffers** - Learn how wave data is captured to render targets for efficient GPU sampling.
+5. **Configure Wave Buffer Settings** - Set resolution, capture size, and LOD distances for optimal performance.
+6. **Configure Shore Waves** - Set up coastal breaking waves with transition factors and sway amplitudes.
+7. **Preview results** - See the final wave simulation with realistic foam and motion.
 
 With this knowledge, you can create any ocean condition from mirror-calm lakes to hurricane-force storms, all with physically-based wave behavior and optimized GPU performance.

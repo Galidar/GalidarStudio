@@ -3,20 +3,28 @@ title: Normal Maps
 sidebar_label: Normal Maps
 ---
 
-# Riverology — Normal Maps
+# Riverology - Normal Maps
 
-_Last updated: 2025-12-09_
+<div className="doc-badge doc-badge-violet">🌊 Surface Detail</div>
+<div className="doc-badge doc-badge-cyan">💨 Flow Animation</div>
+<div className="doc-badge doc-badge-emerald">🎨 Ripples</div>
+
+Configure animated normal maps for realistic surface detail and ripple effects.
+
+---
 
 ## Prerequisites
-- Unreal Engine 5.6 or newer.
-- **Riverology** installed and configured (see the **Setup** page).
-- At least one **BP_Riverology** river placed in your level.
-- Basic familiarity with **Normal Maps** and **Materials** in Unreal Engine.
 
-## Notes
-- Normal maps define the surface detail of the water, creating the appearance of small waves, ripples, and surface perturbations without adding geometric complexity. They are essential for realistic water rendering.
-- Riverology uses animated normal maps that scroll across the water surface, simulating the constant motion of flowing water. The animation speed and scale can be adjusted to match different river conditions.
-- Normal maps affect reflections, refraction, specular highlights, and caustics — making them one of the most impactful visual settings in the system.
+| Requirement | Details |
+|-------------|---------|
+| **Engine** | Unreal Engine 5.3 or newer |
+| **Plugin** | Riverology installed and configured |
+| **Scene** | BP_Riverology river in your level |
+| **Skills** | Basic Normal Maps understanding |
+
+:::info About Normal Maps
+Animated normal maps scroll across the water surface simulating flowing water. They affect reflections, refraction, specular highlights, and caustics - one of the most impactful visual settings.
+:::
 
 ---
 
@@ -39,10 +47,10 @@ Select your **BP_Riverology** actor in the **Outliner**. In the **Details** pane
 With the normal maps configured, the water surface displays realistic ripples and wave patterns that animate with the river flow.
 
 The normal map affects multiple visual aspects:
-- **Reflections** — Surface normals distort reflected sky and environment.
-- **Refraction** — Underwater objects appear to shimmer and distort.
-- **Specular highlights** — Sun and light reflections break into dynamic patterns.
-- **Caustics** — Light patterns on the riverbed follow surface normal variations.
+- **Reflections** - Surface normals distort reflected sky and environment.
+- **Refraction** - Underwater objects appear to shimmer and distort.
+- **Specular highlights** - Sun and light reflections break into dynamic patterns.
+- **Caustics** - Light patterns on the riverbed follow surface normal variations.
 
 Adjust **Normal Flatness** to balance between calm water (higher values) and turbulent rapids (lower values).
 
@@ -98,9 +106,9 @@ To assign a custom texture, click the **Wave Normals** dropdown and select your 
 
 In this guide, you learned how to:
 
-1. **Configure wave normal texture** — Assign and customize the normal map that defines water surface detail.
-2. **Adjust animation speed** — Control how fast surface ripples move with the **Fast Wave** parameter.
-3. **Control wave scale** — Set the tiling density to match your river's character.
-4. **Balance normal intensity** — Use **Normal Flatness** to dial between calm and turbulent water.
+1. **Configure wave normal texture** - Assign and customize the normal map that defines water surface detail.
+2. **Adjust animation speed** - Control how fast surface ripples move with the **Fast Wave** parameter.
+3. **Control wave scale** - Set the tiling density to match your river's character.
+4. **Balance normal intensity** - Use **Normal Flatness** to dial between calm and turbulent water.
 
 Normal maps are fundamental to water realism. Small adjustments to these parameters dramatically change the river's visual character, from mirror-smooth pools to churning whitewater rapids.
