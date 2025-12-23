@@ -25,8 +25,8 @@ export default function Home(): JSX.Element {
     <Layout title="Galidar Studio" description="Ocean and river simulation plugins for Unreal Engine — plus cinematic environment packs.">
       <header className="landing-hero">
         <div className="container">
-          <h1 className="hero-title">Make water the star of your world.</h1>
-          <p className="hero-subtitle">Oceanology Legacy · Oceanology NextGen · Riverology — by Galidar Studio</p>
+          <h1 className="hero-title">Build Immersive Worlds</h1>
+          <p className="hero-subtitle">Water simulation plugins and environment packs for Unreal Engine 5.</p>
           <div className="landing-cta">
             <FabLink href="https://www.fab.com/listings/87c9af41-62b7-4e70-98e3-fc72eff016ab" label="Get Oceanology NextGen" />
             <FabLink href="https://www.fab.com/listings/1cd1f62e-0fa3-48bf-bc60-f0e06010fce3" label="Get Oceanology Legacy" />
