@@ -65,6 +65,11 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/logo.svg',
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
+    },
     metadata: [
       { name: 'keywords', content: 'Galidar Studio, Oceanology, Riverology, Unreal Engine, water, ocean, rivers' },
       { name: 'twitter:card', content: 'summary_large_image' },
