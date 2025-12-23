@@ -348,6 +348,6 @@ LocalSimulation: true (clients simulate visuals)
 
 Found a hidden feature we didn't cover? Share it in our [Discord](https://discord.gg/VHJGBDR2as)!
 
-The community frequently discovers creative uses we never anticipated. Your tip might end up in a future blog post!
+The community frequently discovers creative uses we never anticipated. Your tip might end up in a future roadmap post!
 
 Happy exploring! 🔍

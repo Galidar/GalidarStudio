@@ -17,7 +17,7 @@ Implement realistic floating physics with the pontoon-based buoyancy system in O
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Oceanology NextGen installed and configured |
 | **Scene** | Water body with Oceanology Water Volume |
 | **Skills** | Basic familiarity with Blueprints and Physics |

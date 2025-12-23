@@ -67,7 +67,7 @@ slug: /
 
 | Requirement | Specification |
 |-------------|---------------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Platform** | Windows (macOS/Linux experimental) |
 | **Graphics API** | DirectX 12 with Shader Model 6 |
 | **Hardware** | High-end GPU recommended (RTX 3080 / RTX 4070+ / 8GB+ VRAM) |

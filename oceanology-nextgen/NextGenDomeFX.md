@@ -17,7 +17,7 @@ Create underwater dome structures with correct water interaction for bases and o
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Oceanology NextGen installed and configured |
 | **Scene** | OceanologyInfiniteOcean actor in level |
 | **Skills** | Basic Blueprint and Materials familiarity |

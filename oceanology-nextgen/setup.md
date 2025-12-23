@@ -18,7 +18,7 @@ Get Oceanology NextGen up and running in your Unreal Engine project with this co
 
 | Requirement | Details |
 |-------------|---------|
-| **Unreal Engine** | Version 5.3 or newer |
+| **Unreal Engine** | UE5.x (latest release) |
 | **Operating System** | Windows with DirectX 12 capable GPU |
 | **Shader Model** | SM6 support required for full features |
 | **GPU** | RTX 3080 / RTX 4070+ or equivalent recommended |

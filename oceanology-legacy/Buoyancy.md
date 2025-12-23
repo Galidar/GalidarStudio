@@ -17,7 +17,7 @@ Learn how to make objects float realistically using the pontoon-based buoyancy s
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Oceanology Legacy installed and configured |
 | **Scene** | At least one water body placed in your level |
 | **Skills** | Basic familiarity with Blueprints, physics, and collision |

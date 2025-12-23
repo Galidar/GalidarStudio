@@ -17,7 +17,7 @@ Simulate realistic wet sand and moisture effects along coastlines where waves me
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Oceanology NextGen installed and configured |
 | **Scene** | Water body placed in your level |
 | **Skills** | Basic PBR and material understanding |

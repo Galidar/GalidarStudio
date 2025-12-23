@@ -17,7 +17,7 @@ Configure flow-based foam generation for wave crests, shorelines, and object int
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Oceanology NextGen installed and configured |
 | **Scene** | Water body placed in your level |
 | **Skills** | Basic Material Instance familiarity |

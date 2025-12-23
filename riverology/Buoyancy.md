@@ -17,7 +17,7 @@ Implement flow-based buoyancy with automatic downstream forces for floating obje
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Riverology installed and configured |
 | **Scene** | BP_Riverology actor with waves configured |
 | **Skills** | Basic physics and collision familiarity |

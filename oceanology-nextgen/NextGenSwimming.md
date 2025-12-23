@@ -17,7 +17,7 @@ Implement realistic character swimming with the OceanSwimming component and wate
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Oceanology NextGen installed and configured |
 | **Scene** | Water body with Oceanology Water Volume |
 | **Character** | Blueprint with CharacterMovementComponent |

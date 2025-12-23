@@ -17,7 +17,7 @@ Control buoyant vessels with keyboard, mouse, or gamepad using the Pawn-based na
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Oceanology Legacy installed and configured |
 | **Scene** | Water body with buoyancy setup |
 | **Skills** | Basic familiarity with Pawns and Enhanced Input |

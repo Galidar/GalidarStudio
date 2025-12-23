@@ -18,7 +18,7 @@ Get Riverology up and running in your Unreal Engine project with this comprehens
 
 | Requirement | Details |
 |-------------|---------|
-| **Unreal Engine** | Version 5.3 or newer |
+| **Unreal Engine** | UE5.x (latest release) |
 | **Operating System** | Windows with DirectX 12 capable GPU (GTX 1080 / RTX 3060+) |
 | **Shader Model** | SM6 support recommended |
 | **Optional** | Mesh Distance Fields for shoreline effects |

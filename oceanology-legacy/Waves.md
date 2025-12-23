@@ -17,7 +17,7 @@ Configure Gerstner wave parameters to create calm seas, stormy oceans, or anythi
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Oceanology Legacy installed and configured |
 | **Scene** | At least one water body in your level |
 | **Skills** | Basic Blueprint and material parameter familiarity |

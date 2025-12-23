@@ -17,7 +17,7 @@ Create dancing underwater light patterns projected onto the riverbed.
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Riverology installed and configured |
 | **Scene** | BP_Riverology river + Directional Light |
 | **Skills** | Basic Materials and Lighting understanding |

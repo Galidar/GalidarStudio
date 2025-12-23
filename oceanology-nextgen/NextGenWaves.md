@@ -17,7 +17,7 @@ Configure the hybrid wave system combining Spectral Gerstner waves with FFT for 
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Oceanology NextGen installed and configured |
 | **Scene** | At least one water body in your level |
 | **Skills** | Basic Blueprint and material parameter familiarity |

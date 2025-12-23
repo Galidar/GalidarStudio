@@ -17,7 +17,7 @@ Create seamless infinite oceans that follow the camera for open-world environmen
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Oceanology NextGen installed and configured |
 | **Scene** | OceanologyInfiniteOcean actor in level |
 | **Skills** | Basic Blueprint familiarity |

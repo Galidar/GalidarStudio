@@ -17,7 +17,7 @@ Automatically carve realistic riverbeds and banks into your landscape terrain.
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Riverology installed and configured |
 | **Scene** | Landscape actor in your level |
 | **Skills** | Basic Landscape Mode familiarity |

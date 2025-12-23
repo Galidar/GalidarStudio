@@ -17,7 +17,7 @@ Simulate realistic coastal wave behavior with math-based breaking waves and dire
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Oceanology NextGen installed and configured |
 | **Scene** | Ocean actor + landscape/coastline geometry |
 | **Skills** | Basic wave physics understanding |

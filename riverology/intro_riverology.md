@@ -67,7 +67,7 @@ slug: /
 
 | Requirement | Specification |
 |-------------|---------------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Platform** | Windows (consoles supported) |
 | **Graphics API** | DirectX 12 (SM6 recommended) |
 | **Hardware** | Mid-range GPU (GTX 1080 / RTX 3060+) or better |

@@ -67,7 +67,7 @@ Oceanology Legacy is designed for teams who need water that performs consistentl
 
 | Requirement | Specification |
 |-------------|---------------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Platform** | Windows, Mac, Linux |
 | **Graphics API** | DirectX 12 (Shader Model 6 recommended) |
 | **Hardware** | Mid-range GPU (GTX 1080 / RTX 3060+) or better |

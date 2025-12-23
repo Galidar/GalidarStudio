@@ -17,7 +17,7 @@ Create immersive underwater environments with fog, light absorption, and color t
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Riverology installed and configured |
 | **Scene** | BP_Riverology river spline in your level |
 | **Skills** | Basic post-processing understanding |

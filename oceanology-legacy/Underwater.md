@@ -17,7 +17,7 @@ Create immersive underwater environments with fog, caustics, god rays, and volum
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Oceanology Legacy installed and configured |
 | **Scene** | Water body placed in your level |
 | **Lighting** | A Directional Light (required for God Rays) |

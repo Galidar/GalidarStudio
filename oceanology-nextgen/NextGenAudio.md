@@ -17,7 +17,7 @@ Create immersive ocean soundscapes with spatialized audio that responds to playe
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Oceanology NextGen installed and configured |
 | **Scene** | Water body placed in your level |
 | **Skills** | Basic audio systems familiarity |

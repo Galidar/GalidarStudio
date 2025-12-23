@@ -17,7 +17,7 @@ Dynamic mesh generation with GPU-accelerated QuadTree tessellation for optimal q
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Oceanology NextGen installed and configured |
 | **Scene** | Oceanology Infinite Ocean placed in level |
 | **Skills** | Basic understanding of LOD systems |

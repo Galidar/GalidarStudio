@@ -17,7 +17,7 @@ Configure water surface rendering including scattering, absorption, caustics, an
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Oceanology Legacy installed and configured |
 | **Scene** | Water body placed in your level |
 | **Skills** | Basic familiarity with Materials and shaders |

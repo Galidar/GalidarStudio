@@ -17,7 +17,7 @@ Implement character swimming with automatic current response in river environmen
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Riverology installed and configured |
 | **Scene** | BP_Riverology river spline in your level |
 | **Character** | Blueprint with CharacterMovementComponent |

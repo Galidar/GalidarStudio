@@ -23,19 +23,19 @@ const faqData = [
     questions: [
       {
         q: 'What Unreal Engine versions are supported?',
-        a: 'We target UE 5.3 and later. Check release notes on the blog for exact compatibility per release. Legacy versions may support older UE5.x releases.',
+        a: 'All plugins are continuously updated to support the latest UE5.x release. We maintain compatibility with the current engine version as our primary focus. Previous engine versions remain functional but are not actively maintained due to significant engine-level changes between releases.',
       },
       {
         q: 'Does NextGen replace Legacy?',
-        a: 'No. Legacy is actively maintained and optimized for mid-range GPUs. NextGen introduces new architectures (FFT waves, C++ QuadTree) for high-end systems. Choose based on your project needs.',
+        a: 'No. Both products serve different use cases. Legacy is optimized for broad hardware compatibility and consistent performance across mid-range GPUs. NextGen leverages advanced rendering techniques (FFT spectral waves, GPU QuadTree tessellation) for high-end systems and cinematic applications. Select based on your target hardware and visual requirements.',
       },
       {
         q: 'Can I use these plugins in commercial projects?',
-        a: 'Yes! All plugins purchased from FAB include a commercial license. You can ship games and sell products using our water systems.',
+        a: 'Yes. All plugins purchased through FAB include a full commercial license. You may ship games, simulations, and commercial products using our water systems without additional licensing fees.',
       },
       {
         q: 'Do you offer refunds?',
-        a: 'Refund policies are handled by Epic Games / FAB. Please contact their support for refund requests within the eligible window.',
+        a: 'Refund policies are managed by Epic Games through the FAB marketplace. Please contact their support team for refund requests within the applicable eligibility window.',
       },
     ],
   },
@@ -46,23 +46,23 @@ const faqData = [
     questions: [
       {
         q: 'How do I install the plugins?',
-        a: 'Download from FAB, extract to your project\'s Plugins folder, and enable in the Plugins menu. See our setup guides for detailed instructions.',
+        a: 'Download from FAB, extract to your project\'s Plugins directory, and enable via the Plugins menu in Unreal Editor. Refer to our setup documentation for detailed integration instructions.',
       },
       {
         q: 'Why is my ocean not rendering?',
-        a: 'Check that: (1) The plugin is enabled, (2) You\'ve added the Ocean actor to your level, (3) Your project has Lumen or similar lighting enabled, (4) Post-process volume is configured.',
+        a: 'Verify the following: (1) Plugin is enabled in Project Settings, (2) Ocean actor is placed in your level, (3) Lumen or compatible global illumination is configured, (4) Post-process volume is present with appropriate settings.',
       },
       {
         q: 'Does buoyancy work with physics actors?',
-        a: 'Yes! Our buoyancy system supports both Blueprint and C++ actors. Add the Buoyancy component and configure mass, pontoons, and drag settings.',
+        a: 'Yes. Our buoyancy system fully supports both Blueprint and C++ physics actors. Attach the Buoyancy component and configure mass distribution, pontoon placement, and drag coefficients for realistic water interaction.',
       },
       {
         q: 'Can I use multiple ocean instances?',
-        a: 'Oceanology supports one primary ocean per level. For multiple water bodies, use Riverology for rivers/lakes alongside Oceanology for the main ocean.',
+        a: 'Oceanology supports one primary ocean per level for optimal performance. For projects requiring multiple water bodies, combine Oceanology (ocean) with Riverology (rivers, lakes) for seamless multi-body water environments.',
       },
       {
         q: 'How do I optimize performance?',
-        a: 'Reduce tessellation distance, lower FFT resolution, disable features you don\'t need (caustics, foam), and use LOD settings appropriate for your target hardware.',
+        a: 'Key optimization parameters include: tessellation distance, FFT resolution, LOD bias settings, and selective feature toggling (caustics, foam, subsurface scattering). Consult the performance documentation for hardware-specific recommendations.',
       },
     ],
   },
@@ -73,11 +73,11 @@ const faqData = [
     questions: [
       {
         q: 'Do the plugins support multiplayer?',
-        a: 'Yes! Wave simulation is deterministic and synchronized across clients. Buoyancy and swimming work with replicated actors.',
+        a: 'Yes. Wave simulation is fully deterministic and synchronized across all clients. Buoyancy physics and swimming mechanics are designed for replicated actor support in networked environments.',
       },
       {
         q: 'How is wave state synchronized?',
-        a: 'Waves use a shared time seed — all clients calculate the same wave positions. No network traffic is needed for wave sync.',
+        a: 'Waves utilize a shared time seed ensuring all clients compute identical wave positions independently. This approach eliminates network bandwidth overhead for wave synchronization.',
       },
     ],
   },
@@ -88,15 +88,15 @@ const faqData = [
     questions: [
       {
         q: 'How do I report a bug?',
-        a: 'Open a thread in #support on Discord with: plugin version, UE version, steps to reproduce, and any error logs or screenshots.',
+        a: 'Submit a detailed report in #support on our Discord server. Include: plugin version, Unreal Engine version, reproduction steps, and relevant logs or screenshots.',
       },
       {
         q: 'How do I request a feature?',
-        a: 'Post in #feature-requests on Discord. We review community suggestions regularly and prioritize based on demand and feasibility.',
+        a: 'Post feature requests in #feature-requests on Discord. We evaluate community suggestions regularly and prioritize based on technical feasibility and demand.',
       },
       {
         q: 'What\'s the response time for support?',
-        a: 'We aim to respond within 24-48 hours. Priority support is available to verified @EPIC GAMES members via Linked Roles.',
+        a: 'Standard support response time is 24-48 hours. Priority support with expedited response is available to verified @EPIC GAMES members through our Linked Roles system.',
       },
     ],
   },

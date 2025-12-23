@@ -17,7 +17,7 @@ Save, load, and combine ocean configurations with the two-tier preset system.
 
 | Requirement | Details |
 |-------------|---------|
-| **Engine** | Unreal Engine 5.3 or newer |
+| **Engine** | UE5.x (latest release) |
 | **Plugin** | Oceanology NextGen installed and configured |
 | **Scene** | OceanologyInfiniteOcean actor in level |
 | **Skills** | Basic Data Assets familiarity |
