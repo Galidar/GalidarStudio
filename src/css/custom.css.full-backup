@@ -186,6 +186,13 @@
 }
 
 /* NAVBAR TITLE - Keep gradient for brand recognition */
+[data-theme='light'] .navbar__title {
+  background: linear-gradient(90deg, #8b5cf6, #06b6d4, #8b5cf6) !important;
+  background-size: 200% 100% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
 
 /* STAT VALUES - Use solid violet color */
 [data-theme='light'] .stat-value,
@@ -212,6 +219,9 @@
    ============================================ */
 
 /* Navbar border for light mode */
+[data-theme='light'] .navbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
 
 /* Hero section light mode */
 [data-theme='light'] .hero-section {
@@ -414,7 +424,19 @@
 }
 
 /* Sidebar light mode */
+[data-theme='light'] .theme-doc-sidebar-menu .menu__link {
+  color: var(--text-gray);
+}
 
+[data-theme='light'] .theme-doc-sidebar-menu .menu__link:hover {
+  color: var(--violet);
+  background: rgba(139, 92, 246, 0.08);
+}
+
+[data-theme='light'] .theme-doc-sidebar-menu .menu__link--active {
+  color: var(--violet) !important;
+  background: rgba(139, 92, 246, 0.1);
+}
 
 /* Table of contents light mode */
 [data-theme='light'] .table-of-contents__link {
@@ -674,6 +696,10 @@
 }
 
 /* Sidebar menu */
+[data-theme='light'] .theme-doc-sidebar-menu .menu__link--sublist-caret,
+[data-theme='light'] .theme-doc-sidebar-menu .menu__link--sublist-caret {
+  color: var(--text-white);
+}
 
 /* Stat values - keep gradients for visual interest */
 [data-theme='light'] .stat-value {
@@ -697,7 +723,13 @@
 }
 
 /* Navbar items */
+[data-theme='light'] .navbar__link {
+  color: var(--text-gray);
+}
 
+[data-theme='light'] .navbar__link:hover {
+  color: var(--violet);
+}
 
 /* Breadcrumbs */
 [data-theme='light'] .breadcrumbs__link,
@@ -804,7 +836,13 @@
 }
 
 /* Links in content */
+[data-theme='light'] main a:not(.button):not(.navbar__link):not(.menu__link) {
+  color: var(--violet);
+}
 
+[data-theme='light'] main a:not(.button):not(.navbar__link):not(.menu__link):hover {
+  color: var(--violet-bright);
+}
 
 /* Blockquotes */
 [data-theme='light'] blockquote {
@@ -1378,9 +1416,37 @@
 /* Doc sidebar */
 [data-theme='light'] [class*="docSidebar"],
 [data-theme='light'] aside[class*="sidebar"],
+[data-theme='light'] .theme-doc-sidebar-container nav.menu {
+  background: transparent !important;
+}
 
+[data-theme='light'] .theme-doc-sidebar-menu .menu__list-item,
+[data-theme='light'] .theme-doc-sidebar-menu .menu__link {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .theme-doc-sidebar-menu .menu__link:hover {
+  color: var(--violet) !important;
+  background: rgba(139, 92, 246, 0.08) !important;
+}
+
+[data-theme='light'] .theme-doc-sidebar-menu .menu__link--active,
+[data-theme='light'] .theme-doc-sidebar-menu .menu__link--active:hover {
+  color: var(--violet) !important;
+  background: rgba(139, 92, 246, 0.12) !important;
+}
+
+[data-theme='light'] .theme-doc-sidebar-menu .menu__link--sublist-caret::after,
+[data-theme='light'] .theme-doc-sidebar-menu .menu__caret::before {
+  filter: invert(0.4);
+}
 
 /* Sidebar category labels */
+[data-theme='light'] .theme-doc-sidebar-menu .menu__list-item-collapsible > .menu__link,
+[data-theme='light'] .theme-doc-sidebar-menu .theme-doc-sidebar-item-category > .menu__link {
+  color: var(--text-white) !important;
+  font-weight: 600;
+}
 
 /* Table of contents (right sidebar) */
 [data-theme='light'] .table-of-contents,
@@ -1709,10 +1775,30 @@
 }
 
 /* Navbar in light mode */
+[data-theme='light'] .navbar {
+  background: rgba(250, 250, 250, 0.9) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
 
+[data-theme='light'] .navbar__link {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .navbar__link:hover,
+[data-theme='light'] .navbar__link--active {
+  color: var(--violet) !important;
+}
+
+[data-theme='light'] .navbar__toggle {
+  color: var(--text-white);
+}
 
 /* Mobile sidebar */
+[data-theme='light'] 
 
+[data-theme='light'] 
+
+[data-theme='light'] 
 
 /* Back to top button */
 [data-theme='light'] .theme-back-to-top-button {
@@ -1769,11 +1855,51 @@ body { background: var(--bg-dark); color: var(--text-white); overflow-x: hidden;
 /* ============================================
    NAVBAR
    ============================================ */
+.navbar {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 0.5rem 1rem;
+}
 
+.navbar__brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
 
 /* Ocultar logo si existe */
+.navbar__logo {
+  display: none !important;
+}
 
 /* Título con gradiente animado fuego dorado-azul */
+.navbar__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: linear-gradient(
+    90deg,
+    #fbbf24,
+    #f59e0b,
+    #ea580c,
+    #dc2626,
+    #f59e0b,
+    #fbbf24,
+    #38bdf8,
+    #3b82f6,
+    #6366f1,
+    #3b82f6,
+    #38bdf8,
+    #fbbf24
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fireGradient 4s ease-in-out infinite;
+}
 
 @keyframes fireGradient {
   0% {
@@ -1787,6 +1913,17 @@ body { background: var(--bg-dark); color: var(--text-white); overflow-x: hidden;
   }
 }
 
+.navbar__link {
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.navbar__link:hover {
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--violet-bright) !important;
+}
 
 /* ============================================
    HERO SECTION
@@ -2637,6 +2774,13 @@ body { background: var(--bg-dark); color: var(--text-white); overflow-x: hidden;
 }
 
 /* Sidebar */
+.theme-doc-sidebar-menu .menu__link { border-radius: 10px; transition: all 0.2s ease; }
+.theme-doc-sidebar-menu .menu__link:hover { background: rgba(139, 92, 246, 0.1); color: var(--violet-bright); }
+.theme-doc-sidebar-menu .menu__link--active {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(232, 121, 249, 0.1)) !important;
+  color: var(--violet-bright) !important;
+  font-weight: 600;
+}
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
@@ -4492,8 +4636,39 @@ article [class*="readMore"] {
   background: transparent !important;
 }
 
+.theme-doc-sidebar-menu .menu__link {
+  border-radius: 10px;
+  padding: 0.6rem 0.875rem;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.theme-doc-sidebar-menu .menu__link:hover {
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--violet-bright);
+}
+
+.theme-doc-sidebar-menu .menu__link--active {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(232, 121, 249, 0.1)) !important;
+  color: var(--violet-bright) !important;
+  font-weight: 600;
+  border-left: 3px solid var(--violet);
+}
+
+.theme-doc-sidebar-menu .menu__list-item-collapsible {
+  border-radius: 10px;
+}
+
+.theme-doc-sidebar-menu .menu__list-item-collapsible:hover {
+  background: rgba(139, 92, 246, 0.05);
+}
 
 /* Category labels */
+.theme-doc-sidebar-menu .menu__link--sublist-caret {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  color: #fff;
+}
 
 /* Doc breadcrumbs */
 .theme-doc-breadcrumbs {
@@ -4764,6 +4939,9 @@ div[class*="sidebarViewport"] {
 }
 
 .theme-doc-sidebar-menu,
+.theme-doc-sidebar-menu .menu__list {
+  background: transparent !important;
+}
 
 /* Article wrapper */
 article,
@@ -5433,6 +5611,35 @@ footer[class*="footer"] {
   }
 }
 
+/* ========== NAVBAR MOBILE ========== */
+@media (max-width: 996px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+  
+  .navbar__title {
+    font-size: 1.1rem;
+  }
+  
+  .navbar__logo {
+    height: 28px;
+  }
+  
+  /* Mobile menu improvements */
+  
+  
+  
+  
+  .navbar__toggle {
+    padding: 0.5rem;
+    /* Larger touch target */
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 /* ========== FOOTER MOBILE ========== */
 @media (max-width: 768px) {
@@ -5773,6 +5980,9 @@ footer[class*="footer"] {
     padding-bottom: calc(2rem + env(safe-area-inset-bottom));
   }
   
+  .navbar {
+    padding-top: env(safe-area-inset-top);
+  }
   
   
 }
@@ -6263,12 +6473,43 @@ footer[class*="footer"] {
 
 /* ========== NAVBAR - MOBILE PREMIUM ========== */
 @media (max-width: 996px) {
+  .navbar {
+    height: 60px;
+    padding: 0 1rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
   
+  .navbar__brand {
+    margin-right: auto;
+  }
   
+  .navbar__logo {
+    height: 32px;
+  }
   
+  .navbar__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
   
   /* Hamburger menu button */
+  .navbar__toggle {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+  }
   
+  .navbar__toggle:active {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(0.95);
+  }
   
   /* Mobile sidebar */
   
@@ -6750,6 +6991,11 @@ footer[class*="footer"] {
     padding: 1rem;
   }
   
+  .menu__link {
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
+    border-radius: 10px;
+  }
 }
 
 /* ========== ROADMAP/BLOG - MOBILE PREMIUM ========== */
@@ -6864,6 +7110,19 @@ footer[class*="footer"] {
     background: rgba(0, 0, 0, 0.02);
     border-color: rgba(0, 0, 0, 0.06);
   }
+  
+  [data-theme='light'] 
+  
+  [data-theme='light'] 
+  
+  [data-theme='light'] .navbar__toggle {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+  
+  [data-theme='light'] .navbar__toggle:active {
+    background: rgba(0, 0, 0, 0.06);
+  }
 }
 
 /* ========== PERFORMANCE OPTIMIZATIONS ========== */
@@ -6909,71 +7168,102 @@ footer[class*="footer"] {
   }
 }
 
-/* ========== NAVBAR TITLE GRADIENT - FIRE STYLE ========== */
-.navbar__title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  background: linear-gradient(
-    90deg,
-    #fbbf24,
-    #f59e0b,
-    #ea580c,
-    #dc2626,
-    #f59e0b,
-    #fbbf24,
-    #38bdf8,
-    #3b82f6,
-    #6366f1,
-    #3b82f6,
-    #38bdf8,
-    #fbbf24
-  );
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: fireGradient 4s ease-in-out infinite;
-}
+/* ============================================
+   MOBILE NAVBAR - CLEAN STYLING ONLY
+   Non-invasive styles that work with Docusaurus
+   ============================================ */
 
-@keyframes fireGradient {
-  0% {
-    background-position: 0% 50%;
+/* Mobile navbar styling - visual only, no layout breaking */
+@media (max-width: 996px) {
+  /* Navbar container */
+  .navbar {
+    height: 60px;
+    --ifm-navbar-height: 60px;
   }
-  50% {
-    background-position: 100% 50%;
+  
+  /* Mobile sidebar - style only, don't override display/flex */
+  
+  
+  /* Brand section */
+  
+  
+  /* Close button styling */
+  
+  
+  
+  
+  /* Menu items container */
+  
+  
+  /* Individual menu links */
+  
+  
+  
+  
+  
+  
+  /* Submenu styling */
+  
+  
+  
+  
+  /* Dropdown caret */
+  
+  
+  
+  
+  /* Back button in nested menus */
+  
+  
+  /* Backdrop */
+  
+  
+  /* Toggle button */
+  .navbar__toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  100% {
-    background-position: 0% 50%;
+  
+  .navbar__toggle:hover {
+    background: rgba(139, 92, 246, 0.1);
   }
 }
 
-/* Light mode - different gradient */
-[data-theme='light'] .navbar__title {
-  background: linear-gradient(90deg, #8b5cf6, #06b6d4, #8b5cf6);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fireGradient 4s ease-in-out infinite;
+/* Light mode adjustments */
+[data-theme='light'] 
+
+[data-theme='light'] 
+
+[data-theme='light'] 
+
+[data-theme='light'] 
+
+[data-theme='light'] 
+
+[data-theme='light'] 
+
+/* ============================================
+   MOBILE NAVBAR - SAFE VISUAL STYLING ONLY
+   These styles only affect colors/borders, 
+   NOT display, position, or layout properties
+   ============================================ */
+
+/* Mobile navbar toggle button - only colors */
+@media (max-width: 996px) {
+  .navbar__toggle {
+    color: var(--ifm-navbar-link-color);
+  }
+  
+  .navbar__toggle:hover {
+    background-color: rgba(139, 92, 246, 0.1);
+  }
 }
 
-/* ========== NAVBAR LINKS - ORIGINAL SIZE ========== */
-.navbar__link {
-  font-weight: 500;
-  font-size: 0.9rem;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-.navbar__link:hover {
-  background: rgba(139, 92, 246, 0.1);
-  color: var(--violet-bright) !important;
-}
-
-[data-theme='light'] .navbar__link {
-  color: var(--text-gray);
-}
-
-[data-theme='light'] .navbar__link:hover {
-  color: var(--violet);
+/* Light mode mobile navbar adjustments - only colors */
+[data-theme='light'] .navbar__toggle:hover {
+  background-color: rgba(139, 92, 246, 0.08);
 }

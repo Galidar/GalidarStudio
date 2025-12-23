@@ -416,6 +416,7 @@
 /* Sidebar light mode */
 
 
+
 /* Table of contents light mode */
 [data-theme='light'] .table-of-contents__link {
   color: var(--text-gray);
@@ -1380,6 +1381,9 @@
 [data-theme='light'] aside[class*="sidebar"],
 
 
+
+
+
 /* Sidebar category labels */
 
 /* Table of contents (right sidebar) */
@@ -1711,8 +1715,14 @@
 /* Navbar in light mode */
 
 
-/* Mobile sidebar */
 
+
+/* Mobile sidebar */
+[data-theme='light'] 
+
+[data-theme='light'] 
+
+[data-theme='light'] 
 
 /* Back to top button */
 [data-theme='light'] .theme-back-to-top-button {
@@ -1786,6 +1796,7 @@ body { background: var(--bg-dark); color: var(--text-white); overflow-x: hidden;
     background-position: 0% 50%;
   }
 }
+
 
 
 /* ============================================
@@ -4493,6 +4504,10 @@ article [class*="readMore"] {
 }
 
 
+
+
+
+
 /* Category labels */
 
 /* Doc breadcrumbs */
@@ -5433,6 +5448,17 @@ footer[class*="footer"] {
   }
 }
 
+/* ========== NAVBAR MOBILE ========== */
+@media (max-width: 996px) {
+  
+  
+  
+  /* Mobile menu improvements */
+  
+  
+  
+  
+}
 
 /* ========== FOOTER MOBILE ========== */
 @media (max-width: 768px) {
@@ -6864,6 +6890,12 @@ footer[class*="footer"] {
     background: rgba(0, 0, 0, 0.02);
     border-color: rgba(0, 0, 0, 0.06);
   }
+  
+  [data-theme='light'] 
+  
+  [data-theme='light'] 
+  
+  
 }
 
 /* ========== PERFORMANCE OPTIMIZATIONS ========== */
@@ -6909,71 +6941,78 @@ footer[class*="footer"] {
   }
 }
 
-/* ========== NAVBAR TITLE GRADIENT - FIRE STYLE ========== */
-.navbar__title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  background: linear-gradient(
-    90deg,
-    #fbbf24,
-    #f59e0b,
-    #ea580c,
-    #dc2626,
-    #f59e0b,
-    #fbbf24,
-    #38bdf8,
-    #3b82f6,
-    #6366f1,
-    #3b82f6,
-    #38bdf8,
-    #fbbf24
-  );
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: fireGradient 4s ease-in-out infinite;
+/* ============================================
+   MOBILE NAVBAR - CLEAN STYLING ONLY
+   Non-invasive styles that work with Docusaurus
+   ============================================ */
+
+/* Mobile navbar styling - visual only, no layout breaking */
+@media (max-width: 996px) {
+  /* Navbar container */
+  
+  /* Mobile sidebar - style only, don't override display/flex */
+  
+  
+  /* Brand section */
+  
+  
+  /* Close button styling */
+  
+  
+  
+  
+  /* Menu items container */
+  
+  
+  /* Individual menu links */
+  
+  
+  
+  
+  
+  
+  /* Submenu styling */
+  
+  
+  
+  
+  /* Dropdown caret */
+  
+  
+  
+  
+  /* Back button in nested menus */
+  
+  
+  /* Backdrop */
+  
+  
+  /* Toggle button */
+  
 }
 
-@keyframes fireGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Light mode adjustments */
+[data-theme='light'] 
+
+[data-theme='light'] 
+
+[data-theme='light'] 
+
+[data-theme='light'] 
+
+[data-theme='light'] 
+
+[data-theme='light'] 
+
+/* ============================================
+   MOBILE NAVBAR - SAFE VISUAL STYLING ONLY
+   These styles only affect colors/borders, 
+   NOT display, position, or layout properties
+   ============================================ */
+
+/* Mobile navbar toggle button - only colors */
+@media (max-width: 996px) {
+  
 }
 
-/* Light mode - different gradient */
-[data-theme='light'] .navbar__title {
-  background: linear-gradient(90deg, #8b5cf6, #06b6d4, #8b5cf6);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fireGradient 4s ease-in-out infinite;
-}
-
-/* ========== NAVBAR LINKS - ORIGINAL SIZE ========== */
-.navbar__link {
-  font-weight: 500;
-  font-size: 0.9rem;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-.navbar__link:hover {
-  background: rgba(139, 92, 246, 0.1);
-  color: var(--violet-bright) !important;
-}
-
-[data-theme='light'] .navbar__link {
-  color: var(--text-gray);
-}
-
-[data-theme='light'] .navbar__link:hover {
-  color: var(--violet);
-}
+/* Light mode mobile navbar adjustments - only colors */
