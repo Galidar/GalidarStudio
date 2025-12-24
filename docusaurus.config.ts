@@ -10,7 +10,6 @@ const config: Config = {
   favicon: 'img/logo.svg',
   i18n: { defaultLocale: 'en', locales: ['en'] },
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   trailingSlash: false,
 
   organizationName: 'Galidar',
