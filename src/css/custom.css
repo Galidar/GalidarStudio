@@ -133,14 +133,7 @@
   -webkit-text-fill-color: #18181b !important;
 }
 
-/* HERO TITLE - Remove gradient for light mode */
-[data-theme='light'] .hero-title {
-  background: none !important;
-  -webkit-background-clip: unset !important;
-  background-clip: unset !important;
-  -webkit-text-fill-color: #8b5cf6 !important;
-  color: #8b5cf6 !important;
-}
+/* HERO TITLE - Keep gradient animation in light mode */
 
 /* SECTION TITLES - Some may use gradients */
 [data-theme='light'] .section-title {
@@ -1181,10 +1174,6 @@
 }
 
 /* ==========  INDEX PAGE SPECIFIC ========== */
-[data-theme='light'] .hero-title {
-  /* Gradient text stays the same */
-}
-
 [data-theme='light'] .hero-subtitle {
   color: var(--text-gray) !important;
 }
