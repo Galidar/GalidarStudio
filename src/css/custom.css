@@ -1231,7 +1231,10 @@
 }
 
 [data-theme='light'] .showcase-hero-title {
-  color: var(--text-white) !important;
+  background: linear-gradient(135deg, var(--violet-bright), var(--fuchsia), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 [data-theme='light'] .showcase-hero-subtitle {
