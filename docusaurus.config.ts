@@ -40,13 +40,7 @@ const config: Config = {
       'classic',
       {
         docs: false,
-        blog: {
-          path: 'roadmap',
-          showReadingTime: true,
-          routeBasePath: 'roadmap',
-          blogTitle: 'Roadmap',
-          blogDescription: 'Upcoming features and release notes for Oceanology and Riverology'
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css'
         },
@@ -62,6 +56,14 @@ const config: Config = {
     ['@docusaurus/plugin-content-docs', { id: 'legacy', path: 'oceanology-legacy', routeBasePath: 'oceanology-legacy', sidebarPath: './sidebarsLegacy.ts' }],
     ['@docusaurus/plugin-content-docs', { id: 'default', path: 'oceanology-nextgen', routeBasePath: 'oceanology-nextgen', sidebarPath: './sidebarsNextGen.ts' }],
     ['@docusaurus/plugin-content-docs', { id: 'riverology', path: 'riverology', routeBasePath: 'riverology', sidebarPath: './sidebarsRiverology.ts' }],
+    ['@docusaurus/plugin-content-blog', {
+      id: 'roadmap',
+      path: 'roadmap',
+      routeBasePath: 'roadmap',
+      showReadingTime: true,
+      blogTitle: 'Roadmap',
+      blogDescription: 'Upcoming features and release notes for Oceanology and Riverology'
+    }],
   ],
 
   themeConfig: {
