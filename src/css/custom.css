@@ -135,30 +135,14 @@
 
 /* HERO TITLE - Keep gradient animation in light mode */
 
-/* SECTION TITLES - Some may use gradients */
-[data-theme='light'] .section-title {
-  background: none !important;
-  -webkit-background-clip: unset !important;
-  background-clip: unset !important;
-  -webkit-text-fill-color: #18181b !important;
-  color: #18181b !important;
-}
+/* SECTION TITLES - Keep gradient in light mode */
 
 /* STAT VALUES - Keep gradient but ensure visibility */
 [data-theme='light'] .stat-value {
   /* Keep the gradient for these */
 }
 
-/* PAGE HERO TITLES */
-[data-theme='light'] .page-hero-title,
-[data-theme='light'] .showcase-hero-title,
-[data-theme='light'] .community-hero-title {
-  background: none !important;
-  -webkit-background-clip: unset !important;
-  background-clip: unset !important;
-  -webkit-text-fill-color: #18181b !important;
-  color: #18181b !important;
-}
+/* PAGE HERO TITLES - Keep gradient in light mode */
 
 /* GRADIENT TEXT SPANS - Keep gradient but ensure dark mode gradient works */
 [data-theme='light'] .gradient-text {
@@ -168,28 +152,11 @@
   -webkit-text-fill-color: transparent !important;
 }
 
-/* CTA TITLES */
-[data-theme='light'] .cta-title,
-[data-theme='light'] .showcase-cta-title {
-  background: none !important;
-  -webkit-background-clip: unset !important;
-  background-clip: unset !important;
-  -webkit-text-fill-color: #18181b !important;
-  color: #18181b !important;
-}
+/* CTA TITLES - Keep gradient in light mode */
 
 /* NAVBAR TITLE - Keep gradient for brand recognition */
 
-/* STAT VALUES - Use solid violet color */
-[data-theme='light'] .stat-value,
-[data-theme='light'] .community-stat-value,
-[data-theme='light'] .response-time-value {
-  background: none !important;
-  -webkit-background-clip: unset !important;
-  background-clip: unset !important;
-  -webkit-text-fill-color: #8b5cf6 !important;
-  color: #8b5cf6 !important;
-}
+/* STAT VALUES - Keep gradient in light mode */
 
 /* DOC MARKDOWN FIRST H1 */
 [data-theme='light'] .theme-doc-markdown.markdown h1:first-of-type {
