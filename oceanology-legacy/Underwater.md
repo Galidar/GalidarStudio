@@ -271,6 +271,32 @@ Once configured, god rays will appear as animated light shafts when the camera i
 
 ---
 
+## Exponential Height Fog Configuration
+
+:::note 11. Enable Volumetric Fog on ExponentialHeightFog actor
+**Critical step for Volumetric Fog mode:** If you selected **Volumetric Fog** as your Underwater Mode but the volumetric effect is not visible underwater, you need to enable Volumetric Fog on your scene's **ExponentialHeightFog** actor.
+
+Select the **ExponentialHeightFog** actor in the **Outliner** (e.g., `Darkworld_ExponentialHeightFog`). In the **Details** panel, locate the **Volumetric Fog** category:
+
+**Volumetric Fog Settings:**
+| Property | Value | Explanation |
+|----------|-------|-------------|
+| **Volumetric Fog** | ✅ Enabled | **Must be enabled for underwater volumetric fog to render.** Without this, the Volumetric Fog underwater mode will not display any fog effect. |
+
+**Why this is required:**
+
+Unreal Engine's volumetric fog system is controlled globally by the ExponentialHeightFog actor. Oceanology's underwater Volumetric Fog mode integrates with this system — it doesn't create its own independent volumetric rendering. If the scene's ExponentialHeightFog has Volumetric Fog disabled, there's no volumetric system for Oceanology to inject underwater fog into.
+
+**Troubleshooting:**
+- If underwater appears clear with no fog when using Volumetric Fog mode → Check ExponentialHeightFog actor
+- If you don't have an ExponentialHeightFog in your scene → Add one and enable Volumetric Fog
+- If Volumetric Fog is too dense/sparse above water → Adjust ExponentialHeightFog parameters, Oceanology handles underwater separately
+
+![ExponentialHeightFog Volumetric Fog setting](Underwater/LegacyUnderwater_11.png)
+:::
+
+---
+
 ## Underwater Mode Comparison
 
 The following table compares the two underwater rendering modes:
@@ -326,6 +352,7 @@ The following table compares the two underwater rendering modes:
 | Problem | Likely Cause | Solution |
 |---------|--------------|----------|
 | No underwater effect visible | Underwater Mode set to None | Change Underwater Mode to Underwater or Volumetric Fog |
+| Volumetric fog not visible underwater | ExponentialHeightFog Volumetric Fog disabled | Enable Volumetric Fog on scene's ExponentialHeightFog actor |
 | Underwater too dark | SunPower or AtmosphereLighting too low | Increase SunPower and AtmosphereLighting values |
 | Underwater too bright | UnderwaterLightDepth too high | Reduce UnderwaterLightDepth or increase DepthColorAbsorption |
 | No god rays visible | Light Function not assigned | Assign MI_DirectionalCausticsGodRays to Directional Light |
@@ -349,5 +376,6 @@ In this guide, you learned how to:
 5. **Enable Bubbles** - Add animated bubble particles using the Niagara system.
 6. **Set up Caustics** - Configure underwater light patterns for realistic illumination.
 7. **Enable God Rays** - Assign Light Function materials to your Directional Light for dramatic light shafts.
+8. **Enable ExponentialHeightFog Volumetric Fog** - Required for Volumetric Fog underwater mode to render properly.
 
 With these settings, you can create immersive underwater environments ranging from bright tropical shallows to dark ocean depths.
