@@ -137,6 +137,24 @@ Note that when using Volumetric Fog mode, the standard **Underwater Fog Material
 ![Volumetric Fog mode settings](NextGenUnderwater/NextGenUnderwater_04.png)
 :::
 
+:::note 5. Enable Volumetric Fog on ExponentialHeightFog actor
+**Critical Requirement:** For Volumetric Fog underwater mode to work, your level's **ExponentialHeightFog** actor must have **Volumetric Fog** enabled. Without this, the underwater volumetric effects will not render.
+
+In the **Outliner**, locate your **ExponentialHeightFog** actor (commonly found in a Lighting folder). Select it and examine the **Details** panel:
+
+**Directional Inscattering:**
+- **Directional Inscattering Exponent** — `4.0`. Controls light scattering falloff.
+- **Directional Inscattering Start Distance** — `10000.0`. Distance where directional scattering begins.
+- **Directional Inscattering Color** — Color tint for scattered light.
+
+**Volumetric Fog:**
+- **Volumetric Fog** — ✅ **Must be Enabled**. This checkbox activates the engine's volumetric fog system which Oceanology's underwater volumetric mode depends on.
+
+If **Volumetric Fog** is disabled on the ExponentialHeightFog, the underwater Volumetric Fog mode will fall back to standard fog rendering or produce no volumetric effects at all.
+
+![ExponentialHeightFog Volumetric Fog setting](NextGenUnderwater/NextGenUnderwater_05.png)
+:::
+
 ---
 
 ## Underwater Mode Comparison
@@ -177,6 +195,7 @@ Note that when using Volumetric Fog mode, the standard **Underwater Fog Material
 | Colors look wrong | Incorrect fog colors | Adjust **FogAmbientColor** and **FogScatterColor** |
 | Distortion too strong | Distortion material settings | Modify **Underwater Distortion Material** parameters |
 | Volumetric fog not working | Wrong mode selected | Verify **Underwater Mode** is set to `Volumetric Fog` |
+| Volumetric fog not rendering | ExponentialHeightFog disabled | Enable **Volumetric Fog** on **ExponentialHeightFog** actor |
 
 ---
 
@@ -188,5 +207,6 @@ In this guide, you learned how to:
 2. **Configure Underwater Fog** - Adjust fog density, distance, god rays, and colors for standard underwater rendering.
 3. **Set up Bubbles** - Enable and customize underwater bubble particle effects.
 4. **Use Volumetric Fog mode** - Configure advanced volumetric underwater rendering for high-quality visuals.
+5. **Enable ExponentialHeightFog** - Ensure the engine's Volumetric Fog is enabled for underwater volumetric effects to work.
 
 With the Underwater system properly configured, your submerged environments will feature realistic fog, light scattering, god rays, and atmospheric effects that create immersive underwater experiences.
