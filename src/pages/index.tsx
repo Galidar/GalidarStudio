@@ -385,14 +385,31 @@ export default function Home(): JSX.Element {
           {/* Legacy → Lite */}
           <div style={{
             background: 'rgba(6, 182, 212, 0.05)',
-            border: '1px solid rgba(6, 182, 212, 0.2)',
+            border: '2px solid rgba(6, 182, 212, 0.35)',
             borderRadius: '16px',
             padding: '2rem',
             display: 'flex',
             flexDirection: 'column' as const,
             gap: '1.25rem',
+            position: 'relative' as const,
             transition: 'border-color 0.3s, transform 0.3s',
           }}>
+            <div style={{
+              position: 'absolute' as const,
+              top: '-0.75rem',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              background: 'linear-gradient(135deg, var(--cyan), #0891b2)',
+              color: '#fff',
+              fontSize: '0.7rem',
+              fontWeight: 700,
+              padding: '0.3rem 1rem',
+              borderRadius: '20px',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase' as const,
+            }}>
+              NEW 6.0
+            </div>
             <div>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textDecoration: 'line-through', opacity: 0.5, marginBottom: '0.5rem' }}>
                 Oceanology Legacy
@@ -462,21 +479,37 @@ export default function Home(): JSX.Element {
             </div>
           </div>
 
-          {/* Riverology Upgraded */}
+          {/* Riverology 3.0 */}
           <div style={{
             background: 'rgba(16, 185, 129, 0.05)',
-            border: '1px solid rgba(16, 185, 129, 0.2)',
+            border: '2px solid rgba(16, 185, 129, 0.35)',
             borderRadius: '16px',
             padding: '2rem',
             display: 'flex',
             flexDirection: 'column' as const,
             gap: '1.25rem',
+            position: 'relative' as const,
             transition: 'border-color 0.3s, transform 0.3s',
           }}>
+            <div style={{
+              position: 'absolute' as const,
+              top: '-0.75rem',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              background: 'linear-gradient(135deg, var(--emerald), #047857)',
+              color: '#fff',
+              fontSize: '0.7rem',
+              fontWeight: 700,
+              padding: '0.3rem 1rem',
+              borderRadius: '20px',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase' as const,
+            }}>
+              NEW 3.0
+            </div>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <span style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--emerald)' }}>Riverology</span>
-                <span style={{ fontSize: '0.65rem', background: 'rgba(16, 185, 129, 0.2)', color: 'var(--emerald)', padding: '0.2rem 0.6rem', borderRadius: '20px', fontWeight: 700, letterSpacing: '0.04em' }}>UPGRADED</span>
               </div>
             </div>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.65, flex: 1 }}>
