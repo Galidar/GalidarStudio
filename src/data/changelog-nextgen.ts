@@ -8,12 +8,12 @@ let nextgenChangelog: ProductChangelog = {
     {
       version: '1.2.6',
       date: 'March 7, 2026',
-      title: 'Dedicated Server & Multiplayer Replication',
+      title: 'Dedicated Server, Multiplayer Replication & Wave Performance',
       tag: 'latest',
       highlights: [
         'Full dedicated server support — zero crashes on headless servers',
         'Buoyancy replication fix eliminates boat "jumping" in multiplayer',
-        'Swimming replication fix eliminates WaterWalk flickering',
+        'Distance-based wave culling — major GPU savings at range',
       ],
       sections: [
         {
@@ -37,10 +37,58 @@ let nextgenChangelog: ProductChangelog = {
           ],
         },
         {
+          heading: 'Performance',
+          items: [
+            'HLSL shader optimization across ocean and shore wave materials',
+            'Distance-based wave disabling — waves beyond render range skipped entirely on CPU and GPU',
+            'Smooth distance blending for seamless wave LOD transitions',
+            'Breaking waves underwater culling — skips geometry outside camera frustum',
+            'Underwater wave culling system for occluded geometry',
+          ],
+        },
+        {
           heading: 'Compatibility',
           items: [
+            'UE 5.7 material and shader compatibility updates',
             'C++ standard compatibility fixes for UE 5.7',
             'Packaging error fixes for source-built engines',
+            'Epic Games marketplace fake compile error fixes',
+          ],
+        },
+      ],
+    },
+    {
+      version: '1.2.0',
+      date: 'June 11, 2025',
+      title: 'Breaking Waves, Lake Mask 2D & UE 5.6 Support',
+      sections: [
+        {
+          heading: 'Features',
+          items: [
+            'New Lake Mask 2D system for precise water boundary masking',
+            'WaterBoxScale parameter for flexible water volume scaling',
+            'Shore waves now have their own dedicated preset group',
+            'New breaking wave presets for varied coastal configurations',
+            'New presets optimized for 8K resolution maps',
+          ],
+        },
+        {
+          heading: 'Improvements',
+          items: [
+            'Breaking waves formula reworked for more realistic wave collapse behavior',
+            'Spectral Gerstner wave solver finalized with improved accuracy',
+            'CalculateWaveOffset corrected — eliminates wave position drift',
+            'Foam flow direction fixed for proper current-aligned foam',
+            'Visual artifact reduction on wave crests and shore edges',
+            'Realistic ocean simulation improvements across all water types',
+          ],
+        },
+        {
+          heading: 'Compatibility',
+          items: [
+            'UE 5.6 compatibility update',
+            'Niagara WaterDepth compile error fixed',
+            'Deprecation warnings resolved for modern UE APIs',
           ],
         },
       ],
