@@ -155,14 +155,14 @@ Enable `WITH_NIAGARA_DEBUGGER` for HUD overlays:
 
 ---
 
-## Upcoming Enhancements
+## 🏖️ Shore Simulation Module
 
-| Feature | Status |
-|---------|--------|
-| GPU Simulation Support | Planned |
-| Wave Spectrum Access | Planned |
-| Shore Distance Queries | Planned |
-| Foam Threshold Data | Planned |
+Oceanology Pro 2.0 includes a dedicated **Niagara Shore module** for shoreline foam generation:
+
+- Particles spawn along the shore boundary using SDF data
+- Foam intensity scales with wave breaking strength
+- Flow direction follows wave refraction near coastlines
+- Seamless integration with the Breaking Waves system
 
 ---
 

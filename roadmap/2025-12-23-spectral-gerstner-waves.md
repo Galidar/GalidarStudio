@@ -1,27 +1,80 @@
 ---
 slug: spectral-gerstner-waves-explained
-title: "🌊 Spectral Gerstner Waves - The Science Behind Oceanology Pro 2.0"
+title: "🌊 Three Wave Systems - FFT, Gerstner & Spectral in Oceanology Pro 2.0"
 authors: [galidar]
-tags: [oceanology-pro, waves, technical, physics, 2.0]
+tags: [oceanology-pro, waves, technical, physics, fft, gerstner, spectral, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---
 
-# Spectral Gerstner Waves: Oceanographic Accuracy Meets Real-Time Performance
+# Three Wave Systems: Choose the Right Tool for Every Project
 
-One of the headline features of **Oceanology Pro 2.0** is the new **Spectral Gerstner Wave System**. In this deep-dive, we'll explore the science behind this system and how it delivers unprecedented realism while maintaining excellent performance.
+Oceanology Pro 2.0 ships with **three complete wave systems** — FFT, Gerstner, and Spectral Gerstner — all usable in the same project. Each wave body can independently select its wave system via the `WaveSystemSelector`, so you can combine cinematic FFT oceans with performant Gerstner lakes in a single level.
 
 <!--truncate-->
 
-## 🌊 The Problem with Traditional Approaches
+## 🎛️ Wave System Overview
 
-In Oceanology Pro 1.x (and most game engines), ocean waves are created by manually stacking 4-8 individual Gerstner waves. While effective, this approach has limitations:
+| System | Best For | GPU Cost | Realism | Control |
+|--------|----------|----------|---------|---------|
+| **FFT** | Cinematic oceans, film-quality water | High (RTX 3080+) | ⭐⭐⭐⭐⭐ | Physics-based |
+| **Gerstner** | Games, wide hardware support | Low (GTX 1080+) | ⭐⭐⭐ | Fully manual |
+| **Spectral Gerstner** | Balanced quality/performance | Medium | ⭐⭐⭐⭐ | Beaufort-driven |
 
-- **Tedious tuning**: Getting realistic results requires careful parameter adjustment
-- **Repetitive patterns**: Limited wave count creates visible tiling
-- **Unrealistic behavior**: Waves don't respond naturally to conditions
-- **No energy spectrum**: Real oceans have complex frequency distributions
+All three systems output the same interface (`Displacement`, `Normal`, `Foam`), so downstream features — buoyancy, breaking waves, foam, caustics — work identically regardless of which wave system you choose.
 
-## 🔬 The Spectral Solution
+---
+
+## 🌊 FFT Waves (Fast Fourier Transform)
+
+The most physically accurate option. FFT simulates the full ocean spectrum using GPU compute shaders.
+
+### How It Works
+
+1. **Spectrum Generation** — A Phillips or JONSWAP energy spectrum is generated based on wind parameters
+2. **Inverse FFT** — GPU compute shaders transform the frequency-domain spectrum to spatial-domain displacement via horizontal and vertical IFFT passes
+3. **Gradient Folding** — A second pass computes normals and Jacobian-based foam from the displacement map
+
+### Key Features
+
+- **GPU Compute Pipeline** — Dedicated compute shaders for spectrum update, IFFT, and gradient computation
+- **Displacement + Gradient Render Targets** — XYZ displacement and folding maps updated every frame
+- **Wave Baking** — Bake FFT output into flipbook atlases for zero-cost playback in shipped games
+- **Configurable Resolution** — From 64×64 (fast) to 512×512 (cinematic)
+
+### When to Use FFT
+
+- Film/cinematic sequences where quality is paramount
+- ArchViz projects requiring photorealistic water
+- High-end PC/console games with RTX 3080+ minimum spec
+- Any project that needs wave baking for performance
+
+---
+
+## ⚙️ Gerstner Waves (Legacy)
+
+The proven, performance-first approach. Manually stack 4-8 analytical Gerstner waves with full parameter control.
+
+### How It Works
+
+Each wave is defined by amplitude, wavelength, direction, and steepness. The CPU-friendly analytical formula produces displacement and normals without GPU compute.
+
+### Key Features
+
+- **Manual Control** — Tune each individual wave for exact artistic direction
+- **Lowest GPU Cost** — Runs efficiently on GTX 1080 and up
+- **Preset System** — One-click ocean configurations for common scenarios
+- **Wave Baking** — Bake Gerstner output into flipbook atlases too
+
+### When to Use Gerstner
+
+- Mobile or low-spec hardware targets
+- Stylized water that needs precise artistic control
+- Projects where every millisecond of GPU budget matters
+- Simple lake or pool simulations
+
+---
+
+## 🔬 Spectral Gerstner Waves
 
 Real ocean surfaces are the result of **wind energy distributed across a spectrum of frequencies**. Our Spectral Gerstner system simulates this by:
 
@@ -186,23 +239,33 @@ OutFoam = lerp(ShoreFoam, OceanFoam, OceanBlend);
 
 The `OceanBlend` factor ensures smooth transitions from deep water to surf zone.
 
-## 🚀 Getting Started
+## 🚀 Choosing Your Wave System
 
-When Oceanology Pro 2.0 releases, migrating to Spectral waves is simple:
+| Scenario | Recommended System |
+|----------|--------------------|
+| Open ocean, cinematic | **FFT** |
+| Open ocean, game-optimized | **Spectral Gerstner** |
+| Lake, pool, stylized | **Gerstner** |
+| Mixed project | FFT for hero ocean + Gerstner for background lakes |
 
-1. Set `WaveSystemSelector = SpectralGerstnerWaves`
-2. Configure `BeaufortScale` for your conditions
-3. Adjust `WindDirection` to match your scene
-4. Fine-tune foam thresholds for your art style
+### Quick Setup
 
-That's it! The system handles the rest.
+1. Select your water body in the editor
+2. Set `WaveSystemSelector` to your chosen system
+3. Configure system-specific parameters:
+   - **FFT**: Resolution, wind speed, spectrum type
+   - **Gerstner**: Individual wave amplitude, wavelength, direction
+   - **Spectral**: `BeaufortScale`, `WindDirection`, `DirectionalVariance`
+
+All three systems support **Wave Baking** for shipped games — bake once, play back with near-zero GPU cost.
 
 ## 📚 Further Reading
 
 - [Original Gerstner Paper (1804)](https://en.wikipedia.org/wiki/Gerstner_wave)
-- [Tessendorf's "Simulating Ocean Water"](https://people.computing.clemson.edu/~jtessen/reports/papers_files/coursenotes2004.pdf)
+- [Tessendorf's "Simulating Ocean Water" (FFT reference)](https://people.computing.clemson.edu/~jtessen/reports/papers_files/coursenotes2004.pdf)
 - [Beaufort Scale (Wikipedia)](https://en.wikipedia.org/wiki/Beaufort_scale)
+- [Technical Architecture — Wave System Selector](/roadmap/nextgen-2-technical-architecture)
 
 ---
 
-*Questions about Spectral Waves? Join our [Discord](https://discord.gg/s9TSBBX3Rh) and ask!*
+*Questions about wave systems? Join our [Discord](https://discord.gg/s9TSBBX3Rh) and ask!*

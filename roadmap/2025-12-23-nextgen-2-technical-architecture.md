@@ -21,10 +21,10 @@ Water Body → View Extension → GPU Buffers → Shaders → Output
                    ↓
             Wave System Selector
                    ↓
-     ┌─────────────┼─────────────┐
-     ↓             ↓             ↓
-  Spectral     Legacy      Breaking
-  Gerstner    Gerstner      Waves
+     ┌─────────┬─────────┬─────────┐
+     ↓         ↓         ↓         ↓
+   FFT     Spectral   Legacy   Breaking
+  Ocean    Gerstner  Gerstner   Waves
 ```
 
 Each system operates independently but shares common infrastructure.
@@ -113,13 +113,17 @@ float3 GetWaves(
 
     WaveOutput OceanWaves;
 
-    if (WaveSystemSelector == 1)  // Spectral
+    if (WaveSystemSelector == 1)  // Spectral Gerstner
     {
         OceanWaves = GetSpectralGerstnerWaves(WaterBodyIndex, WorldPosition, Time);
     }
-    else if (WaveSystemSelector == 2)  // Legacy
+    else if (WaveSystemSelector == 2)  // Legacy Gerstner
     {
         OceanWaves = GetGerstnerWaves(WaterBodyIndex, WorldPosition, Time);
+    }
+    else if (WaveSystemSelector == 3)  // FFT Ocean
+    {
+        OceanWaves = GetFFTWaves(WaterBodyIndex, WorldPosition, Time);
     }
     else  // None
     {
@@ -336,20 +340,16 @@ float2 SDFGradient = ComputeSDFGradient(WorldPosition);
 2.0 architecture supports future expansion:
 
 ```cpp
-// Reserved wave systems
 enum class EOceanologyWaveSystemSelector : uint8
 {
     None = 0,
     SpectralGerstnerWaves = 1,
     GerstnerWaves = 2,
-    // Reserved for future:
-    // FFTOcean = 3,
-    // Tessendorf = 4,
-    // Custom = 255
+    FFTOcean = 3,
 };
 ```
 
-DataBlocks 7-14 remain available for additional parameters.
+The FFT system uses dedicated GPU compute shaders (horizontal/vertical IFFT, spectrum update, gradient folding) and outputs displacement + gradient render targets that feed into the same downstream pipeline as Gerstner and Spectral waves. See the [Three Wave Systems article](/roadmap/spectral-gerstner-waves-explained) for a full comparison.
 
 ## 📚 For Plugin Developers
 

@@ -197,14 +197,26 @@ HISMC provides efficient GPU instancing:
 
 ---
 
-## Future Enhancements
+## 🎨 Five Rendering Modes
 
-| Feature | Status |
-|---------|--------|
-| Ray Marching Caustics | Planned |
-| Screen-Space Caustics | Research |
-| Volumetric Caustics | Planned |
-| Compute Shader Path | Planned |
+Oceanology Pro 2.0 ships with **five complete caustics rendering modes**, each suited for different use cases:
+
+| Mode | Description | Best For |
+|------|-------------|----------|
+| **Gerstner Analytical** | Caustics derived from real-time Gerstner wave normals | Performance, dynamic oceans |
+| **Sub-UV Animated** | Flipbook texture animation for caustic patterns | Stylized water, pools |
+| **Volumetric** | Full volumetric light scattering through water | Cinematic underwater scenes |
+| **Fluid Simulation** | Caustics driven by fluid sim data | Interactive water effects |
+| **Static Texture** | Pre-baked caustic texture projection | Fixed lighting, maximum performance |
+
+All modes support **Chromatic Spread** — RGB channel separation that creates the characteristic rainbow refraction patterns seen in real underwater caustics.
+
+### Caustics Material Functions
+
+The plugin includes ready-to-use material functions:
+- `MF_CausticProjection` — Core projection logic
+- `MF_CausticPreview` — Editor preview helpers
+- Caustic **Light Functions** for directional/point lights
 
 ---
 
