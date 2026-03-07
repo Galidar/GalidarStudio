@@ -34,7 +34,7 @@ Our coastline rendering has been completely revamped:
 
 ## ⚡ Performance Optimizations
 
-We've focused heavily on making NextGen run better on a wider range of hardware:
+We've focused heavily on making Oceanology Pro run better on a wider range of hardware:
 
 - **C++ QuadTree LOD** — Native code for faster tessellation decisions
 - **Async GPU Readback** — Non-blocking buoyancy calculations
@@ -46,8 +46,8 @@ We've focused heavily on making NextGen run better on a wider range of hardware:
 - **Blueprint API** — Easy integration with game logic
 - **Preset System** — One-click ocean configurations
 
-:::info Coming Soon
-We're working on real-time underwater caustics and volumetric fog for Q1 2026.
+:::tip Now Available in 2.0
+Real-time underwater caustics (5 rendering modes), volumetric fog, and a full underwater post-process system are now part of Oceanology Pro 2.0. See the [complete feature roundup](/roadmap/nextgen-2-additional-features) for details.
 :::
 
 ## Upgrade Guide

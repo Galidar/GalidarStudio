@@ -682,6 +682,235 @@ export default function Home(): JSX.Element {
         </div>
       </section>
 
+      {/* ========== TECHNOLOGY SHOWCASE ========== */}
+      <section className="bento-section reveal">
+        <div className="section-header">
+          <div className="section-label" style={{background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.2))', borderColor: 'rgba(139, 92, 246, 0.4)', color: 'var(--violet)'}}>
+            Under the Hood
+          </div>
+          <h2 className="section-title">Powered by Advanced Technology</h2>
+          <p className="section-desc">Production-grade systems built for games, cinematics, and architectural visualization.</p>
+        </div>
+
+        {/* Tech Grid — 3 columns */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: '1.25rem',
+          maxWidth: '1100px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          marginBottom: '2rem',
+        }}>
+
+          {/* Wave Baking */}
+          <div style={{
+            background: 'rgba(139, 92, 246, 0.05)',
+            border: '1px solid rgba(139, 92, 246, 0.2)',
+            borderRadius: '16px',
+            padding: '1.75rem',
+            display: 'flex',
+            flexDirection: 'column' as const,
+            gap: '0.75rem',
+          }}>
+            <div style={{ fontSize: '2rem' }}>🎞️</div>
+            <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--violet)', margin: 0 }}>Wave Baking</h4>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              Bake FFT, Gerstner, or Spectral waves into flipbook atlases. Ship cinematic oceans with minimal GPU cost — perfect for games.
+            </p>
+            <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' as const, marginTop: 'auto' }}>
+              <span className="tag tag-violet">Game Ready</span>
+              <span className="tag tag-fuchsia">GPU Optimized</span>
+            </div>
+          </div>
+
+          {/* 3 Wave Modes */}
+          <div style={{
+            background: 'rgba(6, 182, 212, 0.05)',
+            border: '1px solid rgba(6, 182, 212, 0.2)',
+            borderRadius: '16px',
+            padding: '1.75rem',
+            display: 'flex',
+            flexDirection: 'column' as const,
+            gap: '0.75rem',
+          }}>
+            <div style={{ fontSize: '2rem' }}>🌊</div>
+            <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--cyan)', margin: 0 }}>Three Wave Systems</h4>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              FFT for cinematic realism, Gerstner for performance, Spectral Gerstner for balanced quality. Mix them in the same project.
+            </p>
+            <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' as const, marginTop: 'auto' }}>
+              <span className="tag tag-cyan">FFT</span>
+              <span className="tag tag-emerald">Gerstner</span>
+              <span className="tag tag-violet">Spectral</span>
+            </div>
+          </div>
+
+          {/* Buoyancy */}
+          <div style={{
+            background: 'rgba(251, 146, 60, 0.05)',
+            border: '1px solid rgba(251, 146, 60, 0.2)',
+            borderRadius: '16px',
+            padding: '1.75rem',
+            display: 'flex',
+            flexDirection: 'column' as const,
+            gap: '0.75rem',
+          }}>
+            <div style={{ fontSize: '2rem' }}>⚓</div>
+            <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--orange)', margin: 0 }}>Physics Buoyancy</h4>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              Multi-pontoon floating system with Chaos physics integration. Boats, debris, and objects react naturally to waves.
+            </p>
+            <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' as const, marginTop: 'auto' }}>
+              <span className="tag tag-orange">Chaos Physics</span>
+              <span className="tag tag-cyan">Multiplayer</span>
+            </div>
+          </div>
+
+          {/* Caustics */}
+          <div style={{
+            background: 'rgba(236, 72, 153, 0.05)',
+            border: '1px solid rgba(236, 72, 153, 0.2)',
+            borderRadius: '16px',
+            padding: '1.75rem',
+            display: 'flex',
+            flexDirection: 'column' as const,
+            gap: '0.75rem',
+          }}>
+            <div style={{ fontSize: '2rem' }}>✨</div>
+            <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--fuchsia)', margin: 0 }}>Advanced Caustics</h4>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              Five rendering modes — analytical Gerstner, sub-UV animated, volumetric, fluid simulation, and static. Chromatic spread support.
+            </p>
+            <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' as const, marginTop: 'auto' }}>
+              <span className="tag tag-fuchsia">5 Modes</span>
+              <span className="tag tag-violet">Volumetric</span>
+            </div>
+          </div>
+
+          {/* Niagara & Foam */}
+          <div style={{
+            background: 'rgba(16, 185, 129, 0.05)',
+            border: '1px solid rgba(16, 185, 129, 0.2)',
+            borderRadius: '16px',
+            padding: '1.75rem',
+            display: 'flex',
+            flexDirection: 'column' as const,
+            gap: '0.75rem',
+          }}>
+            <div style={{ fontSize: '2rem' }}>🫧</div>
+            <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--emerald)', margin: 0 }}>Niagara Foam & Particles</h4>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              Shore foam, spray, and mist via Niagara particle system. Waves feed data directly to particles for natural interaction.
+            </p>
+            <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' as const, marginTop: 'auto' }}>
+              <span className="tag tag-emerald">Niagara</span>
+              <span className="tag tag-cyan">Shore Foam</span>
+            </div>
+          </div>
+
+          {/* Underwater */}
+          <div style={{
+            background: 'rgba(6, 182, 212, 0.05)',
+            border: '1px solid rgba(6, 182, 212, 0.2)',
+            borderRadius: '16px',
+            padding: '1.75rem',
+            display: 'flex',
+            flexDirection: 'column' as const,
+            gap: '0.75rem',
+          }}>
+            <div style={{ fontSize: '2rem' }}>🤿</div>
+            <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--cyan)', margin: 0 }}>Underwater World</h4>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
+              Full post-process underwater rendering with volumetric light shafts, god rays, caustics on terrain, and depth-based fog.
+            </p>
+            <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' as const, marginTop: 'auto' }}>
+              <span className="tag tag-cyan">Post-Process</span>
+              <span className="tag tag-fuchsia">God Rays</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Second row — 2x2 grid with consistent card style */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: '1.25rem',
+          maxWidth: '1100px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        }}>
+          <div style={{
+            background: 'rgba(139, 92, 246, 0.05)',
+            border: '1px solid rgba(139, 92, 246, 0.2)',
+            borderRadius: '16px',
+            padding: '1.75rem',
+            display: 'flex',
+            gap: '1.25rem',
+            alignItems: 'flex-start',
+          }}>
+            <div style={{ fontSize: '2rem', flexShrink: 0 }}>🏝️</div>
+            <div>
+              <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--violet)', margin: '0 0 0.5rem 0' }}>Terrain Carving & Islands</h4>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Spline-based islands auto-carve your landscape with heightmap and weightmap painting. Exclusion volumes remove water from enclosed areas.
+              </p>
+            </div>
+          </div>
+          <div style={{
+            background: 'rgba(236, 72, 153, 0.05)',
+            border: '1px solid rgba(236, 72, 153, 0.2)',
+            borderRadius: '16px',
+            padding: '1.75rem',
+            display: 'flex',
+            gap: '1.25rem',
+            alignItems: 'flex-start',
+          }}>
+            <div style={{ fontSize: '2rem', flexShrink: 0 }}>🖥️</div>
+            <div>
+              <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--fuchsia)', margin: '0 0 0.5rem 0' }}>GPU Compute Shaders</h4>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Custom compute shaders drive FFT spectrum, wave displacement, SDF generation, gradient folding, and shallow water advection.
+              </p>
+            </div>
+          </div>
+          <div style={{
+            background: 'rgba(16, 185, 129, 0.05)',
+            border: '1px solid rgba(16, 185, 129, 0.2)',
+            borderRadius: '16px',
+            padding: '1.75rem',
+            display: 'flex',
+            gap: '1.25rem',
+            alignItems: 'flex-start',
+          }}>
+            <div style={{ fontSize: '2rem', flexShrink: 0 }}>🔲</div>
+            <div>
+              <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--emerald)', margin: '0 0 0.5rem 0' }}>Quad-Tree LOD Mesh</h4>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Dynamic per-view tessellation with continuous LOD. Millions of vertices where you need them, zero overdraw where you don't.
+              </p>
+            </div>
+          </div>
+          <div style={{
+            background: 'rgba(251, 146, 60, 0.05)',
+            border: '1px solid rgba(251, 146, 60, 0.2)',
+            borderRadius: '16px',
+            padding: '1.75rem',
+            display: 'flex',
+            gap: '1.25rem',
+            alignItems: 'flex-start',
+          }}>
+            <div style={{ fontSize: '2rem', flexShrink: 0 }}>💧</div>
+            <div>
+              <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--orange)', margin: '0 0 0.5rem 0' }}>Shallow Water Simulation</h4>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                Grid-based fluid dynamics for interactive puddles, splashes, and localized water effects. Bakeable for zero runtime cost.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ========== ENVIRONMENT PACKS ========== */}
       <section className="bento-section reveal">
         <div className="section-header">
