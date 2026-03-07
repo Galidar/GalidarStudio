@@ -1,20 +1,20 @@
 ---
 slug: spectral-gerstner-waves-explained
-title: "🌊 Spectral Gerstner Waves - The Science Behind NextGen 2.0"
+title: "🌊 Spectral Gerstner Waves - The Science Behind Oceanology Pro 2.0"
 authors: [galidar]
-tags: [nextgen, waves, technical, physics, 2.0]
+tags: [oceanology-pro, waves, technical, physics, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---
 
 # Spectral Gerstner Waves: Oceanographic Accuracy Meets Real-Time Performance
 
-One of the headline features of **NextGen 2.0** is the new **Spectral Gerstner Wave System**. In this deep-dive, we'll explore the science behind this system and how it delivers unprecedented realism while maintaining excellent performance.
+One of the headline features of **Oceanology Pro 2.0** is the new **Spectral Gerstner Wave System**. In this deep-dive, we'll explore the science behind this system and how it delivers unprecedented realism while maintaining excellent performance.
 
 <!--truncate-->
 
 ## 🌊 The Problem with Traditional Approaches
 
-In NextGen 1.x (and most game engines), ocean waves are created by manually stacking 4-8 individual Gerstner waves. While effective, this approach has limitations:
+In Oceanology Pro 1.x (and most game engines), ocean waves are created by manually stacking 4-8 individual Gerstner waves. While effective, this approach has limitations:
 
 - **Tedious tuning**: Getting realistic results requires careful parameter adjustment
 - **Repetitive patterns**: Limited wave count creates visible tiling
@@ -188,7 +188,7 @@ The `OceanBlend` factor ensures smooth transitions from deep water to surf zone.
 
 ## 🚀 Getting Started
 
-When NextGen 2.0 releases, migrating to Spectral waves is simple:
+When Oceanology Pro 2.0 releases, migrating to Spectral waves is simple:
 
 1. Set `WaveSystemSelector = SpectralGerstnerWaves`
 2. Configure `BeaufortScale` for your conditions

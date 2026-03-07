@@ -6,7 +6,7 @@ tags:
   - tutorial
   - beginner
   - oceanology
-description: "A quick-start guide to creating your first ocean environment with Oceanology NextGen in Unreal Engine 5."
+description: "A quick-start guide to creating your first ocean environment with Oceanology in Unreal Engine 5."
 image: /img/landing/oceanology-legacy.png
 authors: [galidar]
 ---
@@ -15,12 +15,16 @@ New to Oceanology? This quick tutorial will have you rendering beautiful ocean w
 
 <!-- truncate -->
 
+:::note Which Plugin?
+This guide works with both **Oceanology Pro** (NextGen) and **Oceanology Lite** (Legacy). Steps are identical — the difference is in available wave quality options. [Not sure which to choose?](/roadmap/choosing-right-plugin)
+:::
+
 ## Prerequisites
 
 Before we start, make sure you have:
 
 - Unreal Engine 5.3 or later
-- Oceanology NextGen from the [FAB Store](https://www.fab.com/listings/87c9af41-62b7-4e70-98e3-fc72eff016ab)
+- Oceanology from the FAB Store ([Pro/NextGen](https://www.fab.com/listings/87c9af41-62b7-4e70-98e3-fc72eff016ab) or [Lite/Legacy](https://www.fab.com/listings/1cd1f62e-0fa3-48bf-bc60-f0e06010fce3))
 - A new or existing UE5 project
 
 ## Step 1: Enable the Plugin
@@ -34,7 +38,7 @@ Before we start, make sure you have:
 
 1. Open the **Content Browser**
 2. Navigate to `Oceanology/Blueprints/`
-3. Drag `BP_Ocean_NextGen` into your level
+3. Drag the **Ocean Blueprint** into your level
 4. Position it at your desired water level
 
 ## Step 3: Configure Basic Settings

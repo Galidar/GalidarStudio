@@ -348,12 +348,206 @@ export default function Home(): JSX.Element {
         </div>
       </div>
 
+      {/* ========== BIG ANNOUNCEMENT ========== */}
+      <section className="bento-section reveal" style={{
+        background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.06) 0%, rgba(6, 182, 212, 0.04) 50%, rgba(251, 191, 36, 0.04) 100%)',
+        borderTop: '1px solid rgba(139, 92, 246, 0.25)',
+        borderBottom: '1px solid rgba(6, 182, 212, 0.15)',
+      }}>
+        <div className="section-header">
+          <div className="section-label" style={{
+            background: 'linear-gradient(135deg, rgba(251, 191, 36, 0.18), rgba(251, 146, 60, 0.15))',
+            borderColor: 'rgba(251, 191, 36, 0.5)',
+            color: '#fbbf24',
+            fontWeight: 700,
+            letterSpacing: '0.05em',
+          }}>
+            🚀 Big Announcement
+          </div>
+          <h2 className="section-title">The Future of Water Simulation Is Almost Here</h2>
+          <p className="section-desc" style={{ maxWidth: '680px' }}>
+            After years of community feedback and development, we're completely restructuring our product lineup.
+            New names, a unified architecture, and features that redefine what's possible — coming soon.
+          </p>
+        </div>
+
+        {/* Product transformation grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: '1.5rem',
+          marginBottom: '3rem',
+          maxWidth: '1100px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        }}>
+
+          {/* Legacy → Lite */}
+          <div style={{
+            background: 'rgba(6, 182, 212, 0.05)',
+            border: '1px solid rgba(6, 182, 212, 0.2)',
+            borderRadius: '16px',
+            padding: '2rem',
+            display: 'flex',
+            flexDirection: 'column' as const,
+            gap: '1.25rem',
+            transition: 'border-color 0.3s, transform 0.3s',
+          }}>
+            <div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textDecoration: 'line-through', opacity: 0.5, marginBottom: '0.5rem' }}>
+                Oceanology Legacy
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--cyan)' }}>Oceanology Lite</span>
+              </div>
+            </div>
+            <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.65, flex: 1 }}>
+              Ocean + Lakes with optimized Gerstner waves. The performance champion — wide hardware support and broad compatibility.
+            </p>
+            <div style={{ fontSize: '0.8rem', color: 'rgba(6, 182, 212, 0.85)', padding: '0.65rem 1rem', background: 'rgba(6, 182, 212, 0.08)', borderRadius: '10px', borderLeft: '3px solid rgba(6, 182, 212, 0.4)' }}>
+              Existing customers get automatic update
+            </div>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' as const }}>
+              <span className="tag tag-cyan">GTX 1080+</span>
+              <span className="tag tag-emerald">Performance</span>
+            </div>
+          </div>
+
+          {/* NextGen → Pro (highlighted) */}
+          <div style={{
+            background: 'rgba(139, 92, 246, 0.07)',
+            border: '2px solid rgba(139, 92, 246, 0.35)',
+            borderRadius: '16px',
+            padding: '2rem',
+            display: 'flex',
+            flexDirection: 'column' as const,
+            gap: '1.25rem',
+            position: 'relative' as const,
+            transition: 'border-color 0.3s, transform 0.3s',
+          }}>
+            <div style={{
+              position: 'absolute' as const,
+              top: '-0.75rem',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              background: 'linear-gradient(135deg, var(--violet), var(--fuchsia))',
+              color: '#fff',
+              fontSize: '0.7rem',
+              fontWeight: 700,
+              padding: '0.3rem 1rem',
+              borderRadius: '20px',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase' as const,
+            }}>
+              NEW 2.0
+            </div>
+            <div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textDecoration: 'line-through', opacity: 0.5, marginBottom: '0.5rem' }}>
+                Oceanology NextGen
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--violet)' }}>Oceanology Pro</span>
+              </div>
+            </div>
+            <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.65, flex: 1 }}>
+              The complete water package. Ocean + Lakes + <strong>Rivers</strong> + Breaking Waves. Three wave modes: Gerstner, Spectral, and FFT.
+            </p>
+            <div style={{ fontSize: '0.8rem', color: 'rgba(139, 92, 246, 0.85)', padding: '0.65rem 1rem', background: 'rgba(139, 92, 246, 0.08)', borderRadius: '10px', borderLeft: '3px solid rgba(139, 92, 246, 0.4)' }}>
+              Free upgrade for all NextGen customers
+            </div>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' as const }}>
+              <span className="tag tag-violet">RTX 3080+</span>
+              <span className="tag tag-fuchsia">All Waves</span>
+              <span className="tag tag-cyan">Rivers</span>
+            </div>
+          </div>
+
+          {/* Riverology Upgraded */}
+          <div style={{
+            background: 'rgba(16, 185, 129, 0.05)',
+            border: '1px solid rgba(16, 185, 129, 0.2)',
+            borderRadius: '16px',
+            padding: '2rem',
+            display: 'flex',
+            flexDirection: 'column' as const,
+            gap: '1.25rem',
+            transition: 'border-color 0.3s, transform 0.3s',
+          }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--emerald)' }}>Riverology</span>
+                <span style={{ fontSize: '0.65rem', background: 'rgba(16, 185, 129, 0.2)', color: 'var(--emerald)', padding: '0.2rem 0.6rem', borderRadius: '20px', fontWeight: 700, letterSpacing: '0.04em' }}>UPGRADED</span>
+              </div>
+            </div>
+            <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.65, flex: 1 }}>
+              Rivers + Lakes with <strong>exclusive features</strong> not in Pro. The definitive river solution, now on the unified architecture.
+            </p>
+            <div style={{ fontSize: '0.8rem', color: 'rgba(16, 185, 129, 0.85)', padding: '0.65rem 1rem', background: 'rgba(16, 185, 129, 0.08)', borderRadius: '10px', borderLeft: '3px solid rgba(16, 185, 129, 0.4)' }}>
+              Existing customers get architecture benefits
+            </div>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' as const }}>
+              <span className="tag tag-emerald">Exclusive</span>
+              <span className="tag tag-violet">River Focus</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Key announcement highlights — 2x2 grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: '1.25rem',
+          maxWidth: '900px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        }}>
+          <div className="feature-card fuchsia">
+            <div className="product-icon fuchsia">🎛️</div>
+            <div>
+              <h4 className="feature-card-title">Multi-Wave System</h4>
+              <p className="feature-card-desc">Choose Gerstner, Spectral Gerstner, or FFT per water body — all in the same project.</p>
+            </div>
+          </div>
+          <div className="feature-card violet">
+            <div className="product-icon violet">🔄</div>
+            <div>
+              <h4 className="feature-card-title">Synchronized Updates</h4>
+              <p className="feature-card-desc">Unified codebase — every fix and improvement reaches Lite and Pro at the same time.</p>
+            </div>
+          </div>
+          <div className="feature-card cyan">
+            <div className="product-icon cyan">🗳️</div>
+            <div>
+              <h4 className="feature-card-title">You Choose the Sales</h4>
+              <p className="feature-card-desc">Vote in Discord polls to decide which product gets the next FAB Store discount.</p>
+            </div>
+          </div>
+          <div className="feature-card emerald">
+            <div className="product-icon emerald">🎁</div>
+            <div>
+              <h4 className="feature-card-title">No Re-Purchase Needed</h4>
+              <p className="feature-card-desc">All existing customers receive their product's upgrade automatically. You're covered.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '2rem', flexWrap: 'wrap' }}>
+          <Link to="/roadmap/product-rebranding-announcement" className="btn btn-primary">
+            📋 Read the Full Announcement
+          </Link>
+          <a href="https://discord.gg/VHJGBDR2as" target="_blank" rel="noopener" className="btn btn-secondary">
+            💬 Join the Conversation
+          </a>
+        </div>
+      </section>
+
       {/* ========== WATER PLUGINS ========== */}
       <section className="bento-section reveal">
         <div className="section-header">
-          <div className="section-label">Water Plugins</div>
-          <h2 className="section-title">Simulation Tools</h2>
-          <p className="section-desc">Production-ready water systems trusted by developers worldwide.</p>
+          <div className="section-label">Current Products</div>
+          <h2 className="section-title">Available Now on FAB</h2>
+          <p className="section-desc">Production-ready water systems trusted by developers worldwide. Evolving into Pro, Lite & Riverology soon.</p>
         </div>
 
         <div className="products-grid">
@@ -539,7 +733,7 @@ export default function Home(): JSX.Element {
             🆕 New Tool
           </div>
           <h2 className="section-title">Wave Forge Studio</h2>
-          <p className="section-desc">Professional breaking wave profile editor for NextGen 2.0 and compatible plugins.</p>
+          <p className="section-desc">Professional breaking wave profile editor for Oceanology Pro 2.0 and compatible plugins.</p>
         </div>
 
         <div className="wave-forge-showcase">
@@ -609,8 +803,8 @@ export default function Home(): JSX.Element {
           <div className="feature-card violet">
             <div className="product-icon violet">🔧</div>
             <div>
-              <h4 className="feature-card-title">NextGen 2.0 Compatible</h4>
-              <p className="feature-card-desc">Seamlessly integrates with Oceanology NextGen breaking wave system.</p>
+              <h4 className="feature-card-title">Oceanology Pro 2.0 Compatible</h4>
+              <p className="feature-card-desc">Seamlessly integrates with Oceanology Pro breaking wave system.</p>
             </div>
           </div>
           <div className="feature-card cyan">

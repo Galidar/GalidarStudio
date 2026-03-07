@@ -1,20 +1,20 @@
 ---
 slug: migration-guide-1x-to-2
-title: "📦 Migration Guide - Upgrading from NextGen 1.x to 2.0"
+title: "📦 Migration Guide - Upgrading from Oceanology Pro 1.x to 2.0"
 authors: [galidar]
-tags: [nextgen, migration, upgrade, guide, 2.0]
+tags: [oceanology-pro, migration, upgrade, guide, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---
 
-# Migrating from NextGen 1.x to 2.0
+# Migrating from Oceanology Pro 1.x to 2.0
 
-Ready to upgrade? This guide covers everything you need to know about migrating your project from **Oceanology NextGen 1.2.5** (or earlier) to the new **NextGen 2.0**.
+Ready to upgrade? This guide covers everything you need to know about migrating your project from **Oceanology Pro 1.2.5** (NextGen, or earlier) to the new **Oceanology Pro 2.0**.
 
 <!--truncate-->
 
 ## ✅ Good News First
 
-**NextGen 2.0 is designed for backward compatibility.** Your existing water setups will continue to work without modification. The new features are **additive** - you opt into them when ready.
+**Oceanology Pro 2.0 is designed for backward compatibility.** Your existing water setups will continue to work without modification. The new features are **additive** - you opt into them when ready.
 
 ## 📋 Pre-Migration Checklist
 

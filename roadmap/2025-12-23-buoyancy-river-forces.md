@@ -1,14 +1,14 @@
 ---
 slug: nextgen-2-buoyancy-river-forces
-title: "⚓ Advanced Buoyancy & River Physics in NextGen 2.0"
+title: "⚓ Advanced Buoyancy & River Physics in Oceanology Pro 2.0"
 authors: [galidar]
-tags: [nextgen, buoyancy, physics, rivers, boats, 2.0]
+tags: [oceanology-pro, buoyancy, physics, rivers, boats, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---
 
 # Advanced Buoyancy & River Physics
 
-NextGen 2.0 introduces a completely overhauled buoyancy system with **async physics**, **river-specific forces**, and **downstream rotation**. Perfect for boats, debris, characters, and any floating objects.
+Oceanology Pro 2.0 introduces a completely overhauled buoyancy system with **async physics**, **river-specific forces**, and **downstream rotation**. Perfect for boats, debris, characters, and any floating objects.
 
 <!--truncate-->
 

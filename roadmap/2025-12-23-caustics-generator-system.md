@@ -2,7 +2,7 @@
 slug: caustics-generator-system
 title: "✨ Caustics Generator - Dynamic Underwater Light Patterns"
 authors: [galidar]
-tags: [nextgen, caustics, underwater, lighting, visual-effects]
+tags: [oceanology-pro, caustics, underwater, lighting, visual-effects]
 image: /img/landing/oceanology-nextgen.png
 ---
 

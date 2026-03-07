@@ -1,14 +1,14 @@
 ---
 slug: wave-forge-integration
-title: "🔨 Wave Forge Studio - Custom Wave Profiles for NextGen 2.0"
+title: "🔨 Wave Forge Studio - Custom Wave Profiles for Oceanology Pro 2.0"
 authors: [galidar]
-tags: [nextgen, wave-forge, tools, procedural, 2.0]
+tags: [oceanology-pro, wave-forge, tools, procedural, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---
 
 # Wave Forge Studio: The Ultimate Wave Design Tool
 
-**Wave Forge Studio** is our companion WebGPU application for designing custom breaking wave profiles. In NextGen 2.0, these profiles integrate directly with the engine for unprecedented control over wave shapes.
+**Wave Forge Studio** is our companion WebGPU application for designing custom breaking wave profiles. In Oceanology Pro 2.0, these profiles integrate directly with the engine for unprecedented control over wave shapes.
 
 <!--truncate-->
 

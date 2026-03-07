@@ -1,14 +1,14 @@
 ---
 slug: nextgen-2-additional-features
-title: "✨ NextGen 2.0 - Complete Feature Roundup"
+title: "✨ Oceanology Pro 2.0 - Complete Feature Roundup"
 authors: [galidar]
-tags: [nextgen, features, niagara, hlod, shallow-water, 2.0]
+tags: [oceanology-pro, features, niagara, hlod, shallow-water, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---
 
-# NextGen 2.0: Every New Feature Explained
+# Oceanology Pro 2.0: Every New Feature Explained
 
-Beyond the headline features (Spectral Waves, Breaking Waves, Wave Forge), NextGen 2.0 includes **dozens of additional improvements** across every system. Here's the complete feature roundup.
+Beyond the headline features (Spectral Waves, Breaking Waves, Wave Forge), Oceanology Pro 2.0 includes **dozens of additional improvements** across every system. Here's the complete feature roundup.
 
 <!--truncate-->
 

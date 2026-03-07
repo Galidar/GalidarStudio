@@ -21,17 +21,21 @@ After helping thousands of developers create stunning water environments, we've 
 **Don't start from scratch.** Our demo maps contain pre-configured setups that work perfectly out of the box.
 
 **Where to find them:**
-- **NextGen:** `Plugins/Oceanology/Content/Maps/DemoMap_NextGen`
-- **Legacy:** `Plugins/Oceanology/Content/Maps/DemoMap_Legacy`
+- **Oceanology Pro (NextGen):** `Plugins/Oceanology/Content/Maps/DemoMap_NextGen`
+- **Oceanology Lite (Legacy):** `Plugins/Oceanology/Content/Maps/DemoMap_Legacy`
 - **Riverology:** `Plugins/Riverology/Content/Maps/DemoMap_River`
 
 Copy these maps and modify them instead of building from zero. This saves hours of configuration time.
+
+:::note Coming in 2.0
+Demo maps will use **blockout design** (simple geometric shapes), making them much smaller in file size and giving you a clearer picture of actual water performance without interference from environmental assets.
+:::
 
 ---
 
 ## ⚙️ Tip 2: Enable DirectX 12 First
 
-**This is non-negotiable for NextGen.** Many visual issues stem from using DX11.
+**This is non-negotiable for Oceanology Pro (NextGen).** Many visual issues stem from using DX11.
 
 **Quick setup:**
 1. Go to **Project Settings → Platforms → Windows**
@@ -128,9 +132,9 @@ Use Unreal's built-in profiler to identify actual bottlenecks:
 **Console commands:**
 ```
 stat gpu          // GPU timing breakdown
-stat unit         // Frame time analysis  
+stat unit         // Frame time analysis
 profilegpu        // Detailed GPU profiler
-stat oceanology   // Our custom stats (if available)
+r.Oceanology.WaterMesh.ShowLODLevels 1  // Visualize LOD levels
 ```
 
 **Common performance issues:**
@@ -149,7 +153,7 @@ For multiplayer games, enable **Deterministic Mode**:
 3. Enable **Deterministic Waves** ✅
 4. Set a fixed **Wave Seed** (same on all clients)
 
-This ensures all players see identical wave positions - critical for competitive gameplay.
+This ensures all players see identical wave positions — critical for competitive gameplay.
 
 ---
 

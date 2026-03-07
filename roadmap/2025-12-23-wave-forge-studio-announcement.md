@@ -6,7 +6,7 @@ tags: [announcement, wave-forge, tool, breaking-waves, subscription]
 image: /img/landing/wave-forge-studio.png
 ---
 
-We're excited to announce **Wave Forge Studio** — a professional WebGPU-powered breaking wave profile editor designed for Oceanology NextGen 2.0 and compatible water simulation plugins.
+We're excited to announce **Wave Forge Studio** — a professional WebGPU-powered breaking wave profile editor designed for **Oceanology Pro 2.0** and compatible water simulation plugins.
 
 **[Launch Wave Forge Studio →](https://waveforgestudio.galidarreset.workers.dev)**
 

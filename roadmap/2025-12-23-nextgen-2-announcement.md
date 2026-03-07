@@ -1,20 +1,24 @@
 ---
 slug: nextgen-2-announcement
-title: "🌊 Oceanology NextGen 2.0 - The Future of Water Simulation"
+title: "🌊 Oceanology Pro 2.0 - The Future of Water Simulation"
 authors: [galidar]
-tags: [nextgen, announcement, update, 2.0]
+tags: [oceanology-pro, announcement, update, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---
 
-# Oceanology NextGen 2.0 - A Complete Revolution
+# Oceanology Pro 2.0 - A Complete Revolution
 
-After months of intensive development, we're thrilled to announce **Oceanology NextGen 2.0** - the most significant update in the history of our water simulation plugin. This isn't just an update; it's a complete reimagining of what's possible with real-time ocean rendering in Unreal Engine 5.
+After months of intensive development, we're thrilled to announce **Oceanology Pro 2.0** (formerly NextGen) - the most significant update in the history of our water simulation plugin. This isn't just an update; it's a complete reimagining of what's possible with real-time ocean rendering in Unreal Engine 5.
+
+:::note Product Naming
+Oceanology NextGen is being renamed to **Oceanology Pro** with the 2.0 release. No re-purchase needed — all existing NextGen customers receive this update for free. [Read the full announcement →](/roadmap/product-rebranding-announcement)
+:::
 
 <!--truncate-->
 
 ## 🎯 What Makes 2.0 Special?
 
-NextGen 2.0 introduces **three major new systems** that work together to create the most realistic water simulation ever seen in a game engine:
+Oceanology Pro 2.0 introduces **three major new systems** that work together to create the most realistic water simulation ever seen in a game engine:
 
 ### 1. Spectral Gerstner Waves
 
@@ -41,7 +45,7 @@ All driven by **SDF (Signed Distance Field)** data from your shoreline, with ful
 
 ### 3. Wave Forge Integration
 
-Our companion tool **Wave Forge Studio** now integrates directly with NextGen 2.0:
+Our companion tool **Wave Forge Studio** now integrates directly with Oceanology Pro 2.0:
 
 - **21 Hermite spline profiles** defining complete wave lifecycles
 - **Procedural generation** or **baked texture** workflows
@@ -52,9 +56,9 @@ Our companion tool **Wave Forge Studio** now integrates directly with NextGen 2.
 
 Beyond the major features, 2.0 brings significant architectural improvements:
 
-| Feature | NextGen 1.2.5 | NextGen 2.0 |
-|---------|---------------|-------------|
-| Wave System | Legacy Gerstner | Spectral + Legacy + Breaking |
+| Feature | Oceanology Pro 1.2.5 | Oceanology Pro 2.0 |
+|---------|----------------------|--------------------|
+| Wave System | Gerstner | Spectral + Gerstner + Breaking |
 | GPU Data | 4 DataBlocks | 15 DataBlocks |
 | Coastal Simulation | ❌ None | ✅ Full SDF-based |
 | Beaufort Integration | ❌ None | ✅ 0-12 Scale |
@@ -94,7 +98,7 @@ Despite the massive feature additions, we've maintained excellent performance:
 - **Beta Release**: Q2 2026 (All existing customers)
 - **Full Release**: Q3 2026 (FAB Store)
 
-Existing NextGen customers will receive 2.0 as a **free update**.
+Existing Oceanology Pro (NextGen) customers will receive 2.0 as a **free update**.
 
 ## 🔮 What's Next?
 
@@ -113,4 +117,4 @@ Have questions? Want early access? Join our Discord community with **6,000+ deve
 
 ---
 
-*The ocean awaits. NextGen 2.0 is coming.* 🌊
+*The ocean awaits. Oceanology Pro 2.0 is coming.* 🌊

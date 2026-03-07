@@ -2,7 +2,7 @@
 slug: niagara-vfx-integration
 title: "🎆 Niagara VFX Integration - Water-Aware Particle Systems"
 authors: [galidar]
-tags: [nextgen, niagara, vfx, particles, integration]
+tags: [oceanology-pro, niagara, vfx, particles, integration]
 image: /img/landing/oceanology-nextgen.png
 ---
 

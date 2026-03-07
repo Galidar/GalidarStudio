@@ -1,17 +1,17 @@
 ---
-title: "Oceanology NextGen: What's New in 2025"
+title: "Oceanology Pro (NextGen): What's New in 2025"
 slug: oceanology-nextgen-2025
 date: 2025-10-15
 tags:
   - oceanology
-  - nextgen
+  - oceanology-pro
   - update
-description: "Discover the latest features in Oceanology NextGen including improved FFT waves, better performance, and new coastline rendering."
+description: "Discover the latest features in Oceanology Pro (NextGen) including improved FFT waves, better performance, and new coastline rendering."
 image: /img/landing/oceanology-nextgen.png
 authors: [galidar]
 ---
 
-Oceanology NextGen continues to evolve with powerful new features for creating stunning ocean environments in Unreal Engine 5.
+Oceanology Pro (NextGen) continues to evolve with powerful new features for creating stunning ocean environments in Unreal Engine 5.
 
 <!-- truncate -->
 

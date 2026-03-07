@@ -1,15 +1,15 @@
 ---
 slug: nextgen-2-bugfixes
-title: "🐛 Bug Fixes & Visual Polish - NextGen 2.0"
+title: "🐛 Bug Fixes & Visual Polish - Oceanology Pro 2.0"
 date: 2026-01-11
 authors: [galidar]
-tags: [nextgen, bugfix, lod, underwater, fog, masking, godrays, 2]
+tags: [oceanology-pro, bugfix, lod, underwater, fog, masking, godrays, 2]
 image: /img/landing/oceanology-nextgen.png
 ---
 
-# 🐛 Bug Fixes & Visual Polish - NextGen 2.0
+# 🐛 Bug Fixes & Visual Polish - Oceanology Pro 2.0
 
-We've been listening closely to community feedback, and NextGen 2.0 will bring meaningful fixes to some of the most frequently reported visual issues.
+We've been listening closely to community feedback, and Oceanology Pro 2.0 will bring meaningful fixes to some of the most frequently reported visual issues.
 
 <!--truncate-->
 

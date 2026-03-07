@@ -237,8 +237,8 @@ Open the demo map first. If it works there, the issue is in your level configura
    - Or `YourProject/Plugins/` (Project install)
 
 2. **Check engine version**
-   - NextGen requires UE 5.3+
-   - Legacy works with UE 5.0+
+   - Oceanology Pro (NextGen) requires UE 5.7+
+   - Oceanology Lite (Legacy) requires UE 5.7+
 
 3. **Restart editor** after moving files
 

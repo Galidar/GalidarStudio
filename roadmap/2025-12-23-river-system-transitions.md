@@ -2,13 +2,13 @@
 slug: river-system-transitions
 title: "🌊 Rivers, Lakes & Oceans - Seamless Water Transitions"
 authors: [galidar]
-tags: [nextgen, rivers, lakes, transitions, splines, 2.0]
+tags: [oceanology-pro, rivers, lakes, transitions, splines, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---
 
-# Seamless Water Body Transitions in NextGen 2.0
+# Seamless Water Body Transitions in Oceanology Pro 2.0
 
-One of the most challenging aspects of realistic water simulation is handling the boundaries between different water body types. NextGen 2.0 introduces a sophisticated transition system that makes these boundaries seamless and visually stunning.
+One of the most challenging aspects of realistic water simulation is handling the boundaries between different water body types. Oceanology Pro 2.0 introduces a sophisticated transition system that makes these boundaries seamless and visually stunning.
 
 <!-- truncate -->
 

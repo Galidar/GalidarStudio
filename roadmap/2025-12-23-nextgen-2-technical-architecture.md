@@ -1,14 +1,14 @@
 ---
 slug: nextgen-2-technical-architecture
-title: "⚙️ Under the Hood - NextGen 2.0 Technical Architecture"
+title: "⚙️ Under the Hood - Oceanology Pro 2.0 Technical Architecture"
 authors: [galidar]
-tags: [nextgen, technical, architecture, gpu, 2.0]
+tags: [oceanology-pro, technical, architecture, gpu, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---
 
-# NextGen 2.0 Technical Architecture: A Deep Dive
+# Oceanology Pro 2.0 Technical Architecture: A Deep Dive
 
-For developers who want to understand the engineering behind NextGen 2.0, this article explores the **GPU data architecture**, **shader organization**, and **rendering pipeline** changes that make the new features possible.
+For developers who want to understand the engineering behind Oceanology Pro 2.0, this article explores the **GPU data architecture**, **shader organization**, and **rendering pipeline** changes that make the new features possible.
 
 <!--truncate-->
 

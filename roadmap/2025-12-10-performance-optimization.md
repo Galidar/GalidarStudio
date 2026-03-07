@@ -57,7 +57,7 @@ stat memory           // Memory usage
 
 ## 🌊 Wave System Optimization
 
-### FFT Resolution (NextGen)
+### FFT Resolution (Oceanology Pro)
 
 The FFT grid resolution has the biggest performance impact:
 
@@ -72,9 +72,9 @@ The FFT grid resolution has the biggest performance impact:
 2. Find **FFT Settings** category
 3. Lower **Resolution** value
 
-### Wave Layers (Legacy)
+### Wave Layers (Oceanology Lite)
 
-Legacy uses layered Gerstner waves:
+Oceanology Lite uses layered Gerstner waves:
 
 | Layers | Quality | Cost |
 |--------|---------|------|
@@ -215,18 +215,18 @@ MaxTessellation: 16
 ReflectionMode: Cubemap
 
 // LowQuality
-Use Oceanology Legacy instead
+Use Oceanology Lite instead
 ```
 
 ### Console Optimization
 
 For PS5/Xbox Series X:
-- Use **NextGen** with Medium settings
+- Use **Oceanology Pro** with Medium settings
 - Enable **Variable Rate Shading** (VRS)
 - Use **Async Compute** for FFT
 
 For PS4/Xbox One:
-- Use **Oceanology Legacy**
+- Use **Oceanology Lite**
 - Limit to 2 wave layers
 - Reduce QuadTree density
 
@@ -234,7 +234,7 @@ For PS4/Xbox One:
 
 VR is demanding — every millisecond counts:
 
-1. **Use Oceanology Legacy** (not NextGen)
+1. **Use Oceanology Lite** (not Pro — VR requires maximum performance)
 2. **Disable post-processing** underwater effects
 3. **Reduce all distances** by 50%
 4. **Use fixed foveated rendering** if available

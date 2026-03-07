@@ -2,13 +2,13 @@
 slug: landscape-integration
 title: "🏔️ Landscape Integration - Automatic Terrain Sculpting"
 authors: [galidar]
-tags: [nextgen, landscape, islands, terrain, brush-effects]
+tags: [oceanology-pro, landscape, islands, terrain, brush-effects]
 image: /img/landing/oceanology-nextgen.png
 ---
 
-# Landscape Integration in NextGen 2.0
+# Landscape Integration in Oceanology Pro 2.0
 
-One of NextGen 2.0's most powerful features is its deep integration with Unreal Engine's Landscape system. This post covers how water bodies interact with terrain through islands, exclusion volumes, and brush effects.
+One of Oceanology Pro 2.0's most powerful features is its deep integration with Unreal Engine's Landscape system. This post covers how water bodies interact with terrain through islands, exclusion volumes, and brush effects.
 
 <!-- truncate -->
 

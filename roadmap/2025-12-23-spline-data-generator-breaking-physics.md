@@ -2,7 +2,7 @@
 slug: spline-data-generator-breaking-physics
 title: "🌊 Spline Data Generator - Physics-Accurate Breaking Wave Authoring"
 authors: [galidar]
-tags: [nextgen, splines, breaking-waves, physics, wave-forge]
+tags: [oceanology-pro, splines, breaking-waves, physics, wave-forge]
 image: /img/landing/oceanology-nextgen.png
 ---
 

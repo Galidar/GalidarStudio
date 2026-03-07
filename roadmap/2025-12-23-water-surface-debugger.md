@@ -2,7 +2,7 @@
 slug: water-surface-debugger
 title: "🔍 Water Surface Debugger - Advanced Visualization & Analysis Tools"
 authors: [galidar]
-tags: [nextgen, debug, visualization, editor, tools]
+tags: [oceanology-pro, debug, visualization, editor, tools]
 image: /img/landing/oceanology-nextgen.png
 ---
 

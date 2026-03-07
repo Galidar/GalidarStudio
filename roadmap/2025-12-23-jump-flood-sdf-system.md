@@ -2,7 +2,7 @@
 slug: jump-flood-sdf-system
 title: "📐 Jump Flood SDF - Real-Time Distance Field Computation"
 authors: [galidar]
-tags: [nextgen, sdf, jump-flood, algorithm, shore-detection]
+tags: [oceanology-pro, sdf, jump-flood, algorithm, shore-detection]
 image: /img/landing/oceanology-nextgen.png
 ---
 

@@ -2,7 +2,7 @@
 slug: debug-tools-console-variables
 title: "🔧 Debug Tools & Console Variables - Complete Reference"
 authors: [galidar]
-tags: [nextgen, debug, console, performance, tools, 2.0]
+tags: [oceanology-pro, debug, console, performance, tools, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---
 

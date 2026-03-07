@@ -1,14 +1,14 @@
 ---
 slug: breaking-waves-deep-dive
-title: "🏄 Breaking Waves - Realistic Surf Zone Simulation in NextGen 2.0"
+title: "🏄 Breaking Waves - Realistic Surf Zone Simulation in Oceanology Pro 2.0"
 authors: [galidar]
-tags: [nextgen, coastal, breaking-waves, surf, 2.0]
+tags: [oceanology-pro, coastal, breaking-waves, surf, 2.0]
 image: /img/landing/oceanology-nextgen.png
 ---
 
 # Breaking Waves: The Most Requested Feature Finally Arrives
 
-For years, the #1 feature request from our community has been **realistic breaking waves**. With NextGen 2.0, we're delivering a complete **Coastal Wave System** that simulates the entire lifecycle of waves as they approach and break on your shores.
+For years, the #1 feature request from our community has been **realistic breaking waves**. With Oceanology Pro 2.0, we're delivering a complete **Coastal Wave System** that simulates the entire lifecycle of waves as they approach and break on your shores.
 
 <!--truncate-->
 

@@ -1,5 +1,5 @@
 ---
-title: "Choosing the Right Plugin: NextGen vs Legacy vs Riverology"
+title: "Choosing the Right Plugin: Oceanology Pro vs Lite vs Riverology"
 slug: choosing-right-plugin
 date: 2025-11-20
 tags:
@@ -8,7 +8,7 @@ tags:
   - oceanology
   - riverology
 description: "Not sure which water plugin is right for your project? This comprehensive guide helps you make the perfect choice."
-image: /img/landing/oceanology-legacy.png
+image: /img/landing/oceanology-nextgen.png
 authors: [galidar]
 ---
 
@@ -16,14 +16,21 @@ Choosing the right water simulation plugin can make or break your project. Let's
 
 <!-- truncate -->
 
+:::note Coming with Oceanology Pro 2.0 (Q3 2026)
+Our product lineup is being restructured with the **Oceanology Pro 2.0** release. Current products are **Oceanology NextGen** (becoming **Pro**) and **Oceanology Legacy** (becoming **Lite**). No re-purchase needed — all existing customers receive updates automatically.
+[Read the full announcement →](/roadmap/product-rebranding-announcement)
+:::
+
+---
+
 ## 🤔 The Big Question
 
 We often get asked: *"Which plugin should I buy?"*
 
 The answer depends on three factors:
-1. **Target hardware** — What GPUs will your players have?
-2. **Water type** — Ocean, river, or both?
-3. **Visual requirements** — AAA quality or optimized performance?
+1. **Water type** — Ocean, river, or both?
+2. **Target hardware** — What GPUs will your players have?
+3. **Visual requirements** — Maximum quality or optimized performance?
 
 ---
 
@@ -33,115 +40,126 @@ The answer depends on three factors:
 START HERE
     │
     ▼
-┌─────────────────────────────────┐
-│  Do you need RIVERS or STREAMS? │
-└─────────────────────────────────┘
+┌──────────────────────────────┐
+│  Do you ONLY need rivers?    │
+│  (no open ocean)             │
+└──────────────────────────────┘
     │ YES              │ NO
     ▼                  ▼
-┌─────────┐    ┌─────────────────────┐
-│RIVEROLOGY│    │ Target HIGH-END GPU? │
-└─────────┘    │   (RTX 3080+)        │
-               └─────────────────────┘
-                    │ YES      │ NO
-                    ▼          ▼
-              ┌─────────┐ ┌─────────┐
-              │ NEXTGEN │ │ LEGACY  │
-              └─────────┘ └─────────┘
+┌──────────┐    ┌──────────────────────────────┐
+│RIVEROLOGY│    │ Do you need rivers + ocean,  │
+│(exclusive│    │ or max wave quality?         │
+│  river   │    └──────────────────────────────┘
+│ features)│         │ YES           │ NO
+└──────────┘         ▼               ▼
+               ┌───────────┐   ┌──────────────┐
+               │ OCEANOLOGY│   │  OCEANOLOGY  │
+               │    PRO    │   │     LITE     │
+               │(NextGen)  │   │  (Legacy)    │
+               └───────────┘   └──────────────┘
 ```
 
 ---
 
-## 🌊 Oceanology NextGen
+## 🌊 Oceanology Pro (NextGen → Pro)
 
-**Best for:** AAA projects, cinematics, high-end PC games
+**Best for:** AAA projects, cinematics, high-end PC games, projects needing rivers + ocean
 
-### ✅ Choose NextGen If:
+### ✅ Choose Pro If:
 
+- You need **rivers AND ocean** in the same project
 - You're targeting **RTX 3080 / RTX 4070+ or better** GPUs
-- You need **FFT-based spectral waves** (realistic ocean simulation)
-- Your project requires **advanced shore wave breaking**
-- You want **the best visual quality** possible
+- You need **Breaking Waves** — surf simulation with coastal waves
+- You want **Spectral Gerstner or FFT waves** for maximum realism
 - You're building **cinematic experiences**
-- Your audience has **gaming PCs or next-gen consoles**
+- You want the **complete package** — ocean, lakes, rivers, all wave types
 
-### ❌ Don't Choose NextGen If:
+### ❌ Don't Choose Pro If:
 
-- Targeting mobile or low-end hardware
-- Performance is more important than visuals
-- You have a tight GPU budget
+- You only need performance-friendly ocean/lakes (use Lite — it shares the same codebase)
+- You need maximum support for low-end hardware and mobile
 
 ### Key Features:
-| Feature | NextGen |
-|---------|---------|
-| Wave System | FFT + Gerstner Hybrid |
-| Shore Waves | ✅ Breaking waves |
+
+| Feature | Oceanology Pro |
+|---------|---------------|
+| Ocean Wave System | Gerstner + Spectral Gerstner + FFT |
+| Lake System | ✅ Full features |
+| River System | ✅ Included |
+| Breaking Waves | ✅ Surf profiles |
 | GPU Requirement | RTX 3080 / RTX 4070+ recommended |
-| Best Quality | ⭐⭐⭐⭐⭐ |
+| Visual Quality | ⭐⭐⭐⭐⭐ |
 
-**Documentation:** [Oceanology NextGen Docs](/oceanology-nextgen)
+**Documentation:** [Oceanology Pro Docs](/oceanology-nextgen)
 
-**FAB Store:** [Buy NextGen](https://www.fab.com/listings/87c9af41-62b7-4e70-98e3-fc72eff016ab)
+**FAB Store:** [Buy Oceanology Pro (NextGen)](https://www.fab.com/listings/87c9af41-62b7-4e70-98e3-fc72eff016ab)
 
 ---
 
-## 🌅 Oceanology Legacy
+## 🌅 Oceanology Lite (Legacy → Lite)
 
-**Best for:** Wide hardware compatibility, indie games, mobile-adjacent
+**Best for:** Wide hardware compatibility, indie games, performance-critical projects
 
-### ✅ Choose Legacy If:
+### ✅ Choose Lite If:
 
 - You need to support **GTX 1080 / RTX 3060+** GPUs
-- **Performance is critical** (VR, mobile, streaming)
+- **Performance is critical** (VR, mobile, streaming, console)
 - You want **broad audience reach**
-- Your project is an **indie game** with hardware constraints
+- You need **ocean and lakes** without rivers or advanced wave systems
 - You're making a **stylized** water look (not photorealism)
-- You need **console compatibility** (Xbox One, PS4)
+- You want **synchronized updates** with Pro (shared codebase)
 
-### ❌ Don't Choose Legacy If:
+### ❌ Don't Choose Lite If:
 
-- You need the absolute best visual quality
-- Shore wave breaking is essential
-- You have high-end GPU requirements anyway
+- You need rivers (rivers are exclusive to Pro and Riverology)
+- You need Breaking Waves or Spectral/FFT wave systems
+- You need maximum visual quality on high-end hardware
 
 ### Key Features:
-| Feature | Legacy |
-|---------|--------|
-| Wave System | Pure Gerstner (4 layers) |
-| Shore Waves | Basic foam |
+
+| Feature | Oceanology Lite |
+|---------|----------------|
+| Ocean Wave System | Gerstner (4 layers) |
+| Lake System | ✅ Full features |
+| River System | ❌ Not included |
+| Breaking Waves | ❌ (basic shoreline only) |
 | GPU Requirement | GTX 1080 / RTX 3060+ |
 | Performance | ⭐⭐⭐⭐⭐ |
 
-**Documentation:** [Oceanology Legacy Docs](/oceanology-legacy)
+**Documentation:** [Oceanology Lite Docs](/oceanology-legacy)
 
-**FAB Store:** [Buy Legacy](https://www.fab.com/listings/1cd1f62e-0fa3-48bf-bc60-f0e06010fce3)
+**FAB Store:** [Buy Oceanology Lite (Legacy)](https://www.fab.com/listings/1cd1f62e-0fa3-48bf-bc60-f0e06010fce3)
 
 ---
 
 ## 🏞️ Riverology
 
-**Best for:** Rivers, streams, lakes, inland water
+**Best for:** Rivers, streams, lakes, inland water environments
 
 ### ✅ Choose Riverology If:
 
 - You need **flowing rivers** with current physics
 - Your game has **spline-based water paths**
 - You want **objects to flow downstream**
-- You need **terrain-integrated riverbeds**
-- You're building **nature environments** with streams
-- You need **waterfalls and rapids**
+- You need **terrain-integrated riverbeds** with auto-carving
+- You're building **nature environments** with streams, waterfalls, or rapids
+- You want **exclusive river features** not available in Oceanology Pro
 
 ### ❌ Don't Choose Riverology If:
 
-- You only need open ocean
-- You don't have terrain/landscape in your level
+- You need open ocean simulation (Riverology has no ocean)
+- You need rivers AND ocean → use Oceanology Pro instead (includes both)
 
 ### Key Features:
+
 | Feature | Riverology |
 |---------|------------|
 | Water Type | Rivers, streams, lakes |
+| Ocean System | ❌ Not included |
 | Flow Physics | ✅ Directional current |
 | Terrain Integration | ✅ Auto riverbed carving |
 | Spline-Based | ✅ Flexible paths |
+| Exclusive River Features | ✅ Not available elsewhere |
 
 **Documentation:** [Riverology Docs](/riverology)
 
@@ -151,53 +169,53 @@ START HERE
 
 ## 🔄 Can I Use Multiple Plugins?
 
-**YES!** Our plugins work together beautifully:
+**YES!** Our plugins work together:
 
-### Common Combinations:
+### Pro + Riverology
+- Get ocean AND exclusive Riverology river features in the same project
+- Riverology has exclusive river mechanics not available in Pro
+- Rivers flowing into the sea, coastal + inland water systems
 
-**NextGen + Riverology**
-- Open ocean meets river delta
-- Rivers flowing into the sea
-- Coastal + inland water systems
+### Lite + Riverology
+- Performance-optimized ocean with Riverology rivers
+- Best for projects targeting a wide range of hardware
 
-**Legacy + Riverology**
-- Performance-optimized ocean
-- Rivers for exploration games
-- Best for wider hardware support
-
-### How to Combine:
-1. Install both plugins
-2. Use NextGen/Legacy for ocean areas
-3. Use Riverology for river systems
-4. They share the same buoyancy and swimming systems
+:::tip
+Oceanology Pro already **includes a river system**, so you only need to add Riverology if you specifically need its exclusive river features.
+:::
 
 ---
 
-## 📈 Performance Comparison
+## 📈 Feature Comparison
 
-| Metric | NextGen | Legacy | Riverology |
-|--------|---------|--------|------------|
-| GPU Load | High | Low | Medium |
-| CPU Load | Medium | Low | Medium |
-| Memory | ~200MB | ~50MB | ~80MB |
+| Feature | Oceanology Pro | Oceanology Lite | Riverology |
+|---------|---------------|----------------|------------|
+| Ocean | ✅ All wave types | ✅ Gerstner only | ❌ |
+| Lakes | ✅ Full | ✅ Full | ✅ Full |
+| Rivers | ✅ Included | ❌ | ✅ Exclusive features |
+| Breaking Waves | ✅ | ❌ (basic shoreline) | ❌ |
+| Spectral Gerstner | ✅ | ❌ | ❌ |
+| FFT Waves | ✅ | ❌ | ❌ |
 | Min GPU | RTX 3080 / RTX 4070+ | GTX 1080 / RTX 3060+ | GTX 1080 / RTX 3060+ |
-| Target FPS | 60 | 120+ | 90+ |
+| Buoyancy | ✅ | ✅ | ✅ |
+| Swimming | ✅ | ✅ | ✅ |
 
 ---
 
 ## 🎮 Project Type Recommendations
 
-| Project Type | Recommended Plugin |
-|--------------|-------------------|
-| AAA Open World | NextGen |
-| Indie Adventure | Legacy |
-| Survival Game | NextGen or Legacy + Riverology |
-| Racing/Boat Game | NextGen |
-| VR Experience | Legacy |
-| Mobile Game | Legacy |
-| Cinematic | NextGen |
-| Exploration | Legacy + Riverology |
-| Fantasy RPG | All three! |
+| Project Type | Recommended |
+|--------------|-------------|
+| AAA Open World (ocean + rivers) | Oceanology Pro |
+| Indie Adventure | Oceanology Lite |
+| Survival Game (ocean) | Oceanology Lite or Pro |
+| Survival Game (rivers + ocean) | Oceanology Pro |
+| Racing / Boat Game | Oceanology Pro |
+| VR Experience | Oceanology Lite |
+| Mobile Game | Oceanology Lite |
+| Cinematic Production | Oceanology Pro |
+| Forest / Nature Scene | Riverology |
+| Fantasy RPG (all water types) | Pro + Riverology |
 
 ---
 
@@ -205,20 +223,18 @@ START HERE
 
 ### Ask These Questions:
 
-1. **What's my minimum target GPU?**
-   - RTX 3080 / RTX 4070+ → NextGen
-   - GTX 1080 / RTX 3060+ → Legacy
+1. **Do I need rivers AND ocean in the same project?**
+   - Yes → Oceanology Pro (includes both)
 
-2. **Do I need rivers?**
-   - Yes → Add Riverology
+2. **Do I need ONLY rivers (no ocean)?**
+   - Yes → Riverology (exclusive river features)
 
-3. **Is visual quality my priority?**
-   - Yes → NextGen
-   - No, performance is → Legacy
+3. **Do I need ocean only?**
+   - High-end GPU, best quality → Oceanology Pro
+   - Wide hardware support → Oceanology Lite
 
-4. **What's my budget?**
-   - All three plugins are competitively priced
-   - Bundle deals available
+4. **Is Breaking Waves (surf simulation) essential?**
+   - Yes → Oceanology Pro
 
 ---
 
@@ -228,6 +244,5 @@ We're here to help you make the right choice:
 
 - 💬 **Ask in Discord** — [Get community advice](https://discord.gg/VHJGBDR2as)
 - 📧 **Contact Support** — [Direct help](/support)
-- 🎥 **Watch Demos** — See each plugin in action on our YouTube
 
-Remember: You can always start with one plugin and add others later. They're designed to work together!
+Remember: you can always start with one plugin and add others later. They're designed to work together!
