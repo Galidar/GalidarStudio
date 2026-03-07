@@ -85,6 +85,7 @@ const config: Config = {
         { type: 'docSidebar', sidebarId: 'nextgenSidebar', docsPluginId: 'default', position: 'left', label: 'Oceanology NextGen' },
         { type: 'docSidebar', sidebarId: 'riverologySidebar', docsPluginId: 'riverology', position: 'left', label: 'Riverology' },
         { to: '/roadmap', label: 'Roadmap', position: 'left' },
+        { to: '/changelog', label: 'Changelog', position: 'left' },
         { to: '/community', label: 'Community', position: 'left' },
         { to: '/showcase', label: 'Showcase', position: 'left' },
         { to: '/linked-roles', label: 'Linked Roles', position: 'right' },
@@ -123,6 +124,7 @@ const config: Config = {
           title: 'More',
           items: [
             {label: 'Showcase', to: '/showcase'},
+            {label: 'Changelog', to: '/changelog'},
             {label: 'FAQ', to: '/faq'}
           ],
         },
