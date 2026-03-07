@@ -7,17 +7,31 @@ let riverologyChangelog: ProductChangelog = {
   entries: [
     {
       version: '2.3.0',
-      date: 'March 30, 2025',
-      title: 'UE 5.5 Compatibility & Landscape Deformation',
+      date: 'March 29, 2025',
+      title: 'UE 5.5–5.7 Compatibility, Landscape Deformation & C++ Fixes',
       tag: 'latest',
       sections: [
         {
-          heading: 'Changes',
+          heading: 'Features',
           items: [
-            'Restored/rolledback the pre-directory refactor state for stability',
-            'UE 5.5.0 compatibility updates',
             'Landscape deformation via "Editor Apply Spline" button',
             'New Input System controls integration',
+            'Construction script lag fix via exposed editor button',
+          ],
+        },
+        {
+          heading: 'Compatibility',
+          items: [
+            'UE 5.5 compatibility update',
+            'UE 5.6 compatibility update',
+            'UE 5.7 compatibility update',
+            'C++ standard compatibility fixes',
+          ],
+        },
+        {
+          heading: 'Changes',
+          items: [
+            'Restored pre-directory refactor state for stability',
           ],
         },
       ],
