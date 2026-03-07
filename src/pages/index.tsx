@@ -722,6 +722,7 @@ export default function Home(): JSX.Element {
               <span className="tag tag-violet">Game Ready</span>
               <span className="tag tag-fuchsia">GPU Optimized</span>
             </div>
+            <Link to="/roadmap/nextgen-2-additional-features" style={{ fontSize: '0.8rem', color: 'var(--violet)', textDecoration: 'none', fontWeight: 600 }}>Learn more →</Link>
           </div>
 
           {/* 3 Wave Modes */}
@@ -744,6 +745,7 @@ export default function Home(): JSX.Element {
               <span className="tag tag-emerald">Gerstner</span>
               <span className="tag tag-violet">Spectral</span>
             </div>
+            <Link to="/roadmap/spectral-gerstner-waves-explained" style={{ fontSize: '0.8rem', color: 'var(--cyan)', textDecoration: 'none', fontWeight: 600 }}>Learn more →</Link>
           </div>
 
           {/* Buoyancy */}
@@ -765,6 +767,7 @@ export default function Home(): JSX.Element {
               <span className="tag tag-orange">Chaos Physics</span>
               <span className="tag tag-cyan">Multiplayer</span>
             </div>
+            <Link to="/roadmap/nextgen-2-buoyancy-river-forces" style={{ fontSize: '0.8rem', color: 'var(--orange)', textDecoration: 'none', fontWeight: 600 }}>Learn more →</Link>
           </div>
 
           {/* Caustics */}
@@ -786,6 +789,7 @@ export default function Home(): JSX.Element {
               <span className="tag tag-fuchsia">5 Modes</span>
               <span className="tag tag-violet">Volumetric</span>
             </div>
+            <Link to="/roadmap/caustics-generator-system" style={{ fontSize: '0.8rem', color: 'var(--fuchsia)', textDecoration: 'none', fontWeight: 600 }}>Learn more →</Link>
           </div>
 
           {/* Niagara & Foam */}
@@ -807,6 +811,7 @@ export default function Home(): JSX.Element {
               <span className="tag tag-emerald">Niagara</span>
               <span className="tag tag-cyan">Shore Foam</span>
             </div>
+            <Link to="/roadmap/niagara-vfx-integration" style={{ fontSize: '0.8rem', color: 'var(--emerald)', textDecoration: 'none', fontWeight: 600 }}>Learn more →</Link>
           </div>
 
           {/* Underwater */}
@@ -828,6 +833,7 @@ export default function Home(): JSX.Element {
               <span className="tag tag-cyan">Post-Process</span>
               <span className="tag tag-fuchsia">God Rays</span>
             </div>
+            <Link to="/roadmap/nextgen-2-additional-features" style={{ fontSize: '0.8rem', color: 'var(--cyan)', textDecoration: 'none', fontWeight: 600 }}>Learn more →</Link>
           </div>
         </div>
 
@@ -855,6 +861,7 @@ export default function Home(): JSX.Element {
               <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
                 Spline-based islands auto-carve your landscape with heightmap and weightmap painting. Exclusion volumes remove water from enclosed areas.
               </p>
+              <Link to="/roadmap/landscape-integration" style={{ fontSize: '0.8rem', color: 'var(--violet)', textDecoration: 'none', fontWeight: 600, marginTop: '0.5rem', display: 'inline-block' }}>Learn more →</Link>
             </div>
           </div>
           <div style={{
@@ -872,6 +879,7 @@ export default function Home(): JSX.Element {
               <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
                 Custom compute shaders drive FFT spectrum, wave displacement, SDF generation, gradient folding, and shallow water advection.
               </p>
+              <Link to="/roadmap/nextgen-2-technical-architecture" style={{ fontSize: '0.8rem', color: 'var(--fuchsia)', textDecoration: 'none', fontWeight: 600, marginTop: '0.5rem', display: 'inline-block' }}>Learn more →</Link>
             </div>
           </div>
           <div style={{
@@ -889,6 +897,7 @@ export default function Home(): JSX.Element {
               <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
                 Dynamic per-view tessellation with continuous LOD. Millions of vertices where you need them, zero overdraw where you don't.
               </p>
+              <Link to="/roadmap/nextgen-2-technical-architecture" style={{ fontSize: '0.8rem', color: 'var(--emerald)', textDecoration: 'none', fontWeight: 600, marginTop: '0.5rem', display: 'inline-block' }}>Learn more →</Link>
             </div>
           </div>
           <div style={{
@@ -906,6 +915,7 @@ export default function Home(): JSX.Element {
               <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
                 Grid-based fluid dynamics for interactive puddles, splashes, and localized water effects. Bakeable for zero runtime cost.
               </p>
+              <Link to="/roadmap/nextgen-2-additional-features" style={{ fontSize: '0.8rem', color: 'var(--orange)', textDecoration: 'none', fontWeight: 600, marginTop: '0.5rem', display: 'inline-block' }}>Learn more →</Link>
             </div>
           </div>
         </div>
