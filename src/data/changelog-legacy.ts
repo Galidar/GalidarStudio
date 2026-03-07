@@ -6,6 +6,60 @@ let legacyChangelog: ProductChangelog = {
   accent: '#22d3ee',
   entries: [
     {
+      version: '5.9.0',
+      date: 'October 24, 2025',
+      title: 'Niagara Heightmap, Surface Debugger & UE 5.7 Support',
+      tag: 'latest',
+      highlights: [
+        'New Niagara-based heightmap system replaces legacy RVT baker',
+        'New Water Surface Debugger actor for development and debugging',
+        'UE 5.5, 5.6, and 5.7 compatibility updates',
+      ],
+      sections: [
+        {
+          heading: 'New Features',
+          items: [
+            'New Niagara-based heightmap system with auto-configuration on BeginPlay',
+            'New Water Surface Debugger actor for in-editor development',
+            'Distance Field system re-enabled',
+            'Gerstner wave solver updated to match material-side equations',
+            'RVT World Position system with HeightmapLocation and TerrainMask',
+          ],
+        },
+        {
+          heading: 'Fixes',
+          items: [
+            'Black artifacts on high-amplitude waves — normal calculation fix ported from NextGen',
+            'RVT Fixed: missing parameters and scale corrections',
+            'Normal solution improvements',
+            'Water Z min/max auto-setup',
+            'Niagara wave integration corrections',
+          ],
+        },
+        {
+          heading: 'Compatibility',
+          items: [
+            'UE 5.5 compatibility update',
+            'UE 5.6 compatibility update',
+            'UE 5.7 compatibility update',
+            'C++ standard compatibility fixes',
+            'Packaging error fixes for source-built engines',
+            'Epic Games fake compile error fixes',
+          ],
+        },
+        {
+          heading: 'Changes',
+          items: [
+            'Old RVT Baker removed and replaced with Niagara heightmap system',
+            'Heightmap component major rework with new sampling logic',
+            'Gerstner wave solver simplified and aligned with material implementation',
+            'Multiple struct parameter additions (Underwater, SurfaceScattering, Wetness, Foam, Folding)',
+            'QuadTree mesh scene proxy improvements',
+          ],
+        },
+      ],
+    },
+    {
       version: '5.7.0',
       date: 'April 29, 2024',
       title: 'UE 5.4 Support',
