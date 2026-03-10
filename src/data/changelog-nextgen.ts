@@ -6,10 +6,95 @@ let nextgenChangelog: ProductChangelog = {
   accent: '#8b5cf6',
   entries: [
     {
+      version: '1.3.0',
+      date: 'March 10, 2026',
+      title: 'Ship Navigation, PredictiveInterpolation & Standalone Game Support',
+      tag: 'latest',
+      highlights: [
+        'Complete C++ ship navigation system with spline-based FlowController and two flow modes',
+        'PredictiveInterpolation with CubicInterp for butter-smooth vessel replication at 30Hz',
+        'Standalone Game & Dedicated Server buoyancy fully operational without rendering',
+      ],
+      sections: [
+        {
+          heading: 'Ship Navigation System',
+          items: [
+            'New OceanologyFlowController C++ actor — defines water currents via spline with configurable speed and width',
+            'Two flow modes: Force (Legacy) for simple current push, Navigation (Natural) for realistic ship handling',
+            'Navigation mode three-phase control: steering via AddTorque, propulsion via AddForce, lateral drag for sideslip prevention',
+            'Speed-dependent look-ahead steering — ships begin turning before reaching curves for natural cornering',
+            'Force mode mass-proportional scaling — vessels of any size respond naturally to the same current',
+            'FlowController automatic tag-based assignment to vessels on BeginPlay',
+          ],
+        },
+        {
+          heading: 'BattleShip C++ Actors',
+          items: [
+            'Migrated BattleShip from Blueprint to pure C++ for performance and reliability',
+            'OceanologyBattleShipPawn — full-featured Pawn with camera, input, and player control',
+            'OceanologyBattleShipBase, Box, and Custom variants for AI and flow-driven ships',
+            'Player input: W/S for forward/reverse, A/D for rudder with speed-dependent steering',
+            'VisualSmoothRoot for client-side frame interpolation without double smoothing',
+            'Force-based propulsion replaces SetVelocity — works correctly with physics and buoyancy',
+          ],
+        },
+        {
+          heading: 'AutoConfigure Systems',
+          items: [
+            'Shape-aware AutoConfigurePontoons — detects collision geometry and places pontoons accordingly',
+            'AutoConfigureBuoyancy — 6-pontoon layout (Bow, Midship, Stern) with mass-proportional tuning',
+            'Automatic linear/angular damping: scales with MassFactor for vessels of any weight',
+            'Default mesh density (620 kg/m³) and water fluid density (1030 kg/m³) for realistic floating',
+          ],
+        },
+        {
+          heading: 'PredictiveInterpolation',
+          items: [
+            'Temporal CubicInterp using server state buffer for smooth vessel movement on clients',
+            'Override PostNetReceiveLocationAndRotation to prevent UE5 snap-to-server competing with interpolation',
+            'ETeleportType::TeleportPhysics for zero physics overhead on interpolated clients',
+            '30Hz NetUpdateFrequency provides equivalent smoothness to 60Hz with linear interpolation at half bandwidth',
+            'InterpolationBackTime auto-calculated: >= 3x server send interval (0.1s at 30Hz)',
+          ],
+        },
+        {
+          heading: 'Standalone Game & Dedicated Server',
+          items: [
+            'Fixed wave time frozen at 0 on dedicated servers — automatic fallback to GetWorld()->GetTimeSeconds()',
+            'Buoyancy activation via fallback timer with OverlapComponent check when overlap events fail',
+            'Water Volume SetGenerateOverlapEvents(true) ensures overlap detection in Standalone Game',
+            'Works correctly in PIE, Standalone Game, and Packaged Builds without configuration changes',
+          ],
+        },
+        {
+          heading: 'Multiplayer',
+          items: [
+            'bDisableClientPhysicsSimulation enabled by default — eliminates client gravity fighting server corrections',
+            'Flow properties (spline, speed, width) replicated with push-based networking',
+            'Server-authoritative flow forces — client changes silently ignored for security',
+            'VerifySetup validator checks NetUpdateFrequency and MinNetUpdateFrequency on replicated actors',
+          ],
+        },
+        {
+          heading: 'Rendering & Waves',
+          items: [
+            'Removed hardcoded distance culling from wave shaders for user-controlled LOD',
+            'Fixed underwater waterline — removed unused Underwater param from wave shaders',
+          ],
+        },
+        {
+          heading: 'Maintenance',
+          items: [
+            'Removed obsolete InternalTools batch scripts',
+            'Added .mcp.json to .gitignore',
+          ],
+        },
+      ],
+    },
+    {
       version: '1.2.6',
       date: 'March 7, 2026',
       title: 'Dedicated Server, Multiplayer Replication & Wave Performance',
-      tag: 'latest',
       highlights: [
         'Full dedicated server support — zero crashes on headless servers',
         'Buoyancy replication fix eliminates boat "jumping" in multiplayer',
