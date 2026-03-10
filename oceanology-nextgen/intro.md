@@ -51,9 +51,11 @@ slug: /
 
 ### 🎮 Gameplay Systems
 
-- **Pontoon Buoyancy** - Physics-accurate floating with configurable density, damping, and wave response
+- **Pontoon Buoyancy** - Physics-accurate floating with configurable density, damping, and wave response. Supports AutoConfigurePontoons for quick setup based on hull collision geometry
+- **Ship Navigation** - Force-based vessel movement along splines with C++ FlowController for natural ship-like navigation
 - **Swimming Component** - Ready-to-use character swimming with surface detection and underwater states
 - **Water Volumes** - Trigger-based regions for gameplay logic, audio zones, and post-process effects
+- **Multiplayer Ready** - Server-authoritative replication with PredictiveInterpolation, push-based networking, and Standalone Game/Dedicated Server support
 
 ### 🔧 Workflow & Flexibility
 
@@ -95,6 +97,8 @@ Oceanology NextGen is optimized for high-end hardware. While it runs on mid-rang
 | **[DomeFX](./NextGenDomeFX.md)** | Sky dome and atmospheric integration |
 | **[RVT](./NextGenRVT.md)** | Runtime Virtual Texture integration |
 | **[Audio](./NextGenAudio.md)** | Dynamic wave-driven soundscapes |
+| **[Ship Navigation](./NextGenShipNavigation.md)** | Spline flow, FlowController, BattleShip C++ actors, force-based navigation |
+| **[Replication](./NextGenReplication.md)** | Multiplayer setup, PredictiveInterpolation, and Standalone Game support |
 | **[Presets](./NextGenPreset.md)** | Save and manage water configurations |
 
 ---

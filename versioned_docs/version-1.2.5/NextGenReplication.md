@@ -111,6 +111,44 @@ Any failures will appear as warnings in the **Output Log** with clear descriptio
 
 ---
 
+## Skeletal Mesh Vessels & Physics Jitter
+
+### The Problem
+
+When a vessel with physics simulation (Static or Skeletal Mesh) uses buoyancy in multiplayer, UE5's physics engine runs on **all roles** — server and clients. This creates a conflict:
+
+1. The **server** calculates buoyancy forces and pushes the vessel up against gravity
+2. On **clients**, the buoyancy tick does not run (server-authoritative), but the physics engine still applies **gravity** locally
+3. Between server position updates, gravity pulls the mesh **down** on clients
+4. When the server correction arrives, the mesh **snaps back up** → visible jitter
+
+This effect gets worse over time ("run-off") because damping values are calculated per-tick on the server but not on clients, causing physics state to diverge progressively.
+
+### Solution: bDisableClientPhysicsSimulation
+
+The `OceanBuoyancyComponent` includes a property called **bDisableClientPhysicsSimulation** (enabled by default since v1.2.6) that resolves this by disabling local physics simulation on non-authority clients. The vessel position is fully controlled by server replication.
+
+:::info When to disable this property
+Only set `bDisableClientPhysicsSimulation = false` if you have custom client-side logic that requires local physics simulation on the vessel (e.g., procedural visual effects that depend on real-time physics state). For 99% of multiplayer vessels, keep this enabled.
+:::
+
+### Recommended Network Settings
+
+For buoyant vessels, configure these values on the vessel Actor:
+
+| Property | Minimum | Recommended | Description |
+|----------|---------|-------------|-------------|
+| **NetUpdateFrequency** | 20 | 25-30 | Server updates per second. Lower values cause visible position snapping. |
+| **MinNetUpdateFrequency** | 10 | 15 | Minimum update rate during slow movement. |
+| **Replicate Movement** | `✓` | `✓` | Required for position synchronization. |
+| **bDisableClientPhysicsSimulation** | - | `✓` (default) | Prevents client gravity from fighting server corrections. |
+
+:::warning VerifySetup Warnings
+Starting in v1.2.6, `VerifySetup()` checks `NetUpdateFrequency` and `MinNetUpdateFrequency` for replicated actors. If you see warnings about low update frequency, increase these values in the actor's **Replication** settings.
+:::
+
+---
+
 ## Swimming Replication
 
 Swimming uses a combination of **Server RPCs** and **NetMulticast RPCs** for responsive multiplayer gameplay.
@@ -242,7 +280,8 @@ Oceanology's wave calculations are **deterministic**. Given the same time and po
 | StaticMesh vessel is stuck on clients | Missing static mesh flag | Enable **Static Mesh Replicate Movement** |
 | Swimming doesn't sync | OceanSwimmingComponent missing | Ensure the component is attached to the character |
 | Swim animations don't play on others | NetMulticast not reaching clients | Verify the character actor has **Replicates** enabled |
-| Vessel jitters on clients | Physics interpolation issues | Increase **Net Update Frequency** on the actor |
+| Vessel jitters on clients | Client-side gravity fighting server corrections | Ensure **bDisableClientPhysicsSimulation** is enabled on the OceanBuoyancyComponent, and increase **NetUpdateFrequency** to 25+ |
+| Vessel jitter gets worse over time ("run-off") | Physics state diverging between server and client | Enable **bDisableClientPhysicsSimulation** (default in v1.2.6). See [Skeletal Mesh Vessels](#skeletal-mesh-vessels--physics-jitter) |
 | Flow control changes ignored on client | Authority check blocking | Ensure flow changes are made on the server |
 | Water looks different per client | Water actor not replicating | Ensure the water actor has **Replicates** enabled |
 | OnEnteredWater not firing on clients | By design (not replicated) | Implement custom RPC for cross-client notification |

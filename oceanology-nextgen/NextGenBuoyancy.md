@@ -124,8 +124,9 @@ Here you will find several ready-to-use vessel Blueprints:
 | **BP_Floating_VillageBoat** | Traditional village-style boat. |
 | **BP_MossyBoat** | Weathered boat with moss details. |
 | **BP_Raft** | Simple wooden raft platform. |
+| **BP_BattleShip_CustomCollision** | Large battleship using a Skeletal Mesh with custom collision shapes. Demonstrates buoyancy with skeletal meshes and AutoConfigurePontoons. |
 
-These prefabs demonstrate the correct component hierarchy and physics setup for buoyant vessels.
+These prefabs demonstrate the correct component hierarchy and physics setup for buoyant vessels. The **BattleShip** prefab is particularly useful as a reference for large skeletal mesh vessels with multiplayer replication.
 
 ![Prefab vessels in Content Browser](NextGenBuoyancy/NextGenBuoyancy_04.png)
 :::
@@ -531,20 +532,76 @@ Each pontoon (Index [0] through [4]) has the following properties:
 
 ---
 
+## AutoConfigurePontoons
+
+Starting in v1.3.0, the OceanBuoyancy component includes an automatic pontoon placement system that detects collision geometry and distributes pontoons based on hull shape.
+
+:::note 17b. Use AutoConfigurePontoons for quick setup
+Instead of manually positioning pontoons, click the **AutoConfigurePontoons** button in the OceanBuoyancy component Details panel. The system will:
+
+1. **Scan the root component's collision geometry** — supports Box, Sphere, Capsule, and Convex collision shapes.
+2. **Calculate the hull extents** — determines the bounding dimensions of the physics body.
+3. **Distribute pontoons** at strategic positions — bow, stern, port, starboard, and center.
+4. **Set appropriate radius** — sized proportionally to the vessel dimensions.
+
+**How It Works:**
+
+| Step | Action |
+|------|--------|
+| 1 | Reads the physics body's collision shapes (from `FBodyInstance`) |
+| 2 | Calculates axis-aligned extents across all collision primitives |
+| 3 | Places pontoons at hull extremities with center stabilizer |
+| 4 | Adjusts radius based on vessel size for smooth sampling |
+
+**When to Use AutoConfigurePontoons:**
+- **New vessel setup** — get floating quickly without manual pontoon tweaking.
+- **Skeletal Mesh vessels** — works with custom collision shapes on skeletal meshes (e.g., BattleShip).
+- **Prototyping** — instantly see buoyancy behavior before fine-tuning positions.
+
+**When to Use Manual Pontoons:**
+- **Fine-tuned behavior** — you need precise control over each pontoon's position and density.
+- **Asymmetric vessels** — boats with off-center weight distribution requiring custom placement.
+- **Specialized physics** — vessels that need different pontoon modes per sampling point.
+
+:::tip
+AutoConfigurePontoons works with both Static Mesh and Skeletal Mesh actors. For skeletal meshes, ensure the collision shapes are properly configured in the Physics Asset.
+:::
+:::
+
+---
+
 ## Configuring Flow Physics
 
-Flow physics simulates the effect of water currents and wave motion pushing the vessel in a direction.
+Flow physics simulates the effect of water currents and wave motion pushing the vessel in a direction. Starting in v1.3.0, the flow system supports **two modes** and integrates with spline-based navigation.
 
 :::note 18. Configure flow settings
 Expand the **Flow** category in the OceanBuoyancy component.
 
-**Flow Parameters:**
+**Flow Mode (v1.3.0):**
+
+| Mode | Description |
+|------|-------------|
+| **Force (Legacy)** | Simple directional push. Vessel slides along currents. Good for rivers, ambient drift. |
+| **Navigation (Natural)** | Three-phase control: steering + propulsion + lateral drag. Ship turns into curves naturally. Good for patrol routes, cinematic paths. |
+
+**Force Mode Parameters:**
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
 | **Enable Flow Physics** | `✓` | Master toggle for flow physics simulation. |
 | **Angle Adjusted Force Strength** | `35.0` | Strength of the directional force applied based on wave angle. Higher values push the vessel more strongly in the wave direction. |
+| **Flow Mass Norm** | `1000.0` | Reference mass for force scaling. Forces scale proportionally: a 10,000 kg ship gets 10× the base force. |
 | **Orient Mesh Rotation Yaw Toward...** | `☐` | When enabled, gradually rotates the vessel to align with flow direction. |
+
+**Navigation Mode Parameters:**
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| **Flow Max Speed** | `2000.0` | Maximum speed in cm/s. |
+| **Flow Acceleration Smoothing** | `3.0` | Propulsion responsiveness. |
+| **Flow Turn Rate** | `45.0` | Maximum turn rate in degrees/second. |
+| **Flow Steering Smoothing** | `4.0` | Steering responsiveness. |
+| **Flow Lateral Drag Coeff** | `3.0` | Sideslip resistance during turns. |
 
 **Flow Physics Behavior:**
 - When enabled, waves apply horizontal forces to the vessel based on their direction and steepness.
@@ -552,12 +609,12 @@ Expand the **Flow** category in the OceanBuoyancy component.
 - This creates realistic behavior where vessels move with swells and currents.
 - Disable for stationary objects like docks or anchored vessels.
 
-**Tuning Tips:**
+**Tuning Tips (Force Mode):**
 - **Low values (10-20):** Subtle drift, vessel mostly holds position.
 - **Medium values (30-50):** Noticeable drift, good for realistic open-water behavior.
 - **High values (70-100):** Strong drift, vessel moves significantly with waves.
 
-For vessels with engines or propulsion, you may want lower values so players can maintain control against the current.
+For a complete guide on spline-based navigation, FlowController actors, and BattleShip C++ actors, see the **[Ship Navigation Guide](./NextGenShipNavigation.md)**.
 
 ![Flow settings](NextGenBuoyancy/NextGenBuoyancy_18.png)
 :::
@@ -609,6 +666,41 @@ Expand the **Debug** category in the OceanBuoyancy component.
 
 ---
 
+## Standalone Game & Dedicated Server Support
+
+:::info New in v1.3.0
+Starting in v1.3.0, buoyancy works correctly in **Standalone Game** and **Dedicated Server** modes without additional configuration. Previous versions required Play In Editor (PIE) for proper operation.
+:::
+
+### How It Works
+
+When running in Standalone Game mode, Unreal Engine launches separate processes for server and client. The dedicated server process has **no rendering**, which means:
+
+1. **OceanologyManager may not activate** — the wave solver component relies on it for activation.
+2. **Wave solver may not tick** — without ticking, `GameTimeInSeconds` stays at 0.
+3. **Static wave displacement** — at t=0, the Gerstner wave sum produces a fixed offset instead of oscillating.
+
+The v1.3.0 fix addresses this automatically:
+
+| Component | Fix Applied |
+|-----------|-------------|
+| **GerstnerWaveSolver** | Falls back to `GetWorld()->GetTimeSeconds()` when `GameTimeInSeconds` is stuck at 0, ensuring waves oscillate correctly on dedicated servers. |
+| **OceanBuoyancyComponent** | Runs a 1-second fallback timer that checks if the actor is inside a Water Volume using spatial queries, activating buoyancy even when overlap events don't fire. |
+| **OceanologyWaterVolume** | Explicitly enables `SetGenerateOverlapEvents(true)` to ensure overlap events fire in all modes. |
+
+### No Action Required
+
+These fixes are **automatic and transparent**. Your existing buoyancy setup will work in all modes:
+
+| Mode | Status |
+|------|--------|
+| **Play In Editor (PIE)** | ✅ Works (always worked) |
+| **Standalone Game** | ✅ Works (fixed in v1.3.0) |
+| **Dedicated Server + Client** | ✅ Works (fixed in v1.3.0) |
+| **Packaged Build** | ✅ Works (fixed in v1.3.0) |
+
+---
+
 ## Component Configuration Summary
 
 The following table summarizes the correct physics and collision settings for each component type:
@@ -647,7 +739,11 @@ The following table summarizes the correct physics and collision settings for ea
 | Parameter | Range | Default | Description |
 |-----------|-------|---------|-------------|
 | **Enable Flow Physics** | Boolean | `✓` | Toggle flow forces |
-| **Angle Adjusted Force Strength** | `0.0` - `200.0` | `35.0` | Flow push strength |
+| **Flow Mode** | Force / Navigation | `Force` | Simple push vs natural ship handling |
+| **Angle Adjusted Force Strength** | `0.0` - `200.0` | `35.0` | Flow push strength (Force mode) |
+| **Flow Max Speed** | `100.0` - `10000.0` | `2000.0` | Speed cap in cm/s (Navigation mode) |
+| **Flow Turn Rate** | `5.0` - `120.0` | `45.0` | Max turn rate in deg/s (Navigation mode) |
+| **Flow Lateral Drag Coeff** | `0.0` - `10.0` | `3.0` | Sideslip resistance (Navigation mode) |
 
 ---
 
@@ -676,6 +772,8 @@ The following presets demonstrate common vessel configurations:
 | **Physics** | Buoyancy applies forces to the physics body. Collisions, constraints, and other physics features work normally. |
 | **Niagara** | Foam and spray effects can be triggered based on vessel velocity and wave interaction. |
 | **Flow/Rivers** | Flow physics respects river current directions when using river water bodies. |
+| **Ship Navigation** | FlowController actors define spline paths. Navigation mode provides natural ship steering. See [Ship Navigation](./NextGenShipNavigation.md). |
+| **Replication** | Buoyancy runs on server only. Clients receive smooth positions via PredictiveInterpolation. See [Replication](./NextGenReplication.md). |
 
 ---
 
@@ -692,6 +790,9 @@ The following presets demonstrate common vessel configurations:
 | Child meshes move independently | Physics enabled on children | Disable **Simulate Physics** on all child meshes |
 | No debug spheres visible | Debug disabled | Enable **Debug Enabled** in Debug category |
 | Vessel doesn't respond in multiplayer | Replication issues | Enable **Replicate Physics to Autonomous Proxy** |
+| Vessel sinks in Standalone Game | Wave time stuck at 0 on dedicated server | Update to v1.3.0 — the fix is automatic |
+| Buoyancy doesn't activate in Standalone | Overlap events not firing | Update to v1.3.0 — fallback timer activates buoyancy automatically |
+| Vessel jitters in multiplayer | Client physics fighting server corrections | Enable **bDisableClientPhysicsSimulation** (default since v1.2.6). See [Replication Guide](./NextGenReplication.md) |
 
 ---
 
@@ -719,4 +820,7 @@ In this guide, you learned how to:
 18. **Enable flow physics** - Allow wave-driven movement and drift.
 19. **Use debug visualization** - Troubleshoot issues with visual pontoon feedback.
 
-With this knowledge, you can create any floating vessel from simple rafts to complex ships, all with realistic wave response and physics interaction.
+20. **AutoConfigurePontoons** - Automatically place pontoons based on hull collision geometry.
+21. **Standalone Game support** - Understand the automatic fixes that ensure buoyancy works in all game modes.
+
+With this knowledge, you can create any floating vessel from simple rafts to complex ships, all with realistic wave response and physics interaction across all game modes including Standalone Game and Dedicated Servers.

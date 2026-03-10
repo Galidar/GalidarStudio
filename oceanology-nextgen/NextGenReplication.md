@@ -111,6 +111,83 @@ Any failures will appear as warnings in the **Output Log** with clear descriptio
 
 ---
 
+## Skeletal Mesh Vessels & Physics Jitter
+
+### The Problem
+
+When a vessel with physics simulation (Static or Skeletal Mesh) uses buoyancy in multiplayer, UE5's physics engine runs on **all roles** — server and clients. This creates a conflict:
+
+1. The **server** calculates buoyancy forces and pushes the vessel up against gravity
+2. On **clients**, the buoyancy tick does not run (server-authoritative), but the physics engine still applies **gravity** locally
+3. Between server position updates, gravity pulls the mesh **down** on clients
+4. When the server correction arrives, the mesh **snaps back up** → visible jitter
+
+This effect gets worse over time ("run-off") because damping values are calculated per-tick on the server but not on clients, causing physics state to diverge progressively.
+
+### Solution: bDisableClientPhysicsSimulation
+
+The `OceanBuoyancyComponent` includes a property called **bDisableClientPhysicsSimulation** (enabled by default since v1.2.6) that resolves this by disabling local physics simulation on non-authority clients. The vessel position is fully controlled by server replication.
+
+:::info When to disable this property
+Only set `bDisableClientPhysicsSimulation = false` if you have custom client-side logic that requires local physics simulation on the vessel (e.g., procedural visual effects that depend on real-time physics state). For 99% of multiplayer vessels, keep this enabled.
+:::
+
+### Recommended Network Settings
+
+For buoyant vessels, configure these values on the vessel Actor:
+
+| Property | Minimum | Recommended | Description |
+|----------|---------|-------------|-------------|
+| **NetUpdateFrequency** | 20 | 30 | Server updates per second. With PredictiveInterpolation, 30Hz provides smooth results equivalent to 60Hz without interpolation. |
+| **MinNetUpdateFrequency** | 10 | 15 | Minimum update rate during slow movement. |
+| **Replicate Movement** | `✓` | `✓` | Required for position synchronization. |
+| **bDisableClientPhysicsSimulation** | - | `✓` (default) | Prevents client gravity from fighting server corrections. |
+
+:::warning VerifySetup Warnings
+Starting in v1.2.6, `VerifySetup()` checks `NetUpdateFrequency` and `MinNetUpdateFrequency` for replicated actors. If you see warnings about low update frequency, increase these values in the actor's **Replication** settings.
+:::
+
+### PredictiveInterpolation (v1.3.0)
+
+Starting in v1.3.0, the `OceanBuoyancyComponent` includes **PredictiveInterpolation** — a temporal interpolation system that smooths vessel movement on clients using a buffer of recent server states.
+
+**How It Works:**
+
+```
+Server sends position update (30Hz)
+    ↓
+Client stores in state buffer (timestamped)
+    ↓
+Each client frame: CubicInterp between two bracketing states
+    ↓
+Smooth, frame-accurate position without jitter
+```
+
+**Key Design Decisions:**
+
+| Decision | Rationale |
+|----------|-----------|
+| **CubicInterp over Lerp** | `FMath::CubicInterp` uses server velocities as tangents, producing curves that respect real acceleration/deceleration. Lerp produces straight-line segments that feel robotic. |
+| **No double smoothing** | Interpolation already produces frame-accurate positions. Adding secondary easing (VInterpTo) on top causes micro-jumps when the interpolation pair changes. |
+| **Override PostNetReceive** | Overrides `PostNetReceiveLocationAndRotation()` and `PostNetReceiveVelocity()` to prevent UE5 from snapping to raw server positions, which competes with manual interpolation. |
+| **ETeleportType::TeleportPhysics** | Uses TeleportPhysics for `SetActorLocationAndRotation` to avoid physics overhead on clients where simulation is disabled. |
+
+**InterpolationBackTime:**
+
+The interpolation delay must be at least 3x the server send interval:
+
+| NetUpdateFrequency | Send Interval | InterpolationBackTime |
+|--------------------|---------------|----------------------|
+| 20 Hz | 50 ms | 0.15s |
+| 30 Hz | 33 ms | 0.10s (recommended) |
+| 60 Hz | 16 ms | 0.05s |
+
+:::info 30Hz = Optimal for Vessels
+With PredictiveInterpolation using CubicInterp, **30Hz NetUpdateFrequency** provides the same visual smoothness as 60Hz with linear interpolation — at half the bandwidth cost. This is the recommended setting for buoyant vessels.
+:::
+
+---
+
 ## Swimming Replication
 
 Swimming uses a combination of **Server RPCs** and **NetMulticast RPCs** for responsive multiplayer gameplay.
@@ -216,6 +293,36 @@ This ensures all clients see identical water appearance. When you change water p
 
 ---
 
+## Standalone Game & Dedicated Server (v1.3.0)
+
+:::info Automatic Support
+Starting in v1.3.0, multiplayer buoyancy works correctly in **Standalone Game**, **Dedicated Server**, and **Packaged Builds** without additional configuration. No changes to your Blueprints or settings are required.
+:::
+
+### PIE vs Standalone Game
+
+Understanding the difference is important for debugging multiplayer issues:
+
+| Mode | Server Type | Rendering | Wave Solver |
+|------|-------------|-----------|-------------|
+| **PIE (Play As Client)** | ListenServer (same process) | ✅ Active | ✅ Ticks normally |
+| **Standalone Game** | DedicatedServer (separate process) | ❌ None | ⚠️ May not tick |
+| **Packaged Build** | DedicatedServer (separate binary) | ❌ None | ⚠️ May not tick |
+
+On a dedicated server without rendering, the OceanologyManager may not exist, which means the wave solver's `GameTimeInSeconds` never updates. In v1.3.0, the wave solver automatically falls back to `GetWorld()->GetTimeSeconds()` when this occurs, ensuring wave phases oscillate correctly.
+
+### Testing Multiplayer
+
+Always test your buoyancy setup in **Standalone Game** mode in addition to PIE:
+
+1. **PIE (Play As Client)** — Quick iteration, but hides dedicated server issues.
+2. **Standalone Game** — Launches separate processes, reveals real multiplayer behavior.
+3. **Packaged Build** — Final verification before shipping.
+
+If buoyancy works in PIE but not in Standalone Game on versions prior to v1.3.0, update the plugin.
+
+---
+
 ## Important Notes
 
 :::warning Events Are NOT Replicated
@@ -242,11 +349,15 @@ Oceanology's wave calculations are **deterministic**. Given the same time and po
 | StaticMesh vessel is stuck on clients | Missing static mesh flag | Enable **Static Mesh Replicate Movement** |
 | Swimming doesn't sync | OceanSwimmingComponent missing | Ensure the component is attached to the character |
 | Swim animations don't play on others | NetMulticast not reaching clients | Verify the character actor has **Replicates** enabled |
-| Vessel jitters on clients | Physics interpolation issues | Increase **Net Update Frequency** on the actor |
+| Vessel jitters on clients | Client-side gravity fighting server corrections | Ensure **bDisableClientPhysicsSimulation** is enabled on the OceanBuoyancyComponent, and increase **NetUpdateFrequency** to 25+ |
+| Vessel jitter gets worse over time ("run-off") | Physics state diverging between server and client | Enable **bDisableClientPhysicsSimulation** (default in v1.2.6). See [Skeletal Mesh Vessels](#skeletal-mesh-vessels--physics-jitter) |
 | Flow control changes ignored on client | Authority check blocking | Ensure flow changes are made on the server |
 | Water looks different per client | Water actor not replicating | Ensure the water actor has **Replicates** enabled |
 | OnEnteredWater not firing on clients | By design (not replicated) | Implement custom RPC for cross-client notification |
 | High bandwidth usage | Too many replicated actors | Reduce **Net Update Frequency** for distant vessels |
+| Vessel sinks in Standalone Game | Wave time frozen at 0 on dedicated server | Update to v1.3.0 — automatic time fallback fix |
+| Buoyancy works in PIE but not Standalone | Overlap events or wave solver not activating | Update to v1.3.0 — includes fallback timer and time fix |
+| Skeletal mesh vessel jitters | Client physics conflicting with server state | Enable **bDisableClientPhysicsSimulation** and use NetUpdateFrequency 30 with PredictiveInterpolation |
 
 ---
 
@@ -274,4 +385,7 @@ In this guide, you learned how to:
 6. **Handle water body replication** - Automatic visual synchronization across clients.
 7. **Troubleshoot common issues** - Diagnose and fix the most frequent multiplayer problems.
 
-With proper replication configured, your multiplayer project will have synchronized vessels, swimming characters, and consistent water behavior across all connected clients.
+8. **Use PredictiveInterpolation** - Leverage temporal CubicInterp for smooth vessel movement at 30Hz.
+9. **Support Standalone Game** - Understand automatic fixes for dedicated server wave time and overlap activation.
+
+With proper replication configured, your multiplayer project will have synchronized vessels, swimming characters, and consistent water behavior across all connected clients — including Standalone Game and Dedicated Server modes.
