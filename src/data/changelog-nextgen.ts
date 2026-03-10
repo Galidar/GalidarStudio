@@ -82,13 +82,6 @@ let nextgenChangelog: ProductChangelog = {
             'Fixed underwater waterline — removed unused Underwater param from wave shaders',
           ],
         },
-        {
-          heading: 'Maintenance',
-          items: [
-            'Removed obsolete InternalTools batch scripts',
-            'Added .mcp.json to .gitignore',
-          ],
-        },
       ],
     },
     {
