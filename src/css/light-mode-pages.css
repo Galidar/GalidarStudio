@@ -1,0 +1,937 @@
+/* ============================================
+   LIGHT MODE - ALL PAGES COMPREHENSIVE FIX
+   ============================================ */
+
+/* ==========  COMMUNITY PAGE ========== */
+[data-theme='light'] .community-hero {
+  background: var(--bg-dark);
+}
+
+[data-theme='light'] .community-hero-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .community-hero-subtitle {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .community-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .community-card-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .community-card-desc {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .community-stat-value {
+  color: var(--violet) !important;
+}
+
+[data-theme='light'] .community-stat-label {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .discord-container {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .discord-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .discord-desc {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .discord-icon {
+  color: var(--violet);
+}
+
+[data-theme='light'] .docs-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .docs-card h4 {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .docs-card p {
+  color: var(--text-gray) !important;
+}
+
+/* ==========  FAQ PAGE ========== */
+[data-theme='light'] .page-hero {
+  background: var(--bg-dark);
+}
+
+[data-theme='light'] .page-hero-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .page-hero-subtitle {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .faq-category {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .faq-category-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .accordion-item {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .accordion-header {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .accordion-header:hover {
+  background: rgba(139, 92, 246, 0.05);
+}
+
+[data-theme='light'] .accordion-body p {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .accordion-icon {
+  color: var(--violet);
+}
+
+/* ==========  SUPPORT PAGE ========== */
+[data-theme='light'] .support-option {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .support-option-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .support-option-desc {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .support-option-features li {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .checklist-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .checklist-column h4 {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .checklist-item {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .checklist-item strong {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .checklist-check {
+  color: var(--emerald);
+}
+
+[data-theme='light'] .response-time-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .response-time-value {
+  color: var(--violet) !important;
+}
+
+[data-theme='light'] .response-time-label {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .response-time-card p {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .info-note {
+  background: rgba(139, 92, 246, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+[data-theme='light'] .info-note p {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .security-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .security-card h3 {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .security-card p {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .quick-link-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .quick-link-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .quick-link-card:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  background: rgba(139, 92, 246, 0.03);
+}
+
+/* ==========  LINKED ROLES PAGE ========== */
+[data-theme='light'] .step-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .step-number {
+  background: linear-gradient(135deg, var(--violet), var(--fuchsia));
+  color: white !important; /* Keep white on gradient */
+}
+
+[data-theme='light'] .step-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .step-body,
+[data-theme='light'] .step-body p,
+[data-theme='light'] .step-list li {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .step-list li strong {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .feature-list li {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .feature-list li strong {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .info-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .info-card-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .info-card-body {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .troubleshoot-item {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .troubleshoot-item h4 {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .troubleshoot-item p {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .resources-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .resources-card h3 {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .resource-link {
+  color: var(--text-gray) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .resource-link:hover {
+  color: var(--violet) !important;
+  background: rgba(139, 92, 246, 0.05);
+}
+
+/* ==========  CTA SECTIONS ========== */
+[data-theme='light'] .page-cta-card {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(6, 182, 212, 0.05));
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+[data-theme='light'] .page-cta-card h3 {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .page-cta-card p {
+  color: var(--text-gray) !important;
+}
+
+/* ==========  CONTENT SECTIONS ========== */
+[data-theme='light'] .content-section {
+  background: transparent;
+}
+
+[data-theme='light'] .section-header .section-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .section-header .section-desc {
+  color: var(--text-gray) !important;
+}
+
+/* ==========  FEATURE CARDS ========== */
+[data-theme='light'] .feature-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .feature-card-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .feature-card-desc {
+  color: var(--text-gray) !important;
+}
+
+/* ==========  HERO BADGE ========== */
+[data-theme='light'] .hero-badge {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  color: var(--violet);
+}
+
+/* ==========  GRADIENT TEXT - Keep working in light mode ========== */
+[data-theme='light'] .gradient-text {
+  background: linear-gradient(135deg, var(--violet), var(--fuchsia), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==========  LINKS IN LIGHT MODE ========== */
+[data-theme='light'] .link-highlight {
+  color: var(--violet);
+}
+
+[data-theme='light'] .link-highlight:hover {
+  color: var(--violet-bright);
+}
+
+[data-theme='light'] code {
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--violet);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+/* ==========  SHOWCASE PAGE ========== */
+[data-theme='light'] .showcase-cta-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .showcase-cta-desc {
+  color: var(--text-gray) !important;
+}
+
+/* ==========  INDEX PAGE SPECIFIC ========== */
+[data-theme='light'] .hero-subtitle {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .section-label {
+  /* Keep the colored backgrounds */
+}
+
+[data-theme='light'] .stat-value {
+  /* Keep gradient for emphasis */
+}
+
+[data-theme='light'] .stat-label {
+  color: var(--text-muted) !important;
+}
+
+/* ==========  BENTO CARDS ========== */
+[data-theme='light'] .bento-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .bento-card h3,
+[data-theme='light'] .bento-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .bento-card p,
+[data-theme='light'] .bento-desc {
+  color: var(--text-gray) !important;
+}
+
+/* ==========  CTA SECTION ========== */
+[data-theme='light'] .cta-section {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(6, 182, 212, 0.05));
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+[data-theme='light'] .cta-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .cta-section .section-desc {
+  color: var(--text-gray) !important;
+}
+
+/* ==========  VIDEO CAROUSEL ========== */
+[data-theme='light'] .carousel__status {
+  color: var(--text-gray);
+}
+
+/* ==========  PRODUCT CARDS - Keep white text on images ========== */
+[data-theme='light'] .product-card-title,
+[data-theme='light'] .product-card-desc {
+  color: white !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* ==========  TAGS ========== */
+[data-theme='light'] .tag {
+  /* Tags keep their colored backgrounds */
+}
+
+/* ==========  BUTTONS ========== */
+[data-theme='light'] .btn-primary {
+  /* Keep white text on gradient background */
+  color: white !important;
+}
+
+[data-theme='light'] .btn-secondary {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: var(--text-white) !important;
+}
+
+/* ============================================
+   LIGHT MODE - SHOWCASE PAGE
+   ============================================ */
+
+[data-theme='light'] .showcase-hero {
+  background: var(--bg-dark);
+}
+
+[data-theme='light'] .showcase-hero-title {
+  background: linear-gradient(135deg, var(--violet-bright), var(--fuchsia), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme='light'] .showcase-hero-subtitle {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .showcase-cta-card {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(6, 182, 212, 0.05));
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+[data-theme='light'] .showcase-cta-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .showcase-cta-desc {
+  color: var(--text-gray) !important;
+}
+
+/* ============================================
+   LIGHT MODE - DOCUSAURUS DOCUMENTATION PAGES
+   All doc pages: oceanology-legacy, oceanology-nextgen, riverology
+   ============================================ */
+
+/* Main doc wrapper background */
+[data-theme='light'] .docusaurus-doc-page,
+[data-theme='light'] [class*="docPage"],
+[data-theme='light'] [class*="docsWrapper"] {
+  background: var(--bg-dark) !important;
+}
+
+/* Doc main container */
+[data-theme='light'] [class*="docMainContainer"] {
+  background: transparent !important;
+}
+
+/* Doc article/content area */
+[data-theme='light'] article[class*="docItemContainer"],
+[data-theme='light'] .markdown,
+[data-theme='light'] [class*="docItemContainer"] {
+  background: transparent !important;
+}
+
+/* All headers in documentation */
+[data-theme='light'] .markdown h1,
+[data-theme='light'] .markdown h2,
+[data-theme='light'] .markdown h3,
+[data-theme='light'] .markdown h4,
+[data-theme='light'] .markdown h5,
+[data-theme='light'] .markdown h6,
+[data-theme='light'] article h1,
+[data-theme='light'] article h2,
+[data-theme='light'] article h3,
+[data-theme='light'] article h4,
+[data-theme='light'] article h5,
+[data-theme='light'] article h6 {
+  color: var(--text-white) !important;
+}
+
+/* Doc page title (the main h1) */
+[data-theme='light'] header h1,
+[data-theme='light'] [class*="docTitle"],
+[data-theme='light'] .theme-doc-markdown h1:first-child {
+  color: var(--text-white) !important;
+}
+
+/* All paragraph text in docs */
+[data-theme='light'] .markdown p,
+[data-theme='light'] article p,
+[data-theme='light'] [class*="docItemContainer"] p {
+  color: var(--text-gray) !important;
+}
+
+/* All list items in docs */
+[data-theme='light'] .markdown li,
+[data-theme='light'] article li,
+[data-theme='light'] .markdown ul li,
+[data-theme='light'] .markdown ol li {
+  color: var(--text-gray) !important;
+}
+
+/* Strong/bold text */
+[data-theme='light'] .markdown strong,
+[data-theme='light'] article strong,
+[data-theme='light'] .markdown b {
+  color: var(--text-white) !important;
+}
+
+/* Links in docs */
+[data-theme='light'] .markdown a,
+[data-theme='light'] article a:not(.btn):not(.button) {
+  color: var(--violet) !important;
+}
+
+[data-theme='light'] .markdown a:hover,
+[data-theme='light'] article a:not(.btn):not(.button):hover {
+  color: var(--violet-bright) !important;
+}
+
+/* Doc sidebar */
+[data-theme='light'] [class*="docSidebar"],
+[data-theme='light'] aside[class*="sidebar"],
+
+
+/* Sidebar category labels */
+
+/* Table of contents (right sidebar) */
+[data-theme='light'] .table-of-contents,
+[data-theme='light'] [class*="tableOfContents"] {
+  background: transparent !important;
+}
+
+[data-theme='light'] .table-of-contents__link {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .table-of-contents__link:hover {
+  color: var(--violet) !important;
+}
+
+[data-theme='light'] .table-of-contents__link--active {
+  color: var(--violet) !important;
+  font-weight: 600;
+}
+
+/* Breadcrumbs */
+[data-theme='light'] .breadcrumbs__item,
+[data-theme='light'] .breadcrumbs__link {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .breadcrumbs__link:hover {
+  color: var(--violet) !important;
+}
+
+/* Tables in docs */
+[data-theme='light'] .markdown table,
+[data-theme='light'] article table {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .markdown table th,
+[data-theme='light'] article table th {
+  background: rgba(0, 0, 0, 0.04) !important;
+  color: var(--text-white) !important;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .markdown table td,
+[data-theme='light'] article table td {
+  color: var(--text-gray) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='light'] .markdown table tr:hover td {
+  background: rgba(139, 92, 246, 0.03);
+}
+
+/* Code blocks - keep dark for readability */
+[data-theme='light'] .markdown pre,
+[data-theme='light'] article pre,
+[data-theme='light'] pre[class*="language-"] {
+  background: #1e1e2e !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Inline code */
+[data-theme='light'] .markdown code:not(pre code),
+[data-theme='light'] article code:not(pre code),
+[data-theme='light'] p code,
+[data-theme='light'] li code,
+[data-theme='light'] td code {
+  background: rgba(139, 92, 246, 0.1) !important;
+  color: var(--violet) !important;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+/* Admonitions/Callouts (tip, note, warning, etc.) */
+[data-theme='light'] .alert,
+[data-theme='light'] [class*="admonition"] {
+  background: var(--bg-card) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .alert .admonition-heading,
+[data-theme='light'] [class*="admonitionHeading"] {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .alert p,
+[data-theme='light'] [class*="admonition"] p {
+  color: var(--text-gray) !important;
+}
+
+/* Tip admonition */
+[data-theme='light'] .alert--success,
+[data-theme='light'] [class*="admonition"][class*="tip"] {
+  border-left: 4px solid var(--emerald);
+  background: rgba(52, 211, 153, 0.05) !important;
+}
+
+/* Note admonition */
+[data-theme='light'] .alert--info,
+[data-theme='light'] [class*="admonition"][class*="note"] {
+  border-left: 4px solid var(--cyan);
+  background: rgba(34, 211, 238, 0.05) !important;
+}
+
+/* Warning admonition */
+[data-theme='light'] .alert--warning,
+[data-theme='light'] [class*="admonition"][class*="caution"],
+[data-theme='light'] [class*="admonition"][class*="warning"] {
+  border-left: 4px solid var(--amber);
+  background: rgba(251, 191, 36, 0.05) !important;
+}
+
+/* Danger admonition */
+[data-theme='light'] .alert--danger,
+[data-theme='light'] [class*="admonition"][class*="danger"] {
+  border-left: 4px solid var(--rose);
+  background: rgba(251, 113, 133, 0.05) !important;
+}
+
+/* Blockquotes */
+[data-theme='light'] .markdown blockquote,
+[data-theme='light'] article blockquote {
+  background: rgba(139, 92, 246, 0.05);
+  border-left: 4px solid var(--violet);
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .markdown blockquote p {
+  color: var(--text-gray) !important;
+}
+
+/* Horizontal rules */
+[data-theme='light'] .markdown hr,
+[data-theme='light'] article hr {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Doc badges (custom) */
+[data-theme='light'] .doc-badge {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+[data-theme='light'] .doc-badge-violet {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(232, 121, 249, 0.1));
+  border-color: rgba(139, 92, 246, 0.3);
+  color: var(--violet);
+}
+
+[data-theme='light'] .doc-badge-cyan {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(16, 185, 129, 0.1));
+  border-color: rgba(6, 182, 212, 0.3);
+  color: var(--cyan);
+}
+
+[data-theme='light'] .doc-badge-emerald {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(6, 182, 212, 0.1));
+  border-color: rgba(16, 185, 129, 0.3);
+  color: var(--emerald);
+}
+
+[data-theme='light'] .doc-badge-orange {
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.15), rgba(251, 191, 36, 0.1));
+  border-color: rgba(251, 146, 60, 0.3);
+  color: var(--orange);
+}
+
+/* Doc steps (custom) */
+[data-theme='light'] .doc-steps li {
+  border-left-color: rgba(139, 92, 246, 0.2);
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .doc-steps li::before {
+  /* Keep gradient background for step numbers */
+}
+
+[data-theme='light'] .doc-steps li strong {
+  color: var(--text-white) !important;
+}
+
+/* Doc CTA (custom) */
+[data-theme='light'] .doc-cta {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(6, 182, 212, 0.05));
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+[data-theme='light'] .doc-cta h3 {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .doc-cta p {
+  color: var(--text-gray) !important;
+}
+
+/* Doc feature cards (custom) */
+[data-theme='light'] .doc-feature-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .doc-feature-card h4 {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .doc-feature-card p {
+  color: var(--text-gray) !important;
+}
+
+/* Pagination in docs */
+[data-theme='light'] .pagination-nav {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .pagination-nav__link {
+  background: var(--bg-card) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .pagination-nav__link:hover {
+  background: rgba(139, 92, 246, 0.05) !important;
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+[data-theme='light'] .pagination-nav__sublabel {
+  color: var(--text-muted) !important;
+}
+
+[data-theme='light'] .pagination-nav__label {
+  color: var(--text-white) !important;
+}
+
+/* Version dropdown */
+[data-theme='light'] .dropdown__menu {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .dropdown__link {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .dropdown__link:hover {
+  background: rgba(139, 92, 246, 0.08);
+  color: var(--violet) !important;
+}
+
+/* Search */
+[data-theme='light'] .DocSearch-Button {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .DocSearch-Button:hover {
+  background: rgba(139, 92, 246, 0.08) !important;
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+[data-theme='light'] .DocSearch-Button-Placeholder {
+  color: var(--text-muted) !important;
+}
+
+/* Tabs in docs */
+[data-theme='light'] .tabs-container {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+[data-theme='light'] .tabs__item {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .tabs__item:hover {
+  background: rgba(139, 92, 246, 0.05);
+}
+
+[data-theme='light'] .tabs__item--active {
+  color: var(--violet) !important;
+  border-bottom-color: var(--violet) !important;
+}
+
+/* Images in docs */
+[data-theme='light'] .markdown img,
+[data-theme='light'] article img {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+/* Edit this page link */
+[data-theme='light'] .theme-edit-this-page {
+  color: var(--text-muted) !important;
+}
+
+[data-theme='light'] .theme-edit-this-page:hover {
+  color: var(--violet) !important;
+}
+
+/* Last updated text */
+[data-theme='light'] .theme-last-updated {
+  color: var(--text-muted) !important;
+}
+
+/* Footer in light mode */
+[data-theme='light'] footer.footer {
+  background: var(--bg-card) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .footer__title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .footer__item,
+[data-theme='light'] .footer__link-item {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .footer__link-item:hover {
+  color: var(--violet) !important;
+}
+
+[data-theme='light'] .footer__copyright {
+  color: var(--text-muted) !important;
+}
+
+/* Navbar in light mode */
+
+
+/* Mobile sidebar */
+
+
+/* Back to top button */
+[data-theme='light'] .theme-back-to-top-button {
+  background: var(--violet) !important;
+}
+
+/* Announcement bar */
+[data-theme='light'] .announcementBar {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.08)) !important;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+[data-theme='light'] .announcementBar__content {
+  color: var(--text-white) !important;
+}
+
+/* Copy button for code blocks */
+[data-theme='light'] button[class*="copyButton"] {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+}
+
+[data-theme='light'] button[class*="copyButton"]:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Details/Summary (collapsible) */
+[data-theme='light'] details {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+[data-theme='light'] details summary {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] details[open] summary {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] details > div {
+  color: var(--text-gray) !important;
+}
+

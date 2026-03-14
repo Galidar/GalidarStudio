@@ -1,0 +1,807 @@
+/* ============================================
+   DOCS — Documentation styles: sidebar, TOC, breadcrumbs, pagination, badges
+   ============================================ */
+
+/* ============================================
+   DOCUMENTATION STYLES (Oceanology Legacy/NextGen)
+   ============================================ */
+
+/* Doc Page Hero Banner */
+.theme-doc-markdown.markdown h1:first-of-type {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.85) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+/* Doc intro image styling */
+.theme-doc-markdown.markdown > p:first-of-type img,
+.theme-doc-markdown.markdown h1 + p img {
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  margin: 1.5rem 0 2rem;
+}
+
+/* Section headers with accent line */
+.theme-doc-markdown.markdown h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 3rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(139, 92, 246, 0.25);
+  position: relative;
+}
+
+.theme-doc-markdown.markdown h2::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--violet), var(--fuchsia));
+}
+
+.theme-doc-markdown.markdown h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--cyan);
+  margin-top: 2rem;
+}
+
+.theme-doc-markdown.markdown h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+/* Enhanced admonitions */
+.theme-admonition {
+  background: var(--bg-elevated) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+  padding: 1.25rem !important;
+  margin: 1.5rem 0 !important;
+  border-left: 4px solid var(--violet) !important;
+}
+
+.theme-admonition-note {
+  border-left-color: var(--cyan) !important;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), var(--bg-elevated)) !important;
+}
+
+.theme-admonition-tip {
+  border-left-color: var(--emerald) !important;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), var(--bg-elevated)) !important;
+}
+
+.theme-admonition-warning {
+  border-left-color: var(--orange) !important;
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.08), var(--bg-elevated)) !important;
+}
+
+.theme-admonition-danger {
+  border-left-color: #ef4444 !important;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), var(--bg-elevated)) !important;
+}
+
+.theme-admonition-info {
+  border-left-color: var(--violet) !important;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), var(--bg-elevated)) !important;
+}
+
+.admonitionHeading_node_modules-\@docusaurus-theme-classic-lib-theme-Admonition-Layout-styles-module {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.theme-admonition img {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 1rem;
+}
+
+/* Enhanced tables */
+.theme-doc-markdown.markdown table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 1.5rem 0;
+}
+
+.theme-doc-markdown.markdown table thead {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(6, 182, 212, 0.1));
+}
+
+.theme-doc-markdown.markdown table thead th {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  color: #fff;
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-doc-markdown.markdown table tbody tr {
+  background: var(--bg-elevated);
+  transition: background 0.2s ease;
+}
+
+.theme-doc-markdown.markdown table tbody tr:hover {
+  background: rgba(139, 92, 246, 0.08);
+}
+
+.theme-doc-markdown.markdown table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.theme-doc-markdown.markdown table tbody tr:nth-child(even):hover {
+  background: rgba(139, 92, 246, 0.08);
+}
+
+.theme-doc-markdown.markdown table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+}
+
+.theme-doc-markdown.markdown table td:first-child {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Code blocks in docs */
+.theme-doc-markdown.markdown pre {
+  background: var(--bg-elevated) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.theme-doc-markdown.markdown code {
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.9em;
+  color: var(--violet-bright);
+}
+
+.theme-doc-markdown.markdown pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+
+/* Images in docs */
+.theme-doc-markdown.markdown img {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.theme-doc-markdown.markdown img:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Lists in docs */
+.theme-doc-markdown.markdown ul,
+.theme-doc-markdown.markdown ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.theme-doc-markdown.markdown li {
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+}
+
+.theme-doc-markdown.markdown li strong {
+  color: #fff;
+}
+
+/* Blockquotes */
+.theme-doc-markdown.markdown blockquote {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(6, 182, 212, 0.05));
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-left: 4px solid var(--violet);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.theme-doc-markdown.markdown blockquote p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* Horizontal rules */
+.theme-doc-markdown.markdown hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
+  margin: 3rem 0;
+}
+
+/* Doc sidebar enhancements */
+.theme-doc-sidebar-container {
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent !important;
+}
+
+.theme-doc-sidebar-menu {
+  background: transparent !important;
+}
+
+
+/* Category labels */
+
+/* Doc breadcrumbs */
+.theme-doc-breadcrumbs {
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumbs__link {
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.breadcrumbs__link:hover {
+  color: var(--violet-bright);
+}
+
+/* TOC (Table of Contents) */
+.table-of-contents {
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  padding-left: 1rem;
+}
+
+.table-of-contents__link {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.table-of-contents__link:hover {
+  color: var(--violet-bright);
+}
+
+.table-of-contents__link--active {
+  color: var(--violet-bright) !important;
+  font-weight: 600;
+}
+
+/* Doc pagination */
+.pagination-nav {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Feature badges for docs */
+.doc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.875rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 100px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.doc-badge-violet {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(232, 121, 249, 0.15));
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  color: var(--violet-bright);
+}
+
+.doc-badge-cyan {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(16, 185, 129, 0.15));
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  color: var(--cyan);
+}
+
+.doc-badge-emerald {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.15));
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: var(--emerald);
+}
+
+.doc-badge-orange {
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.2), rgba(251, 191, 36, 0.15));
+  border: 1px solid rgba(251, 146, 60, 0.4);
+  color: var(--orange);
+}
+
+/* Doc feature grid */
+.doc-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .doc-feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.doc-feature-card {
+  background: var(--bg-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.doc-feature-card:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  transform: translateY(-2px);
+}
+
+.doc-feature-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #fff;
+}
+
+.doc-feature-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Quick start steps */
+.doc-steps {
+  counter-reset: step-counter;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.doc-steps li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 3.5rem;
+  padding-bottom: 1.5rem;
+  border-left: 2px solid rgba(139, 92, 246, 0.2);
+  margin-left: 1rem;
+}
+
+.doc-steps li:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+
+.doc-steps li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  background: linear-gradient(135deg, var(--violet), var(--fuchsia));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #fff;
+}
+
+.doc-steps li strong {
+  color: #fff;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Version badge */
+.doc-version-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 6px;
+  color: var(--emerald);
+  margin-left: 0.5rem;
+}
+
+/* Updated date styling */
+.doc-updated {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* CTA at bottom of docs */
+.doc-cta {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.05));
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.doc-cta h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.75rem 0;
+}
+
+.doc-cta p {
+  color: var(--text-muted);
+  margin: 0 0 1.5rem 0;
+}
+
+/* ============================================
+   DOCUMENTATION PAGE BACKGROUND
+   ============================================ */
+
+/* Root documentation wrapper - apply gradient to entire doc area */
+div[class*="docRoot"],
+div[class*="docsWrapper"],
+div[class*="docPage"] {
+  background: transparent !important;
+}
+
+/* Main wrapper for all doc pages with gradient */
+html[data-theme="dark"] .main-wrapper:has([class*="docPage"]),
+html[data-theme="dark"] .main-wrapper:has([class*="docsWrapper"]) {
+  background: 
+    radial-gradient(ellipse 120% 80% at 50% -10%, rgba(139, 92, 246, 0.15), transparent 60%),
+    radial-gradient(ellipse 80% 50% at 0% 40%, rgba(6, 182, 212, 0.08), transparent 50%),
+    radial-gradient(ellipse 80% 50% at 100% 70%, rgba(232, 121, 249, 0.06), transparent 50%),
+    var(--bg-dark) !important;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Fallback for browsers without :has() support */
+.docusaurus-doc-page .main-wrapper {
+  background: 
+    radial-gradient(ellipse 120% 80% at 50% -10%, rgba(139, 92, 246, 0.15), transparent 60%),
+    radial-gradient(ellipse 80% 50% at 0% 40%, rgba(6, 182, 212, 0.08), transparent 50%),
+    radial-gradient(ellipse 80% 50% at 100% 70%, rgba(232, 121, 249, 0.06), transparent 50%),
+    var(--bg-dark) !important;
+  min-height: 100vh;
+}
+
+/* All internal doc containers should be transparent */
+[class*="docMainContainer"],
+[class*="docItemContainer"],
+[class*="docSidebarContainer"],
+[class*="docRoot"],
+[class*="docPage"] > div,
+[class*="docsWrapper"] > div {
+  background: transparent !important;
+}
+
+/* Main content column */
+main[class*="docMainContainer"] {
+  background: transparent !important;
+}
+
+/* Sidebar */
+aside[class*="sidebar"],
+aside[class*="docSidebar"],
+nav[class*="sidebar"],
+div[class*="sidebarViewport"] {
+  background: transparent !important;
+}
+
+.theme-doc-sidebar-menu,
+
+/* Article wrapper */
+article,
+article[class*="docItemContainer"] {
+  background: transparent !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Remove any pseudo-element backgrounds or dividers */
+[class*="docSidebarContainer"]::before,
+[class*="docSidebarContainer"]::after,
+[class*="docMainContainer"]::before,
+[class*="docMainContainer"]::after {
+  display: none !important;
+  background: transparent !important;
+}
+
+/* TOC wrapper */
+div[class*="tableOfContents"],
+div[class*="tocCollapsible"] {
+  background: transparent !important;
+}
+
+/* Doc item wrapper row */
+div[class*="docItemRow"],
+div[class*="docItemCol"] {
+  background: transparent !important;
+}
+
+/* Pagination nav */
+nav[class*="pagination-nav"] {
+  background: transparent !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+nav[class*="pagination-nav"] a {
+  background: var(--bg-elevated) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+nav[class*="pagination-nav"] a:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  background: rgba(139, 92, 246, 0.08) !important;
+  transform: translateY(-2px);
+}
+
+/* Breadcrumbs */
+nav[class*="breadcrumbs"] {
+  background: transparent !important;
+}
+
+/* Version badge dropdown */
+div[class*="navbarSearchContainer"],
+div[class*="colorModeToggle"] {
+  background: transparent !important;
+}
+
+/* Footer */
+footer[class*="footer"] {
+  background: var(--bg-dark) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure no dark cuts between sections */
+.container,
+.container-fluid {
+  background: transparent !important;
+}
+
+/* Row wrapper */
+.row {
+  background: transparent !important;
+}
+
+/* ============================================
+   WAVE FORGE STUDIO SECTION
+   ============================================ */
+
+.wave-forge-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 968px) {
+  .wave-forge-showcase {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wave-forge-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.wave-forge-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(6, 182, 212, 0.2));
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--violet);
+  width: fit-content;
+  animation: pulse-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
+  50% { box-shadow: 0 0 20px 5px rgba(139, 92, 246, 0.2); }
+}
+
+.wave-forge-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin: 0;
+}
+
+.wave-forge-desc {
+  font-size: 1.1rem;
+  color: var(--text-gray);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.wave-forge-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.wave-forge-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.wave-forge-feature:hover {
+  background: rgba(139, 92, 246, 0.08);
+  border-color: rgba(139, 92, 246, 0.2);
+  transform: translateX(4px);
+}
+
+.wave-forge-feature-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.wave-forge-feature div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.wave-forge-feature strong {
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+.wave-forge-feature span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.wave-forge-pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.05));
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 12px;
+}
+
+.wave-forge-pricing-label {
+  color: var(--violet);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.wave-forge-pricing-note {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.wave-forge-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.wave-forge-actions .btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+.wave-forge-preview {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.wave-forge-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wave-forge-preview-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  display: flex;
+  justify-content: center;
+}
+
+.wave-forge-preview-overlay span {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Light mode adjustments */
+[data-theme='light'] .wave-forge-title {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .wave-forge-desc {
+  color: var(--text-gray) !important;
+}
+
+[data-theme='light'] .wave-forge-feature {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .wave-forge-feature:hover {
+  background: rgba(139, 92, 246, 0.08);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+[data-theme='light'] .wave-forge-feature strong {
+  color: var(--text-white) !important;
+}
+
+[data-theme='light'] .wave-forge-feature span {
+  color: var(--text-muted) !important;
+}
+
+[data-theme='light'] .wave-forge-preview {
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+

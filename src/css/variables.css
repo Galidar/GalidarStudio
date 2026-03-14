@@ -1,0 +1,96 @@
+/* ============================================
+   VARIABLES — Font imports & CSS custom properties
+   ============================================ */
+
+/* ============================================
+   GALIDAR STUDIO - VIBRANT BENTO DESIGN V2
+   Fixed cards with full background images
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ============================================
+   VIBRANT COLOR SYSTEM
+   ============================================ */
+:root {
+  /* Core Vibrant Colors */
+  --violet: #8b5cf6;
+  --violet-bright: #a78bfa;
+  --purple: #c026d3;
+  --fuchsia: #e879f9;
+  --pink: #f472b6;
+  --rose: #fb7185;
+  --orange: #fb923c;
+  --amber: #fbbf24;
+  --lime: #a3e635;
+  --emerald: #34d399;
+  --teal: #2dd4bf;
+  --cyan: #22d3ee;
+  --sky: #38bdf8;
+  --blue: #3b82f6;
+  
+  /* Backgrounds */
+  --bg-dark: #09090b;
+  --bg-card: #18181b;
+  --bg-card-hover: #27272a;
+  --bg-elevated: #1f1f23;
+  
+  /* Text */
+  --text-white: #fafafa;
+  --text-gray: #a1a1aa;
+  --text-muted: #71717a;
+  
+  /* Mesh Gradients */
+  --mesh-1: radial-gradient(at 40% 20%, rgba(139, 92, 246, 0.3) 0px, transparent 50%),
+            radial-gradient(at 80% 0%, rgba(236, 72, 153, 0.25) 0px, transparent 50%),
+            radial-gradient(at 0% 50%, rgba(45, 212, 191, 0.2) 0px, transparent 50%),
+            radial-gradient(at 80% 50%, rgba(251, 146, 60, 0.2) 0px, transparent 50%),
+            radial-gradient(at 0% 100%, rgba(56, 189, 248, 0.25) 0px, transparent 50%);
+  
+  /* Docusaurus Overrides */
+  --ifm-color-primary: #8b5cf6;
+  --ifm-color-primary-dark: #7c3aed;
+  --ifm-color-primary-darker: #6d28d9;
+  --ifm-color-primary-darkest: #5b21b6;
+  --ifm-color-primary-light: #a78bfa;
+  --ifm-color-primary-lighter: #c4b5fd;
+  --ifm-color-primary-lightest: #ddd6fe;
+  
+  --ifm-background-color: var(--bg-dark);
+  --ifm-background-surface-color: var(--bg-card);
+  --ifm-navbar-background-color: rgba(9, 9, 11, 0.8);
+  --ifm-footer-background-color: var(--bg-dark);
+  --ifm-font-family-base: 'Sora', system-ui, sans-serif;
+  --ifm-heading-font-family: 'Space Grotesk', system-ui, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', monospace;
+  --ifm-border-radius: 16px;
+}
+
+[data-theme='light'] {
+  --bg-dark: #fafafa;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f4f4f5;
+  --bg-elevated: #ffffff;
+  --text-white: #18181b;
+  --text-gray: #52525b;
+  --text-muted: #71717a;
+  --ifm-background-color: var(--bg-dark);
+  --ifm-navbar-background-color: rgba(250, 250, 250, 0.9);
+  --ifm-footer-background-color: #f4f4f5;
+  
+  /* CRITICAL: Override Docusaurus text colors */
+  --ifm-font-color-base: #18181b;
+  --ifm-heading-color: #18181b;
+  --ifm-link-color: #8b5cf6;
+  --ifm-menu-color: #52525b;
+  --ifm-toc-link-color: #52525b;
+  --ifm-color-content: #18181b;
+  --ifm-color-content-secondary: #52525b;
+  
+  /* Light mode mesh gradient - más sutil */
+  --mesh-1: radial-gradient(at 40% 20%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
+            radial-gradient(at 80% 0%, rgba(236, 72, 153, 0.06) 0px, transparent 50%),
+            radial-gradient(at 0% 50%, rgba(45, 212, 191, 0.05) 0px, transparent 50%),
+            radial-gradient(at 80% 50%, rgba(251, 146, 60, 0.05) 0px, transparent 50%),
+            radial-gradient(at 0% 100%, rgba(56, 189, 248, 0.06) 0px, transparent 50%);
+}
