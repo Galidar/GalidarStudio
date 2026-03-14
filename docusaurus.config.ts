@@ -82,18 +82,24 @@ const config: Config = {
     navbar: {
       title: 'Galidar Studio',
       items: [
-        { type: 'docSidebar', sidebarId: 'legacySidebar', docsPluginId: 'legacy', position: 'left', label: 'Oceanology Legacy' },
-        { type: 'docSidebar', sidebarId: 'nextgenSidebar', docsPluginId: 'default', position: 'left', label: 'Oceanology NextGen' },
-        { type: 'docSidebar', sidebarId: 'riverologySidebar', docsPluginId: 'riverology', position: 'left', label: 'Riverology' },
-        { type: 'docSidebar', sidebarId: 'claudebridgeSidebar', docsPluginId: 'claudebridge', position: 'left', label: 'ClaudeBridge' },
+        {
+          type: 'dropdown',
+          label: 'Products',
+          position: 'left',
+          items: [
+            { type: 'docSidebar', sidebarId: 'nextgenSidebar', docsPluginId: 'default', label: 'Oceanology NextGen' },
+            { type: 'docSidebar', sidebarId: 'legacySidebar', docsPluginId: 'legacy', label: 'Oceanology Legacy' },
+            { type: 'docSidebar', sidebarId: 'riverologySidebar', docsPluginId: 'riverology', label: 'Riverology' },
+            { type: 'docSidebar', sidebarId: 'claudebridgeSidebar', docsPluginId: 'claudebridge', label: 'ClaudeBridge' },
+          ],
+        },
         { to: '/roadmap', label: 'Roadmap', position: 'left' },
         { to: '/changelog', label: 'Changelog', position: 'left' },
         { to: '/community', label: 'Community', position: 'left' },
         { to: '/showcase', label: 'Showcase', position: 'left' },
-        { to: '/linked-roles', label: 'Linked Roles', position: 'right' },
-        { to: '/faq', label: 'FAQ', position: 'right' },
         { to: '/support', label: 'Support', position: 'right' },
-        { href: 'https://discord.gg/VHJGBDR2as', label: 'Discord', position: 'right' }
+        { to: '/faq', label: 'FAQ', position: 'right' },
+        { href: 'https://discord.gg/VHJGBDR2as', label: 'Discord', position: 'right' },
       ],
     },
     footer: {
