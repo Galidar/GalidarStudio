@@ -4,7 +4,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 const config: Config = {
   title: 'Galidar Studio Docs',
-  tagline: 'Oceanology, Riverology & Environment Packs',
+  tagline: 'Oceanology, Riverology, ClaudeBridge & Environment Packs',
   url: 'https://galidar.com',
   baseUrl: '/',
   favicon: 'img/logo.svg',
@@ -26,7 +26,7 @@ const config: Config = {
         indexBlog: true,
         indexPages: true,
         blogRouteBasePath: ['roadmap'],
-        docsRouteBasePath: ['oceanology-legacy', 'oceanology-nextgen', 'riverology'],
+        docsRouteBasePath: ['oceanology-legacy', 'oceanology-nextgen', 'riverology', 'claudebridge'],
         language: ['en'],
         searchBarShortcutKeymap: 'mod+k',
         searchBarPosition: 'right',
@@ -56,6 +56,7 @@ const config: Config = {
     ['@docusaurus/plugin-content-docs', { id: 'legacy', path: 'oceanology-legacy', routeBasePath: 'oceanology-legacy', sidebarPath: './sidebarsLegacy.ts' }],
     ['@docusaurus/plugin-content-docs', { id: 'default', path: 'oceanology-nextgen', routeBasePath: 'oceanology-nextgen', sidebarPath: './sidebarsNextGen.ts' }],
     ['@docusaurus/plugin-content-docs', { id: 'riverology', path: 'riverology', routeBasePath: 'riverology', sidebarPath: './sidebarsRiverology.ts' }],
+    ['@docusaurus/plugin-content-docs', { id: 'claudebridge', path: 'claudebridge', routeBasePath: 'claudebridge', sidebarPath: './sidebarsClaudeBridge.ts' }],
     ['@docusaurus/plugin-content-blog', {
       id: 'roadmap',
       path: 'roadmap',
@@ -74,7 +75,7 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     metadata: [
-      { name: 'keywords', content: 'Galidar Studio, Oceanology, Riverology, Unreal Engine, water, ocean, rivers' },
+      { name: 'keywords', content: 'Galidar Studio, Oceanology, Riverology, ClaudeBridge, Unreal Engine, water, ocean, rivers, AI, MCP, editor tools' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { property: 'og:site_name', content: 'Galidar Studio Docs' },
     ],
@@ -84,6 +85,7 @@ const config: Config = {
         { type: 'docSidebar', sidebarId: 'legacySidebar', docsPluginId: 'legacy', position: 'left', label: 'Oceanology Legacy' },
         { type: 'docSidebar', sidebarId: 'nextgenSidebar', docsPluginId: 'default', position: 'left', label: 'Oceanology NextGen' },
         { type: 'docSidebar', sidebarId: 'riverologySidebar', docsPluginId: 'riverology', position: 'left', label: 'Riverology' },
+        { type: 'docSidebar', sidebarId: 'claudebridgeSidebar', docsPluginId: 'claudebridge', position: 'left', label: 'ClaudeBridge' },
         { to: '/roadmap', label: 'Roadmap', position: 'left' },
         { to: '/changelog', label: 'Changelog', position: 'left' },
         { to: '/community', label: 'Community', position: 'left' },
@@ -103,6 +105,7 @@ const config: Config = {
             {label: 'Oceanology Legacy', to: '/oceanology-legacy/'},
             {label: 'Oceanology NextGen', to: '/oceanology-nextgen/'},
             {label: 'Riverology', to: '/riverology/'},
+            {label: 'ClaudeBridge', to: '/claudebridge/'},
           ],
         },
         {
