@@ -6,10 +6,29 @@ let nextgenChangelog: ProductChangelog = {
   accent: '#8b5cf6',
   entries: [
     {
+      version: '1.3.1',
+      date: 'March 15, 2026',
+      title: 'Packaging Fix & Volumetric Fog Material Correction',
+      tag: 'latest',
+      highlights: [
+        'Fixed fatal CDO construction crash that prevented project packaging on source builds',
+        'Fixed VolumetricFog underwater material not rendering (incorrect Shading Model)',
+      ],
+      sections: [
+        {
+          heading: 'Bug Fixes',
+          items: [
+            'Fixed CDO construction crash (GEngine not initialized) in OceanologyBattleShipPawn — SetPhysMaterialOverride now guarded with RF_ClassDefaultObject check to prevent physics material queries during CDO creation',
+            'Fixed VolumetricFog underwater material (M_UnderOcean_VolumetricFog) not rendering — Shading Model corrected from Unlit to DefaultLit',
+            'Fixed Fab Store build: added missing TimerManager.h and LocalPlayer.h includes',
+          ],
+        },
+      ],
+    },
+    {
       version: '1.3.0',
       date: 'March 10, 2026',
       title: 'Ship Navigation, PredictiveInterpolation & Standalone Game Support',
-      tag: 'latest',
       highlights: [
         'Complete C++ ship navigation system with spline-based FlowController and two flow modes',
         'PredictiveInterpolation with CubicInterp for butter-smooth vessel replication at 30Hz',
