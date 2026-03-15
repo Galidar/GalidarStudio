@@ -4,6 +4,7 @@ import type { ProductChangelog } from '../data/changelog-types';
 import nextgenChangelog from '../data/changelog-nextgen';
 import legacyChangelog from '../data/changelog-legacy';
 import riverologyChangelog from '../data/changelog-riverology';
+import claudebridgeChangelog from '../data/changelog-claudebridge';
 
 /* ─────────────────────────────────────────────
    Product registry — add new products here.
@@ -16,6 +17,7 @@ let changelogs: ProductChangelog[] = [
   nextgenChangelog,
   legacyChangelog,
   riverologyChangelog,
+  claudebridgeChangelog,
   // Future products go here:
   // proChangelog,
   // liteChangelog,
